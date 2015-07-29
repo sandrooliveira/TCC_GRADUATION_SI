@@ -302,60 +302,110 @@ além da máquina virtual padrão;
 
 \end{citacao}
 
-\subsection{Java Server Faces}
+\subsection{AngularJS}
 
-\par Segundo \citeonline{livro_programacao_java_para_web}, o \textit{JavaServer
-Faces} é uma especificação para um \textit{framework} de componentes para
-desenvolvimento \textit{web} em Java de forma segura. Foi definido pela
-\textit{Java Comunity Process} - JCP\footnotemark[3], que é uma entidade cujo
-objetivo é especificar a evolução do Java.
+\subsubsection{Introdução}
 
-\footnotetext[4]{O termo \textit{Java Comunity Process} será referenciado pela
-sigla JCP a partir deste ponto do trabalho.}
+\par Segundo \citeonline{livro_java_Guia_do_Programador} a lingugem Java Script
+é uma das linguagens que vem sendo muito utilizada para desenvolver aplicações WEB. Com isso ela sempre esta em evolução e com isso
+vão surgindo novos frameworks tornando-a cada dia mais poderosa e com mais
+recursos e dentre esses frameworks está o AngularJS
 
-\par Como o JSF é uma especificação da JCP, grandes empresas como
-\textit{Apache}, \textit{IBM}, \textit{Oracle} entre outras, participaram da
-definição do JSF e aprovaram sua especificação e mesmo sendo idealizado por várias empresas e generalizado pela
-JCP, o JSF torna-se um padrão de mercado, mas não é um produto acabado e precisa
-de implementações.\cite{livro_programacao_java_para_web}
+\par O AngularJS é mantido pelo Google e possui varios recursos que o fazem uma
+ferramenta poderosa.
+Uma dessas particularidades é que ele funciona como uma extensão ao documento HTML, adici-
+onando novos parâmetros e interagindo de forma dinâmica com vários elementos. Ou seja, com
+AngularJS podemos adicionar novos atributos no html para conseguir adicionar funcionalidades
+extras, sem a necessidade de programar em javascript.
+AngularJS é quase uma linguagem declarativa, ou seja, você usa novos parâmetros na linguagem
+html para alterar o comportamento padrão do html. Estes parâmetros (ou propriedades) são
+chamados de diretivas.
+Além disso, é fornecido também um conjunto de funcionalidades que tornam o desenvolvimento
+web muito mais fácil, tais como o DataBinding, templates e fácil uso do Ajax
+\cite{livro_java_Guia_do_Programador}.
 
-\par As implementações mais conhecidas são:
+\subsubsection{Características}
 
- \begin{itemize}
-	\item \textit{Sun Mojarra} (antes JSF R1) – implementação de referencia
-	(http://javaserverfaces.java.net/)
-	
-	\item \textit{MyFaces} da \textit{Apache}(http://myfaces.apache.org/)
- \end{itemize}
+\par O AngularJS possui algumas caracteríticas e através delas será possível
+realizar diferentes tarefas que irão tornar o desenvolvimento web muito mais simples e prazeroso.
 
-\par Com essa implementação é possível utilizar todos os recursos do padrão JSF,
-como formulários, tabelas, \textit{layout}, conversão e validação de eventos,
-além de toda a inteligência para a interpretação dos arquivos de configuração e
-interação com o contêiner Java. Como o JSF é um padrão de mercado, várias empresas investem no
-desenvolvimento de componentes como, Calendário, \textit{ProgressBar}, menus,
-efeitos de transição entre outros.\cite{livro_programacao_java_para_web}
+\subsubsection{DataBind}
 
- \par Algumas das principais bibliotecas de componentes são:
+\par O DataBind é uma das principais vantagens do AngularJS.
+Com ele conseguimos ligar automaticamente uma variável qualquer a uma outra.
+Geralmente, é usado para ligar uma variável do JavaScript (ou um objeto) a algum
+elemento do documento HTML \cite{livro_java_Guia_do_Programador}.
 
- \begin{itemize}
-	\item \textit{Trinidad}, da \textit{Apache MyFaces}
-	(http://myfaces.apache.org/trinidad/);
-	
-	\item \textit{Tobago}, da \textit{Apache MyFaces}
-	(http://myfaces.apache.org/tobago/);
-	
-	\item \textit{ICEFaces}, da \textit{ICESoft} (http://www.icefaces.org/);
-	
-	\item \textit{RichFaces}, da \textit{JBoss} (http://www.jboss.org/richfaces/);
-	
-	\item \textit{Tomahawk}, da \textit{Apache MyFaces}
-	(http://myfaces.apache.org/tomahawk/);
-	
-	\item \textit{PrimeFaces} (http://www.primefaces.org/)
- \end{itemize}
+\subsubsection{Controller}
 
-\par Neste projeto, utilizaremos a biblioteca PrimeFaces.
+\par Um controller é um arquivo JavaScript que contém funcionalidades
+referentes à alguma parte do documento HTML.
+Não existe uma regra para o controller, como por exemplo
+ter um controller por arquivo HTML, mas sim uma forma de sintetizar as regras de negócio (funções
+javascript) em um lugar separado ao documento HTML
+\cite{livro_java_Guia_do_Programador}.
 
+\subsubsection{Loops}
+
+\par Com o AngularJS pode-se utilizar templates para que se possa
+adicionar conteúdo dinâmico. Um loop é sempre realizado através da propriedade ng-repeat e obedece a uma variável
+que geralmente é um array de dados \cite{livro_java_Guia_do_Programador}.
+
+
+% \subsection{Java Server Faces}
+% 
+% \par Segundo \citeonline{livro_programacao_java_para_web}, o \textit{JavaServer
+% Faces} é uma especificação para um \textit{framework} de componentes para
+% desenvolvimento \textit{web} em Java de forma segura. Foi definido pela
+% \textit{Java Comunity Process} - JCP\footnotemark[3], que é uma entidade cujo
+% objetivo é especificar a evolução do Java.
+% 
+% \footnotetext[4]{O termo \textit{Java Comunity Process} será referenciado pela
+% sigla JCP a partir deste ponto do trabalho.}
+% 
+% \par Como o JSF é uma especificação da JCP, grandes empresas como
+% \textit{Apache}, \textit{IBM}, \textit{Oracle} entre outras, participaram da
+% definição do JSF e aprovaram sua especificação e mesmo sendo idealizado por várias empresas e generalizado pela
+% JCP, o JSF torna-se um padrão de mercado, mas não é um produto acabado e precisa
+% de implementações.\cite{livro_programacao_java_para_web}
+% 
+% \par As implementações mais conhecidas são:
+% 
+%  \begin{itemize}
+% 	\item \textit{Sun Mojarra} (antes JSF R1) – implementação de referencia
+% 	(http://javaserverfaces.java.net/)
+% 	
+% 	\item \textit{MyFaces} da \textit{Apache}(http://myfaces.apache.org/)
+%  \end{itemize}
+% 
+% \par Com essa implementação é possível utilizar todos os recursos do padrão JSF,
+% como formulários, tabelas, \textit{layout}, conversão e validação de eventos,
+% além de toda a inteligência para a interpretação dos arquivos de configuração e
+% interação com o contêiner Java. Como o JSF é um padrão de mercado, várias empresas investem no
+% desenvolvimento de componentes como, Calendário, \textit{ProgressBar}, menus,
+% efeitos de transição entre outros.\cite{livro_programacao_java_para_web}
+% 
+%  \par Algumas das principais bibliotecas de componentes são:
+% 
+%  \begin{itemize}
+% 	\item \textit{Trinidad}, da \textit{Apache MyFaces}
+% 	(http://myfaces.apache.org/trinidad/);
+% 	
+% 	\item \textit{Tobago}, da \textit{Apache MyFaces}
+% 	(http://myfaces.apache.org/tobago/);
+% 	
+% 	\item \textit{ICEFaces}, da \textit{ICESoft} (http://www.icefaces.org/);
+% 	
+% 	\item \textit{RichFaces}, da \textit{JBoss} (http://www.jboss.org/richfaces/);
+% 	
+% 	\item \textit{Tomahawk}, da \textit{Apache MyFaces}
+% 	(http://myfaces.apache.org/tomahawk/);
+% 	
+% 	\item \textit{PrimeFaces} (http://www.primefaces.org/)
+%  \end{itemize}
+% 
+% \par Neste projeto, utilizaremos a biblioteca PrimeFaces.
+% 
 
 
 
