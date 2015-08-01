@@ -177,15 +177,26 @@ da população para proseguir de forma satisfatória, pois se esta for
 constituida somente das melhores soluções, será composta de indídudos
 cada vez mais semelhantes prejudicando a evolução da população. 
 
-
-Existe vários tipos, mas iremos usar a X por causa disso
+\par Existem varios tipos de seleção, no projeto será utilizado o método da
+roleta. Este metodo é muito utilizado entre a maioria dos pesquisadores de AGs.
+A seleção pelo método da roleta é calculada através
+da soma total de todas as aptidões dos indivíduos de uma população. Para
+cada indivíduo divide-se sua aptidão pelo valor da soma total das aptidões
+de todos os indivíduos, chegando à probabilidade que cada indivíduo tem
+de ser selecionado dentro da população. Com as probabilidades montadas é
+possivel atribuir aos individuos mais aptos uma área proporcional a sua aptidão
+dentro da roleta e ao girar a roleta os indivíduos com maior aptidão, ou seja,
+maior área na roleta tem mais chances de serem escolhidos \cite{livro_ags_ricardo_linden}.
 
 \subsubsection{Cruzamento}
+
 \par Após a seleção dos pais irá ocorrer então o processo de \textit{crossover}
 e, como no cruzamento natural, neste processo dois novos indivíduos, ou seja, duas
 novas soluções são formadas a partir de características daquelas que se
 cruzaram, ou seja, serão geradas duas novas soluções que conterão alguns cromossomos
 de uma solução e alguns cromossomos de outra.
+
+
 
 Existe vários tipos, mas iremos usar a X por causa disso
 
