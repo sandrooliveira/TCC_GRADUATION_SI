@@ -144,9 +144,9 @@ soluções inviáveis para a solução do problema,ou seja, ao verificar que uma
 certa solução não satisfaz o grau de aptidão nescessário para o problema
 proposto esta solução é descartada e assim, só sobrevivem na execução da função
 as soluções com mais chence de resolver o problema e por isso torna-se o
-componente mais importante de qualquer algoritmo genetico.
+componente mais importante de qualquer algoritmo genético.
 
-\par Devido a generilidade encontrada nos GAs a função de avaliação
+\par Devido a generalidade encontrada nos AGs a função de avaliação
 torna-se em muitos casos a unica ligação verdadeira entre o programa e o problema real, por
 isso deve-se ter um certo cuidado ao escolhe-la, ela deve conter tudo o que se
 sabe sobre o problema a ser resolvido, quanto mais conhecimento a função
@@ -190,13 +190,18 @@ maior área na roleta tem mais chances de serem escolhidos \cite{livro_ags_ricar
 
 \subsubsection{Cruzamento}
 
-\par Após a seleção dos pais irá ocorrer então o processo de \textit{crossover}
-e, como no cruzamento natural, neste processo dois novos indivíduos, ou seja, duas
+\par Segundo \citeonline{livro_ags_ricardo_linden} Após a seleção dos pais irá ocorrer então o
+processo de \textit{crossover} e, como no cruzamento natural, neste processo dois novos indivíduos, ou seja, duas
 novas soluções são formadas a partir de características daquelas que se
 cruzaram, ou seja, serão geradas duas novas soluções que conterão alguns cromossomos
 de uma solução e alguns cromossomos de outra.
 
-
+\par Para \citeonline{intro_algoritimo_geneticos} o operador crossover é um
+mecanismo de busca dos AGs para explorar regiões desconhecidas do espaço de busca, ele é aplicado a um par de cromossomos
+retirados da população intermediária, gerando dois cromossomos filhos. O
+crossover é aplicado com uma dada probabilidade a cada par de cromossomos selecionados.
+Essa probabilidade vaira entre 60$\%$ e 90$\%$ e caso não ocorra o
+crossover os filhos serão iguais aos pais possibilitando que algumas soluções sejam preservadas.
 
 Existe vários tipos, mas iremos usar a X por causa disso
 
@@ -219,32 +224,6 @@ novamente, passando pela avaliação, classificação, cruzamento, mutação par
 formar assim uma nova população. O fim da execução acontece quando o
 número de populações criadas atinge um limite que é definido previamente.
 Este processo oferece como saída a melhor solução encontrada.
-
-
-\subsubsection{Como Funciona}
-
-\par Para entendermos como os AGs funcionam temos que saber alguns passsos
-fundamentais para desenvolver uma solução usando AGs e esses passos são:
-\item Inicialize a população de cromossomos;
-\item Avalie cada cromossomo na população;
-\item Selecione os pais para gerar novos cromossomos;
-\item Aplique os opreradores de recombinação e mutação a estes pais de forma a
-gerar os indivíduos da nova geração;
-\item Apague os velhos membros da população;
-\item Avalie todos os novos cromossomos e insira-os na população
-\item Se o tempo acabou o melhor cromossomo satisfaz os requerimentos e
-desempenho, retorne-o, caso contrario, selecione os pais para gerar novos
-cromossomos
-
-\par Estes passos são o básico para que se possoa desenvolver uma solução
-utilizando AGs e escondem uma complexibilidade do processo de obtenção de alguns
-elementos como:
-\item uma melhor forma de criar os cromossomos para se adequar na resolução do
-problema;
-\item uma função de avaliação para que dentre vairias soluções
-sempre seja mantida a melhor solução para que se possa chegar ao resultado
-esperado ou bem próximo do esperado de um problema e descarte as soluções que
-não estão aptas a serem usadas para atingir a solução do problema;
 
 \section{Orientação a Objetos}
 
