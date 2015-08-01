@@ -1,4 +1,4 @@
-\chapter{QUADRO TEÓRICOoooooo}
+\chapter{QUADRO TEÓRICO}
 
 \par Neste capítulo serão listados os conceitos e as tecnologias que serão
 utilizados no desenvolvimento da proposta de trabalho apontada na seção 
@@ -10,6 +10,7 @@ questões sobre a origem dos seres vivos.
 
 \section{Algoritmos Genéticos}
 
+\subsection{Fundamentos}
 
 \par Para \citeonline{livro_introduction_ag_melaine_mitchell}, desde o começo da
 era computacional, cientistas pioneiros, tais como Alan Turing, John von
@@ -115,6 +116,8 @@ características melhores ou piores que seus progenitores, porém, se os pais
 possuem características positivas, a probabilidade de gerarem filhos ainda
 melhores são maiores \cite{livro_ags_ricardo_linden}.
 
+\subsubsection{Características dos Algoritmos Genéticos}
+
 \par De acordo com \citeonline{livro_ags_ricardo_linden}, a analogia dos AGs com
 os processos biológicos se dá por meio da representação de cada termo descrito
 anteriormente em um modelo computacional voltado a encontrar soluções a um
@@ -126,12 +129,17 @@ para o problema.
 \par O autor afirma ainda que, um indivíduo é formado por cromossomos que
 guardam as características da solução, ou seja, a forma que esta resolve o
 problema.
-Após a criação da população inicial esta é então avaliada através de uma
+
+\subsubsection{Função de avaliação}
+
+\par Após a criação da população inicial esta é então avaliada através de uma
 função de avaliação que mede a qualidade de cada uma de suas soluções e é
 realizado então uma classificação que ordena as soluções das melhores para as
 piores, para então iniciar a formação de uma nova população. A nova população
 pode conter já inicialmente os dois melhores indivíduos existentes, este mecanismo é
 denominado elitismo e pode ser utilizado ou não.
+
+\subsubsection{Seleção}
 
 \par Ainda segundo \citeonline{livro_ags_ricardo_linden}, o próximo passo
 para a formação da nova população é o cruzamento que, inicia-se com a seleção de
@@ -141,11 +149,18 @@ qualidade muito baixa, a seleção é feita de forma probabilística ou seja
 indivíduos com boa qualidade possuem mais chances de serem selecionados e, por outro lado,
 indivíduos com menor nota de avaliação terão menos chance. 
 
+Existe vários tipos, mas iremos usar a X por causa disso
+
+\subsubsection{Cruzamento}
 \par Após a seleção dos pais irá ocorrer então o processo de \textit{crossover}
 e, como no cruzamento natural, neste processo dois novos indivíduos, ou seja, duas
 novas soluções são formadas a partir de características daquelas que se
 cruzaram, ou seja, serão geradas duas novas soluções que conterão alguns cromossomos
 de uma solução e alguns cromossomos de outra.
+
+Existe vários tipos, mas iremos usar a X por causa disso
+
+\subsubsection{Mutação}
 
 \par Para o autor, também pode ocorrer a mutação em
 que, da mesma forma que ocorre na natureza, aleatoriamente o valor dos
@@ -153,6 +168,8 @@ cromossomos de um indivíduo pode ser alterado. A mutação ocorre de acordo com
 uma taxa definida. Basicamente é definido uma porcentagem baixa e então um
 número de 0 a 1 é sorteado e multiplicado por 100, se o resultado for menor que
 a porcentagem então irá ocorrer a mutação para aquele indivíduo.
+
+Existe vários tipos, mas iremos usar a X por causa disso
 
 \par Concluindo, \citeonline{livro_ags_ricardo_linden} afirma que o processo de 
 seleção, cruzamento e mutação acontece até formar uma nova população, 
@@ -163,6 +180,31 @@ formar assim uma nova população. O fim da execução acontece quando o
 número de populações criadas atinge um limite que é definido previamente.
 Este processo oferece como saída a melhor solução encontrada.
 
+
+\subsubsection{Como Funciona}
+
+\par Para entendermos como os AGs funcionam temos que saber alguns passsos
+fundamentais para desenvolver uma solução usando AGs e esses passos são:
+\item Inicialize a população de cromossomos;
+\item Avalie cada cromossomo na população;
+\item Selecione os pais para gerar novos cromossomos;
+\item Aplique os opreradores de recombinação e mutação a estes pais de forma a
+gerar os indivíduos da nova geração;
+\item Apague os velhos membros da população;
+\item Avalie todos os novos cromossomos e insira-os na população
+\item Se o tempo acabou o melhor cromossomo satisfaz os requerimentos e
+desempenho, retorne-o, caso contrario, selecione os pais para gerar novos
+cromossomos
+
+\par Estes passos são o básico para que se possoa desenvolver uma solução
+utilizando AGs e escondem uma complexibilidade do processo de obtenção de alguns
+elementos como:
+\item uma melhor forma de criar os cromossomos para se adequar na resolução do
+problema;
+\item uma função de avaliação para que dentre vairias soluções
+sempre seja mantida a melhor solução para que se possa chegar ao resultado
+esperado ou bem próximo do esperado de um problema e descarte as soluções que
+não estão aptas a serem usadas para atingir a solução do problema;
 
 \section{Orientação a Objetos}
 
