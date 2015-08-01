@@ -132,22 +132,51 @@ problema.
 
 \subsubsection{Função de avaliação}
 
-\par Após a criação da população inicial esta é então avaliada através de uma
-função de avaliação que mede a qualidade de cada uma de suas soluções e é
+\par Segundo \citeonline{livro_ags_ricardo_linden} após a criação da população
+inicial esta é então avaliada através de uma função de avaliação que mede a qualidade de cada uma de suas soluções e é
 realizado então uma classificação que ordena as soluções das melhores para as
 piores, para então iniciar a formação de uma nova população. A nova população
-pode conter já inicialmente os dois melhores indivíduos existentes, este mecanismo é
-denominado elitismo e pode ser utilizado ou não.
+pode conter já inicialmente os dois melhores indivíduos existentes, este
+mecanismo é denominado elitismo e pode ser utilizado ou não.
+
+\par Ainda segundo o autor a função de Avaliação ou função de aptdão penaliza as
+soluções inviáveis para a solução do problema,ou seja, ao verificar que uma
+certa solução não satisfaz o grau de aptidão nescessário para o problema
+proposto esta solução é descartada e assim, só sobrevivem na execução da função
+as soluções com mais chence de resolver o problema e por isso torna-se o
+componente mais importante de qualquer algoritmo genetico.
+
+\par Devido a generilidade encontrada nos GAs a função de avaliação
+torna-se em muitos casos a unica ligação verdadeira entre o programa e o problema real, por
+isso deve-se ter um certo cuidado ao escolhe-la, ela deve conter tudo o que se
+sabe sobre o problema a ser resolvido, quanto mais conhecimento a função
+possuir, maior será a chance da função entregar o melhor resultado
+\cite{livro_ags_ricardo_linden}.
+
+% \par Baseando nessas \citeonline{livro_ags_ricardo_linden}, iremos
+% usar no projeto uma função para avaliar dentre varias costureiras a melhor forma de
+% destribuir a materia prima para que seja produzida uma certa quantidade de
+% calças no menor tempo possível.
+
 
 \subsubsection{Seleção}
 
-\par Ainda segundo \citeonline{livro_ags_ricardo_linden}, o próximo passo
+\par Segundo \citeonline{livro_ags_ricardo_linden}, o próximo passo
 para a formação da nova população é o cruzamento que, inicia-se com a seleção de
 dois indivíduos, que é realizada de acordo com a qualidade destes, porém,
 como é fundamental que esta escolha não despreze completamente os indivíduos com uma
 qualidade muito baixa, a seleção é feita de forma probabilística ou seja
 indivíduos com boa qualidade possuem mais chances de serem selecionados e, por outro lado,
-indivíduos com menor nota de avaliação terão menos chance. 
+indivíduos com menor nota de avaliação terão menos chance.
+
+\par Para \citeonline{livro_ags_ricardo_linden}, é importante que não se tenha
+apenas as melhores soluções, as soluções com menor grau de avalição também são
+importantes para que se tenha uma maior diversidade de caracteristicas na
+população envolvida para solução do problema, possibilitanto uma maior evolução
+da população para proseguir de forma satisfatória, pois se esta for
+constituida somente das melhores soluções, será composta de indídudos
+cada vez mais semelhantes prejudicando a evolução da população.
+
 
 Existe vários tipos, mas iremos usar a X por causa disso
 
