@@ -130,6 +130,23 @@ para o problema.
 guardam as características da solução, ou seja, a forma que esta resolve o
 problema.
 
+\par Segundo \citeonline{livro_introduction_ag_melaine_mitchell}, para
+entendermos como os AGs funcionam precisamos conhecer alguns
+elementos comuns no desenvolvolvimento de uma solução usando AGs, esses
+elementos são:
+\begin{itemize}
+\item População de cromossomos;
+\item Avaliar cada cromossomo na população;
+\item Seleção de acordo com a qualidade;
+\item Cruzamento para geração de novos descendentes;
+\item Mutação aleatória da nova população;
+\item Avalie todos os novos cromossomos e insira-os na população
+\item Se o tempo acabou o melhor cromossomo satisfaz os requerimentos e
+desempenho, retorne-o, caso contrario, selecione os pais para gerar novos
+cromossomos
+\end{itemize}
+\par Logo abaixo será descrito alguns dos principais elementos.
+
 \subsubsection{Função de avaliação}
 
 \par Segundo \citeonline{livro_ags_ricardo_linden} após a criação da população
@@ -179,14 +196,12 @@ cada vez mais semelhantes prejudicando a evolução da população.
 
 \par Existem varios tipos de seleção, no projeto será utilizado o método da
 roleta. Este metodo é muito utilizado entre a maioria dos pesquisadores de AGs.
-A seleção pelo método da roleta é calculada através
-da soma total de todas as aptidões dos indivíduos de uma população. Para
-cada indivíduo divide-se sua aptidão pelo valor da soma total das aptidões
-de todos os indivíduos, chegando à probabilidade que cada indivíduo tem
-de ser selecionado dentro da população. Com as probabilidades montadas é
-possivel atribuir aos individuos mais aptos uma área proporcional a sua aptidão
-dentro da roleta e ao girar a roleta os indivíduos com maior aptidão, ou seja,
-maior área na roleta tem mais chances de serem escolhidos \cite{livro_ags_ricardo_linden}.
+Neste método cada indivíduo da população ocupa uma porção da roleta,
+proporcional ao seu indicie de aptidão, ou seja, os indivíduos que possuírem
+maior aptdão ocuparão uma maior porção do que aqueles com menor aptidão. A
+quentidade de vezes que a roleta é girada depende do tamanho da população, em
+cada vez que a roleta é girada é escolhido um indivíduo que fara parte do
+processo de geração da nova população \cite{REVISTA_MULTIDISCIPLINAR_DA_UNIESP}.
 
 \subsubsection{Cruzamento}
 
@@ -196,25 +211,68 @@ novas soluções são formadas a partir de características daquelas que se
 cruzaram, ou seja, serão geradas duas novas soluções que conterão alguns cromossomos
 de uma solução e alguns cromossomos de outra.
 
-\par Para \citeonline{intro_algoritimo_geneticos} o operador crossover é um
+\par Para \citeonline{intro_aos_algoritimos_geneticos} o operador crossover é um
 mecanismo de busca dos AGs para explorar regiões desconhecidas do espaço de busca, ele é aplicado a um par de cromossomos
 retirados da população intermediária, gerando dois cromossomos filhos. O
 crossover é aplicado com uma dada probabilidade a cada par de cromossomos selecionados.
-Essa probabilidade vaira entre 60$\%$ e 90$\%$ e caso não ocorra o
+Essa probabilidade vaira entre 60\% e 90\% e caso não ocorra o
 crossover os filhos serão iguais aos pais possibilitando que algumas soluções sejam preservadas.
 
-Existe vários tipos, mas iremos usar a X por causa disso
+\par Para \citeonline{REVISTA_MULTIDISCIPLINAR_DA_UNIESP}, o cruzamento combina
+os cromossomos pais a fim de gerar cromossomos filhos e para isso existem vários
+tipos de cruzamento. Existem vários tipos de cruzamento, abaixo será apresentado
+dois tipos de cruzamento, o cruzamento em um ponto e cruzamento Uniforme
+
+\subsubsection{Cruzamento um ponto}
+
+\par Esse tipo de cruzamento divide os cromossomos selecionados em um ponto de
+sua cadeia, esse ponto é escolhido aleatoriamente. Após essa divisão é copiado
+uma parte dos cromossomos de cada pai, para gerar novos cromossomos filhos. Neste
+método é comum os pais gerarem dois novos filhos, mas a quantidade de filhos
+pode ser definida levando em consideração que o numero de alelos permita as
+diferentes combinações \cite{REVISTA_MULTIDISCIPLINAR_DA_UNIESP}.
+
+\subsubsection{Cruzamento Uniforme}
+
+\par Para \citeonline{REVISTA_MULTIDISCIPLINAR_DA_UNIESP} o cruzamento
+uniforme gera cada gene do descendente copiando o gene em questão de um dos
+pais, onde se usa uma mascara de cruzamento que é gerada aleatoriamente para fazer a escolha. Para criar o cromossomo é percorrido todas as posições da máscara
+fazendo uma análise dos seus valores, quando o valor da posição for 1, o gene do
+primeiro pai referente a mesma posição da máscara é copiado, se o valor for 0
+será copiado o gene do segundo pai, depois desse processo é gerado o novo
+descendente.
+
+\par Segundo \citeonline{intro_aos_algoritimos_geneticos}, o tipo de cruzamento
+uniforme se difere do cruzamento de um ponto uma vez que este sempre leva a
+metade dos bits de cada pai.
 
 \subsubsection{Mutação}
 
-\par Para o autor, também pode ocorrer a mutação em
+\par Para \citeonline{livro_ags_ricardo_linden}, também pode ocorrer a mutação em
 que, da mesma forma que ocorre na natureza, aleatoriamente o valor dos
 cromossomos de um indivíduo pode ser alterado. A mutação ocorre de acordo com
 uma taxa definida. Basicamente é definido uma porcentagem baixa e então um
 número de 0 a 1 é sorteado e multiplicado por 100, se o resultado for menor que
 a porcentagem então irá ocorrer a mutação para aquele indivíduo.
 
-Existe vários tipos, mas iremos usar a X por causa disso
+\par Para \citeonline{intro_aos_algoritimos_geneticos}, a mutação melhora a
+diversidade dos cromossomos na poulação, em contra partida depois de realizada a
+mutação se perde informações contidas no cromossomo e para assegurar a
+diversidade deve-se usar uma taxa de mutação pequena. 
+
+\par Assim como no cruzamento a vários tipos de mutação, será descrito sobre a
+mutação de bit.
+
+\subsubsection{Mutação de bit}
+
+\par Segundo \citeonline{REVISTA_MULTIDISCIPLINAR_DA_UNIESP} este é o operador
+mais fácil de trabalhar podendo ser aplicado em qualquer forma de representação
+binária dos cromossomos. Este tipo de mutação gera uma probabilidade de mutação
+para cada bit do cromossomo, se caso a probabilidade for baixa o bit sofrerá
+mutação, recebendo um valor determinado de forma aleatória dentre os valores que
+podem ser assumidos pelo cromossomo.
+
+\subsection{Conclusão}
 
 \par Concluindo, \citeonline{livro_ags_ricardo_linden} afirma que o processo de 
 seleção, cruzamento e mutação acontece até formar uma nova população, 
@@ -247,38 +305,12 @@ modelo representaria dentre outros dados, o nome, cargo, salário e horas extras
 trabalhadas dessa pessoa, ainda podendo conter operações para realização
 de cálculos de salário por exemplo.
 
-
 \par Concluindo, \citeonline{ifsudestemg} afirma que, do mesmo modo 
 que no mundo real vemos as coisas de um ângulo geral em que objetos se
 interagem entre si, a proposta de orientação a objetos é que uma  
 aplicação não seja organizada em processos estruturados mas
 sim como objetos que se interagem uns com os outros.
 
-\subsubsection{Como Funciona}
-
-\par Para entendermos como os AGs funcionam temos que saber alguns passsos
-fundamentais para desenvolver uma solução usando AGs e esses passos são:
-\item Inicialize a população de cromossomos;
-\item Avalie cada cromossomo na população;
-\item Selecione os pais para gerar novos cromossomos;
-\item Aplique os opreradores de recombinação e mutação a estes pais de forma a
-gerar os indivíduos da nova geração;
-\item Apague os velhos membros da população;
-\item Avalie todos os novos cromossomos e insira-os na população
-\item Se o tempo acabou o melhor cromossomo satisfaz os requerimentos e
-desempenho, retorne-o, caso contrario, selecione os pais para gerar novos
-cromossomos
-
-\par Estes passos são o básico para que se possoa desenvolver uma solução
-utilizando AGs e escondem uma complexibilidade do processo de obtenção de alguns
-elementos como:
-\item uma melhor forma de criar os cromossomos para se adequar na resolução do
-problema;
-\item uma função de avaliação para que dentre vairias soluções
-sempre seja mantida a melhor solução para que se possa chegar ao resultado
-esperado ou bem próximo do esperado de um problema e descarte as soluções que
-não estão aptas a serem usadas para atingir a solução do problema;
-\item 
 
 
 
@@ -389,110 +421,61 @@ além da máquina virtual padrão;
 
 \end{citacao}
 
-\subsection{AngularJS}
 
-\subsubsection{Introdução}
-
-\par Segundo \citeonline{livro_java_Guia_do_Programador} a lingugem Java Script
-é uma das linguagens que vem sendo muito utilizada para desenvolver aplicações WEB. Com isso ela sempre esta em evolução e com isso
-vão surgindo novos frameworks tornando-a cada dia mais poderosa e com mais
-recursos e dentre esses frameworks está o AngularJS
-
-\par O AngularJS é mantido pelo Google e possui varios recursos que o fazem uma
-ferramenta poderosa.
-Uma dessas particularidades é que ele funciona como uma extensão ao documento HTML, adici-
-onando novos parâmetros e interagindo de forma dinâmica com vários elementos. Ou seja, com
-AngularJS podemos adicionar novos atributos no html para conseguir adicionar funcionalidades
-extras, sem a necessidade de programar em javascript.
-AngularJS é quase uma linguagem declarativa, ou seja, você usa novos parâmetros na linguagem
-html para alterar o comportamento padrão do html. Estes parâmetros (ou propriedades) são
-chamados de diretivas.
-Além disso, é fornecido também um conjunto de funcionalidades que tornam o desenvolvimento
-web muito mais fácil, tais como o DataBinding, templates e fácil uso do Ajax
-\cite{livro_java_Guia_do_Programador}.
-
-\subsubsection{Características}
-
-\par O AngularJS possui algumas caracteríticas e através delas será possível
-realizar diferentes tarefas que irão tornar o desenvolvimento web muito mais simples e prazeroso.
-
-\subsubsection{DataBind}
-
-\par O DataBind é uma das principais vantagens do AngularJS.
-Com ele conseguimos ligar automaticamente uma variável qualquer a uma outra.
-Geralmente, é usado para ligar uma variável do JavaScript (ou um objeto) a algum
-elemento do documento HTML \cite{livro_java_Guia_do_Programador}.
-
-\subsubsection{Controller}
-
-\par Um controller é um arquivo JavaScript que contém funcionalidades
-referentes à alguma parte do documento HTML.
-Não existe uma regra para o controller, como por exemplo
-ter um controller por arquivo HTML, mas sim uma forma de sintetizar as regras de negócio (funções
-javascript) em um lugar separado ao documento HTML
-\cite{livro_java_Guia_do_Programador}.
-
-\subsubsection{Loops}
-
-\par Com o AngularJS pode-se utilizar templates para que se possa
-adicionar conteúdo dinâmico. Um loop é sempre realizado através da propriedade ng-repeat e obedece a uma variável
-que geralmente é um array de dados \cite{livro_java_Guia_do_Programador}.
-
-
-% \subsection{Java Server Faces}
-% 
-% \par Segundo \citeonline{livro_programacao_java_para_web}, o \textit{JavaServer
-% Faces} é uma especificação para um \textit{framework} de componentes para
-% desenvolvimento \textit{web} em Java de forma segura. Foi definido pela
-% \textit{Java Comunity Process} - JCP\footnotemark[3], que é uma entidade cujo
-% objetivo é especificar a evolução do Java.
-% 
-% \footnotetext[4]{O termo \textit{Java Comunity Process} será referenciado pela
-% sigla JCP a partir deste ponto do trabalho.}
-% 
-% \par Como o JSF é uma especificação da JCP, grandes empresas como
-% \textit{Apache}, \textit{IBM}, \textit{Oracle} entre outras, participaram da
-% definição do JSF e aprovaram sua especificação e mesmo sendo idealizado por várias empresas e generalizado pela
-% JCP, o JSF torna-se um padrão de mercado, mas não é um produto acabado e precisa
-% de implementações.\cite{livro_programacao_java_para_web}
-% 
-% \par As implementações mais conhecidas são:
-% 
-%  \begin{itemize}
-% 	\item \textit{Sun Mojarra} (antes JSF R1) – implementação de referencia
-% 	(http://javaserverfaces.java.net/)
-% 	
-% 	\item \textit{MyFaces} da \textit{Apache}(http://myfaces.apache.org/)
-%  \end{itemize}
-% 
-% \par Com essa implementação é possível utilizar todos os recursos do padrão JSF,
-% como formulários, tabelas, \textit{layout}, conversão e validação de eventos,
-% além de toda a inteligência para a interpretação dos arquivos de configuração e
-% interação com o contêiner Java. Como o JSF é um padrão de mercado, várias empresas investem no
-% desenvolvimento de componentes como, Calendário, \textit{ProgressBar}, menus,
-% efeitos de transição entre outros.\cite{livro_programacao_java_para_web}
-% 
-%  \par Algumas das principais bibliotecas de componentes são:
-% 
-%  \begin{itemize}
-% 	\item \textit{Trinidad}, da \textit{Apache MyFaces}
-% 	(http://myfaces.apache.org/trinidad/);
-% 	
-% 	\item \textit{Tobago}, da \textit{Apache MyFaces}
-% 	(http://myfaces.apache.org/tobago/);
-% 	
-% 	\item \textit{ICEFaces}, da \textit{ICESoft} (http://www.icefaces.org/);
-% 	
-% 	\item \textit{RichFaces}, da \textit{JBoss} (http://www.jboss.org/richfaces/);
-% 	
-% 	\item \textit{Tomahawk}, da \textit{Apache MyFaces}
-% 	(http://myfaces.apache.org/tomahawk/);
-% 	
-% 	\item \textit{PrimeFaces} (http://www.primefaces.org/)
-%  \end{itemize}
-% 
-% \par Neste projeto, utilizaremos a biblioteca PrimeFaces.
-% 
+ \subsection{Java Server Faces}
+ 
+ \par Segundo \citeonline{livro_programacao_java_para_web}, o \textit{JavaServer
+ Faces} é uma especificação para um \textit{framework} de componentes para
+ desenvolvimento \textit{web} em Java de forma segura. Foi definido pela
+ \textit{Java Comunity Process} - JCP\footnotemark[3], que é uma entidade cujo
+ objetivo é especificar a evolução do Java.
+ 
+ \footnotetext[4]{O termo \textit{Java Comunity Process} será referenciado pela
+ sigla JCP a partir deste ponto do trabalho.}
+ 
+ \par Como o JSF é uma especificação da JCP, grandes empresas como
+ \textit{Apache}, \textit{IBM}, \textit{Oracle} entre outras, participaram da
+ definição do JSF e aprovaram sua especificação e mesmo sendo idealizado por várias empresas e generalizado pela
+ JCP, o JSF torna-se um padrão de mercado, mas não é um produto acabado e precisa
+ de implementações.\cite{livro_programacao_java_para_web}
+ 
+ \par As implementações mais conhecidas são:
+ 
+  \begin{itemize}
+ 	\item \textit{Sun Mojarra} (antes JSF R1) – implementação de referencia
+ 	(http://javaserverfaces.java.net/)
+ 	
+ 	\item \textit{MyFaces} da \textit{Apache}(http://myfaces.apache.org/)
+  \end{itemize}
+ 
+ \par Com essa implementação é possível utilizar todos os recursos do padrão JSF,
+ como formulários, tabelas, \textit{layout}, conversão e validação de eventos,
+ além de toda a inteligência para a interpretação dos arquivos de configuração e
+ interação com o contêiner Java. Como o JSF é um padrão de mercado, várias empresas investem no
+ desenvolvimento de componentes como, Calendário, \textit{ProgressBar}, menus,
+ efeitos de transição entre outros.\cite{livro_programacao_java_para_web}
+ 
+  \par Algumas das principais bibliotecas de componentes são:
+ 
+  \begin{itemize}
+ 	\item \textit{Trinidad}, da \textit{Apache MyFaces}
+ 	(http://myfaces.apache.org/trinidad/);
+ 	
+ 	\item \textit{Tobago}, da \textit{Apache MyFaces}
+ 	(http://myfaces.apache.org/tobago/);
+ 	
+ 	\item \textit{ICEFaces}, da \textit{ICESoft} (http://www.icefaces.org/);
+ 	
+ 	\item \textit{RichFaces}, da \textit{JBoss} (http://www.jboss.org/richfaces/);
+ 	
+ 	\item \textit{Tomahawk}, da \textit{Apache MyFaces}
+ 	(http://myfaces.apache.org/tomahawk/);
+ 	
+ 	\item \textit{PrimeFaces} (http://www.primefaces.org/)
+  \end{itemize}
+ 
+ \par Neste projeto, utilizaremos a biblioteca PrimeFaces.
+ 
 
 
 
