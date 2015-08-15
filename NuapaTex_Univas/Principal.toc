@@ -1,0 +1,29 @@
+\changetocdepth {4}
+\changetocdepth {2}
+\select@language {brazil}
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {QUADRO TE\IeC {\'O}RICO}}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Algoritmos Gen\IeC {\'e}ticos}{3}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Fundamentos}{3}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Caracter\IeC {\'\i }sticas dos Algoritmos Gen\IeC {\'e}ticos}{5}{subsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.2.1}Popula\IeC {\c c}\IeC {\~a}o Inicial}{6}{subsubsection.1.1.2.1}
+\contentsline {subsubsection}{\numberline {1.1.2.2}Fun\IeC {\c c}\IeC {\~a}o de avalia\IeC {\c c}\IeC {\~a}o}{7}{subsubsection.1.1.2.2}
+\contentsline {subsubsection}{\numberline {1.1.2.3}Sele\IeC {\c c}\IeC {\~a}o}{7}{subsubsection.1.1.2.3}
+\contentsline {subsubsection}{\numberline {1.1.2.4}Cruzamento}{8}{subsubsection.1.1.2.4}
+\contentsline {subsubsection}{\numberline {1.1.2.5}Muta\IeC {\c c}\IeC {\~a}o}{9}{subsubsection.1.1.2.5}
+\contentsline {section}{\numberline {1.2}Tecnologias}{10}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Linguagem de programa\IeC {\c c}\IeC {\~a}o Java}{10}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Interface Gr\IeC {\'a}fica}{12}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Armazenamento de dados}{15}{subsection.1.2.3}
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {QUADRO METODOL\IeC {\'O}GICO}}{16}{chapter.2}
+\contentsline {section}{\numberline {2.1}Tipo de pesquisa}{16}{section.2.1}
+\contentsline {section}{\numberline {2.2}Contexto de pesquisa}{16}{section.2.2}
+\contentsline {section}{\numberline {2.3}Participantes}{17}{section.2.3}
+\contentsline {section}{\numberline {2.4}Instrumentos}{17}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Entrevistas}{18}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Reuni\IeC {\~o}es}{18}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Procedimentos}{18}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Realza\IeC {\c c}\IeC {\~a}o da Modelagem da base de dados}{19}{subsection.2.5.1}
+\contentsline {section}{\numberline {2.6}Cronograma}{20}{section.2.6}
+\contentsline {section}{\numberline {2.7}Or\IeC {\c c}amento}{21}{section.2.7}
+\vspace {\cftbeforechapterskip }
+\contentsline {chapter}{REFER\IeC {\^E}NCIAS}{23}{section*.8}
