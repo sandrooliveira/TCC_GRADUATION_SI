@@ -170,7 +170,10 @@ de um algorítimo genético. Este \textit{framework} é definido dentro da segui
 \begin{itemize}
 	
 	\item Classe \texttt{GAModel}:
-	\par A classe \texttt{GAModel} é basicamente a classe mãe de todos os elementos de um algoritmo genético, ela representa o modelo que irá armazenar a população de indivíduos além de ser a classe que armazena os parâmetros que definem as configurações do algoritmo, tais como, tipo de cruzamento, tipo de mutação, tamanho da população etc.
+	\par A classe \texttt{GAModel} é basicamente a classe mãe de todos os elementos de um algoritmo genético, 
+	ela representa o modelo que irá armazenar a população de indivíduos além de ser a classe que armazena os 
+	parâmetros que definem as configurações do algoritmo, tais como, tipo de cruzamento, tipo de mutação, 
+	tamanho da população etc.
 	
 	\par A classe contém os seguintes atributos:
 	
@@ -179,47 +182,66 @@ de um algorítimo genético. Este \textit{framework} é definido dentro da segui
 		Este atributo define qual será o tamanho da população, ou seja, quantos indivíduos irão formar cada população;
 		
 		\item \textit{generationQuantity}:
-		Como já explicado anteriormente, o processo de cruzamento e mutação se repete até que o número de indivíduos, definido 
-		no atributo anterior, seja atingido formando assim uma nova população e então, por sua vez, este processo de geração 
-		de novas populações se repete até que seja atingido um número de gerações definido pelo programador. Este atributo 
-		representa esta quantidade;
+		Como já explicado anteriormente, o processo de cruzamento e mutação se repete até que o número de indivíduos, 
+		definido no atributo anterior, seja atingido formando assim uma nova população e então, por sua vez, 
+		este processo de geração de novas populações se repete até que seja atingido um número de gerações definido 
+		pelo programador. Este atributo representa esta quantidade;
 		
 		\item{elitism}:
-		Atributo do tipo \textit{boolean} que representa se o algoritmo vai ter a função de elitismo. Esta função, como já foi
-		explicado anteriormente, quando está ativada (com valor \textit{true}), no momento de começar a se criar uma nova população os dois melhores indivíduos da população que será substituída já começam a fazer parte da nova população, antes de começar o processo de cruzamento e mutação. Este mecanismo garante que a nova população terá pelo dois indivíduos iguais ao da antiga população, o que irá impedir que a nova população seja pior que a primeira;
+		Atributo do tipo \textit{boolean} que representa se o algoritmo vai ter a função de elitismo. 
+		Esta função, como já foi explicado anteriormente, quando está ativada (com valor \textit{true}), 
+		no momento de começar a se criar uma nova população os dois melhores indivíduos da população que será 
+		substituída já começam a fazer parte da nova população, antes de começar o processo de cruzamento e mutação. 
+		Este mecanismo garante que a nova população terá pelo dois indivíduos iguais ao da antiga população, o que irá 
+		impedir que a nova população seja pior que a primeira;
 		
 		\item{foreignIndividualRate}:
 		
 		
 		\item{mutationRate}:
-		Como descrito no quadro teórico, a mutação é o fato de realizar pequenas alterações no indivíduo a fim de que este possa se tornar ainda melhor. Este parâmetro define uma porcentagem, geralmente baixa, que define quando o indivíduo sofrerá mutação ou não. Esta questão ficará mais claras mais abaixo, quando será explicado o passo a passo da execução do algoritmo.
+		Como descrito no quadro teórico, a mutação é o fato de realizar pequenas alterações no indivíduo a fim de que 
+		este possa se tornar ainda melhor. Este parâmetro define uma porcentagem, geralmente baixa, que define quando 
+		o indivíduo sofrerá mutação ou não. Esta questão ficará mais claras mais abaixo, quando será explicado o passo 
+		a passo da execução do algoritmo.
 		
 		\item{mutationQuantity}:
-		Caso a mutação for ocorrer para o indivíduo, a alteração aleatória será feita nos cromossomos. Este parâmetro define quantos cromossomos do indivíduo deve ser alterado pela mutação;
+		Caso a mutação for ocorrer para o indivíduo, a alteração aleatória será feita nos cromossomos. 
+		Este parâmetro define quantos cromossomos do indivíduo deve ser alterado pela mutação;
 		
 		\item{selectionType}:
-		Conforme descrito no quadro teórico, existem várias formas de seleção dos indivíduos para realizarem o cruzamento. Este parâmetro define qual será a forma escolhida pelo programador ao implementar o seu problema. No \textit{framework} este parâmetro é do tipo \texttt{enum} e pode assumir 2 valores o \textit{ROULETTE}, que representa o método roleta e o \textit{CLASSIFICATION}, que representa o método de classificação;
+		Conforme descrito no quadro teórico, existem várias formas de seleção dos indivíduos para realizarem 
+		o cruzamento. Este parâmetro define qual será a forma escolhida pelo programador ao implementar o seu problema. 
+		No \textit{framework} este parâmetro é do tipo \texttt{enum} e pode assumir 2 valores o \textit{ROULETTE}, 
+		que representa o método roleta e o \textit{CLASSIFICATION}, que representa o método de classificação;
 		
 		\item{crossType}:
-		Assim como a seleção, existe diversas formas de fazer o cruzamento dos indivíduos. Este atributo, também do tipo \texttt{enum} representa a forma de cruzamento e pode receber os valores \textit{Binary}, \textit{Permutation}, \textit{Uniform} e \textit{Aritmetic};
+		Assim como a seleção, existe diversas formas de fazer o cruzamento dos indivíduos. Este atributo, 
+		também do tipo \texttt{enum} representa a forma de cruzamento e pode receber os valores \textit{Binary}, 
+		\textit{Permutation}, \textit{Uniform} e \textit{Aritmetic};
 		
 		\item{mutationType}:
-		Segue as mesma forma que o selectionType e o crossType e pode assumir os valores \textit{Permutation}, \textit{Binary} e \textit{Numerical}.
+		Segue as mesma forma que o selectionType e o crossType e pode assumir os valores \textit{Permutation}, 
+		\textit{Binary} e \textit{Numerical}.
 		
 	\end{itemize}
 	
 	\item Classe \texttt{Individual}:
 	\par A classe abstrata \texttt{Individual}, encontra-se dentro do pacote edu.univas.edu.tcc.gacore e  
-	representa a estrutura básica de um indivíduo. A classe contém uma \texttt{lista} do tipo \texttt{Cromossomo}, que será 
-	descrito mais abaixo, que contém uma coleção de objetos que representam as características da solução. 
+	representa a estrutura básica de um indivíduo. A classe contém uma \texttt{lista} do tipo 
+	\texttt{Cromossomo}, que será descrito mais abaixo, que contém uma coleção de objetos que representam as 
+	características da solução.
+	 
 	\par A Classe contém ainda um atributo chamado \texttt{valor} que irá armazenar a qualidade, ou seja, qual é o custo
 	da solução representada pelo indivíduo, tal valor é recebido no retorno da operação calcularValor() descrita abaixo.
-	\par Com relação as operações, além dos \textit{getters and setters} e o construtor, que recebe a lista de cromossomos como
-	parâmetro, a classe contém a operação abstrata \texttt{calcularValor()}, esta operação é quem realiza a função de avaliação, 
-	explicada anteriormente, que mede a qualidade do indivíduo. Desta forma, ao utilizar este \textit{framework}, a
-	classe que representa o indivíduo do problema deve herdar desta classe  \texttt{Individual}. Fazendo isso tal classe passará a ter uma
-	lista de cromossomos e o atributo que representa o seu valor e a classe obrigatoriamente terá que implementar a operação 
-	\texttt{calcularValor()}, já que esta é abstrata na classe mãe, permitindo assim que o programador desenvolva a função de avaliação específica para o seu problema.
+	
+	\par Com relação as operações, além dos \textit{getters and setters} e o construtor, que recebe a lista 
+	de cromossomos como parâmetro, a classe contém a operação abstrata \texttt{calcularValor()}, esta operação é 
+	quem realiza a função de avaliação, explicada anteriormente, que mede a qualidade do indivíduo. 
+	Desta forma, ao utilizar este \textit{framework}, a classe que representa o indivíduo do problema deve herdar 
+	desta classe  \texttt{Individual}. Fazendo isso tal classe passará a ter uma lista de cromossomos e o atributo 
+	que representa o seu valor e a classe obrigatoriamente terá que implementar a operação 
+	\texttt{calcularValor()}, já que esta é abstrata na classe mãe, permitindo assim que o programador 
+	desenvolva a função de avaliação específica para o seu problema.
 	
 	\item Classe \texttt{Chromosome}:
 	\par 
@@ -229,6 +251,34 @@ de um algorítimo genético. Este \textit{framework} é definido dentro da segui
 	
 	
 	\item Classe \texttt{GAController}:
+	\par A classe \texttt{GAController} é onde se executa todas as operações do
+	algoritmo genético. Ela recebe no seu construtor o modelo do algoritmo da
+	classe \texttt{GAModel} que traz configurações como tipo de mutação, tamanho da
+	população, tipo de cruzamento, etc e salva essas informações em uma variavel
+	do tipo \texttt{GAModel}.
+	
+	\par Ela contém um método chamado \texttt{execute} e este método é o
+	responsável pelo inicio de toda a operação do algoritmo genético. 
+	Para começar é chamado o método  \texttt{createInitialPopulation} da classe
+	\texttt{GAModel} para criar a população de indivíduos e este método será implementado pela
+	classe que irá herdar da classe \texttt{GAModel}.
+	A variável \texttt{lastBest} irá guardar sempre o melhor individuo da
+	população. Após a criação da população inicial ou do processo de cruzamento e
+	mutação a população será submetida ao processo de classificação.
+	
+	\par No processo de classificação é calculado o valor do indivíduo pelo método
+	\texttt{calculateValue} que será implementado pela classe que herda da classe
+	onde este método está implementado.
+	
+	\par Se 
+		
+	\par Feito isso é verificado se o numero de populações da geração foi
+	atingido. Este numero é definido na classe \texttt{GAModel}, o método
+	\texttt{execute} chama o método \texttt{getGenerationQuantity} que retorna o
+	valor da variável \texttt{generationQuantity}, se o valor dessa variável for 100, 
+	será criada uma geração com 100 populações diferentes.
+	
+	
 	
 	
 \end{itemize}
