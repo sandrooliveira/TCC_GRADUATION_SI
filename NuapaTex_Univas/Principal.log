@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.6)  14 AUG 2015 21:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.6)  22 AUG 2015 10:21
 entering extended mode
 **Principal.tex
 (C:\Users\Sandro\TCC_OFICIAL\TCC_GRADUATION_SI\NuapaTex_Univas\Principal.tex
@@ -1001,7 +1001,11 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 \RaggedRightParindent=\skip216
 \JustifyingParindent=\skip217
 ))
-(C:\Users\Sandro\TCC_OFICIAL\TCC_GRADUATION_SI\NuapaTex_Univas\Principal.aux)
+(C:\Users\Sandro\TCC_OFICIAL\TCC_GRADUATION_SI\NuapaTex_Univas\Principal.aux
+
+LaTeX Warning: Label `fig:exemplo1' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
@@ -1017,8 +1021,7 @@ LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 10.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 \AtBeginShipoutBox=\box33
@@ -1135,26 +1138,18 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
  [1
 
 {C:/Users/Sandro/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
-(C:\Users\Sandro\TCC_OFICIAL\TCC_GRADUATION_SI\NuapaTex_Univas\fixos/02_FolhaRo
-sto.texpdfTeX warning (ext4): destination with the same identifier (name{page.1
-}) has been already used, duplicate ignored
+(C:\Users\Sandro\TCC_OFICIAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/11_Qua
+droTeorico.texpdfTeX warning (ext4): destination with the same identifier (name
+{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.35 \imprimirfolhaderosto*{}
-                              [1
+l.42 \par O
+            autor afirma então que, com base nesta observação, Darwin pro...
+[1
 
 
 
-])
-(C:\Users\Sandro\TCC_OFICIAL\TCC_GRADUATION_SI\NuapaTex_Univas\fixos/0C_Sumario
-.tex
-(C:\Users\Sandro\TCC_OFICIAL\TCC_GRADUATION_SI\NuapaTex_Univas\Principal.toc)
-[2])
-(C:\Users\Sandro\TCC_OFICIAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/11_Qua
-droTeorico.tex [3
-
-
-] [4]
+] [2]
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 138.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
@@ -1162,7 +1157,8 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 138.
- [5] <./imagens/algoritimos_geneticos.jpg, id=98, 700.11563pt x 323.70938pt>
+ [3]
+<./imagens/algoritimos_geneticos.jpg, id=51, 700.11563pt x 323.70938pt>
 File: ./imagens/algoritimos_geneticos.jpg Graphic file (type jpg)
 
 <use ./imagens/algoritimos_geneticos.jpg>
@@ -1171,24 +1167,24 @@ Package pdftex.def Info: ./imagens/algoritimos_geneticos.jpg used on input line
 (pdftex.def)             Requested size: 420.07262pt x 194.22713pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 156.
- [6 <C:/Users/Sandro/TCC_OFICIAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/algo
-ritimos_geneticos.jpg>] [7]
-<./imagens/roleta.jpg, id=123, 311.9655pt x 103.587pt>
+ [4 <C:/Users/Sandro/TCC_OFICIAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/algo
+ritimos_geneticos.jpg>] [5]
+<./imagens/roleta.jpg, id=75, 311.9655pt x 103.587pt>
 File: ./imagens/roleta.jpg Graphic file (type jpg)
 
 <use ./imagens/roleta.jpg>
 Package pdftex.def Info: ./imagens/roleta.jpg used on input line 227.
 (pdftex.def)             Requested size: 311.96474pt x 103.58675pt.
- [8 <C:/Users/Sandro/TCC_OFICIAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/role
-ta.jpg>] [9]
+ [6 <C:/Users/Sandro/TCC_OFICIAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/role
+ta.jpg>] [7]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 357.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 357.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 357.
- [10] [11] [12]
-<./imagens/jsf_using_mvc.jpg, id=197, 521.95pt x 250.9375pt>
+ [8] [9] [10]
+<./imagens/jsf_using_mvc.jpg, id=152, 521.95pt x 250.9375pt>
 File: ./imagens/jsf_using_mvc.jpg Graphic file (type jpg)
 
 <use ./imagens/jsf_using_mvc.jpg>
@@ -1200,22 +1196,28 @@ Overfull \hbox (9.65323pt too wide) in paragraph at lines 494--496
 �o de re-fe-ren-cia (http://javaserverfaces.java.net/) 
  []
 
-[13 <C:/Users/Sandro/TCC_OFICIAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/jsf_
-using_mvc.jpg>] [14])
+[11 <C:/Users/Sandro/TCC_OFICIAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/jsf_
+using_mvc.jpg>] [12])
 (C:\Users\Sandro\TCC_OFICIAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/12_Qua
-droMetodologico.tex [15] [16
+droMetodologico.tex [13] [14
 
-] [17] [18] [19]
-<./imagens/tabela.jpg, id=277, 532.99126pt x 276.28218pt>
-File: ./imagens/tabela.jpg Graphic file (type jpg)
+] [15]
+<./imagens/model_tcc.png, id=217, 883.3pt x 394.47375pt>
+File: ./imagens/model_tcc.png Graphic file (type png)
 
-<use ./imagens/tabela.jpg>
-Package pdftex.def Info: ./imagens/tabela.jpg used on input line 156.
-(pdftex.def)             Requested size: 426.79134pt x 221.23682pt.
- [20 <C:/Users/Sandro/TCC_OFICIAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/tab
-ela.jpg>])
+<use ./imagens/model_tcc.png>
+Package pdftex.def Info: ./imagens/model_tcc.png used on input line 111.
+(pdftex.def)             Requested size: 529.9841pt x 236.68607pt.
+ [16 <C:/Users/Sandro/TCC_OFICIAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/mod
+el_tcc.png>]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 124.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [17] [18] [19] [20]
+[21])
 (C:\Users\Sandro\TCC_OFICIAL\TCC_GRADUATION_SI\NuapaTex_Univas\Principal.bbl
-[21]
 bibitemlist
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 10.
@@ -1234,7 +1236,6 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[floatfoot] on input line 303.
 See the caption package documentation for explanation.
 
-\tf@toc=\write4
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 54.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 54.
 (C:\Users\Sandro\TCC_OFICIAL\TCC_GRADUATION_SI\NuapaTex_Univas\Principal.aux)
@@ -1242,26 +1243,28 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 54.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 54.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 54.
  ) 
 Here is how much of TeX's memory you used:
- 14285 strings out of 493921
- 216187 string characters out of 3147280
- 342715 words of memory out of 3000000
- 17259 multiletter control sequences out of 15000+200000
- 59278 words of font info for 60 fonts, out of 3000000 for 9000
+ 14266 strings out of 493921
+ 214862 string characters out of 3147280
+ 341126 words of memory out of 3000000
+ 17254 multiletter control sequences out of 15000+200000
+ 59597 words of font info for 61 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 46i,12n,40p,757b,584s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Principal.pdf (24 pages, 291194 bytes).
+ 46i,12n,40p,757b,581s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}{C:/Program File
+s/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmtl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/urw/times/utmri8a.pfb>
+Output written on Principal.pdf (24 pages, 333738 bytes).
 PDF statistics:
- 435 PDF objects out of 1000 (max. 8388607)
- 93 named destinations out of 1000 (max. 500000)
- 237 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
 
