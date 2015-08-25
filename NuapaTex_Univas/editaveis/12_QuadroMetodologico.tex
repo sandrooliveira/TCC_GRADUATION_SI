@@ -244,40 +244,95 @@ de um algorítimo genético. Este \textit{framework} é definido dentro da segui
 	desenvolva a função de avaliação específica para o seu problema.
 	
 	\item Classe \texttt{Chromosome}:
-	\par 
+	\par É uma classe abstrata, que possui todos os métodos abstratos, desta forma
+	ela só existe para garantir que os cromossomos do problema irão implementar os
+	métodos necessários para o funcionamento do algoritmos. Estes métodos são:
+	
+	\begin{itemize}
+	  
+	  \item \texttt{equals}: Necessário para efeito de comparação dos cromossomos;
+	  
+	  \item \texttt{doMutation}: Este é o método que realiza a mutação. Este deve
+	  ser implementado pela classe que representa o cromossomo, pois a
+	  mutação é feita a nível deste.
+	  
+	  \item \texttt{clone}: Este método devolve um objeto exatamente com os mesmos
+	  atributos do objeto, porém com instâncias diferentes.
+	  
+	\end{itemize}
+	
 	
 	\item Classe \texttt{IndividualPair}:
-	\par
+	\par A classe \texttt{IndvidualPair} possui uma estrutura simples. Apenas
+	represnta dois indivíduos. Ela se torna necessária, pois o processo de
+	cruzamento dos indivíduos retornam dois novos indivíduos, desta forma, como 
+	no Java não é possível retornar dois valores, é retornado então um objeto desta
+	classe contendo os dois novos indivíduos criados. 
 	
 	
 	\item Classe \texttt{GAController}:
-	\par A classe \texttt{GAController} é onde se executa todas as operações do
-	algoritmo genético. Ela recebe no seu construtor o modelo do algoritmo da
-	classe \texttt{GAModel} que traz configurações como tipo de mutação, tamanho da
-	população, tipo de cruzamento, etc e salva essas informações em uma variavel
-	do tipo \texttt{GAModel}.
+	\par A classe \texttt{GAController}, como o própio nome já diz, é o
+	controlador de todo processo de excução do algoritmo genético.
+	Ela recebe no seu construtor o modelo que é do tipo \texttt{GAModel}, que como
+	já explicado anteriormente, armazena os parâmetros a serem seguidos na
+	execução do algoritmo. Além disso, através do seu principal método
+	denomidado \texttt{execute}, ela é responsável por criar novas populações, a
+	partir de cruzamentos, mutações, elitismo e etc, tendo também a
+	repsonsabilidade de chamar a função de classificação e avaliação de cada indivíduo.
 	
-	\par Ela contém um método chamado \texttt{execute} e este método é o
-	responsável pelo inicio de toda a operação do algoritmo genético. 
-	Para começar é chamado o método  \texttt{createInitialPopulation} da classe
-	\texttt{GAModel} para criar a população de indivíduos e este método será implementado pela
-	classe que irá herdar da classe \texttt{GAModel}.
-	A variável \texttt{lastBest} irá guardar sempre o melhor individuo da
-	população. Após a criação da população inicial ou do processo de cruzamento e
-	mutação a população será submetida ao processo de classificação.
+	\par Os pontos a seguir descrevem basicamente os passos executados dentro do
+	método \texttt{execute}. Mais detalhes serão vistos mais a frente quando será
+	descrito a implementação do algoritmo da fábrica de calças, pois será necessário 
+	realizar algumas adaptações neste framework.
 	
-	\par No processo de classificação é calculado o valor do indivíduo pelo método
-	\texttt{calculateValue} que será implementado pela classe que herda da classe
-	onde este método está implementado.
+	\begin{itemize}
+	  \item	Criação da população inicial, através do método createInitialPopulation
+	  do objeto da classe model;
+	  
+	  \item Classificação e avaliação da população inicial através do método
+	  \texttt{classify};
+	  
+	  \item Realização do processo de elitismo, através do método
+	  \texttt{doElitism};
+	  
+	  \item Inserção de indivíduos estrangeiros na população;
+	  
+	  \item Realização do processo de seleção de indivíduos, atrvés do método
+	  \texttt{doSelection};
+	  
+	  \item Execução do processo de cruzamento e mutação, através do método
+	  \texttt{doCrossing} e \texttt{doMutaion} respectivamente.
+	  
+	  	  
+	\end{itemize}
 	
-	\par Se  
-		
-	\par Feito isso é verificado se o numero de populações da geração foi
-	atingido. Este numero é definido na classe \texttt{GAModel}, o método
-	\texttt{execute} chama o método \texttt{getGenerationQuantity} que retorna o
-	valor da variável \texttt{generationQuantity}, se o valor dessa variável for 100, 
-	será criada uma geração com 100 populações diferentes.
+	\par Após os passos citados acima, uma nova população foi criada e está
+	armazenada na variável \texttt{newGeneration}, assim o método
+	\texttt{setPopulation} do objeto \texttt{model} é chamado para então substituir
+	a antiga população pela nova. Como a execução está dentro de uma estrutura de repetição
+	\texttt{FOR}, o algoritmo volta ao início desta e recomeça o processo de
+	criação de uma outra população. Este processo para quando o número de gerações, 
+	definido no parâmetro \texttt{getGenerationQuantity} do objeto \texttt{model}
+	for atingido, neste caso é dado o comando \texttt{break} e o \texttt{loop} é encerrado.
+% 	Para começar é chamado o método  \texttt{createInitialPopulation} da classe
+% 	\texttt{GAModel} para criar a população de indivíduos, este método será
+% 	implementado pela classe que irá herdar da classe \texttt{GAModel}.
 	
+% 	\par Cada indivíduo representa uma solução para o problema, sua estrutura é
+% 	composta pela parte da calça a ser produzida, a costureira com
+% 	habilidade para produzir essa peça e o numero de lotes sorteados a ela.
+% 	Para explicar melhor precisa-se produzir um lote de 500 peças, será preciso
+% 	produzir 500 partes da frente, 500 partes de traz, etc., e assim
+% 	sucessivamente.
+% 	Esse lote de 500 peças é divdido entre os indivíduos da população. Para um
+% 	melhor entender a estrutura de um indivíduo veja a figura 5 a seguir:
+% 	
+% 	\begin{figure}[h!]
+% 	\centerline{\includegraphics[scale=0.5]{./imagens/individuos.png}}
+% 	\caption[Representação da estrura de um indivíduo]
+% 	{Representação da estrura de um indivíduo \textbf{Fonte:} Desenvolvido pelos autores}
+% 	\label{fig:exemplo1}
+% 	\end{figure} 
 	
 	
 	
