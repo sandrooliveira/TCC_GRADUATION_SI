@@ -1,5 +1,22 @@
 \changetocdepth {4}
 \changetocdepth {2}
 \select@language {brazil}
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {QUADRO METODOL\IeC {\'O}GICO}}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Tipo de pesquisa}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Contexto de pesquisa}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}Instrumentos}{4}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Entrevistas}{5}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Reuni\IeC {\~o}es}{5}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}Procedimentos}{6}{section.1.4}
+\contentsline {subsubsection}{\numberline {1.4.0.1}Framework de desenvolvimento}{6}{subsubsection.1.4.0.1}
+\contentsline {subsection}{\numberline {1.4.1}Representa\IeC {\c c}\IeC {\~a}o do processo de produ\IeC {\c c}\IeC {\~a}o}{10}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Distribui\IeC {\c c}\IeC {\~a}o das atividades (Indiv\IeC {\'\i }duos e Cromossomos)}{12}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Classe Model e Popula\IeC {\c c}\IeC {\~a}o inicial}{20}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Fun\IeC {\c c}\IeC {\~a}o de avalia\IeC {\c c}\IeC {\~a}o}{21}{subsection.1.4.4}
+\contentsline {subsection}{\numberline {1.4.5}Indiv\IeC {\'\i }duos estrangeiros}{29}{subsection.1.4.5}
+\contentsline {subsection}{\numberline {1.4.6}Sele\IeC {\c c}\IeC {\~a}o, Cruzamento e muta\IeC {\c c}\IeC {\~a}o}{29}{subsection.1.4.6}
+\contentsline {subsubsection}{\numberline {1.4.6.1}Constru\IeC {\c c}\IeC {\~a}o da interface gr\IeC {\'a}fica, \texttt {CRUD} e apresenta\IeC {\c c}\IeC {\~a}o dos dados}{29}{subsubsection.1.4.6.1}
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Discuss\IeC {\~a}o de resultados}}{31}{chapter.2}
+\contentsline {section}{\numberline {2.1}Teste com somente uma atividade}{31}{section.2.1}
 \vspace {\cftbeforechapterskip }
-\contentsline {chapter}{REFER\IeC {\^E}NCIAS}{5}{section*.4}
+\contentsline {chapter}{REFER\IeC {\^E}NCIAS}{33}{section*.29}
