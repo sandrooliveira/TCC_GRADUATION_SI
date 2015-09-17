@@ -37,7 +37,7 @@ e o quanto elas iriam trabalhar naquele processo, representando uma solução pa
 sentido, nos deparamos com uma outra dificuldade que foi a de definir a população inicial de indivíduos, ou seja, 
 como os lotes de peças seriam distribuídos para cada cromossomo. Inicialmente pensamos em distribuir porcentagens para cada costureira
 e posteriormente fazer um cálculo de normalização, conforme explica a sessão Distribuição das atividades do quadro metodológico porém,
-constatamos que o cálculo não era preciso e que ao cruzar dois indivíduos os indivíduos filhos, após o cálculo de normalização, ficavam
+constatamos que o cálculo não era preciso e que, ao cruzar dois indivíduos, os indivíduos filhos, após o cálculo de normalização, ficavam
 completamente diferente de seus progenitores fugindo assim da ideia de algoritmos genéticos. Definimos então distribuir as atividades já 
 nível de lote o que resolveu a questão. 
 
@@ -52,11 +52,7 @@ seleção e cruzamento, neste sentido só tivemos que realizar algumas adaptaç�
 e mantivemos reuniões periódicas para acertar detalhes do desenvolvimento.
 
 \par Após todas as etapas descritas acima, obtivemos como resultado a aplicação capaz de distribuir atividades de forma a se obter o 
-menor custo e o menor tempo de produção, alcançando assim nossos objetivos específicos. A Figura X mostra a tela inicial da aplicação.
-
-
-FIGURA AQUI
- 
+menor custo e o menor tempo de produção, alcançando assim nossos objetivos específicos. 
 
 \par Com a aplicação finalizada, foram realizados então casos de testes a fim de colocar em prova a eficiência da ferramenta para se 
 buscar melhores soluções nas distribuição de tarefas, conforme mostra as sessões abaixo.
@@ -118,7 +114,7 @@ sua eficiência.
 \section{Teste considerando o tempo de transporte}
 \par Este teste foi realizado com duas atividades em que as costureiras estão em suas casas. Neste caso deve-se considerar
 o tempo de transporte entre as costureiras da atividade Frente e a fábrica do Marcelo para a retirada dos materiais e o tempo 
-entre tais costureiras e a costureira responsável pela finalização, conforme mostra a Figura X.
+entre tais costureiras e a costureira responsável pela finalização, conforme mostra a Figura 31.
 
 
 \begin{figure}[h!]
@@ -130,7 +126,7 @@ entre tais costureiras e a costureira responsável pela finalização, conforme 
 
 
 \par Neste teste foi considerado apenas o tempo de transporte, logo o tempo de confecção por peça das costureiras da parte 
-da Frente possuem o mesmo valor, conforme mostra a Figura X.
+da Frente possuem o mesmo valor, conforme mostra a Figura 32.
 
 
 \begin{figure}[h!]
@@ -143,7 +139,7 @@ da Frente possuem o mesmo valor, conforme mostra a Figura X.
 \newpage
 
 \par Além disso foi necessário cadastrar um valor X e Y para cada costureira que representa sua localização conforme 
-mostra a Figura X.
+mostra a Figura 33.
 
 
 \begin{figure}[h!]
@@ -153,3 +149,38 @@ mostra a Figura X.
 	\label{fig:exemplo1}
 \end{figure}
 
+\par \par Feito isso foi iniciado então o processo de distribuição das atividades, através do menu Distribuição de Tarefas.
+O algoritmo foi configurado para ter 1000 gerações e 80 indivíduos em cada população, além disso a taxa de indivíduos
+estrangeiros e de mutação foram de 0,5\% e 0,05\% respectivamente, conforme mostra a figura abaixo. 
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.3]{./imagens/test_case2_distribuicao.png}}
+	\caption[Caso de teste tempo Costureira]
+	{Distribuição das atividades \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:exemplo1}
+\end{figure}
+
+\par Após clicar no botão "Iniciar Distribuição", o algoritmo distribuiu os lotes para as costureiras das atividades
+ finalização e frente e o tempo total encontrado foi de 1700 segundos, conforme mostra a Figura 34. Neste caso o algoritmo 
+ distribuiu 5 peças para cada costureira da parte da frente, logo, como a atividade de finalização possui somente uma costureira,
+ a Roberta e a Tereza irão passar 5 peças cada uma para a Josi que faz a finalização. Conforme descrito no quadro metodológico, 
+ o cálculo da distância entre as costureiras é realizado através da fórmula euclidiana multiplicando-se o resultado por 100.
+ A Figura 35 mostra as distâncias entre as costureiras calculadas através desta fórmula com suas posições X e Y.
+  
+  \newpage
+  
+  \begin{figure}[h!]
+  	\centerline{\includegraphics[scale=0.7]{./imagens/test_case_2_tempo_distribuicao.png}}
+  	\caption[Caso de teste tempo Costureira]
+  	{Distribuição do tempo  \textbf{Fonte:} Desenvolvido pelos autores}
+  	\label{fig:exemplo1}
+  \end{figure}
+ 
+\par Considerando que as costureiras Roberta e Tereza gastam o mesmo tempo para fazer a frente e que o tempo de transporte 
+entre a Tereza e a Josi é menor (100 a menos que entre a Roberta e a Josi), o algoritmo deveria distribuir mais peças a Tereza,
+porém os materiais devem ser pegos na casa do Marcelo e, neste caso, o tempo de transporte entre a Tereza e o Marcelo é 100 
+a mais que o tempo de transporte entre a Roberta e o Marcelo, logo o algoritmo entendeu que o tempo se igualou e definiu
+o mesmo número de peças para cada costureira.
+
+\par Existem outros resultados a serem documentados incluindo a questão de custo, porém até a entrega da discussão dos resultados
+os mesmos não estavam elaborados.
