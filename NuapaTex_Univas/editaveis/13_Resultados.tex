@@ -9,12 +9,12 @@ desenvolver algo relacionado à inteligência artificial, por ser um assunto de 
 de software. Dentro deste campo então, realizando algumas buscas na internet, encontramos o assunto de algoritmos genéticos.
 Coincidentemente no primeiro semestre deste ano, tivemos aulas de sistemas especialistas a qual o assunto foi abordado o que facilitou bastante o aprendizado. 
 
-\par Assim, como sugestão do professor Roberto Rocha, decidimos então desenvolver uma aplicação para otimizar um processo de
-distribuição de atividades entre costureiras para um microempresário da cidade de Cachoeira de Minas - MG do ramo de costura e 
-constatamos que um sistema Web seria mais cômodo de ser utilizado por não precisar de nenhuma instalação e o usuário poder
-acessar o programa de qualquer lugar desde que estivesse conectado à internet, neste sentido, como já estávamos familiarizados
-com JSF e Primefaces decidimos adotá-los como tecnologias para o desenvolvimento em plataforma Web, além disso usamos um 
-\textit{plug-in} denominado \texttt{JBoss Tool} o qual foi de grande utilidade para gerar as classes modelo a partir do 
+\par Assim, como sugestão do professor orientador, decidimos então desenvolver
+uma aplicação para otimizar um processo de distribuição de atividades entre
+costureiras para um microempresário da cidade de Cachoeira de Minas - MG, do ramo de costura e constatamos que um sistema Web seria mais cômodo de ser utilizado por não precisar de nenhuma instalação e o usuário poder
+acessar o programa de qualquer lugar desde que estivesse conectado à internet.
+Neste sentido, como já estávamos familiarizados com JSF e Primefaces. decidimos
+adotá-los como tecnologias para o desenvolvimento em plataforma Web, além disso usamos um \textit{plug-in} denominado \texttt{JBoss Tool} o qual foi de grande utilidade para gerar as classes modelo a partir do 
 banco de dados.
 
 \par Inicialmente tomamos como base o caso do microempresário citado acima, todavia logo após iniciarmos o trabalho, o mesmo fez uma 
@@ -30,8 +30,8 @@ e mutação é iniciado a fim de que possa ser gerados novos indivíduos que rep
 que seus antecessores.
 
 \par Uma das maiores dificuldades nesta etapa, foi definir como os indivíduos e cromossomos seriam estruturados. Assim em uma discussão com o professor Artur Barbosa, decidimos que o total de peças deveriam ser divididos em lotes e que cada cromossomo deveria ter uma costureira 
-e a quantidade de lote a ser confeccionado por esta, assim o indivíduo teria um conjunto de cromossomos que representaria quais costureiras 
-e o quanto elas iriam trabalhar naquele processo, representando uma solução para a distribuição.
+e a quantidade de lotes a ser confeccionado por esta, Assim o indivíduo teria um
+conjunto de cromossomos que representaria quais costureiras e o quanto elas iriam trabalhar naquele processo, representando uma solução para a distribuição.
 
 \par Com base nesta definição, um dos papeis desempenhados pelo algoritmo, seria a distribuição aleatória do trabalho. Neste
 sentido, nos deparamos com uma outra dificuldade que foi a de definir a população inicial de indivíduos, ou seja, 
@@ -45,8 +45,11 @@ nível de lote o que resolveu a questão.
 as atividades e o cálculo do tempo de cada atividade depende de nós predecessores, a maior parte da função foi pensada para ser 
 desenvolvida de forma recursiva o que dificultou o \texttt{debug}. 
 
-\par Para a construção do algoritmo genético, foi utilizado uma base desenvolvida pelo professor Artur Barbosa durante as aulas de sistemas especialistas, que define uma série de regras a ser seguida durante o desenvolvimento tal base é explicada com mais detalhes no quadro metodológico. Tal base foi de grande ajuda pois, além de definir tais regras de desenvolvimento a base já implementava os métodos de 
-seleção e cruzamento, neste sentido só tivemos que realizar algumas adaptações nestes para que pudessem se adequar à nossa lógica.
+\par Para a construção do algoritmo genético, foi utilizado uma base desenvolvida pelo professor Artur Barbosa 
+durante as aulas de sistemas especialistas, que define uma série de regras a ser
+seguida durante o desenvolvimento. Tal base é explicada com mais detalhes no
+quadro metodológico e foi de grande ajuda pois, além de definir tais
+regras de desenvolvimento a base já implementava os métodos de seleção e cruzamento, neste sentido só tivemos que realizar algumas adaptações nestes para que pudessem se adequar à nossa lógica.
 
 \par Após ter o escopo definido e a modelagem do algoritmo genético realizada, dividimos o desenvolvimento entre os autores
 e mantivemos reuniões periódicas para acertar detalhes do desenvolvimento.
@@ -55,13 +58,14 @@ e mantivemos reuniões periódicas para acertar detalhes do desenvolvimento.
 menor custo e o menor tempo de produção, alcançando assim nossos objetivos específicos. 
 
 \par Com a aplicação finalizada, foram realizados então casos de testes a fim de colocar em prova a eficiência da ferramenta para se 
-buscar melhores soluções nas distribuição de tarefas, conforme mostra as sessões abaixo.
+buscar melhores soluções nas distribuição de tarefas, conforme mostra as seções
+seguintes.
 
 
 \section{Teste com somente uma atividade}
 \par Este teste foi realizado com apenas uma atividade, neste caso não está sendo considerado que as costureiras devem ir 
 até a fábrica para retirar os tecidos com o Marcelo. Para este teste foi cadastrado então um processo, criando-se apenas uma atividade para 
-este, conforme mostra a Figura abaixo:
+este, conforme mostra a Figura 1:
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.4]{./imagens/test_case_1.png}}
@@ -70,8 +74,9 @@ este, conforme mostra a Figura abaixo:
 	\label{fig:exemplo1}
 \end{figure}
 
-\par Para a atividade de finalização, atribuída ao processo na Figura acima, foram cadastradas 5 costureiras e seus respectivos
-tempos para fazer tal atividade, conforme mostra a Figura abaixo:
+\par Para a atividade de finalização, atribuída ao processo na Figura 1, foram
+cadastradas 5 costureiras e seus respectivos tempos para fazer tal atividade,
+conforme mostra a Figura 2:
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.4]{./imagens/test_case_1_habilidades.png}}
@@ -82,7 +87,8 @@ tempos para fazer tal atividade, conforme mostra a Figura abaixo:
 
 \par Feito isso foi iniciado então o processo de distribuição das atividades, através do menu Distribuição de Tarefas.
 O algoritmo foi configurado para ter 1000 gerações e 80 indivíduos em cada população, além disso a taxa de indivíduos
-estrangeiros e de mutação foram de 0,5\% e 0,05\% respectivamente, conforme mostra a figura abaixo. 
+estrangeiros e de mutação foram de 0,5\% e 0,05\% respectivamente, conforme
+mostra a figura 3.
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.4]{./imagens/test_case1_distribuicao.png}}
@@ -92,9 +98,9 @@ estrangeiros e de mutação foram de 0,5\% e 0,05\% respectivamente, conforme mo
 \end{figure}
 
 \par Após clicar no botão "Iniciar Distribuição", o algoritmo distribuiu os lotes para as costureiras da finalização,
-conforme mostra a Figura X. O tempo total encontrado foi de 250 segundos. Este é o tempo da costureira que demorou mais
-tempo para produzir seus lotes. Na Figura 27, pode-se ver o tempo gasto por cada costureira, de acordo com seu tempo de
-produção para cada peça.
+conforme mostra a Figura 3. O tempo total encontrado foi de 250 segundos. Este é
+o tempo da costureira que demorou mais tempo para produzir seus lotes. Na Figura
+4, pode-se ver o tempo gasto por cada costureira, de acordo com seu tempo de produção para cada peça.
 
 
 \begin{figure}[h!]
@@ -104,17 +110,18 @@ produção para cada peça.
 	\label{fig:exemplo1}
 \end{figure}
 
-\par Baseando-se na Figura 27, pode-se observar que o algoritmo distribui o máximo de peças possível para a Josi, porque
-ela tem o menor tempo. Nota-se que 5 é o máximo de lotes que a Josi pode receber porque se ela recebesse mais um, seu 
-tempo total passaria a ser 300 segundos, assim o tempo total não seria de 250 segundos. Assim o algoritmo distribuiu as 
-atividades as outras costureiras de forma uniforme, porém, de forma inteligente, definiu menos lotes para aquelas que 
+\par Baseando-se na Figura 4, pode-se observar que o algoritmo distribui o
+máximo de peças possível para a Josi, porque ela tem o menor tempo. Nota-se que 5 é o máximo de lotes que a Josi pode receber porque se ela recebesse mais um, seu 
+tempo total passaria a ser 300 segundos, assim o tempo total não seria de 250
+segundos. Assim, o algoritmo distribuiu as atividades as outras costureiras de forma uniforme, porém, de forma inteligente, definiu menos lotes para aquelas que 
 gastam mais tempo para se produzir, ou seja, encontrou a melhor forma de distribuir as tarefas para este caso provando assim
 sua eficiência.
 
 \section{Teste considerando o tempo de transporte}
 \par Este teste foi realizado com duas atividades em que as costureiras estão em suas casas. Neste caso deve-se considerar
 o tempo de transporte entre as costureiras da atividade Frente e a fábrica do Marcelo para a retirada dos materiais e o tempo 
-entre tais costureiras e a costureira responsável pela finalização, conforme mostra a Figura 31.
+entre tais costureiras e a costureira responsável pela finalização, conforme
+mostra a Figura 5.
 
 
 \begin{figure}[h!]
@@ -126,7 +133,7 @@ entre tais costureiras e a costureira responsável pela finalização, conforme 
 
 
 \par Neste teste foi considerado apenas o tempo de transporte, logo o tempo de confecção por peça das costureiras da parte 
-da Frente possuem o mesmo valor, conforme mostra a Figura 32.
+da Frente possuem o mesmo valor, conforme mostra a Figura 6.
 
 
 \begin{figure}[h!]
@@ -139,7 +146,7 @@ da Frente possuem o mesmo valor, conforme mostra a Figura 32.
 \newpage
 
 \par Além disso foi necessário cadastrar um valor X e Y para cada costureira que representa sua localização conforme 
-mostra a Figura 33.
+mostra a Figura 7.
 
 
 \begin{figure}[h!]
@@ -151,7 +158,8 @@ mostra a Figura 33.
 
 \par \par Feito isso foi iniciado então o processo de distribuição das atividades, através do menu Distribuição de Tarefas.
 O algoritmo foi configurado para ter 1000 gerações e 80 indivíduos em cada população, além disso a taxa de indivíduos
-estrangeiros e de mutação foram de 0,5\% e 0,05\% respectivamente, conforme mostra a figura abaixo. 
+estrangeiros e de mutação foram de 0,5\% e 0,05\% respectivamente, conforme
+mostra a Figura 8.
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.3]{./imagens/test_case2_distribuicao.png}}
@@ -161,11 +169,12 @@ estrangeiros e de mutação foram de 0,5\% e 0,05\% respectivamente, conforme mo
 \end{figure}
 
 \par Após clicar no botão "Iniciar Distribuição", o algoritmo distribuiu os lotes para as costureiras das atividades
- finalização e frente e o tempo total encontrado foi de 1700 segundos, conforme mostra a Figura 34. Neste caso o algoritmo 
- distribuiu 5 peças para cada costureira da parte da frente, logo, como a atividade de finalização possui somente uma costureira,
- a Roberta e a Tereza irão passar 5 peças cada uma para a Josi que faz a finalização. Conforme descrito no quadro metodológico, 
- o cálculo da distância entre as costureiras é realizado através da fórmula euclidiana multiplicando-se o resultado por 100.
- A Figura 35 mostra as distâncias entre as costureiras calculadas através desta fórmula com suas posições X e Y.
+ finalização e frente o qual o tempo total encontrado foi de 1700 segundos,
+ conforme mostra a Figura 34. Neste caso o algoritmo distribuiu 5 peças para cada costureira da parte da frente, logo, como a atividade de finalização possui somente uma costureira,
+ a Roberta e a Tereza irão passar 5 peças cada uma para a Josi, que faz a
+ finalização. Conforme descrito no quadro metodológico, o cálculo da distância entre as costureiras é realizado através da fórmula euclidiana multiplicando-se o resultado por 100.
+ A Figura 9 mostra as distâncias entre as costureiras calculadas através desta
+ fórmula com suas posições X e Y.
   
   \newpage
   
