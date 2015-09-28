@@ -65,22 +65,22 @@ seguintes.
 \section{Teste com somente uma atividade}
 \par Este teste foi realizado com apenas uma atividade, neste caso não está sendo considerado que as costureiras devem ir 
 até a fábrica para retirar os tecidos com o Marcelo. Para este teste foi cadastrado então um processo, criando-se apenas uma atividade para 
-este, conforme mostra a Figura 1:
+este, conforme mostra a Figura 27:
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.4]{./imagens/test_case_1.png}}
-	\caption[Caso de teste]
+	\caption[Caso de teste com uma atividade]
 	{Caso de teste com uma atividade \textbf{Fonte:} Desenvolvido pelos autores}
 	\label{fig:exemplo1}
 \end{figure}
 
-\par Para a atividade de finalização, atribuída ao processo na Figura 1, foram
+\par Para a atividade de finalização, atribuída ao processo na Figura 27, foram
 cadastradas 5 costureiras e seus respectivos tempos para fazer tal atividade,
-conforme mostra a Figura 2:
+conforme mostra a Figura 28:
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.4]{./imagens/test_case_1_habilidades.png}}
-	\caption[Caso de teste Habilidade]
+	\caption[Cadastro da habilidade e associação das costureiras]
 	{Cadastro da habilidade e associação das costureiras \textbf{Fonte:} Desenvolvido pelos autores}
 	\label{fig:exemplo1}
 \end{figure}
@@ -88,29 +88,30 @@ conforme mostra a Figura 2:
 \par Feito isso foi iniciado então o processo de distribuição das atividades, através do menu Distribuição de Tarefas.
 O algoritmo foi configurado para ter 1000 gerações e 80 indivíduos em cada população, além disso a taxa de indivíduos
 estrangeiros e de mutação foram de 0,5\% e 0,05\% respectivamente, conforme
-mostra a figura 3.
+mostra a Figura 29.
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.4]{./imagens/test_case1_distribuicao.png}}
-	\caption[Caso de teste Habilidade]
+	\caption[Distribuição das atividades]
 	{Distribuição das atividades \textbf{Fonte:} Desenvolvido pelos autores}
 	\label{fig:exemplo1}
 \end{figure}
 
 \par Após clicar no botão "Iniciar Distribuição", o algoritmo distribuiu os lotes para as costureiras da finalização,
-conforme mostra a Figura 3. O tempo total encontrado foi de 250 segundos. Este é
-o tempo da costureira que demorou mais tempo para produzir seus lotes. Na Figura
-4, pode-se ver o tempo gasto por cada costureira, de acordo com seu tempo de produção para cada peça.
+conforme mostra a Figura 29. O tempo total encontrado foi de 250 segundos. Este
+é o tempo da costureira que demorou mais tempo para produzir seus lotes. Na Figura
+30, pode-se ver o tempo gasto por cada costureira, de acordo com seu tempo de
+produção para cada peça.
 
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.6]{./imagens/test_case1_resultado.png}}
-	\caption[Caso de teste Habilidade]
+	\caption[Resultado da distribuição]
 	{Resultado da distribuição \textbf{Fonte:} Desenvolvido pelos autores}
 	\label{fig:exemplo1}
 \end{figure}
 
-\par Baseando-se na Figura 4, pode-se observar que o algoritmo distribui o
+\par Baseando-se na Figura 30, pode-se observar que o algoritmo distribui o
 máximo de peças possível para a Josi, porque ela tem o menor tempo. Nota-se que 5 é o máximo de lotes que a Josi pode receber porque se ela recebesse mais um, seu 
 tempo total passaria a ser 300 segundos, assim o tempo total não seria de 250
 segundos. Assim, o algoritmo distribuiu as atividades as outras costureiras de forma uniforme, porém, de forma inteligente, definiu menos lotes para aquelas que 
@@ -121,24 +122,24 @@ sua eficiência.
 \par Este teste foi realizado com duas atividades em que as costureiras estão em suas casas. Neste caso deve-se considerar
 o tempo de transporte entre as costureiras da atividade Frente e a fábrica do Marcelo para a retirada dos materiais e o tempo 
 entre tais costureiras e a costureira responsável pela finalização, conforme
-mostra a Figura 5.
+mostra a Figura 31.
 
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.3]{./imagens/test_case_2.png}}
-	\caption[Caso de teste tempo]
+	\caption[Caso de teste com tempo de distribuição]
 	{Caso de teste com tempo de distribuição \textbf{Fonte:} Desenvolvido pelos autores}
 	\label{fig:exemplo1}
 \end{figure}
 
 
 \par Neste teste foi considerado apenas o tempo de transporte, logo o tempo de confecção por peça das costureiras da parte 
-da Frente possuem o mesmo valor, conforme mostra a Figura 6.
+da Frente possuem o mesmo valor, conforme mostra a Figura 32.
 
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.3]{./imagens/test_case_2_habilidades.png}}
-	\caption[Caso de teste tempo]
+	\caption[Caso de teste com tempo de distribuição]
 	{Caso de teste com tempo de distribuição \textbf{Fonte:} Desenvolvido pelos autores}
 	\label{fig:exemplo1}
 \end{figure}
@@ -146,12 +147,12 @@ da Frente possuem o mesmo valor, conforme mostra a Figura 6.
 \newpage
 
 \par Além disso foi necessário cadastrar um valor X e Y para cada costureira que representa sua localização conforme 
-mostra a Figura 7.
+mostra a Figura 33.
 
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.3]{./imagens/test_case_2_costureiras.png}}
-	\caption[Caso de teste tempo Costureira]
+	\caption[Cadastro de costureiras]
 	{Cadastro de costureiras \textbf{Fonte:} Desenvolvido pelos autores}
 	\label{fig:exemplo1}
 \end{figure}
@@ -159,11 +160,11 @@ mostra a Figura 7.
 \par \par Feito isso foi iniciado então o processo de distribuição das atividades, através do menu Distribuição de Tarefas.
 O algoritmo foi configurado para ter 1000 gerações e 80 indivíduos em cada população, além disso a taxa de indivíduos
 estrangeiros e de mutação foram de 0,5\% e 0,05\% respectivamente, conforme
-mostra a Figura 8.
+mostra a Figura 34.
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.3]{./imagens/test_case2_distribuicao.png}}
-	\caption[Caso de teste tempo Costureira]
+	\caption[Distribuição das atividades]
 	{Distribuição das atividades \textbf{Fonte:} Desenvolvido pelos autores}
 	\label{fig:exemplo1}
 \end{figure}
@@ -173,14 +174,14 @@ mostra a Figura 8.
  conforme mostra a Figura 34. Neste caso o algoritmo distribuiu 5 peças para cada costureira da parte da frente, logo, como a atividade de finalização possui somente uma costureira,
  a Roberta e a Tereza irão passar 5 peças cada uma para a Josi, que faz a
  finalização. Conforme descrito no quadro metodológico, o cálculo da distância entre as costureiras é realizado através da fórmula euclidiana multiplicando-se o resultado por 100.
- A Figura 9 mostra as distâncias entre as costureiras calculadas através desta
+ A Figura 35 mostra as distâncias entre as costureiras calculadas através desta
  fórmula com suas posições X e Y.
   
   \newpage
   
   \begin{figure}[h!]
   	\centerline{\includegraphics[scale=0.7]{./imagens/test_case_2_tempo_distribuicao.png}}
-  	\caption[Caso de teste tempo Costureira]
+  	\caption[Distribuição do tempo]
   	{Distribuição do tempo  \textbf{Fonte:} Desenvolvido pelos autores}
   	\label{fig:exemplo1}
   \end{figure}

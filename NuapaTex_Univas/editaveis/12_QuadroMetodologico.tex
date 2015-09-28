@@ -166,6 +166,11 @@ processo inicial da fábrica de calças, que se resume em construir uma aplicaç
 definindo primeiramente o \textit{framework} de desenvolvimento e explicando
 como o algoritmo genético foi desenvolvido para os requisitos definidos no escopo.
 
+\par É importante ressaltar que a questão do custo ainda não foi implementada
+até o presente momento, porém, como já temos implementada a estrutura de
+distribuição, a adição do cálculo do custo se torna mais simples e será
+apresentada na banca final.
+
 \subsubsection{Framework de desenvolvimento}
 \par Primeiramente é necessário ressaltar que, para o desenvolvimento da aplicação, foi utilizada uma base desenvolvida pelo professor Artur Barbosa durante as aulas de sistemas especialistas, do VII período do curso de sistemas de informação nesta universidade.
 Esta base também denominada \textit{framework}, define regras a serem seguidas no desenvolvimento de cada elemento
@@ -362,24 +367,25 @@ e dos elementos do algoritmo genético, seguindo as definições do \textit{fram
 processo da fábrica, em que a confecção das peças deveria ser dividida em atividades que representam
 cada parte da calça. Neste contexto, surgiu a necessidade de determinar uma ordem para a execução do processo, 
 devido ao fato de que algumas atividades dependem da finalização de outras para poderem ser
-realizadas. A Figura 1 demonstra basicamente um exemplo de ordem de execução do processo de confecção.
+realizadas. A Figura 4 demonstra basicamente um exemplo de ordem de execução do
+processo de confecção.
 
 \newpage
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.6]{./imagens/processo1.png}}
-	\caption[Processo de fabricação]
+	\caption[Demonstração de um processo de fabricação]
 	{Demonstração de um processo de fabricação \textbf{Fonte:} Desenvolvido pelos
 	autores.}
 	\label{fig:exemplo1}
 \end{figure}
 
 \par Para armazenar este processo e suas atividades no software, foram
-utilizadas tabelas do banco de dados, conforme mostra a Figura 2.
+utilizadas tabelas do banco de dados, conforme mostra a Figura 5.
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.7]{./imagens/representacao_processo.png}}
-	\caption[Processo de fabricação]
+	\caption[Representação do processo de fabricação no banco de dados]
 	{Representação do processo de fabricação no banco de dados \textbf{Fonte:}
 	Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
@@ -392,18 +398,18 @@ são representadas na tabela \texttt{atividade}, onde é feita a relação que d
 um processo,  além de conter quais são as habilidades necessárias para cada atividade, ou seja, cada registro desta 
 tabela representa uma atividade do processo e qual habilidade é necessária para sua execução. O campo 
 \texttt{is\_atividade\_inicial}, quando tem o valor 1, define que tal atividade
-é a última do processo, tomando como base a Figura 1, ela seria a atividade ``Finalização''. Este
-\textit{flag} é importante no momento de calcular o tempo total de execução do
+é a última do processo, tomando como base a Figura 4, ela seria a atividade
+``Finalização''. Este \textit{flag} é importante no momento de calcular o tempo total de execução do
 processo e será visto com mais detalhes posteriormente e, por fim, a tabela
 \texttt{atividade\_ordem} é onde é feita a definição de ordem de execução das
 atividades.
 
-\par A Figura 3 demonstra o mapeamento da relação entre a tabela
+\par A Figura 6 demonstra o mapeamento da relação entre a tabela
 \texttt{atividade} e atividade\_ordem para o Java.
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.7]{./imagens/atividade_diagram.png}}
-	\caption[Classe atividade]
+	\caption[Classes Atividade e AtividadeOrdem]
 	{Classes Atividade e AtividadeOrdem \textbf{Fonte:} Desenvolvido pelos
 	autores.}
 	\label{fig:exemplo1}
@@ -422,7 +428,7 @@ este número de lote deveria ser distribuído entre as costureiras que possuíss
 primeiramente deve-se definir qual será o número de peças por lote, neste caso, se for definido que cada lote  
 deverá ter 50 peças, então o resultado final será 500/50 ou seja 10 lotes contendo 50 calças cada um. 
 
-\par Neste sentido, seguindo o exemplo apresentado  na Figura 1, a distribuição
+\par Neste sentido, seguindo o exemplo apresentado  na Figura 4, a distribuição
 deverá ser feita de forma que para cada atividade do processo seja distribuído o trabalho de 10 lotes, ou seja, 10 lotes da parte da frente deve ser confeccionado e enviados para as costureiras que sabem colocar
 o zíper e posteriormente estas enviam os 10 lotes para as costureiras que fazem finalização. Estas últimas irão depender
 também de 10 lotes da parte de trás que também devem passar pelas costureiras que fazem a confecção dos bolsos. 
@@ -430,11 +436,12 @@ também de 10 lotes da parte de trás que também devem passar pelas costureiras
 
 \par Com base nesses requisitos, um dos papeis desempenhados pelo algoritmo genético está na distribuição de
 trabalho descrita acima. Inicialmente algoritmo irá distribuir, de forma
-aleatória, o número de lotes definido entre as costureiras de cada atividade, conforme mostra a Figura 4. 
+aleatória, o número de lotes definido entre as costureiras de cada atividade,
+conforme mostra a Figura 7.
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=1.0]{./imagens/distribuicao_exemplo.png}}
-	\caption[Distribuição de trabalho]
+	\caption[Exemplo de distribuição aleatória de lotes para as costureiras]
 	{Exemplo de distribuição aleatória de lotes para as costureiras \textbf{Fonte:}
 	Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
@@ -460,23 +467,23 @@ tipo de cruzamento a função de avaliação, etc.
 \par Neste caso, cada indivíduo da população irá representar uma forma de
 distribuir as atividades e cada número de lotes distribuídos a determinada
 costureira em uma determinada atividade irá representar um cromossomo. 
-Tomando como base o exemplo da Figura 4, o quadro, como um todo, representa 
+Tomando como base o exemplo da Figura 7, o quadro, como um todo, representa 
 o indivíduo e cada distribuição, como por exemplo a Marta, que recebeu 5 
 lotes para confeccionar, representa um cromossomo.
 
 \par Para fazer esta representação em Java, primeiramente foi criado uma classe denominada \texttt{ProcessoChromosome} que é
-representada na Figura 5:
+representada na Figura 8:
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.6]{./imagens/processo_chromosome_diagram.png}}
-	\caption[ProcessoChromosome Class]
+	\caption[Classe ProcessoChromosome]
 	{Classe ProcessoChromosome \textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
 \end{figure}
 
 
 \par A classe \texttt{ProcessoChromosome} herda de \texttt{Chromosome} do
-\textit{framework} descrito na Figura 5. Por enquanto, é necessário compreender
+\textit{framework} descrito na Figura 8. Por enquanto, é necessário compreender
 apenas os atributos \texttt{atividade}, costureiraHabilidade e
 \texttt{quantidade\_lotes}, que recebem seus valores pelo construtor, os
 demais atributos e métodos são utilizados pela função de avaliação e serão explicados mais adiante. 
@@ -486,20 +493,20 @@ quantidade de lotes, este atributo será passado na criação de cada cromossomo
 sempre que for necessário se criar um novo indivíduo. O atributo \texttt{costureiraHabilidade} é do tipo CostureiraHabilidade, que representa o
 mapeamento da tabela costureira\_habilidade do banco de dados, e faz a relação
 entre quais habilidades cada costureira possui e quanto tempo cada uma gasta para fazer uma peça de 
-uma determinada parte da calça, conforme demonstra a Figura 6.
+uma determinada parte da calça, conforme demonstra a Figura 9.
 
 \newpage
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.9]{./imagens/costureira_habilidade_tabela.png}}
-	\caption[Tabela costureira-habilidade]
+	\caption[Armazenamento de dados das costureiras]
 	{Armazenamento de dados das costureiras \textbf{Fonte:} Desenvolvido pelos
 	autores.}
 	\label{fig:exemplo1}
 \end{figure}
 
 
-\par A classe \texttt{CostureiraHabilidade}, conforme ilustra a Figura 7, por
+\par A classe \texttt{CostureiraHabilidade}, conforme ilustra a Figura 10, por
 sua vez, possui o atributo habilidade, outro que
 representa a costureira e um terceiro para representar o tempo que tal
 costureira gasta para confeccionar uma peça com certa habilidade. Fez-se
@@ -514,20 +521,21 @@ que a costureira gasta para fazer a peça e este tempo pode variar para uma mesm
 	\label{fig:exemplo1}
 \end{figure}
 
-\par Assim, para representar cada característica da solução, tomando como exemplo a Figura 4, 
-o fato de Marta fazer 5 lotes da parte da frente é representado na implementação
+\par Assim, para representar cada característica da solução, tomando como
+exemplo a Figura 7, o fato de Marta fazer 5 lotes da parte da frente é representado na implementação
 do código criando se um objeto da classe \texttt{ProcessoChromosome} passando no
 construtor o \texttt{id} da atividade ``Frente'', um objeto de
 \texttt{costureiraHabilidade}, cujo atributo \texttt{costureira} represente a
 Marta, o atributo \texttt{habilidade} que representa a habilidade em questão e a
 quantidade de lotes que Marta deverá confeccionar, que seria, neste caso, cinco.
 
-\par A representação do indivíduo foi feita criando-se a classe \texttt{ProcessoIndividual} como demonstra a figura abaixo:
+\par A representação do indivíduo foi feita criando-se a classe \texttt{ProcessoIndividual} 
+como demonstra a Figura 11:
 
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.9]{./imagens/class_individual.png}}
-	\caption[Classe CostureiraHabilidade]
+	\caption[Classe ProcessoIndividual]
 	{Classe ProcessoIndividual \textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
 \end{figure}
@@ -548,23 +556,25 @@ gasto por cada uma para fazer tal atividade.
 \par Com base neste \texttt{HashMap} então é feita a criação dos cromossomos do indivíduo.
 Em um primeiro momento, a distribuição de tarefas entre as costureiras seria feita em forma 
 de porcentagem, ou seja, o algoritmo distribuiria uma porcentagem aleatória para cada costureira de 
-uma determinada atividade, desta forma a distribuição seria feita da forma demonstrada na Figura 9.
+uma determinada atividade, desta forma a distribuição seria feita da forma
+demonstrada na Figura 12.
 
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.7]{./imagens/tentativa_1_individual.png}}
-	\caption[Classe CostureiraHabilidade]
+	\caption[Criação de cromossomos (Primeira Abordagem)]
 	{Criação de cromossomos (Primeira Abordagem) \textbf{Fonte:} Desenvolvido pelos autores}
 	\label{fig:exemplo1}
 \end{figure}
  
 \par Feita a distribuição da porcentagem, antes de fazer o cálculo do indivíduo, seria então realizado 
 um cálculo de normalização para que se pudesse encontrar o número de lotes a ser
-produzido por cada costureira em cada atividade. Tomando como exemplo a Figura 10, este cálculo seria feito da seguinte forma:
+produzido por cada costureira em cada atividade. Tomando como exemplo a Figura
+13, este cálculo seria feito da seguinte forma:
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=1.0]{./imagens/distribuicao_porcentagem.png}}
-	\caption[Classe CostureiraHabilidade]
+	\caption[Distribuição em porcentagem]
 	{Distribuição em porcentagem \textbf{Fonte:} Desenvolvido pelos autores}
 	\label{fig:exemplo1}
 \end{figure}
@@ -612,18 +622,19 @@ produzido por cada costureira em cada atividade. Tomando como exemplo a Figura 1
 \par Buscou-se então uma outra alternativa para se realizar a distribuição dos lotes e definiu-se que, ao invés de distribuir
 a porcentagem, a distribuição já deveria ser feita a nível de lote sendo esta também realizada de forma aleatória. Os parâmetros
 do \texttt{construtor} da classe \texttt{ProcessoIndividuo} permaneceram da mesma forma, alternando somente a forma com que 
-os lotes são distribuídos entre as costureiras em cada atividade conforme mostra a Figura 11.
+os lotes são distribuídos entre as costureiras em cada atividade conforme mostra
+a Figura 14.
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.7]{./imagens/tentativa_2_individual.png}}
-	\caption[Distribuição de lotes]
+	\caption[Distribuição em lotes diretamente]
 	{Distribuição em lotes diretamente \textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
 \end{figure}
 
 \newpage
  
-\par Conforme descrito na Figura 11, é feita uma iteração no
+\par Conforme descrito na Figura 14, é feita uma iteração no
 \texttt{HashMap} e, para cada atividade, é feita a distribuição dos lotes para
 as costureiras desta lista. O algoritmo então atribui a cada costureira um valor
 que pode variar de 0 até \texttt{qtdeLote}.
@@ -633,7 +644,7 @@ lotes é subtraída pelo valor atribuído ao cromossomo recém criado.
 Neste processo uma costureira pode receber aleatoriamente o valor 0, o que irá resultar na sua eliminação do processo da mesma forma
 que iria ocorrer na primeira abordagem. Por fim, após a finalização do primeiro
 \texttt{for} um novo indivíduo terá sido criado, semelhante ao quadro
-apresentado na Figura 4.
+apresentado na Figura 7.
 
 \par Concluindo, a distribuição das atividades ocorre todas as vezes que se cria um novo indivíduo.
 Como será explicado no próxima seção, indivíduos podem ser criados no processo
@@ -656,12 +667,13 @@ executado o algoritmo. O construtor então chama o método
 processo em questão, buscar todas as costureiras que tem a habilidade de fazer
 cada uma destas e criar um \texttt{HashMap} que possui como chave o \texttt{ID} da atividade e como valor uma 
 lista de \texttt{CostureiraHabilidade}, feito isto o método 
-também define qual é a atividade final do processo, conforme demonstra a Figura 12.
+também define qual é a atividade final do processo, conforme demonstra a Figura
+15.
 
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.7]{./imagens/metodo_informacoes_costureiras.png}}
-	\caption[Distribuição de lotes]
+	\caption[Método getInformacoesCostureiras()]
 	{Método getInformacoesCostureiras() \textbf{Fonte:} Desenvolvido pelos
 	autores.}
 	\label{fig:exemplo1}
@@ -690,16 +702,16 @@ de avaliação. Assim é feita uma iteração sobre a lista de indivíduos e par
 
 \par Assim como já foi visto anteriormente, cada costureira sabe fazer uma ou
 mais partes da calça e gasta um determinado tempo, medido em segundos, que varia de acordo com a habilidade, uma demonstração pode ser vista na 
-Figura 13. Além disto, existe um tempo de transporte entre cada costureira, porém, até a entrega do quadro 
-metodológico, o armazenamento do tempo real de transporte entre as empregadas ainda não estava sendo armazenado no 
+Figura 16. Além disto, existe um tempo de transporte entre cada costureira,
+porém, até a entrega do quadro metodológico, o armazenamento do tempo real de transporte entre as empregadas ainda não estava sendo armazenado no 
 banco de dados e foi, portanto, gerado de forma aleatória, como será visto mais
 adiante.
 
-\newpage
+%\newpage
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.4]{./imagens/tempo_habilidade2.png}}
-	\caption[Costureiras e Habilidades]
+	\centerline{\includegraphics[scale=0.9]{./imagens/tempo_habilidade_3.PNG}}
+	\caption[Demonstração de costureiras e habilidades]
 	{Demonstração de costureiras e habilidades \textbf{Fonte:} Desenvolvido pelos
 	autores.}
 	\label{fig:exemplo1}
@@ -712,13 +724,14 @@ uma forma de distribuir o trabalho de forma a se produzir as peças desejadas no
 
 \par Para o desenvolvimento desta função, foi necessário construir uma estrutura para representar a questão da ordem de 
 precedência entre as atividades. Tal estrutura, conforme é demonstrado na Figura
-14, deveria ter nós representando cada atividade, as costureiras que trabalham em cada atividade e o número de lotes atribuídos a cada uma aleatoriamente pelo algoritmo.
+17, deveria ter nós representando cada atividade, as costureiras que trabalham
+em cada atividade e o número de lotes atribuídos a cada uma aleatoriamente pelo algoritmo.
 
-\newpage
+%\newpage
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.6]{./imagens/montagem_node.png}}
-	\caption[Distribuição de trabalho]
+	\caption[Estrutura de representação da ordem de precedência]
 	{Estrutura de representação da ordem de precedência \textbf{Fonte:}
 	Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
@@ -730,52 +743,53 @@ cromossomos, e cada cromossomo, por sua vez, representa a alocação de uma
 costureira, contendo os lotes que esta deve produzir para uma determinada atividade. 
 Definiu-se então que tal lista de cromossomos deveria ser dividida de forma que se pudesse 
 agrupar os cromossomos por atividade estabelecendo assim
-a relação demonstrada na Figura 14, para, que por fim, o cálculo pudesse ser
+a relação demonstrada na Figura 17, para, que por fim, o cálculo pudesse ser
 realizado.
 
 \par Para isso, primeiramente, a lista de cromossomos foi distribuída em um \texttt{HashMap} denominado 
 \texttt{atividadeCromossomos}, contendo como chave a atividade e como valor a lista de cromossomos para a 
 respectiva atividade e foi criado uma classe denominada \texttt{Node}, sendo
-esta a responsável por criar a estrutura mostrada na Figura 14.
+esta a responsável por criar a estrutura mostrada na Figura 17.
 
 \par O Construtor da classe \texttt{Node} recebe um \texttt{map} e um objeto de
 atividade. Primeiramente o método \texttt{calculateValue()} instancia um objeto da classe \texttt{Node} passando 
 a \texttt{atividadeFinal} recebida por \texttt{ProcessoModel}, conforme descrito
-na seção anterior, e o map atividadeCromossomos conforme mostra a Figura 15.
+na seção anterior, e o map atividadeCromossomos conforme mostra a Figura 18.
 
-\newpage
+%\newpage
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.7]{./imagens/codigo_calculate_value.png}}
-	\caption[Distribuição de trabalho]
-	{Método calculateValue \textbf{Fonte:} Desenvolvido pelos autores.}
+	\centerline{\includegraphics[scale=0.6]{./imagens/codigo_calculate_value.png}}
+	\caption[Método calculateValue()]
+	{Método calculateValue() \textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
 \end{figure}
 
 \par A estrutura da classe \texttt{Node} foi realizada de forma a produzir objetos de si mesma de forma recursiva, assim 
 cada vez que esta é instanciada, é como se criasse um nó daqueles
-mostrados na Figura 14.
+mostrados na Figura 17.
 Assim, quando o método \texttt{calculateValue()} instancia um objeto
 \texttt{Node}, no construtor deste outros nós são criados, e então toda
-estrutura, como foi ilustrada na Figura 14, será criada.
-A Figura 16 mostra a construção de um objeto \texttt{Node}. 
+estrutura, como foi ilustrada na Figura 17, será criada.
+A Figura 19 mostra a construção de um objeto \texttt{Node}. 
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.8]{./imagens/node_class.png}}
-	\caption[Distribuição de trabalho]
+	\caption[Construtor da classe Node]
 	{Construtor da classe Node \textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
 \end{figure}
 
 
-\par Como se pode ver no método \texttt{calculateValue()} na Figura 15, após
+\par Como se pode ver no método \texttt{calculateValue()} na Figura 18, após
 criar a estrutura de nós, é chamado o método \texttt{getValorTotal()} do objeto
 \texttt{node} criado. Este método é responsável por iniciar a sequência lógica que faz o cálculo do tempo total a ser gasto pelo indivíduo, calculando o tempo gasto por cada costureira, definindo quem irá enviar
-peças pra quem e calculando o tempo de transporte de cada envio, conforme demonstra a Figura 17.
+peças pra quem e calculando o tempo de transporte de cada envio, conforme
+demonstra a Figura 20.
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.8]{./imagens/metodo_getValorTotal.png}}
-	\caption[Distribuição de trabalho]
+	\centerline{\includegraphics[scale=0.7]{./imagens/metodo_getValorTotal.png}}
+	\caption[Método getValorTotal()]
 	{Método getValorTotal() \textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
 \end{figure}
@@ -783,28 +797,31 @@ peças pra quem e calculando o tempo de transporte de cada envio, conforme demon
 \par O método faz uma iteração na lista de cromossomos do nó da atividade final e irá chamar o método getChromosomeValue passando 
 cada cromossomo e o valor de seus lotes, e irá retornar o valor do maior cromossomo.
 
-\par Tomando como base a Figura 14, para facilitar o entendimento, o método getChromosomeValue()
-será chamado passando o cromossomo "Josi" e o inteiro 2 na quantidade de lotes. Este método é responsável por calcular o tempo gasto 
+\par Tomando como base a Figura 17, para facilitar o entendimento, o método
+getChromosomeValue() será chamado passando o cromossomo "Josi" e o inteiro 2 na quantidade de lotes. Este método é responsável por calcular o tempo gasto 
 pela costureira para realizar os lotes atribuídos a ela. O tempo gasto pela
 costureira é definido por \texttt{NLC * QPL * TP}, onde: \texttt{NLC} é o número
 de lotes atribuídos para a costureira, \texttt{QPL} é a quantidade de peças por
-lote e o \texttt{TP} é o tempo que a costureira gasta para fazer cada peça, porém este tempo também é influenciado pelo tempo que se é gasto para receber as partes dependentes, conforme demonstra a Figura 18.
+lote e o \texttt{TP} é o tempo que a costureira gasta para fazer cada peça, 
+porém este tempo também é influenciado pelo tempo que se é gasto para receber 
+as partes dependentes, conforme demonstra a Figura 21.
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.8]{./imagens/metodo_getCromossomeValue.png}}
-	\caption[Distribuição de trabalho]
-	{Método getChromossomeValue \textbf{Fonte:} Desenvolvido pelos autores.}
+	\caption[Método getChromossomeValue()]
+	{Método getChromossomeValue() \textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
 \end{figure}
 
 \par O método \texttt{getChromossomeValue()} chama então o método getTempoRecebimentoPecas(), passando o cromossomo Josi e 
 o inteiro 2 como quantidade de lote. O método chamado tem a função de fazer uma busca nos nós predecessores buscando encontrar 
-qual o tempo gasto para o recebimento das partes predecessoras da atividade e retornar o maior valor, conforme demonstra a Figura 19.
+qual o tempo gasto para o recebimento das partes predecessoras da atividade e retornar o maior valor, 
+conforme demonstra a Figura 22.
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.8]{./imagens/metodo_getTempoRecebimentoPecas.png}}
-	\caption[Distribuição de trabalho]
-	{Método getTempoRecebimentoPecas \textbf{Fonte:} Desenvolvido pelos autores.}
+	\caption[Método getTempoRecebimentoPecas()]
+	{Método getTempoRecebimentoPecas() \textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
 \end{figure}
 
@@ -814,26 +831,27 @@ qual o tempo gasto para o recebimento das partes predecessoras da atividade e re
 própria classe Node, só que de uma outra instância.
 O método chamado é o getValueChromosomosPredecessores() passando o cromossomo
 Josi e o inteiro 2, como número de lotes.
-A Figura 20 mostra este método.
+A Figura 23 mostra este método.
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.7]{./imagens/metodo_getValueCrhomosomosPredecessores.png}}
-	\caption[Distribuição de trabalho]
+	\centerline{\includegraphics[scale=0.6]{./imagens/metodo_getValueCrhomosomosPredecessores.png}}
+	\caption[Método getValueCrhomosomosPredecessores()]
 	{Método getValueCrhomosomosPredecessores() \textbf{Fonte:} Desenvolvido pelos
 	autores.}
 	\label{fig:exemplo1}
 \end{figure}
 
 \par Tal método é responsável por iterar sobre a lista de cromossomos do nó anterior buscando de qual ou quais costureiras 
-podem ser obtidos os lotes, retornando o maior valor. No exemplo da Figura 21,
-uma das atividades anteriores é o ``Ziper'' e a primeira costureira da lista é a Joana, neste caso serão consumidos dois lotes
+podem ser obtidos os lotes, retornando o maior valor. No exemplo da Figura 24,
+uma das atividades anteriores é o ``Ziper'' e a primeira costureira da lista é a Joana, 
+neste caso serão consumidos dois lotes
 da Joana.
 
 \newpage
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.6]{./imagens/processo_solciitacao_de_lotes1.png}}
-	\caption[Distribuição de trabalho]
+	\caption[Costureira Josi solicita dois lotes de atividades predecessoras]
 	{Costureira Josi solicita dois lotes de atividades predecessoras
 	\textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
@@ -848,14 +866,14 @@ tempo de transporte entre a Josi e a Joana. Conforme explicado anteriormente,
 por enquanto este método retorna um tempo gerado aleatoriamente, e será somado
 ao valor retornado de \texttt{getChromosomeValue()} que  foi chamado passando o cromossomo Joana.
 Seguindo as execuções dos métodos já explicados, o fluxo de chamadas então será
-\texttt{getCromossomeValue()}, \texttt{getTempoRecebimentoPecas()}, \texttt{getValueChromosomosPredecessores()} e 
+\texttt{getCromossomeValue()}, \texttt{getTempoRecebimentoPecas()}, getValueChromosomosPredecessores() e 
 neste ponto o cromossomo Joana irá solicitar para sua atividade anterior, 2
-lotes, conforme mostra a Figura 22.
+lotes, conforme mostra a Figura 25.
 
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.7]{./imagens/processo_solciitacao_de_lotes2.png}}
-	\caption[Distribuição de trabalho]
+	\centerline{\includegraphics[scale=0.5]{./imagens/processo_solciitacao_de_lotes2.png}}
+	\caption[Costureira Joana solicita dois lotes de atividades predecessoras]
 	{Costureira Joana solicita dois lotes de atividades predecessoras 
 	\textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
@@ -870,13 +888,14 @@ cromossomo Joana como costureiras predecessoras, para futuros relatórios e
 testes.
 
 \par Concluindo, o processo é todo feito recursivamente, na qual as costureiras
-da primeira atividade vão consumindo os lotes das costureiras das atividades predecessoras, conforme mostra a Figura 23.
+da primeira atividade vão consumindo os lotes das costureiras das atividades
+predecessoras, conforme mostra a Figura 26.
 
 %\newpage
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.2]{./imagens/processo_solciitacao_de_lotes3.png}}
-	\caption[Distribuição de trabalho]
+	\centerline{\includegraphics[scale=0.6]{./imagens/processo_solciitacao_de_lotes3.png}}
+	\caption[Costureiras consomem lotes de suas predecessoras]
 	{Costureiras consomem lotes de suas predecessoras \textbf{Fonte:} Desenvolvido
 	pelos autores.}
 	\label{fig:exemplo1}
