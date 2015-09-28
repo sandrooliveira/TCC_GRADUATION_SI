@@ -159,11 +159,9 @@ algoritmo genético é basicamente realizada conforme os itens a seguir:
 \end{figure}
 
 \par Como demostrado acima existem dois \texttt{loops}, o
-\texttt{loop} de mutação para seleção existe porque é presico percorrer toda
-população para realizar os cruzamentos e fazer com que ela seja
-atualizada.
-O outro \texttt{loop} é responsável por atualizar a população, a
-população inicial passa a não existir dando lugar a nova população que foi criada dos cruzamentos.
+\texttt{loop} que acontece até que uma nova população seja formada e outro
+responsável por  iniciar a criação de uma nova população até que o
+número de gerações seja atingido.
 
 \subsubsection{População Inicial}
 
@@ -191,10 +189,9 @@ proposto, esta solução é descartada e, assim, só sobrevivem as soluções co
 chance de resolver o problema e por isso torna-se o componente mais importante de qualquer algoritmo genético.
 
 \par Devido à generalidade encontrada nos AGs, a função de avaliação
-torna-se em muitos casos a única ligação verdadeira entre o programa e o problema real, por
-isso deve-se ter um certo cuidado ao desenvolvê-la, ela deve conter tudo o que
-se sabe sobre o problema a ser resolvido, quanto mais conhecimento a função
-integrar, maior será a chance da função entregar o melhor resultado
+torna-se em muitos casos a única ligação verdadeira entre o programa e o
+problema real pois ela irá analisar os cromossomos de cada indivíduo,
+convertendo-os assim, em uma proposta de solução para o problema
 \cite{livro_ags_ricardo_linden}.
 
 % \par Baseando nessas \citeonline{livro_ags_ricardo_linden}, iremos
@@ -250,31 +247,22 @@ de uma solução e alguns cromossomos de outra.
 \par Para \citeonline{intro_aos_algoritimos_geneticos}, o operador
 \textit{crossover} é um mecanismo de busca dos AGs para explorar regiões
 desconhecidas do espaço de busca. Ele é aplicado a cada par de cromossomos dos
-indivíduos retirados da população intermediária, gerando dois cromossomos filhos até se formar um novo indivíduo. O \textit{crossover} é aplicado com uma dada probabilidade a cada par de
-cromossomos selecionados.
-Essa probabilidade varia entre 60\% e 90\% e, caso não ocorra o
-\textit{crossover}, os filhos serão iguais aos pais possibilitando que algumas
-soluções sejam preservadas.
+indivíduos que passaram pelo processo de seleção, gerando assim, dois novos
+indivíduos.
 
 \par Para \citeonline{REVISTA_MULTIDISCIPLINAR_DA_UNIESP}, o cruzamento combina
 os cromossomos pais a fim de gerar cromossomos filhos e para isso existem vários
-tipos de cruzamento, dentre eles, o cruzamento em um ponto e cruzamento
-Uniforme.
+tipos de cruzamento.
 
-\par O cruzamento em um ponto divide a lista de cromossomos
-selecionados em um ponto de sua cadeia, esse ponto é escolhido aleatoriamente.
+\par Um dos cruzamentos muito utilizado é o cruzamento de um ponto, que divide a
+lista de cromossomos selecionados em um ponto de sua cadeia, esse ponto é escolhido aleatoriamente.
 Após essa divisão, é copiada uma parte dos cromossomos de cada pai para definir
 os cromossomos dos indivíduos filhos. Neste método, é comum os pais gerarem dois
-novos filhos, mas a quantidade de filhos pode ser definida levando em
-consideração que o número de alelos\footnotemark[1] permita as diferentes
-combinações \cite{REVISTA_MULTIDISCIPLINAR_DA_UNIESP}.
+novos filhos \cite{REVISTA_MULTIDISCIPLINAR_DA_UNIESP}.
 
-\footnotetext[2]{Alelos - São segmentos homologos de DNA, formas alternativas de
-um mesmo gene e afetam a mesma caracteristica de modo diferente.}
-
-\par Já o cruzamento uniforme, segundo o autor, gera cada gene do descendente copiando o gene em questão de um dos
-pais, em que se usa uma máscara de cruzamento que é gerada aleatoriamente para
-fazer a escolha.
+\par Um outro cruzamento muito utilizado é o cruzamento uniforme, que
+ainda segundo o autor, gera cada gene do descendente copiando o gene em questão
+de um dos pais, em que se usa uma máscara de cruzamento que é gerada aleatoriamente para fazer a escolha.
 Para criar cada cromossomo do novo indivíduo é feita uma iteração em todas as
 posições da máscara fazendo uma análise dos seus valores, quando o valor da posição for 1, o gene do
 primeiro pai referente à mesma posição da máscara é copiado, se o valor for 0
@@ -283,7 +271,7 @@ descendente.
 
 \par Segundo \citeonline{intro_aos_algoritimos_geneticos}, o tipo de cruzamento
 uniforme difere do cruzamento de um ponto uma vez que este sempre leva à
-metade dos bits de cada pai.
+metade dos \textit{bits} de cada pai.
 
 \subsubsection{Mutação}
 
@@ -301,14 +289,14 @@ a diversidade deve-se usar uma taxa de mutação pequena.
 
 
 \par Assim como no cruzamento há vários tipos de mutação, dentre eles a mutação
-de bit que será utilizada neste trabalho.
+de \textit{bit} que será utilizada neste trabalho.
 
 \par Segundo \citeonline{REVISTA_MULTIDISCIPLINAR_DA_UNIESP} este é o operador
 mais fácil de trabalhar podendo ser aplicado em qualquer forma de representação
 binária dos cromossomos. Este tipo de mutação gera uma probabilidade de mutação
-para cada bit do cromossomo, caso a probabilidade sorteada estiver dentro da
-taxa de mutação definida, o bit sofrerá mutação, recebendo um valor determinado
-de forma aleatória dentre os valores que podem ser assumidos pelo cromossomo.
+para cada \textit{bit} do cromossomo, caso a probabilidade sorteada estiver
+dentro da taxa de mutação definida, o \textit{bit} sofrerá mutação, recebendo um
+valor determinado de forma aleatória dentre os valores que podem ser assumidos pelo cromossomo.
 
 
 \par No problema a ser solucionado na aplicação deste trabalho, há um

@@ -52,25 +52,23 @@ base uma fábrica de confecção de calças situada na cidade de
 Cachoeira de Minas - MG, porém a base de conhecimento pode ser aplicada a outros
 tipos de negócios que seguem o mesmo padrão de desenvolvimento de produtos.
 
-\par Como cada funcionário da fábrica citada trabalha em sua casa, é preciso ter
-uma boa forma de distribuir a produção para que o transporte da matéria-prima
-seja eficaz, trazendo para a empresa uma redução de custos e um tempo de
-produção menor.
-Para isso, é necessário que o software conheça os procedimentos de
-produção da fábrica, como seus funcionários trabalham e se estão sendo alocados
-de forma correta. A aplicação cruza todas essas informações gerando para o
-usuário uma relação de como ele deve distribuir a matéria-prima para produção
-das peças.
+\par Como cada funcionário trabalha em sua casa, é preciso ter uma boa
+forma de distribuir o trabalho, permitindo que a produção possa ser feita em um
+tempo menor e com custo reduzido.
+Para isso, é necessário que o software faça a distribuição dos lotes a
+serem confeccionados entre as costureiras de forma que estas sejam
+alocadas de forma a receberem a quantidade de peças de acordo com sua
+capacidade de trabalho, considerando também o tempo que cada costureira
+irá gastar para pegar as peças e o material necessário para realizar seu
+trabalho, além disso o software considera o preço cobrado por cada uma das
+delas.
 
-\par Como cada funcionário trabalha em sua casa, é preciso saber qual a
-melhor rota para se entregar a matéria-prima ou recolher o que foi produzido
-para que seja passado para a próxima etapa da produção. O software avalia a
-melhor rota levando em consideração as peças que precisam ser produzidas, as
-habilidades de cada funcionário e se os mesmos não estão alocados em outros
-processos de produção. Analisando esses fatos, o software buscará a melhor forma
-para distribuição da produção e os funcionários terão suas tarefas distribuídas
-de forma a se obter o menor tempo e o  menor custo de produção.
-
+\par A aplicação cruza então todas estas informações de forma a se produzir
+soluções para o problema e, no final, a melhor destas soluções será aquela 
+que ofereça o menor custo e o menor tempo de produção. Porém, sabe-se que, 
+em algoritmos genéticos, não há garantias que a solução encontrada é a melhor
+para se resolver o problema mas a tendência é que a solução proposta pelo
+algoritmo seja muito boa e seria muito difícil encontrá-la manualmente. 
 
 \section{Instrumentos}
 
@@ -158,13 +156,15 @@ processo inicial da fábrica de calças, que se resume em construir uma aplicaç
 	
 \end{itemize}
 
-\par A seção a seguir descreve como foi desenvolvido o escopo demonstrado acima.
+\par A seção a seguir descreve como foi definido o escopo demonstrado acima.
 
 
 
 \section{Procedimentos}
 
-\par Esta seção descreve os procedimentos realizados na execução do trabalho.
+\par Esta seção descreve os procedimentos realizados na execução do trabalho,
+definindo primeiramente o \textit{framework} de desenvolvimento e explicando
+como o algoritmo genético foi desenvolvido para os requisitos definidos no escopo.
 
 \subsubsection{Framework de desenvolvimento}
 \par Primeiramente é necessário ressaltar que, para o desenvolvimento da aplicação, foi utilizada uma base desenvolvida pelo professor Artur Barbosa durante as aulas de sistemas especialistas, do VII período do curso de sistemas de informação nesta universidade.
@@ -218,26 +218,33 @@ de um algoritmo genético. Tal \textit{framework} é definido dentro da seguinte
 		
 		\item \textit{selectionType}:
 		conforme descrito no quadro teórico, existem várias formas de seleção dos
-		indivíduos para realizarem o cruzamento. Este parâmetro define qual será a forma escolhida pelo programador ao implementar o seu problema. 
-		No \textit{framework} este parâmetro é do tipo \texttt{enum} e pode assumir 2 valores o \textit{ROULETTE}, 
-		que representa o método roleta e o \textit{CLASSIFICATION}, que representa o método de classificação;
+		indivíduos para realizarem o cruzamento. Este parâmetro define qual será a forma escolhida pelo programador ao
+		implementar o seu problema.No \textit{framework} este parâmetro é do tipo \texttt{enum} e pode assumir 2 valores o
+		\textit{ROULETTE}, que define que o método de seleção utilizado será o de roleta e o \textit{CLASSIFICATION}, que 
+		define que o método a ser utilizado é o de classificação. Neste projeto o
+		método padrão que já foi pré-definido no código foi o método de roleta;
 		
 		\item \textit{crossType}:
 		Assim como a seleção, existe diversas formas de fazer o cruzamento dos indivíduos. Este atributo, 
 		também do tipo \texttt{enum} representa a forma de cruzamento e pode receber os valores \textit{Binary}, 
-		\textit{Permutation}, \textit{Uniform} e \textit{Aritmetic};
+		\textit{Permutation}, \textit{Uniform} e \textit{Aritmetic}, esses valores
+		definem qual implementação de cruzamento o algoritmo deve utilizar, esta aplicação
+		utilizará o método \textit{Permutation}, desta forma somente um
+		método de cruzamento foi implementado conforme mostra a seção Seleção,
+		cruzamento e mutação;
 		
 		\item \textit{mutationType}:
 		Segue a mesma forma que o selectionType e o crossType e pode assumir os valores \textit{Permutation}, 
-		\textit{Binary} e \textit{Numerical}.
+		\textit{Binary} e \textit{Numerical}, e neste projeto foi o escolhido o
+		método \textit{Permutation}.
 		
 	\end{itemize}
 	
 	\item Classe \texttt{Individual}:
 	\par A classe abstrata \texttt{Individual} representa a estrutura básica de um indivíduo. 
 	A classe contém uma \texttt{lista} do tipo 
-	\texttt{Cromossomo}, que será descrita logo abaixo, que contém uma coleção de
-	objetos que representam as características da solução.
+	\texttt{Cromossomo}, que será descrita posteriormente, que contém uma coleção
+	de objetos que representam as características da solução.
 	
 	\par A Classe contém ainda um atributo chamado \texttt{valor} que irá armazenar a qualidade, ou seja, qual é o custo
 	da solução representada pelo indivíduo, tal valor é recebido no retorno da
@@ -262,7 +269,7 @@ de um algoritmo genético. Tal \textit{framework} é definido dentro da seguinte
 		
 		\item \texttt{doMutation}: realiza a mutação. Este deve
 		ser implementado pela classe que representa o cromossomo, pois a
-		mutação é feita a nível desta classe.
+		mutação é feita nos cromossomos.
 		
 		\item \texttt{clone}: devolve um objeto exatamente com os mesmos
 		atributos do objeto, porém em uma instância diferente.
@@ -295,7 +302,7 @@ de um algoritmo genético. Tal \textit{framework} é definido dentro da seguinte
 	
 	\begin{itemize}
 		\item	Criação da população inicial, através do método createInitialPopulation()
-		do objeto da classe model;
+		do objeto que será extendido da classe GAModel;
 		
 		\item Classificação e avaliação da população inicial através do método
 		\texttt{classify()};
@@ -318,7 +325,7 @@ de um algoritmo genético. Tal \textit{framework} é definido dentro da seguinte
 	armazenada na variável newGeneration, assim o método
 	\texttt{setPopulation()} do objeto \texttt{model} é chamado para então substituir
 	a antiga população pela nova. Como a execução está dentro de uma estrutura de repetição
-	\texttt{for}, o algoritmo volta ao início da classe e recomeça o processo de
+	\texttt{for}, ocorre um \texttt{loop} e então é recomeçado o processo de
 	criação de uma outra população. Este processo para quando o número de gerações, 
 	definido no parâmetro \texttt{generationQuantity} do objeto \texttt{model}
 	for atingido, neste caso é dado o comando \texttt{break} e o \texttt{loop} é encerrado.
@@ -452,8 +459,10 @@ tipo de cruzamento a função de avaliação, etc.
 
 \par Neste caso, cada indivíduo da população irá representar uma forma de
 distribuir as atividades e cada número de lotes distribuídos a determinada
-costureira em uma determinada atividade irá representar um cromossomo. Tomando como base o exemplo da Figura 4, o quadro, como um todo, representa o indivíduo e cada distribuição, como por exemplo Frente= Marta: 5, 
-representa um cromossomo que receberá cinco lotes para confeccionar.
+costureira em uma determinada atividade irá representar um cromossomo. 
+Tomando como base o exemplo da Figura 4, o quadro, como um todo, representa 
+o indivíduo e cada distribuição, como por exemplo a Marta, que recebeu 5 
+lotes para confeccionar, representa um cromossomo.
 
 \par Para fazer esta representação em Java, primeiramente foi criado uma classe denominada \texttt{ProcessoChromosome} que é
 representada na Figura 5:
@@ -471,10 +480,10 @@ representada na Figura 5:
 apenas os atributos \texttt{atividade}, costureiraHabilidade e
 \texttt{quantidade\_lotes}, que recebem seus valores pelo construtor, os
 demais atributos e métodos são utilizados pela função de avaliação e serão explicados mais adiante. 
-O atributo atividade é do tipo \texttt{int} e representa o \texttt{ID} da atividade a qual se está
-atribuindo a costureira e a quantidade de lotes, este identificador vem do banco de dados e será passado na criação 
-de cada cromossomo sempre que for necessário se criar um novo indivíduo. O
-atributo \texttt{costureiraHabilidade} é do tipo CostureiraHabilidade, que representa o
+O atributo atividade é do tipo \texttt{int} e representa o \texttt{ID} da
+atividade, no banco de dados, a qual se está atribuindo a costureira e a
+quantidade de lotes, este atributo será passado na criação de cada cromossomo
+sempre que for necessário se criar um novo indivíduo. O atributo \texttt{costureiraHabilidade} é do tipo CostureiraHabilidade, que representa o
 mapeamento da tabela costureira\_habilidade do banco de dados, e faz a relação
 entre quais habilidades cada costureira possui e quanto tempo cada uma gasta para fazer uma peça de 
 uma determinada parte da calça, conforme demonstra a Figura 6.
@@ -543,7 +552,7 @@ uma determinada atividade, desta forma a distribuição seria feita da forma dem
 
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.8]{./imagens/tentativa_1_individual.png}}
+	\centerline{\includegraphics[scale=0.7]{./imagens/tentativa_1_individual.png}}
 	\caption[Classe CostureiraHabilidade]
 	{Criação de cromossomos (Primeira Abordagem) \textbf{Fonte:} Desenvolvido pelos autores}
 	\label{fig:exemplo1}
@@ -587,8 +596,8 @@ produzido por cada costureira em cada atividade. Tomando como exemplo a Figura 1
  
  \par Os passos acima para distribuição de atividades seriam então repetidos
  para cada atividade chave do \texttt{HashMap} realizando tal distribuição para cada costureira da lista de 
- costureiras de cada uma. No momento de fazer o último cálculo, foi feito um arredondamento, com isso se uma 
- costureira tivesse tido uma porcentagem muito pequena, o valor de lotes para
+ costureiras de cada atividade. No momento de fazer o último cálculo, foi feito
+ um arredondamento, com isso se uma costureira tivesse tido uma porcentagem muito pequena, o valor de lotes para
  esta seria 0, eliminando-a assim da distribuição.
  
  \par Todavia verificou-se que, distribuindo desta forma, em alguns casos, o total de lotes por atividade não era distribuído
@@ -614,7 +623,7 @@ os lotes são distribuídos entre as costureiras em cada atividade conforme most
 
 \newpage
  
-\par Conforme descrito nesta listagem acima, é feita uma iteração no
+\par Conforme descrito na Figura 11, é feita uma iteração no
 \texttt{HashMap} e, para cada atividade, é feita a distribuição dos lotes para
 as costureiras desta lista. O algoritmo então atribui a cada costureira um valor
 que pode variar de 0 até \texttt{qtdeLote}.
@@ -677,10 +686,10 @@ e assim para cada iteração é criado um objeto de \texttt{ProcessoIndividual} 
 \par Após a criação da população inicial, esta é então submetida a um processo
 de avaliação. Assim é feita uma iteração sobre a lista de indivíduos e para cada um é chamado então o seu método 
 \texttt{calculateValue()}. Tal método é declarado de forma abstrata na classe mãe
-\texttt{Individual} e implementado na classe \texttt{ProcessoIndividual}, conforme mostra a Figura 8.
+\texttt{Individual} e implementado na classe \texttt{ProcessoIndividual}.
 
-\par Conforme demonstrado na Figura 6, cada costureira sabe fazer uma ou mais partes da calça e gasta um 
-determinado tempo, medido em segundos, que varia de acordo com a habilidade, uma demonstração pode ser vista na 
+\par Assim como já foi visto anteriormente, cada costureira sabe fazer uma ou
+mais partes da calça e gasta um determinado tempo, medido em segundos, que varia de acordo com a habilidade, uma demonstração pode ser vista na 
 Figura 13. Além disto, existe um tempo de transporte entre cada costureira, porém, até a entrega do quadro 
 metodológico, o armazenamento do tempo real de transporte entre as empregadas ainda não estava sendo armazenado no 
 banco de dados e foi, portanto, gerado de forma aleatória, como será visto mais
@@ -689,7 +698,7 @@ adiante.
 \newpage
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[width=10cm]{./imagens/tempo_habilidade2.png}}
+	\centerline{\includegraphics[scale=0.4]{./imagens/tempo_habilidade2.png}}
 	\caption[Costureiras e Habilidades]
 	{Demonstração de costureiras e habilidades \textbf{Fonte:} Desenvolvido pelos
 	autores.}
@@ -716,10 +725,11 @@ precedência entre as atividades. Tal estrutura, conforme é demonstrado na Figu
 \end{figure}
 
 
-\par Como foi visto na seção, cada cromossomo deles representa a alocação de 
-uma costureira, contendo os lote que esta deve produzir para cada atividade, o indivíduo, por sua vez, tem uma lista de 
-cromossomos. Definiu-se então que tal lista de cromossomos deveria ser dividida
-de forma que se pudesse agrupar os cromossomos por atividade estabelecendo assim
+\par Como foi visto na seção 1.4.2, cada indivíduo possui uma lista de
+cromossomos, e cada cromossomo, por sua vez, representa a alocação de uma
+costureira, contendo os lotes que esta deve produzir para uma determinada atividade. 
+Definiu-se então que tal lista de cromossomos deveria ser dividida de forma que se pudesse 
+agrupar os cromossomos por atividade estabelecendo assim
 a relação demonstrada na Figura 14, para, que por fim, o cálculo pudesse ser
 realizado.
 
@@ -745,13 +755,15 @@ na seção anterior, e o map atividadeCromossomos conforme mostra a Figura 15.
 \par A estrutura da classe \texttt{Node} foi realizada de forma a produzir objetos de si mesma de forma recursiva, assim 
 cada vez que esta é instanciada, é como se criasse um nó daqueles
 mostrados na Figura 14.
-Assim, quando o método \texttt{calculateValue()} instancia um objeto \texttt{Node}, toda estrutura já é criada. 
+Assim, quando o método \texttt{calculateValue()} instancia um objeto
+\texttt{Node}, no construtor deste outros nós são criados, e então toda
+estrutura, como foi ilustrada na Figura 14, será criada.
 A Figura 16 mostra a construção de um objeto \texttt{Node}. 
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.8]{./imagens/node_class.png}}
 	\caption[Distribuição de trabalho]
-	{Classe Node (construtor) \textbf{Fonte:} Desenvolvido pelos autores.}
+	{Construtor da classe Node \textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:exemplo1}
 \end{figure}
 
@@ -829,12 +841,12 @@ da Joana.
 
 
 \par Assim, a costureira Joana é adicionada ao cromossomo Josi como costureira
-predecessora e novamente é chamado o método \texttt{getChromosomeValue()}, só que agora passando o cromossomo Joana e a quantidade
-de lote que ela deve produzir para atender a Josi, para que se possa calcular o tempo, além disso será chamado o método 
-calcularTempoEntreCostureiras() que irá retornar o tempo de transporte
-entre a Josi e a Joana. Conforme explicado anteriormente, 
-por enquanto este tempo está sendo gerado aleatoriamente, e será somado ao valor retornado de \texttt{getChromosomeValue()}
-que  foi chamado passando o cromossomo Joana. 
+predecessora e novamente é chamado o método \texttt{getChromosomeValue()}, só que agora passando o cromossomo 
+Joana e a quantidade de lote que ela deve produzir para atender a Josi, para que
+se possa calcular o tempo, além disso será chamado o método calcularTempoEntreCostureiras() que irá retornar o 
+tempo de transporte entre a Josi e a Joana. Conforme explicado anteriormente, 
+por enquanto este método retorna um tempo gerado aleatoriamente, e será somado
+ao valor retornado de \texttt{getChromosomeValue()} que  foi chamado passando o cromossomo Joana.
 Seguindo as execuções dos métodos já explicados, o fluxo de chamadas então será
 \texttt{getCromossomeValue()}, \texttt{getTempoRecebimentoPecas()}, \texttt{getValueChromosomosPredecessores()} e 
 neste ponto o cromossomo Joana irá solicitar para sua atividade anterior, 2
@@ -854,15 +866,16 @@ lotes, conforme mostra a Figura 22.
 \par Neste caso, será obtida uma peça da Cida e uma da Tereza, e será calculado,
 o tempo de produção mais o tempo de transporte entre ambas e a Josi,
 prevalecendo também o maior valor, além disso ambas são adicionadas ao
-cromossomo Joana como costureiras predecessoras. Isto é feito para futuros relatórios e testes.
+cromossomo Joana como costureiras predecessoras, para futuros relatórios e
+testes.
 
 \par Concluindo, o processo é todo feito recursivamente, na qual as costureiras
 da primeira atividade vão consumindo os lotes das costureiras das atividades predecessoras, conforme mostra a Figura 23.
 
-\newpage
+%\newpage
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.7]{./imagens/processo_solciitacao_de_lotes3.png}}
+	\centerline{\includegraphics[scale=0.2]{./imagens/processo_solciitacao_de_lotes3.png}}
 	\caption[Distribuição de trabalho]
 	{Costureiras consomem lotes de suas predecessoras \textbf{Fonte:} Desenvolvido
 	pelos autores.}
@@ -877,17 +890,14 @@ indivíduo.
 
 
 \subsection{Indivíduos estrangeiros}
-\par Até a entrega do quadro metodológico, este item ainda não tinha sido implementado.
+\par Este item já foi implementado porém ainda não documentado. 
   
 \subsection{Seleção, Cruzamento e mutação}
- \par Até a entrega do quadro metodológico, este item ainda não tinha sido implementado.
+\par Este item já foi implementado porém ainda não documentado.
  
-\subsubsection{Construção da interface gráfica, \texttt{CRUD} e apresentação dos dados}
-\par Até a entrega do quadro metodológico, este item ainda não tinha sido implementado.
-Porém já está definido que será uma aplicação \texttt{JSF} com \texttt{Primefaces} e 
-basicamente permitirá que o usuário cadastre novos processos, costureiras e habilidades,
-além de iniciar o algoritmo e obter informações sobre melhores distribuições encontradas
-e custo. 
+\subsection{Construção da interface gráfica, \texttt{CRUD} e apresentação dos
+dados} 
+\par Este item já foi implementado porém ainda não documentado. 
 
 
 
