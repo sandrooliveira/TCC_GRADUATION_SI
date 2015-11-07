@@ -415,6 +415,8 @@ atividades.
 \par A Figura 6 demonstra o mapeamento da relação entre a tabela
 \texttt{atividade} e atividade\_ordem para o Java.
 
+\newpage
+
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.7]{./imagens/atividade_diagram.png}}
 	\caption[Classes Atividade e AtividadeOrdem]
@@ -695,15 +697,37 @@ gasto por cada uma para fazer tal atividade.
 Em um primeiro momento, a distribuição de tarefas entre as costureiras seria feita em forma 
 de porcentagem, ou seja, o algoritmo distribuiria uma porcentagem aleatória para cada costureira de 
 uma determinada atividade, desta forma a distribuição seria feita da forma
-demonstrada na Figura 12.
+demonstrada na ~\ref{list:distribuicaoPorcentagem}.
 
+\begin{lstlisting} [style=custom_Java,caption={[Métodos da classe \texttt{FilmeBean}]{Criação de cromossomos (Primeira Abordagem). \textbf{Fonte:} Elaborado pelos autores.}}, label=list:distribuicaoPorcentagem] 	
 
-\begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.7]{./imagens/tentativa_1_individual.png}}
-	\caption[Criação de cromossomos (Primeira Abordagem)]
-	{Criação de cromossomos (Primeira Abordagem) \textbf{Fonte:} Desenvolvido pelos autores}
-	\label{fig:exemplo1}
-\end{figure}
+	package edu.univas.edu.tcc.ga_code;
+	
+	import java.util.ArrayList;
+	
+	public class ProcessoIndividual extends Individual {
+		
+		public Atividade atividadeFinal;
+		
+		public ProcessoIndividual(Atividade atividadeInicial,
+			Map<Integer, List<CostureiraHabilidade>> atividadesCostureiras){
+		
+			chromosomes = new ArrayList<Chromosome>();
+			this.atividadeFinal = atividadeInicial;
+			
+			for(Integer key: atividadesCostureiras.keySet()){
+			   for(CostureiraHabilidade costureira : 
+				   atividadesCostureiras.get(key)){
+				
+				   Float porcentagem = (float) (Math.random() *1);
+				   chromosomes.add(new ProcessoChromosome(key, 
+					   costureira, porcentagem));
+				}
+			}
+		}
+	}
+
+\end{lstlisting}
  
 \par Feita a distribuição da porcentagem, antes de fazer o cálculo do indivíduo, seria então realizado 
 um cálculo de normalização para que se pudesse encontrar o número de lotes a ser
@@ -877,17 +901,17 @@ mais partes da calça e gasta um determinado tempo, medido em segundos, além de
 para se produzir cada peça, que varia de  acordo com a habilidade, além disto, existe um 
 tempo de transporte entre cada costureira que é medido através da distância euclidiana, 
 ou seja, cada costureira recebe um valor X e Y que representam suas localidades e então, 
-através da formula euclidiana, é possível calcular a distância entre elas. A Figura 16 demonstra
-os dados a serem considerados para o cálculo do valor do indivíduo.
+através da formula euclidiana, é possível calcular a distância entre elas. A Figura 
+~\ref{fig:demonstracao_costureiras_habilidades} demonstra os dados a serem considerados para o
+cálculo do valor do indivíduo.
 
-\newpage
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.5]{./imagens/tempo_habilidade_3.PNG}}
 	\caption[Demonstração de costureiras e habilidades]
 	{Demonstração de costureiras e habilidades \textbf{Fonte:} Desenvolvido pelos
 	autores.}
-	\label{fig:exemplo1}
+	\label{fig:demonstracao_costureiras_habilidades}
 \end{figure}
 
 \par Com base nestes dados é realizado um cálculo a fim de se encontrar o tempo total de fabricação do número de peças
@@ -1236,7 +1260,6 @@ o tempo de produção do número de peças solicitadas que seria 5 neste caso.
 os lotes das costureiras das atividades predecessoras e somado o tempo de produção e o tempo de transporte entre elas, 
 conforme mostra a Figura ~\ref{fig:ex_tempo_producao}. 
 
-\newpage
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=1.2]{./imagens/distribuicao_tempo.png}}
