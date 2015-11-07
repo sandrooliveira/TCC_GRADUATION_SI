@@ -456,21 +456,39 @@ a Figura ~\ref{fig:exec_ag}.
 da população inicial de indivíduos, conforme explicado na próxima seção.
 
 \subsection {População inicial: Distribuição das atividades, Indivíduos e Cromossomos}
-\par O processo de criação da população inicial assim como o processo de seleção, cruzamento e mutação e a chamada da 
-função de avaliação de cada indivíduo, ocorre dentro da classe de controle do \textit{Framework}, ou seja, tal classe faz a 
-orquestração de toda a execução do algoritmo genético e é denominada \texttt{GAController}.
 
-\par A classe recebe em seu construtor um objeto de \texttt{GAModel} com as configurações do algoritmo, porém, como esta classe 
-é abstrata, foi criado a classe \texttt{ProcessoModel} que herda de \texttt{GAModel}, passando a ter todos os atributos
-da classe mãe. Para gerenciar então a execução do algoritmo foi criado uma classe de serviço denominada 
-\texttt{GeneticAlgorithmManagement}, tal classe é instanciada pelo controlador da tela de distribuição de atividades, que será
-explanado posteriormente, recebe, em seu método \texttt{iniciarDistribuicao}, os dados informados pelo 
-usuário e inicia o algoritmo genético conforme mostra o Código
-\ref{list:iniciarDistribuicao}.
+\par Para um melhor entendimento dos conceitos a serem explanados, é necessário
+conhecer, de forma básica, o fluxo de execução da aplicação. Como será visto na seção que descreve a construção
+da interface gráfica, ao iniciar a distribuição das atividades para um determinado processo, o usuário irá iniciar a 
+execução do algoritmo genético através de uma tela de distribuição de atividades, nesta tela ele deve informar o número de peças 
+que deseja produzir, a quantidade de peças que cada lote deve possuir e uma data de início das atividades. Através da data de início 
+e a data de entrega, informada no cadastro do processo, o controlador da tela calcula o prazo de entrega e o número total de lotes e 
+chama o serviço de gerenciamento da execução do AG, passando o número de lote, o número de peças por lote e o prazo de entrega a 
+ser considerado durante a distribuição. Tal serviço, por sua vez, configura os parâmetros do algoritmo genético e da início 
+a execução deste. A Figura ~\ref{fig:fluxo_basico} ilustra o fluxo básico de execução da aplicação.
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.5]{./imagens/fluxo_basico.png}}
+	\caption[Demonstração da execução de um AG]
+	{Fluxo básico de execução \textbf{Fonte:} Desenvolvido pelos autores.}
+	\label{fig:fluxo_basico}
+\end{figure}
+
+\par Conforme ilustrado na Figura ~\ref{fig:fluxo_basico}, o processo de criação da população inicial assim como o processo de seleção, 
+cruzamento e mutação e a chamada da função de avaliação de cada indivíduo, ocorre dentro dentro de uma classe de controle,
+ou seja, esta classe faz a orquestração de toda a execução do AG. Tal classe é denominada \texttt{GAController} e
+pertence ao \textit{Framework} explanado anteriormente.
+
+\par A classe criada para o gerenciamento da execução do algoritmo genético é denominada \texttt{GeneticAlgorithmManagement} e, conforme demonstrado na Figura ~\ref{fig:fluxo_basico}, esta é instanciada pelo controlador da tela de distribuição de atividades. Tal classe possui 
+um único método denominado \texttt{iniciarDistribuicao()} e recebe neste os dados informados pelo usuário, além disto, neste
+método, é criado um objeto de \texttt{ProcessoModel}, que herda da classe \texttt{GAModel} do \textit{framework}, e, neste, são 
+definidos os parâmetros a serem usados pelo algoritmo genético, além disso, os dados informados pelo usuário também são definidos 
+neste objeto pois são utilizados pela regra de negócio seguida na execução do AG. O Código \ref{list:iniciarDistribuicao} 
+demonstra o método \texttt{iniciarDistribuicao()}.
 
 
 \begin{lstlisting} [style=custom_Java,caption={[Métodos da classe
-\texttt{FilmeBean}]{Método \texttt{iniciarDistribuicao}. \textbf{Fonte:}
+\texttt{FilmeBean}]{Método \texttt{iniciarDistribuicao()} da classe \texttt{GeneticAlgorithmManagement}. \textbf{Fonte:}
 Elaborado pelos autores.}}, label=list:iniciarDistribuicao]
 
 public ProcessoIndividual iniciarDistribuicao(
@@ -500,16 +518,14 @@ public ProcessoIndividual iniciarDistribuicao(
 
 \end{lstlisting}
 
-\par Tal método retorna um objeto do tipo \texttt{ProcessoIndividual} para o controlador da tela de distribuição, este é o melhor indivíduo encontrado, ou seja, a melhor solução encontrada, isto será explicado com mais detalhes nas próximas seções assim como o significado de cada 
-parâmetro do método \texttt{iniciarDistribuicao}. 
+\par Tal método retorna um objeto do tipo \texttt{ProcessoIndividual} para o controlador da tela de distribuição, este é o melhor indivíduo encontrado, ou seja, a melhor solução encontrada. Tal solução será então apresentada ao usuário conforme mostra a Figura ~\ref{fig:fluxo_basico}.
 
-\par A classe \texttt{ProcessoModel} é a primeira a ser instanciada  e  recebe em seu construtor uma conexão para o 
+\par A classe \texttt{ProcessoModel}, ao ser instanciada, recebe em seu construtor uma conexão para o 
 banco de dados e o \texttt{ID} do processo a qual será executado o algoritmo. O construtor desta então chama o método
 \texttt{getInformacoesCostureiras()} que tem por finalidade buscar no banco de dados todas as atividades do processo em questão, 
 buscar todas as costureiras que tem a habilidade de fazer cada uma destas e criar um \texttt{HashMap} que possui como chave o 
 \texttt{ID} da atividade e como valor uma lista de \texttt{CostureiraHabilidade}, feito isto o método também recupera  a 
-atividade final (Finalização), conforme demonstra o Código
-~\ref{list:getInformacoesCostureiras}.
+atividade final (Finalização), conforme demonstra o Código ~\ref{list:getInformacoesCostureiras}.
 
 
 \begin{lstlisting} [style=custom_Java,caption={[Métodos da classe
@@ -547,18 +563,15 @@ public void getInformacoesCostureiras() {
 
 \end{lstlisting}
 
-\par De acordo com o código ~\ref{list:iniciarDistribuicao}, no objeto de
-\texttt{ProcessoModel} são definidas então as configurações do algoritmo genético, conforme explicado na seção \textit{Framework} de desenvolvimento, além disso, também são definidos no objeto os parâmetros recebidos do usuário. O parâmetro \texttt{numeroLote} define qual é o número de lotes a serem produzidos no processo, o \texttt{pecasPorLote} define quantas peças cada lote possui e o parâmetro \texttt{prazEmSegundos} indica qual é o prazo em segundos, considerando a data de início informada pelo usuário e a data de entrega do processo.
-
 \par Então, após a definição dos parâmetros, é criado um novo objeto de \texttt{GAController} passando-se o 
-objeto da classe \texttt{ProcessoModel} e logo o método \texttt{execute()} é chamado, dando-se início  a execução do
-algoritmo genético. A primeira coisa a ser feita então é criar a população inicial de indivíduos que é criada a  partir do método \texttt{createInitialPopulation()} declarado de forma abstrata na classe \texttt{GAModel} e implementado pela classe 
+objeto da classe \texttt{ProcessoModel} com todos os parâmetros do algoritmo genético, os dados do usuário e 
+informações de atividades e costureiras do processo em questão e então  o método \texttt{execute()} é chamado, dando-se início  
+a execução do algoritmo genético. A primeira coisa a ser feita então é criar a população inicial de indivíduos que é criada a  partir do método \texttt{createInitialPopulation()} declarado de forma abstrata na classe \texttt{GAModel} e implementado pela classe 
 \texttt{ProcessoModel}. Tal método basicamente executa um \texttt{for} de 0 até o tamanho da população (atributo 
 \texttt{populationSize}) e assim para cada iteração é criado um objeto de \texttt{ProcessoIndividual} passando a 
 \texttt{atividadeFinal}, o \texttt{map} que contém as atividades e suas costureiras (\texttt{atividadesCostureiras}) criados 
 pelo método \texttt{getInformacoesCostureiras()}, além dos atributos \texttt{numeroLote}, \texttt{pecasPorLote} e
-\texttt{prazoEmSegundos}, conforme mostra o código
-~\ref{list:createInitialPopulation}.
+\texttt{prazoEmSegundos}, conforme mostra o código ~\ref{list:createInitialPopulation}.
 
 
 \begin{lstlisting} [style=custom_Java,caption={[Métodos da classe
