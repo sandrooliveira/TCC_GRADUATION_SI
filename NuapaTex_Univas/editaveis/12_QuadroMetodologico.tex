@@ -376,7 +376,6 @@ devido ao fato de que algumas atividades dependem da finalização de outras par
 realizadas. A Figura ~\ref{fig:processo_fabricacao} demonstra basicamente um
 exemplo de ordem de execução do processo de confecção.
 
-\newpage
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.5]{./imagens/processo1.png}}
@@ -459,13 +458,7 @@ da população inicial de indivíduos, conforme explicado na próxima seção.
 
 \par Para um melhor entendimento dos conceitos a serem explanados, é necessário
 conhecer, de forma básica, o fluxo de execução da aplicação. Como será visto na seção que descreve a construção
-da interface gráfica, ao iniciar a distribuição das atividades para um determinado processo, o usuário irá iniciar a 
-execução do algoritmo genético através de uma tela de distribuição de atividades, nesta tela ele deve informar o número de peças 
-que deseja produzir, a quantidade de peças que cada lote deve possuir e uma data de início das atividades. Através da data de início 
-e a data de entrega, informada no cadastro do processo, o controlador da tela calcula o prazo de entrega e o número total de lotes e 
-chama o serviço de gerenciamento da execução do AG, passando o número de lote, o número de peças por lote e o prazo de entrega a 
-ser considerado durante a distribuição. Tal serviço, por sua vez, configura os parâmetros do algoritmo genético e da início 
-a execução deste. A Figura ~\ref{fig:fluxo_basico} ilustra o fluxo básico de execução da aplicação.
+da interface gráfica, o usuário irá iniciar a execução do algoritmo genético através de uma tela de distribuição de atividades, nesta tela ele deve informar o número de peças que deseja produzir, a quantidade de peças que cada lote deve possuir e uma data de início das atividades. Através da data de início e a data de entrega, informada no cadastro do processo, o controlador da tela calcula o prazo de entrega e o número total de lotes e chama o serviço de gerenciamento da execução do AG, passando o número de lote, o número de peças por lote e o prazo de entrega a ser considerado durante a distribuição. Tal serviço, por sua vez, configura os parâmetros do algoritmo genético e da início a execução deste. A Figura ~\ref{fig:fluxo_basico} ilustra o fluxo básico de execução da aplicação.
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.5]{./imagens/fluxo_basico.png}}
@@ -591,7 +584,7 @@ Elaborado pelos autores.}}, label=list:createInitialPopulation]
 \end{lstlisting}
 
 \par Quando se cria um novo indivíduo, a partir da instanciação de um novo objeto de \texttt{ProcessoIndividual},
-acontece então a distribuição das atividades de forma a representar uma solução para o problema.
+acontece então, no construtor da classe, a distribuição das atividades de forma a representar uma solução para o problema.
 A realização desta distribuição foi realizada considerando que o total de
 peças a ser produzido deveria ser dividido em lotes e então, em cada atividade,
 este número de lote deveria ser distribuído entre as costureiras que possuíssem a habilidade em questão. Por exemplo: se a quantidade total de peças de uma ordem de produção for 500,
@@ -600,15 +593,14 @@ deverá ter 50 peças, então o resultado final será 500/50 ou seja 10 lotes co
 
 \par Neste sentido, seguindo o exemplo apresentado  na Figura
 ~\ref{fig:processo_fabricacao}, a distribuição deverá ser feita de forma que para cada atividade do processo seja 
-distribuído o trabalho de 10 lotes, ou seja, 10 lotes da parte da frente deve ser confeccionado e enviados para as 
-costureiras que sabem colocar o zíper e posteriormente estas enviam os 10 lotes
-para as costureiras que fazem finalização. Estas últimas irão depender também de 10 lotes da parte de trás que também devem passar pelas costureiras que fazem a confecção dos bolsos. 
+distribuído o trabalho de 10 lotes, ou seja, o material para a confecção de 10 lotes deve ser enviado para as costureiras
+que irão fazer a parte da frente e posteriormente estas enviam os 10 lotes para as costureiras que fazem a finalização.
 
-
-\par Com base nesses requisitos, um dos papeis desempenhados pelo algoritmo genético está na distribuição de
-trabalho descrita acima. Inicialmente algoritmo irá distribuir, de forma
-aleatória, o número de lotes definido entre as costureiras de cada atividade,
+\par Com base nesses requisitos, para a realização de tal distribuição, inicialmente, o algoritmo irá distribuir, 
+de forma aleatória, o número de lotes definido entre as costureiras de cada atividade,
 conforme mostra a Figura ~\ref{fig:distribuicao_lotes_costureiras}.
+
+\newpage
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.6]{./imagens/distribuicao_exemplo.png}}
@@ -633,7 +625,7 @@ novos indivíduos que representem soluções ainda melhores que seus antecessore
 lotes, o processo de definição de indivíduo e cromossomo foi o primeiro passo do desenvolvimento da aplicação. Isso se
 deve ao fato de que estes elementos compõe a parte crucial para que se
 possa definir a lógica a ser seguida para a definição da população inicial, o
-tipo de cruzamento a função de avaliação, etc.
+tipo de cruzamento, a função de avaliação, etc.
 
 \par Neste caso, cada indivíduo da população irá representar uma forma de
 distribuir as atividades e cada número de lotes distribuídos a determinada
@@ -644,6 +636,8 @@ lotes para confeccionar, representa um cromossomo.
 
 \par Para fazer esta representação em Java, primeiramente foi criado uma classe denominada \texttt{ProcessoChromosome} que é
 representada na Figura ~\ref{fig:class_processoChromosome}:
+
+\newpage
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.5]{./imagens/processo_chromosome_diagram.png}}
@@ -661,11 +655,10 @@ demais atributos e métodos são utilizados pela função de avaliação e serã
 O atributo atividade é do tipo \texttt{int} e representa o \texttt{ID} da
 atividade, no banco de dados, a qual se está atribuindo a costureira e a
 quantidade de lotes, este atributo será passado na criação de cada cromossomo
-sempre que for necessário se criar um novo indivíduo. O atributo \texttt{costureiraHabilidade} é do tipo CostureiraHabilidade, que representa o
-mapeamento da tabela costureira\_habilidade do banco de dados, e faz a relação
-entre quais habilidades cada costureira possui e quanto tempo cada uma gasta para fazer uma peça de 
-uma determinada parte da calça, conforme demonstra a Figura
-~\ref{fig:dados_costureiras}.
+sempre que for necessário se criar um novo indivíduo. O atributo \texttt{costureiraHabilidade} 
+é do tipo CostureiraHabilidade, que representa o mapeamento da tabela costureira\_habilidade do banco de dados, 
+e faz a relação entre quais habilidades cada costureira possui além do tempo e o preço de cada uma para 
+fazer uma peça de uma determinada parte da calça, conforme demonstra a Figura ~\ref{fig:dados_costureiras}.
 
 
 \begin{figure}[h!]
@@ -1312,23 +1305,187 @@ A recursividade para quando se chega na atividade Carimbo, então os valores com
 maior valor e assim o método \texttt{getValorTotal()} irá retornar o tempo total de produção das partes e o transporte das mesmas 
 entre as costureiras e então este valor é colocado no atributo \texttt{value} do indivíduo.
 
+\par A função de avaliação é chamada dentro do método \texttt{classify}, dentro da classe \texttt{GAController}, tal método, 
+por sua vez, é chamado dentro do método \texttt{execute()} após a criação da população inicial.
+
 \subsection{Classificação dos indivíduos}
+\par Uma vez definido os valores de tempo total de produção e custo do indivíduo, o próximo passo a ser realizado, dentro da
+ordem de execução do algoritmo genético, é a classificação dos indivíduos. Tal classificação também é realizada no método 
+\texttt{classify} da classe \texttt{GAController}, conforme mostra o Código ~\ref{list:codigo_metodo_classify}.
 
-\subsection{Criação de uma nova população}
-  Primeiro falar de indivíduos estrangeiros, seleção, cruzamento, mutação e atualização da população
 
-\par O método \texttt{execute()} da classe \texttt{GAController} é responsável por coordenar toda execução do algoritmo.
-     AQUI TENHO QUE EXPLICAR TODA A EXECUÇÃO DO ALGORITMO PASSANDO PELA SELEÇÃO, CRUZAMENTO, MUTAÇÃO E INDIVÍDUOS ESTRANGEIROS.
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{classify()}]{Método \texttt{classify()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:codigo_metodo_classify] 
 
-\par O conceito de indivíduos estrangeiros considera o fato de que, na natureza, durante o processo de geração de uma nova população, indivíduos estrangeiros podem começar a fazer parte de tal população. No algoritmo genético, tais indivíduos simplesmente são introduzidos
-à nova população de acordo com uma taxa definida no atributo \texttt{foreignIndividualRate} da classe GAModel do \textit{framework}, 
-conforme já explicado anteriormente, e os indivíduos são criados seguindo a mesma lógica utilizada para a criação da população inicial, 
-a diferença é que, ao criar tais indivíduos, o \textit{looping} é executado de acordo com a taxa definida.
+public void classify(List<Individual> population){
+	List<Individual> populationAux = new ArrayList<Individual>();
+	List<Individual> populationGood = new ArrayList<Individual>();
+	
+	for(Individual individual : population){
+		individual.calculateValue();
+	}
+	Collections.sort(population);
+		
+		
+	for(Individual individual : population){
+			
+		ProcessoIndividual pi = (ProcessoIndividual) individual;
+		if(individual.getValue() <= pi.getPrazo().longValue()){
+			individual.setTipoDeClassificacao(
+				Constants.CLASSIFICACAO_POR_CUSTO);
+				
+			populationGood.add(individual);
+		}
+	}
+	Collections.sort(populationGood);
+				
+	for(Individual individual : populationGood){
+		individual.setTipoDeClassificacao(
+			Constants.CLASSIFICACAO_POR_TEMPO);
+	}
+					
+	//Remove todos os objetos com tempo < prazo da populacao
+	population.removeAll(populationGood);
+				
+	//Adiciona-os na populacao auxiliar
+	populationAux.addAll(populationGood);
+					
+	//adiciona os demais individuos da populacao
+	populationAux.addAll(population);
+				
+	//Redefine a populacaoo
+	population.clear();
+	population.addAll(populationAux);
+					
+}
+						
+\end{lstlisting}
 
+\par Após chamar a função de avaliação para todos os indivíduos, através do método \texttt{calculateValue()}, o método
+de ordenação \texttt{Collections.sort()} é chamado passando a lista de indivíduos (população). Para que se possa utilizar este método
+de ordenação, a classe, que representa o tipo da lista, deve implementar a interface
+\texttt{Comparable} e, ao implementá-la, obrigatoriamente o método \texttt{compareTo()} deve ser implementado. Este método
+define qual será o critério de comparação durante a ordenação da lista. No caso do método \texttt{compareTo} da classe Individual, 
+implementado na classe \texttt{ProcessoIndividual}, por ter sido declarado como abstrato, foi definido uma \textit{flag} de forma a
+definir se os indivíduos devem ser ordenados pelo tempo total ou pelo custo, conforme mostra o Código ~\ref{list:codigo_metodo_compareTo}.
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{compareTo()}]{Método \texttt{compareTo()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:codigo_metodo_compareTo] 
+
+	@Override
+	public int compareTo(Individual o) {
+		if(tipoDeClassificacao == Constants.CLASSIFICACAO_POR_CUSTO){
+			return Float.compare(getCusto(), o.getCusto());
+		}else{
+			return Float.compare(getTempo(), o.getTempo());
+		}
+	}
+
+\end{lstlisting}
+
+\par O atributo \texttt{tipoDeClassificacao} é iniciado com zero, ou seja, o padrão é que a classificação seja realizada levando 
+em consideração o tempo total de produção de cada indivíduo. Desta forma, no Código  ~\ref{list:codigo_metodo_classify}, na linha
+9, a ordenação da população será com base no tempo de produção. A questão é que, de acordo com o escopo definido, o objetivo do 
+algoritmo seria encontrar um baixo tempo de produção associado a um custo minimizado, de forma que a melhor solução fosse aquela
+que permitisse a produção das calças no menor custo com um tempo menor ou igual ao prazo, este prazo foi passado pelo usuário e
+atribuído ao indivíduo no construtor da classe \texttt{ProcessoIndivíduo}, conforme já explicado na seção anterior. 
+
+\par Desta forma, de acordo com o Código ~\ref{list:codigo_metodo_classify}, após a ordenação da população pelo tempo de produção, 
+é feita uma verificação para buscar todos os indivíduos que possuem tempo de produção menor ou igual ao prazo e, os indivíduos que antedem este requisito, recebem o valor 1 no atributo \texttt{tipoDeClassificacao}(ordenação por custo), alem disto são adicionados a uma outra lista denominada \texttt{populationGood}, que também será ordenada, só que agora o critério de ordenação do método \texttt{compareTo()} passou ser o custo. Após esta ordenação o atributo \texttt{tipoDeClassificacao} é zerado para evitar possíveis inconsistência em futuras ordenações e, com ajuda de listas auxiliares, os objetos da lista \texttt{populationGood} são transferidos para as primeiras posições da população e os demais indivíduos acrescentados ao final.
+
+\par Desta forma, o algoritmo irá manter sempre o menor custo, procurando manter o tempo dentro do prazo, porém caso nenhum dos indivíduos tenham o tempo total menor que o prazo, então o melhor tempo é retornado e a ordenação por custo é ignorada.
+
+\subsection{Indivíduos estrangeiros e elitismo}
+
+\par Após a classificação dos indivíduos, o próximo passo, a ser realizado pelo método \texttt{execute()}, é verificar
+se o melhor indivíduo (primeiro da lista) da população atual é melhor que o da população anterior, caso positivo ou
+caso a população atual seja a população inicial a variável \texttt{lastBest} recebe este melhor indivíduo e então é 
+realizada uma verificação para checar se o número de gerações (atributo \texttt{getGenerationQuantity}) foi atingido, 
+caso positivo a execução é interrompida e o indivíduo armazenado na variável \texttt{lastBest} é retornado ao contrário 
+a execução irá continuar de forma a iniciar a criação de uma nova população conforme mostra o Código ~\ref{list:código_metodo_execute}.
+
+\newpage
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{execute()}]{Método \texttt{execute()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:código_metodo_execute] 
+
+	public Individual execute(){
+		model.createInitialPopulation();
+		Individual lastBest = null;
+		
+		for(int i = 0; ; i++){
+			ArrayList<Individual> population = model.getPopulation();
+			ArrayList<Individual> newGeneration = 
+				new ArrayList<Individual>();
+			
+			classify(population);
+			if(lastBest == null || lastBest != population.get(0)){
+				lastBest = population.get(0);
+			}
+			
+			//verifica o final da execucao
+			if(i == model.getGenerationQuantity()){
+				break;
+			}
+			
+			//A partir deste ponto e ininiciado a criacao de 
+			//uma nova populacao
+			
+			//elitismo
+			if(model.isElitism()){
+				doElistim(newGeneration);
+			}
+			
+			int foreignQuantity = Math.round(
+				model.getPopulationSize() * model.getForeignIndividualRate());
+			
+			foreignQuantity = foreignQuantity % 2 == 0 ? 
+				foreignQuantity : foreignQuantity +1;
+			
+			for(int j = 0;j < foreignQuantity;j++ ){
+				newGeneration.add(model.createIndividual());
+			}
+			
+			while(newGeneration.size() < model.getPopulationSize()){
+				//selecao
+				Individual individual1 = doSelection();
+				Individual individual2;
+				
+				do{
+					individual2 = doSelection();
+				}while(individual1 == individual2);
+				
+				//cruzamento
+				IndividualPair pair = doCrossing(individual1, individual2);
+				
+				//mutacao
+				doMutation(pair.getIndividual1());
+				doMutation(pair.getIndividual2());
+				
+				newGeneration.add(pair.getIndividual1());
+				newGeneration.add(pair.getIndividual2());
+			}
+			
+			model.setPopulation(newGeneration);
+		}
+		return lastBest;
+	}
+
+\end{lstlisting}
+
+\par O processo de criação de uma nova população inicia-se com o processo de elitismo. Tal processo, conforme já explicado
+anteriormente, consiste em adicionar à nova população os dois melhores indivíduos da população anterior. O próximo
+passo a ser executado é referente a adição de indivíduos à nova população, seguindo um conceito, existente no \textit{framework} de desenvolvimento adotado, denominado indivíduos estrangeiros. Este conceito considera o fato de que, na natureza, durante o processo de geração de uma nova população, indivíduos estrangeiros podem começar a fazer parte de tal população. 
+
+\par No algoritmo genético, tais indivíduos simplesmente são introduzidos à nova população de acordo com uma taxa definida no 
+atributo \texttt{foreignIndividualRate} da classe GAModel do \textit{framework}, conforme já explicado anteriormente. Conforme 
+demonstrado na linha 36 do Código ~\ref{list:código_metodo_execute}, os indivíduos estrangeiros são criados utilizando o método \texttt{createIndividual()} da classe \texttt{GAModel} que, conforme já foi visto, será implementado na classe \texttt{ProcessoModel}, 
+tal método utiliza o mesmo construtor utilizado para criação de indivíduos da população inicial portanto segue a mesma lógica utilizada da mesma, a diferença é que, ao criar tais indivíduos, o \textit{looping} é executado de acordo com a taxa definida, o que irá resultar na criação de um número bem menor de indivíduos.
+
+\subsection{Seleção de indivíduos e cruzamento} 
+
+\subsection{Mutação}
 
  
 \subsection{Construção da interface gráfica, \texttt{CRUD} e apresentação dos dados} 
-\par Este item já foi implementado porém ainda não documentado. 
+
 
 
 
