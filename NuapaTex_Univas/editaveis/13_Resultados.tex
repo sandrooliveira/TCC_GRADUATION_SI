@@ -4,119 +4,252 @@
 do sistema de otimização do processo de fabricação de calças. Tal discussão será realizada em forma de
 casos de teste, buscando demonstrar o comportamento do algoritmo genético de diferentes formas.
 
-\par Desde o princípio, quando começamos a discutir sobre o tema do nosso trabalho de conclusão de curso, tínhamos em mente
-desenvolver algo relacionado à inteligência artificial, por ser um assunto de bastante relevância na área de desenvolvimento
-de software. Dentro deste campo então, realizando algumas buscas na internet, encontramos o assunto de algoritmos genéticos.
-Coincidentemente no primeiro semestre deste ano, tivemos aulas de sistemas especialistas a qual o assunto foi abordado o que facilitou bastante o aprendizado. 
+\par Desde o princípio, quando começou-se a discutir sobre o tema do 
+trabalho de conclusão de curso, teve-se a ideia de desenvolver algo relacionado
+à inteligência artificial, por ser um assunto de bastante relevância na área de desenvolvimento de software. 
+Dentro deste campo então, realizando algumas buscas na internet, foi encontrado
+o assunto de algoritmos genéticos.
+Coincidentemente foi lecionada no primeiro semestre deste ano a diciplina
+sistemas especialistas, a qual o assunto foi abordado o que facilitou bastante o aprendizado.
 
-\par Assim, como sugestão do professor orientador, decidimos então desenvolver
-uma aplicação para otimizar um processo de distribuição de atividades entre
-costureiras para um microempresário da cidade de Cachoeira de Minas - MG, do ramo de costura e constatamos que um sistema Web seria mais cômodo de ser utilizado por não precisar de nenhuma instalação e o usuário poder
-acessar o programa de qualquer lugar desde que estivesse conectado à internet.
-Neste sentido, como já estávamos familiarizados com JSF e Primefaces. decidimos
-adotá-los como tecnologias para o desenvolvimento em plataforma Web, além disso usamos um \textit{plug-in} denominado \texttt{JBoss Tool} o qual foi de grande utilidade para gerar as classes modelo a partir do 
-banco de dados.
+\par Assim, como sugestão do professor orientador, foi decidido então
+desenvolver uma aplicação para otimizar um processo de distribuição de atividades entre
+costureiras para um microempresário da cidade de Cachoeira de Minas - MG, do ramo de costura e constatamos 
+que um sistema Web seria mais cômodo de ser utilizado por não precisar de
+nenhuma instalação por parte do usuário e este poder acessar o programa de
+qualquer lugar desde que estivesse conectado à internet.
 
-\par Inicialmente tomamos como base o caso do microempresário citado acima, todavia logo após iniciarmos o trabalho, o mesmo fez uma 
-reestruturação de processos em sua empresa. Desta forma, sua maneira de trabalhar deixou de ser um cenário o qual algoritmos genéticos
-pudessem ser aplicados, desta forma, decidimos fechar um escopo para que o trabalho pudesse continuar, conforme descrito na seção 
-reuniões do quadro metodológico. Com o escopo definido, o foco passou a ser na definição da estrutura dos elementos do algoritmo genético. 
+Neste sentido, foram adotadas como tecnologias para o desenvolvimento em
+plataforma Web os \textit{frameworks} JSF e Primefaces. Além disso foi utilizado
+um \textit{plug-in} denominado \texttt{JBoss Tool} o qual foi de grande utilidade para gerar as classes 
+modelo a partir do banco de dados.
 
-\par Como já explanado no quadro teórico, segundo \citeonline{livro_ags_ricardo_linden}, a estrutura do algoritmo genético é composta
-por populações que são formadas por indivíduos que por sua vez são formados por cromossomos.
-Cada indivíduo representa uma solução e cada cromossomo do indivíduo representa uma de suas características. 
-Assim então é gerado uma população inicial de indivíduos e, a partir desta, um processo de cruzamento 
-e mutação é iniciado a fim de que possa ser gerados novos indivíduos que representem soluções ainda melhores 
-que seus antecessores.
+\par Inicialmente foi tomado como base o caso do microempresário citado acima,
+todavia logo após iniciarmos o trabalho, o mesmo fez uma reestruturação de processos em sua empresa. 
+Desta forma, sua maneira de trabalhar deixou de ser um cenário o qual algoritmos genéticos
+pudessem ser aplicados, desta forma, fechou-se um escopo para que o trabalho
+pudesse continuar, conforme descrito na seção 3.3.2 do quadro metodológico. Com
+o escopo definido, o foco passou a ser na definição da estrutura dos elementos do algoritmo genético.
 
-\par Uma das maiores dificuldades nesta etapa, foi definir como os indivíduos e cromossomos seriam estruturados. Assim em uma discussão com o professor Artur Barbosa, decidimos que o total de peças deveriam ser divididos em lotes e que cada cromossomo deveria ter uma costureira 
-e a quantidade de lotes a ser confeccionado por esta, Assim o indivíduo teria um
-conjunto de cromossomos que representaria quais costureiras e o quanto elas iriam trabalhar naquele processo, representando uma solução para a distribuição.
-
-\par Com base nesta definição, um dos papeis desempenhados pelo algoritmo, seria a distribuição aleatória do trabalho. Neste
-sentido, nos deparamos com uma outra dificuldade que foi a de definir a população inicial de indivíduos, ou seja, 
-como os lotes de peças seriam distribuídos para cada cromossomo. Inicialmente pensamos em distribuir porcentagens para cada costureira
-e posteriormente fazer um cálculo de normalização, conforme explica a sessão Distribuição das atividades do quadro metodológico porém,
-constatamos que o cálculo não era preciso e que, ao cruzar dois indivíduos, os indivíduos filhos, após o cálculo de normalização, ficavam
-completamente diferente de seus progenitores fugindo assim da ideia de algoritmos genéticos. Definimos então distribuir as atividades já 
-nível de lote o que resolveu a questão. 
-
-\par Um dos maiores desafios do trabalho foi a definição da função de avaliação, pois, uma vez que existe uma estrutura de nós contendo
-as atividades e o cálculo do tempo de cada atividade depende de nós predecessores, a maior parte da função foi pensada para ser 
-desenvolvida de forma recursiva o que dificultou o \texttt{debug}. 
+\par Um dos maiores desafios do trabalho foi a definição da função de avaliação, pois, 
+uma vez que existe uma estrutura de nós contendo as atividades e o cálculo do
+tempo de cada atividade depende de nós predecessores, a maior parte da função foi 
+pensada para ser desenvolvida de forma recursiva o que dificultou o
+\textit{debug}.
 
 \par Para a construção do algoritmo genético, foi utilizado uma base desenvolvida pelo professor Artur Barbosa 
 durante as aulas de sistemas especialistas, que define uma série de regras a ser
 seguida durante o desenvolvimento. Tal base é explicada com mais detalhes no
-quadro metodológico e foi de grande ajuda pois, além de definir tais
-regras de desenvolvimento a base já implementava os métodos de seleção e cruzamento, neste sentido só tivemos que realizar algumas adaptações nestes para que pudessem se adequar à nossa lógica.
+quadro metodológico e foi de grande ajuda pois, além de definir as
+regras, a base já implementava os métodos de seleção e cruzamento, neste sentido
+só foi preciso realizar algumas adaptações nestes para que pudessem se
+adequar à lógica desenvolvida para resolver o problema.
 
-\par Após ter o escopo definido e a modelagem do algoritmo genético realizada, dividimos o desenvolvimento entre os autores
-e mantivemos reuniões periódicas para acertar detalhes do desenvolvimento.
+\par Após ter o escopo definido e a modelagem do algoritmo genético realizada, o
+desenvolvimento foi dividido entre os autores e manteve-se as reuniões
+periódicas para acertar detalhes do desenvolvimento.
 
-\par Após todas as etapas descritas acima, obtivemos como resultado a aplicação capaz de distribuir atividades de forma a se obter o 
-menor custo e o menor tempo de produção, alcançando assim nossos objetivos específicos. 
+\par Após todas as etapas descritas acima, foi obtido como resultado a aplicação
+capaz de distribuir atividades de forma a se obter o menor custo e o menor tempo de produção, 
+alcançando assim os objetivos específicos conforme mostra a Figura
+~\ref{fig:tela_inicial_da_aplicação}.
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.3]{./imagens/tela_inicial.png}}
+	\caption[Tela inicial da aplicação]
+	{Tela inicial da aplicação \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:tela_inicial_da_aplicação}
+\end{figure}
+
 
 \par Com a aplicação finalizada, foram realizados então casos de testes a fim de colocar em prova a eficiência da ferramenta para se 
 buscar melhores soluções nas distribuição de tarefas, conforme mostra as seções
 seguintes.
 
 
-\section{Teste com somente uma atividade}
-\par Este teste foi realizado com apenas uma atividade, neste caso não está sendo considerado que as costureiras devem ir 
-até a fábrica para retirar os tecidos com o Marcelo. Para este teste foi cadastrado então um processo, criando-se apenas uma atividade para 
-este, conforme mostra a Figura 27:
+\section{Teste considerando somente o tempo de produção}
+
+\par Este teste demonstra a distribuição de lotes levando em consideração o
+tempo de cada costureira para fabricação das peças. Neste teste será definido o
+preço por peça igual para as costureiras alterando somente o tempo por peça de
+cada uma.
+
+\par Para este teste foi cadastrado um processo de produção informando o
+cliente, o modelo da calça e a data e hora da entrega conforme mostra a Figura 27:
+\newpage
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.4]{./imagens/test_case_1.png}}
-	\caption[Caso de teste com uma atividade]
-	{Caso de teste com uma atividade \textbf{Fonte:} Desenvolvido pelos autores}
+	\centerline{\includegraphics[scale=0.4]{./imagens/teste_processo.png}}
+	\caption[Criação de um processo]
+	{Criação de um processo \textbf{Fonte:} Desenvolvido pelos autores}
 	\label{fig:exemplo1}
 \end{figure}
 
-\par Para a atividade de finalização, atribuída ao processo na Figura 27, foram
-cadastradas 5 costureiras e seus respectivos tempos para fazer tal atividade,
-conforme mostra a Figura 28:
+\par Todo processo ao ser criado, por padrão já contém as atividades principais
+que são o carimbo e a finalização conforme mostra a Figura
+~\ref{fig:processo_cadastrado}:
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.4]{./imagens/test_case_1_habilidades.png}}
-	\caption[Cadastro da habilidade e associação das costureiras]
-	{Cadastro da habilidade e associação das costureiras \textbf{Fonte:} Desenvolvido pelos autores}
-	\label{fig:exemplo1}
+	\centerline{\includegraphics[scale=0.4]{./imagens/tela_processo_teste1.png}}
+	\caption[Detalhes do processo cadastrado]
+	{Detalhes do processo cadastrado \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:processo_cadastrado}
 \end{figure}
 
-\par Feito isso foi iniciado então o processo de distribuição das atividades, através do menu Distribuição de Tarefas.
-O algoritmo foi configurado para ter 1000 gerações e 80 indivíduos em cada população, além disso a taxa de indivíduos
-estrangeiros e de mutação foram de 0,5\% e 0,05\% respectivamente, conforme
-mostra a Figura 29.
+\par Após a criação do processo é preciso definir quais costureiras possuem a
+habilidade para realizar as atividades que compõe o processo. Vale ressaltar que
+a atividade Carimbo é realizada somente pelo proprietário da fábrica pois é a
+atividade onde serão distribuídas as peças para serem produzidas e por isso
+também esta atividade esta como atividade principal.
+
+\par Será definido para realizar a atividade Finalização as costureiras
+Maria e Duda, ambas cobram o mesmo valor por peça porém o tempo
+gasto em que cada uma gasta para fabricar a peça é diferente conforme mostra
+a Figura ~\ref{fig:costureira_habilidade}:
+
+\newpage
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.4]{./imagens/test_case1_distribuicao.png}}
-	\caption[Distribuição das atividades]
-	{Distribuição das atividades \textbf{Fonte:} Desenvolvido pelos autores}
-	\label{fig:exemplo1}
+	\centerline{\includegraphics[scale=0.4]{./imagens/tela_habilidade_teste1.png}}
+	\caption[Demonstração inserir costureira à habilidade]
+	{Demonstração inserir costureira à habilidade \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:costureira_habilidade}
 \end{figure}
 
-\par Após clicar no botão "Iniciar Distribuição", o algoritmo distribuiu os lotes para as costureiras da finalização,
-conforme mostra a Figura 29. O tempo total encontrado foi de 250 segundos. Este
-é o tempo da costureira que demorou mais tempo para produzir seus lotes. Na Figura
-30, pode-se ver o tempo gasto por cada costureira, de acordo com seu tempo de
-produção para cada peça.
+
+\par Feito isso, pode-se iniciar o processo de distribuição
+das atividades, através do menu Distribuição de Tarefas.
+Ao acessar a página todos os processos criados serão
+listados como mostra a Figura ~\ref{fig:distribuicao_tarefas}:
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.4]{./imagens/tela_distribuicao_tarefas.png}}
+	\caption[Demonstração tela de dritribuição de tarefas]
+	{Demonstração tela de dritribuição de tarefas \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:distribuicao_tarefas}
+\end{figure}
+
+
+\par Ao clicar no botão abrir será mostrado a tela para que o usuário insira os
+dados como número de peças, total de peças por lote e data inicio. Depois de
+inseridos os dados a ao clicar no botão Iniciar distribuição o sistema executa
+toda a parte de algoritmos genéticos e retorna para o usuário a melhor solução
+encontrada com base nos dados inseridos conforme mostra a Figura
+~\ref{fig:resultado_distribuicao_teste1}:
 
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.6]{./imagens/test_case1_resultado.png}}
-	\caption[Resultado da distribuição]
-	{Resultado da distribuição \textbf{Fonte:} Desenvolvido pelos autores}
-	\label{fig:exemplo1}
+	\centerline{\includegraphics[scale=0.4]{./imagens/resultado_distribuicao_teste1.png}}
+	\caption[Resultado da distribuição de lotes]
+	{Resultado da distribuição de lotes \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:resultado_distribuicao_teste1}
 \end{figure}
 
-\par Baseando-se na Figura 30, pode-se observar que o algoritmo distribui o
-máximo de peças possível para a Josi, porque ela tem o menor tempo. Nota-se que 5 é o máximo de lotes que a Josi pode receber porque se ela recebesse mais um, seu 
-tempo total passaria a ser 300 segundos, assim o tempo total não seria de 250
-segundos. Assim, o algoritmo distribuiu as atividades as outras costureiras de forma uniforme, porém, de forma inteligente, definiu menos lotes para aquelas que 
-gastam mais tempo para se produzir, ou seja, encontrou a melhor forma de distribuir as tarefas para este caso provando assim
-sua eficiência.
+\par Conforme ilustrado na Figura ~\ref{fig:costureira_habilidade}, Maria possui
+o tempo de produção maior que Duda, por isso ela recebe um número menor de lotes
+para produzir conforme ilustrado na Figura
+~\ref{fig:resultado_distribuicao_teste1}
+
+\par Se o tempo de cada costureira for alterado, um novo resultado será
+retornado levando em consideração as alterações. Para isto, será definido para
+Maria o tempo de 4 segundos e para Duda o tempo de 7 segundos conforme ilustra a
+Figura ~\ref{fig:tempo_costureiras}: 
+
+\newpage
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.4]{./imagens/alterando_tempo_costureira.png}}
+	\caption[Tempo de produção entre as costureiras]
+	{Tempo de produção entre as costureiras \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:tempo_costureiras}
+\end{figure}
+
+
+
+\par Após executar novamente a distribuição será retornado um novo resultado
+ilustrado na Figura ~\ref{fig:novo_resultado_distribuicao_teste1}:
+
+
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.4]{./imagens/novo_resultado_alterado_tempo_teste1.png}}
+	\caption[Resultado da distribuição de lotes]
+	{Resultado da distribuição de lotes \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:novo_resultado_distribuicao_teste1}
+\end{figure}
+
+\par Neste resultado Maria obtém mais lotes que Duda para produzir pois o seu
+tempo de produção é menor. O algoritmo foi configurado para ter 1000
+gerações e 80 indivíduos em cada população, além disso a taxa de indivíduos estrangeiros e de mutação 
+foram de 0,5\% e 0,05\% respectivamente.
+
+
+\section{Teste considerando o custo de produção}
+
+\par Este teste segue o mesmo procedimento do teste realizado na seção 4.1,
+porém o tempo de produção entre as costureiras será o mesmo e o custo será
+alterado.
+
+\par Para isto, será utilizado o mesmo processo da seção 4.1 contendo as
+atividades Carimbo e Finalização. Será definido o tempo de 5 segundos para as
+costureiras Maria e Duda e o preço por peça R\textdollar 1,50 e R\textdollar
+2,70 respectivamente e além disso foi definido os mesmos valores X e Y  
+relativos a posição geografica para Maria e Duda, de forma a manter o tempo de
+transporte das semelhantes para ambas. A Figura
+~\ref{fig:custo_entre_costureiras} mostra a definição de tempo e custo para
+ambas as costureiras:
+
+
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.4]{./imagens/custo_entre_costureiras_teste2.png}}
+	\caption[Custo entre as costureiras atividade Finalização]
+	{Custo entre as costureiras atividade Finalização \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:custo_entre_costureiras}
+\end{figure}
+
+
+
+\par Ao executar a aplicação é retornado a seguinte distribuição ilustrada na
+Figura ~\ref{fig:resultado_custo}:
+
+\newpage
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.4]{./imagens/resultado_teste2.png}}
+	\caption[Custo entre as costureiras atividade Finalização]
+	{Custo entre as costureiras atividade Finalização \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:resultado_custo}
+\end{figure}
+
+\par Com base no resultado obtido, o algoritmo interpretou que pelo fato de
+Maria e Duda ter o mesmo tempo de produção porém Duda ter um preço por peça bem
+superior que o de Maria, Duda não recebeu nenhum lote para produzir, pois neste
+caso é possível que Maria produza sozinha os lotes dentro do prazo de entrega do
+processo. Caso Maria não conseguisse produzir os lotes no prazo estipulado, o
+algoritmo adequa a distribuição distribuindo alguns lotes para Duda para
+conseguir alcançar o prazo de entrega, toda via, fazendo isto o custo tende a
+almentar.
+
+\par A Figura ~\ref{fig:resultado_mudando_prazo_de_entrega} mostra o resultado
+contendo a alteração na data de início para 27-11-15 às 13:30:00 e mantendo o
+prazo de entrega para 27-11-15 às 14:14:1.
+
+\newpage
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.4]{./imagens/resultado_alterando_prazo_entrega_teste2.png}}
+	\caption[Resultado com alteração do prazo de entrega]
+	{Resultado com alteração do prazo de entrega \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:resultado_mudando_prazo_de_entrega}
+\end{figure}
+
+\par Com base no resultado da Figura
+~\ref{fig:resultado_mudando_prazo_de_entrega}, mesmo com um preço por peça mais
+caro que Maria, o algoritmo distribui um lote para Duda pois Maria não
+conseguiria produzir as peças no prazo limite, com isso o custo final para
+realizar este processo de produção aumenta em relação ao teste anterior
+representado pela Figura ~\ref{fig:resultado_custo} 
 
 \section{Teste considerando o tempo de transporte}
 \par Este teste foi realizado com duas atividades em que as costureiras estão em suas casas. Neste caso deve-se considerar
