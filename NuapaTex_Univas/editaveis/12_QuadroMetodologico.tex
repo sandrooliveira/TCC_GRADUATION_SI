@@ -145,31 +145,37 @@ processo inicial da fábrica de calças, que se resume em construir uma aplicaç
 	\item cada costureira gasta um tempo, medido em segundos, para fabricar uma
 	peça;
 	
+	\item cada costureira cobra um preço por peça produzida;
+	
 	\item o usuário deveria ser capaz de cadastrar um novo processo, costureiras e
 	habilidades;
 	
+	\item o usuário deveria cadastrar o tempo e o preço de produção, por peça, para
+	cada costureira além de sua posição geográfica; 
+	
 	\item o total de peças deveria ser dividido em lotes e cada costureira deveria
-	receber uma quantidade de lotes distribuídas aleatoriamente;
+	receber uma quantidade de lotes distribuída aleatoriamente;
+	
+	\item o usuário deveria informar uma data de entrega das peças de um processo e
+	uma data de início de execução do mesmo para que se pudesse calcular o prazo;
 	
 	\item o software deveria então oferecer como saída a melhor distribuição de
-	forma a se produzir no menor tempo, considerando o tempo de produção de cada costureira e o transporte das peças entre elas.
+	forma a se produzir no menor tempo dentro do prazo, com o menor custo, considerando 
+	o tempo e o preço de produção de cada costureira e o tempo de transporte das peças 
+	entre elas.
+	
+	\item se o software não conseguisse encontrar nenhuma solução abaixo do prazo, a
+	busca pelo menor custo seria ignorada e o menor tempo encontrado seria retornado.
 	
 \end{itemize}
 
 \par A seção a seguir descreve como foi definido o escopo demonstrado acima.
-
-
 
 \section{Procedimentos}
 
 \par Esta seção descreve os procedimentos realizados na execução do trabalho,
 definindo primeiramente o \textit{framework} de desenvolvimento e explicando
 como o algoritmo genético foi desenvolvido para os requisitos definidos no escopo.
-
-\par É importante ressaltar que a questão do custo ainda não foi implementada
-até o presente momento, porém, como já temos implementada a estrutura de
-distribuição, a adição do cálculo do custo se torna mais simples e será
-apresentada na banca final.
 
 \subsection{Framework de desenvolvimento}
 \par Primeiramente é necessário ressaltar que, para o desenvolvimento da aplicação, foi utilizada uma base desenvolvida pelo professor Artur Barbosa durante as aulas de sistemas especialistas, do VII período do curso de sistemas de informação nesta universidade.
@@ -385,7 +391,7 @@ com a atividade Carimbo e finalizar com a atividade Finalização. Isso ocorre p
 de qualquer processo da fábrica e o Carimbo é uma atividade simbólica que representa o fato de o dono da fábrica separar o 
 material de costura. O tempo e o custo gastos nesta separação não são contabilizados no algoritmo genético, somente o tempo de 
 transporte dos materiais até as costureiras são considerados na distribuição, além disto esta atividade terá somente uma pessoa
-trabalhando, que neste caso será o Marcelo, dono da fábrica.
+trabalhando que, neste caso será o Marcelo, dono da fábrica, que é o responsável por este trabalho.
 
 \par Para armazenar este processo e suas atividades no software, foram utilizadas tabelas do banco de dados, conforme mostra 
 a Figura 5.
@@ -407,7 +413,7 @@ são representadas na tabela \texttt{atividade}, onde é feita a relação que d
 um processo,  além de conter quais são as habilidades necessárias para cada atividade, ou seja, cada registro desta 
 tabela representa uma atividade do processo e qual habilidade é necessária para sua execução. O campo 
 \texttt{is\_atividade\_inicial}, quando tem o valor 1, define que tal atividade
-é a atividade Finalização. Este \textit{flag} é importante no momento de calcular o tempo total de execução do
+é a atividade Finalização. Esta \textit{flag} é importante no momento de calcular o tempo total de execução do
 processo e será visto com mais detalhes posteriormente e, por fim, a tabela
 \texttt{atividade\_ordem} é onde é feita a definição de ordem de execução das
 atividades.
@@ -431,7 +437,7 @@ Esta possui dois objetos da própria classe Atividade, um representando uma
 atividade e outro representando a sua predecessora.
 
 \par Considerando o processo de produção e o modelo de dados apresentados acima, foi
-desenvolvido o algoritmo genético para a solução do problema. Conforme já demonstrado 
+desenvolvido um algoritmo genético para a solução do problema de otimização. Conforme já demonstrado 
 no Quadro Teórico, um algoritmo genético deve seguir uma ordem de execução conforme mostra
 a Figura 7.
 
