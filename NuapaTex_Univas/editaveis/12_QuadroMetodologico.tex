@@ -1823,8 +1823,190 @@ auxiliares, os atributos \texttt{quantidade\_lotes} e \texttt{lotesToShow}, tem 
 
 \subsection{Interface gráfica de distribuição} 
 
+\par Para a interação do usuário com o algoritmo de distribuição e possibilidade de cadastro de cadastro de fluxos de processos e 
+costureiras assim como suas respectivas habilidades, tempo e preço de produção, foi realizado uma aplicação em plataforma \texttt{web}
+utilizando \textit{JSF} e \textit{Primefaces}, porém a forma que o mecanismo de cadastro das informações foi realizado não é relevante
+ser apresentado mas é importante explanar sobre o desenvolvimento da tela de distribuição das atividades, a qual é de extrema importância para 
+entender o fluxo de execução da aplicação. No menu "Distribuir tarefas" da aplicação estão disponíveis todos os processos cadastrados e
+para abrir a tela de distribuição de atividades basta clicar no ícone "abrir" da coluna opções conforme mostra a Figura COLOCAR.
+
+FIGURA
+
+\par Ao clicar no ícone "abrir", é aberta uma tela de distribuição para aquele processo, esta tela é responsável por captar alguns
+dados importantes para a regra de negócio do algoritmo genético, além disto, é nela que as informações do melhor indivíduo (melhor
+solução) são apresentadas.  Os dados informados através desta tela são o número total de peças que se deseja produzir, o número de 
+peças que cada lote irá conter e a data de início da produção conforme mostra a Figura COLOCAR.
 
 
+FIGURA
+
+
+
+\par Toda tela do criada com \texttt{JSF} é desenvolvida através de documentos \texttt{XHTML}, tais documentos possuem componentes para entrada e apresentação dos dados. Estes componentes podem ser tanto do \texttt{JSF} quanto do \textit{primefaces}, o Código ~\ref{list:metododoMutationOnChromossome} demonstra o documento \texttt{XHTML} da tela demonstrada acima.
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doMutationOnChromossome()}]{Método \texttt{doMutationOnChromossome()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metododoMutationOnChromossome] 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p="http://primefaces.org/ui">
+
+<h:form id="formAbrirProcessoDis">
+	<p:messages autoUpdate="true"></p:messages>
+	
+	<p:panelGrid columns="1">
+	
+		<div id="distribuicaoFields">
+			<p:fieldset legend="Forma de distribuicao">
+				<p:panelGrid columns="4">
+					<p:inputText id="nPecas" required="true" 
+					value="#{distribuicaoController.totalPecas}"
+					requiredMessage="Por favor informe o total de pecas" 
+					maxlength="19" placeholder="Numero de pecas" />
+					
+					<p:inputText id="totalPecaPorLote" required="true"
+					value="#{distribuicaoController.totalPecasPorLote}"
+					requiredMessage="Por favor informe o total 
+						de pecas por lote"
+						
+					maxlength="19" placeholder="Total de pecas por lote"/>
+					
+					<p:calendar id="inicio" required="true"
+								mask="true" effect="fold"
+								value="#{distribuicaoController.dataInicio}"
+								requiredMessage="Por favor informe uma data de inicio" 
+								pattern="dd/MM/yyyy HH:mm:ss" 
+									mindate="#{processosController.getCurrentDate()}"
+					
+								maxdate="#{distribuicaoController.getDataEntrega()}"
+								placeholder="Data de inicio"/>
+					
+					<p:commandButton action="#{distribuicaoController.
+						iniciarDistribuicao()}"
+					
+					value="Iniciar distribuicao" 
+					update="formAbrirProcessoDis"
+					ajax="true" onstart="PF('waitDialog').show();"
+					onsuccess="PF('waitDialog').hide();"/>
+				
+				</p:panelGrid>
+			</p:fieldset>
+		</div>
+	.
+	.
+	.
+
+\end{lstlisting}
+
+\par No \texttt{JSF}, toda página XHTML possui um controlador que consiste em uma classe Java, e para definir que tal 
+classe é uma controladora de páginas, na sua declaração é definida a notação \texttt{@ManagedBean(name = "[nome da classe em minusculo]")}.
+No caso da tela de distribuição, a classe controladora é denominada \texttt{DistribuiçãoController}, portanto possui a notação
+\texttt{@ManagedBean(name = "[distribuiçãoController]")} em sua declaração. As páginas \texttt{XHTML} fazem então um \texttt{bind}, ou
+seja, uma conexão com a classe controladora de forma que os dados do \texttt{XHTML} são disponibilizados em tal classe e vice-versa. 
+No caso da página de distribuição, as \textit{tags} \texttt{<p:inputText} e \texttt{<p:calendar} são responsáveis pela entrada de 
+informações, tais \textit{tags} possuem um atributo \texttt{value}, neste atributo é informado em qual classe controladora e em qual 
+atributo desta os dados informados pelo usuário serão atribuídos, realizando assim o \textit{bind}, neste, caso os dados informados pelo 
+usuário estarão respetivamente disponíveis nos atributos \texttt{totalPecas}, \texttt{totalPecasPorLote} e \texttt{dataInicio} da
+classe \texttt{DistribuiçãoController}.
+
+\par Após entrar com os dados necessários, o usuário deve clicar no botão Iniciar Distribuição, este botão é construído com a
+\textit{TAG} \texttt{<p:commandButton} conforme mostra o Código acima. Esta \textit{TAG} possui o atributo \textit{action} que 
+é responsável por chamar um método da classe controladora para executar uma determinada ação, neste caso, o método chamado é o 
+\texttt{iniciarDistribuicao()} responsável por iniciar a distribuição das atividades chamando o gerenciador do algoritmo genético, 
+conforme mostra o Código ~\ref{list:metodoiniciarDistribuicao}.
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{iniciarDistribuicao()}]{Método \texttt{iniciarDistribuicao()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoiniciarDistribuicao] 
+
+public void iniciarDistribuicao(){
+	int totalPecasInt = Integer.parseInt(totalPecas);
+	int totalPecasPorLoteInt = Integer.parseInt(totalPecasPorLote);
+	
+	if(totalPecasInt == 0 || totalPecasPorLoteInt == 0){
+		sendMessageToView(
+			"Total de pecas ou total de pecas por lote e invalido!", 
+				FacesMessage.SEVERITY_ERROR);
+		return;
+	}
+	
+	numeroDeLotes = totalPecasInt / totalPecasPorLoteInt;
+	if((numeroDeLotes * totalPecasPorLoteInt) != totalPecasInt){
+		sendMessageToView("Numero de lote nao exato: "+numeroDeLotes+" * "
+			+ totalPecasPorLote+" = "+numeroDeLotes*totalPecasPorLoteInt, 
+				FacesMessage.SEVERITY_ERROR);
+		return;
+	}
+	
+	if(idProcesso <= 0 || processo == null){
+		sendMessageToView(
+			"Processo invalido", FacesMessage.SEVERITY_ERROR);
+		
+		return;
+	}
+	
+	prazEmSegundos = calcularPrazo();
+	prazoAtendido = false;
+	
+	GeneticAlgorithmManagement gam = new GeneticAlgorithmManagement();
+	melhorIndividuo = gam.iniciarDistribuicao(
+		numeroDeLotes, prazEmSegundos, totalPecasPorLoteInt, idProcesso);
+	
+	//This is just to manage information messages in the view
+	if(melhorIndividuo.getValue() <= prazEmSegundos.longValue()){
+		prazoAtendido = true;
+	}
+	
+	if(melhorIndividuo != null){
+		rootFluxograma = construirArvore(melhorIndividuo.getNode(), null);
+		allNodes = new ArrayList<Node>();
+		rootTable  = 
+			new DefaultTreeNode(
+				new TabDetailBean("-", "-", "-","-","-","-","-"));
+	
+		construirTableDetail(melhorIndividuo);
+		mostrarResult = true;
+	}
+}
+
+\end{lstlisting}
+
+\ Os dados que o algoritmo genético espera receber são número de lotes a serem distribuídos, o número de 
+peças por lote e o prazo de entrega. Portanto uma das funções do método \texttt{iniciarDistribuicao()} é
+calcular a quantidade de lotes a serem produzidos e o prazo de entrega das peças, além disto, o método 
+realiza algumas validações, de forma a somente enviar informações consistentes para o algoritmo genético. 
+O cálculo de número de lotes é realizado então dividindo o número de peças informado pelo usuário pelo 
+número de peças por lote, o resultado é armazenado na variável \texttt{numeroDeLotes}.
+
+\par Para calcular o prazo de entrega da produção é chamado o método \texttt{calcularPrazo()} demonstrado no 
+Código ~\ref{metodoCalcularPrazo}.
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{calcularPrazo()}]{Método \texttt{calcularPrazo()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoCalcularPrazo] 
+
+public BigDecimal calcularPrazo(){
+	DateTime dataInical = new DateTime(dataInicio);
+	DateTime dataFinal  = new DateTime(processo.getDataEntrega());
+	return  new BigDecimal(Seconds.secondsBetween(dataInical, dataFinal).getSeconds());
+}
+
+\end{lstlisting}
+
+\par É importante observar que o prazo é calculado em segundos, devido ao fato que o tempo de produção por peça e o tempo 
+de transporte entre as costureiras são definidos em segundos. O método \texttt{calcularPrazo()} simplesmente retorna o tempo 
+em segundos entre a data de início, informada pelo usuário e disponível no atributo \texttt{dataInicio} e o prazo de entrega, 
+disponível no atributo \texttt{dataEntrega} do processo que foi informada no cadastro do mesmo. É importante ressaltar que
+o objeto \texttt{processo} utilizado neste método foi criado no momento em que o usuário abriu o processo, neste caso, é enviado
+o \texttt{ID} do processo via \texttt{URL} é o controlador busca no banco de dados as informações do processo através deste \texttt{ID}
+criando assim tal objeto.
+
+\par Após o calculo do número de lotes e do prazo, é instanciado um objeto da classe \texttt{GeneticAlgorithmManagement()}, conforme
+explicado anteriormente, e então o método \texttt{iniciarDistribuicao()} é chamado. Tal método, conforme já visto nas seções anteriores
+faz o gerenciamento da execução do algoritmo genético e retorna o melhor indivíduo encontrado, tal indivíduo é armazenado no 
+atributo \texttt{melhorIndividuo} da classe \texttt{distribuiçãoController} e então os métodos \texttt{construirArvore()} e
+\texttt{construirTableDetail()} são chamados para realizar a apresentação dos dados na tela após a distribuição, tais método
+simplesmente pegam as atividades e suas respectivas costureiras juntamente com o número de lote que cada uma recebeu e 
+apresenta ao usuário, além disto também é apresentado o tempo e o custo total, além de uma tabela de detalhes da distriubuição.
+A Figura COLOCAR mostra a tela com o resultado da execução do algoritmo.
 
 % \label{cap:quadroMetodologico}
 % 
