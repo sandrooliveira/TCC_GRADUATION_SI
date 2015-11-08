@@ -1399,7 +1399,7 @@ atribuído ao indivíduo no construtor da classe \texttt{ProcessoIndivíduo}, co
 se o melhor indivíduo (primeiro da lista) da população atual é melhor que o da população anterior, caso positivo ou
 caso a população atual seja a população inicial a variável \texttt{lastBest} recebe este melhor indivíduo e então é 
 realizada uma verificação para checar se o número de gerações (atributo \texttt{getGenerationQuantity}) foi atingido, 
-caso positivo a execução é interrompida e o indivíduo armazenado na variável \texttt{lastBest} é retornado ao contrário 
+caso positivo a execução é interrompida e o indivíduo armazenado na variável \texttt{lastBest} é retornado, ao contrário, 
 a execução irá continuar de forma a iniciar a criação de uma nova população conforme mostra o Código ~\ref{list:código_metodo_execute}.
 
 \newpage
@@ -1425,7 +1425,7 @@ a execução irá continuar de forma a iniciar a criação de uma nova populaç�
 				break;
 			}
 			
-			//A partir deste ponto e ininiciado a criacao de 
+			//A partir deste ponto e iniciado a criacao de 
 			//uma nova populacao
 			
 			//elitismo
@@ -1476,10 +1476,144 @@ passo a ser executado é referente a adição de indivíduos à nova população
 
 \par No algoritmo genético, tais indivíduos simplesmente são introduzidos à nova população de acordo com uma taxa definida no 
 atributo \texttt{foreignIndividualRate} da classe GAModel do \textit{framework}, conforme já explicado anteriormente. Conforme 
-demonstrado na linha 36 do Código ~\ref{list:código_metodo_execute}, os indivíduos estrangeiros são criados utilizando o método \texttt{createIndividual()} da classe \texttt{GAModel} que, conforme já foi visto, será implementado na classe \texttt{ProcessoModel}, 
-tal método utiliza o mesmo construtor utilizado para criação de indivíduos da população inicial portanto segue a mesma lógica utilizada da mesma, a diferença é que, ao criar tais indivíduos, o \textit{looping} é executado de acordo com a taxa definida, o que irá resultar na criação de um número bem menor de indivíduos.
+demonstrado na linha 36 do Código ~\ref{list:código_metodo_execute}, os indivíduos estrangeiros são criados utilizando o método \texttt{createIndividual()} da classe \texttt{GAModel} que foi implementado na classe \texttt{ProcessoModel}, 
+tal método utiliza o mesmo construtor utilizado para criação de indivíduos da população inicial portanto segue a mesma lógica utilizada, a diferença é que, ao criar tais indivíduos, o \textit{looping} é executado de acordo com a taxa definida, o que irá resultar na criação de um número bem menor de indivíduos.
 
 \subsection{Seleção de indivíduos e cruzamento} 
+
+\par Após o processo de elitismo e a criação dos indivíduos estrangeiros, o restante da população é criado através do processo
+de cruzamento, conforme mostra  o próximo passo consiste em criar novos indivíduos, conforme as instruções a partir da linha 39
+do Código ~\ref{list:código_metodo_execute}. O cruzamento começa com a seleção dos indivíduos que devem participar deste processo, 
+esta seleção é realizada por meio do método \texttt{doSelection()} mostrado no Código ~\ref{list:metodoDoSelection}.
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doSelection()}]{Método \texttt{doSelection()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoDoSelection] 
+
+private Individual doSelection() {
+	switch (model.getSelectionType()) {
+		case CLASSIFICATION : return doSelectionByClassification();
+		case ROULETTE: return doSelectionByRoulette();
+	}
+	return null;
+}
+
+\end{lstlisting}
+
+\par O método verifica o atributo de configuração \texttt{selectionType} e, neste caso, o valor de tal atributo é 
+\textit{CLASSIFICATION}, conforme mostrado na configuração do algoritmo genético na classe \texttt{GeneticAlgorithmManagement}, 
+explanada anteriormente, portanto o método chamado é o \texttt{doSelectionByClassification()}, conforme mostra o Código
+~\ref{list:metodo_doSelectionByClassification}.
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doSelectionByClassification()}]{Método \texttt{doSelectionByClassification()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodo_doSelectionByClassification] 
+
+	private Individual doSelectionByClassification() {
+		int maxValue = 0;
+		
+		for(int i = 0; i< model.getPopulationSize(); i++){
+			maxValue += (i + 1);
+		}
+		
+		double index = Math.random() * maxValue;
+		int cursor = 0;
+		
+		for(int i = 0; i < model.getPopulationSize(); i++){
+			cursor += model.getPopulationSize() - 1;
+			
+			if(index <= cursor){
+				return model.getPopulation().get(i);
+			}
+		}
+		
+		return null;
+	}
+
+
+\end{lstlisting}
+
+\par Tal método é responsável pela seleção de um indivíduo para realização do cruzamento. Primeiramente
+é realizado a soma dos índices da lista de indivíduos (population) realizando um \texttt{FOR} de 0 até
+\texttt{populationSize}, parâmetro que armazena o tamanho da população, assim se o tamanho da população for
+7, a soma seria 1+2+3+4+5+6+7, o que daria um total de 28. Feito esta soma, é sorteado então um número 
+entre zero até a soma dos valores e então é realizado um novo \texttt{FOR} de 0 até \texttt{populationSize},
+dentro deste é feita uma verificação, se o número sorteado for menor ou igual 
+a ao \texttt{populationSize} (\texttt{cursor}), que neste caso é 7, então o indivíduo da posição \texttt{i} (zero) é escolhido, 
+caso não seja, a variável cursor é incrementada como o valor do tamanho da população, que neste caso resultaria 
+em 14 e assim a verificação é feita novamente até que o número sorteado seja menor ou igual ao cursor e, quando assim
+o for, o indivíduo da posição \texttt{i} é retornado. A figura Figura ~\ref{fig:ex_selecao} ilustra este processo.
+
+\newpage
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.6]{./imagens/selecao.png}}
+	\caption[Seleção dos indivíduos]
+	{Representação do processo de seleção dos indivíduos
+		\textbf{Fonte:} Desenvolvido pelos autores.}
+	\label{fig:ex_selecao}
+\end{figure}
+
+\par Ao finalizar este processo um indivíduo terá sido escolhido, assim, de acordo com a linha 45 do Código ~\ref{list:código_metodo_execute},
+um novo indivíduo deve ser selecionado, porém a instrução está dentro de um \texttt{do while} pois o processo deve ser repetido até que 
+o novo indivíduo selecionado seja diferente do anterior evitando assim que dois indivíduos iguais façam parte do cruzamento.
+
+\par A partir da linha 49 do código Código ~\ref{list:código_metodo_execute}, dois indivíduos já foram selecionados e então o 
+método \texttt{doCrossing()} é chamado para realizar o cruzamento. Tal método também verifica o tipo de cruzamento definido
+chamando o método correspondente, neste caso, o método escolhido para o cruzamento foi o de permutação, desta forma o método
+\texttt{doPermutationCrossing()}. Este método faz parte do \texttt{framework} de desenvolvimento, porém foi modificado para se 
+adaptar ao problema a ser resolvido pela aplicação conforme demonstrado no Código ~\ref{list:metodoPermutationCrossing}.
+
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doPermutationCrossing()}]{Método \texttt{doPermutationCrossing()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoPermutationCrossing] 
+
+		private IndividualPair doPermutationCrossing(
+			Individual individual1, Individual individual2){
+			
+			ArrayList<Chromosome> chromosomes1 = 
+				new ArrayList<Chromosome>();
+				
+			ArrayList<Chromosome> chromosomes2 = 
+				new ArrayList<Chromosome>();
+				
+			Integer lastAtividade = null;
+			float chooseIndividual = 0;
+			int i = 0;
+			
+			for(Chromosome chromosome : individual1.getChromosomes()){
+				ProcessoChromosome processoChromosome = 
+					(ProcessoChromosome) chromosome;
+				
+				if(lastAtividade == null || 
+					!lastAtividade.equals(processoChromosome.getAtividade())){
+					
+					chooseIndividual = Math.round((float) Math.random() * 1);
+					lastAtividade = processoChromosome.getAtividade();
+				}
+				
+				if(chooseIndividual == 1){
+					chromosomes1.add(individual1.getChromosomes().
+						get(i).clone());
+						
+					chromosomes2.add(individual2.getChromosomes().
+						get(i).clone());
+				}else{
+					chromosomes1.add(individual2.getChromosomes().
+						get(i).clone());
+						
+					chromosomes2.add(individual1.getChromosomes().
+						get(i).clone());
+				}
+				i++;
+			}
+			
+			Individual newIndividual1 = 
+				model.createIndividual(chromosomes1);
+				
+			Individual newIndividual2 = 
+				model.createIndividual(chromosomes2);
+			
+			return new IndividualPair(newIndividual1,newIndividual2);
+		}
+
+\end{lstlisting}
+
 
 \subsection{Mutação}
 
