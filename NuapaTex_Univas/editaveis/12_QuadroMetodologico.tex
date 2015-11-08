@@ -1828,19 +1828,29 @@ costureiras assim como suas respectivas habilidades, tempo e preço de produçã
 utilizando \textit{JSF} e \textit{Primefaces}, porém a forma que o mecanismo de cadastro das informações foi realizado não é relevante
 ser apresentado mas é importante explanar sobre o desenvolvimento da tela de distribuição das atividades, a qual é de extrema importância para 
 entender o fluxo de execução da aplicação. No menu "Distribuir tarefas" da aplicação estão disponíveis todos os processos cadastrados e
-para abrir a tela de distribuição de atividades basta clicar no ícone "abrir" da coluna opções conforme mostra a Figura COLOCAR.
+para abrir a tela de distribuição de atividades basta clicar no ícone "abrir" da coluna opções conforme mostra a Figura ~\ref{fig:tela_dis_processos}.
 
-FIGURA
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.5]{./imagens/tela_distribuicao_processos.png}}
+	\caption[Menu Distribuir tarefas]
+	{Menu Distribuir tarefas
+		\textbf{Fonte:} Desenvolvido pelos autores.}
+	\label{fig:tela_dis_processos}
+\end{figure}
 
 \par Ao clicar no ícone "abrir", é aberta uma tela de distribuição para aquele processo, esta tela é responsável por captar alguns
 dados importantes para a regra de negócio do algoritmo genético, além disto, é nela que as informações do melhor indivíduo (melhor
 solução) são apresentadas.  Os dados informados através desta tela são o número total de peças que se deseja produzir, o número de 
-peças que cada lote irá conter e a data de início da produção conforme mostra a Figura COLOCAR.
+peças que cada lote irá conter e a data de início da produção conforme mostra a Figura ~\ref{fig:tela_dis_open}.
 
 
-FIGURA
-
-
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.5]{./imagens/tela_distribuicao_open.png}}
+	\caption[Tela de distribuição de tarefas]
+	{Tela de distribuição de tarefas
+		\textbf{Fonte:} Desenvolvido pelos autores.}
+	\label{fig:tela_dis_open}
+\end{figure}
 
 \par Toda tela do criada com \texttt{JSF} é desenvolvida através de documentos \texttt{XHTML}, tais documentos possuem componentes para entrada e apresentação dos dados. Estes componentes podem ser tanto do \texttt{JSF} quanto do \textit{primefaces}, o Código ~\ref{list:metododoMutationOnChromossome} demonstra o documento \texttt{XHTML} da tela demonstrada acima.
 
@@ -1995,8 +2005,8 @@ public BigDecimal calcularPrazo(){
 de transporte entre as costureiras são definidos em segundos. O método \texttt{calcularPrazo()} simplesmente retorna o tempo 
 em segundos entre a data de início, informada pelo usuário e disponível no atributo \texttt{dataInicio} e o prazo de entrega, 
 disponível no atributo \texttt{dataEntrega} do processo que foi informada no cadastro do mesmo. É importante ressaltar que
-o objeto \texttt{processo} utilizado neste método foi criado no momento em que o usuário abriu o processo, neste caso, é enviado
-o \texttt{ID} do processo via \texttt{URL} é o controlador busca no banco de dados as informações do processo através deste \texttt{ID}
+o objeto \texttt{processo} utilizado neste método foi criado no momento em que o usuário abriu o processo, neste caso, foi enviado
+o \texttt{ID} do tal processo via \texttt{URL}e o controlador buscou, no banco, de dados as informações do mesmo através deste \texttt{ID}
 criando assim tal objeto.
 
 \par Após o calculo do número de lotes e do prazo, é instanciado um objeto da classe \texttt{GeneticAlgorithmManagement()}, conforme
@@ -2005,8 +2015,20 @@ faz o gerenciamento da execução do algoritmo genético e retorna o melhor indi
 atributo \texttt{melhorIndividuo} da classe \texttt{distribuiçãoController} e então os métodos \texttt{construirArvore()} e
 \texttt{construirTableDetail()} são chamados para realizar a apresentação dos dados na tela após a distribuição, tais método
 simplesmente pegam as atividades e suas respectivas costureiras juntamente com o número de lote que cada uma recebeu e 
-apresenta ao usuário, além disto também é apresentado o tempo e o custo total, além de uma tabela de detalhes da distriubuição.
-A Figura COLOCAR mostra a tela com o resultado da execução do algoritmo.
+apresenta ao usuário, além disto também é apresentado o tempo e o custo total, além de uma tabela de detalhes da distribuição.
+A Figura ~\ref{fig:tela_dis_result} mostra a tela com o resultado da execução do algoritmo.
+
+\newpage
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.5]{./imagens/resultado_distribuicao.png}}
+	\caption[Tela de resultado de distribuição de tarefas]
+	{Tela de resultado de distribuição de tarefas
+		\textbf{Fonte:} Desenvolvido pelos autores.}
+	\label{fig:tela_dis_result}
+\end{figure}
+
+\par Os resultados serão vistos com mais detalhes nos casos de testes apresentados na discussão de resultados.
 
 % \label{cap:quadroMetodologico}
 % 
