@@ -190,12 +190,13 @@ foram de 0,5\% e 0,05\% respectivamente.
 porém o tempo de produção entre as costureiras será o mesmo e o custo será
 alterado.
 
-\par Para isto, será utilizado o mesmo processo da seção 4.1 contendo as
-atividades Carimbo e Finalização. Será definido o tempo de 5 segundos para as
-costureiras Maria e Duda e o preço por peça R\textdollar 1,50 e R\textdollar
-2,70 respectivamente e além disso foi definido os mesmos valores X e Y  
+\par O processo assim como o processo da seção 4.1 irá conter as atividades
+Carimbo e Finalização. 
+Será definido o tempo de 5 segundos para as costureiras Maria e Duda e o preço por 
+peça R\textdollar 1,50 e R\textdollar
+2,70 respectivamente. Além disso foi definido os mesmos valores X e Y  
 relativos a posição geografica para Maria e Duda, de forma a manter o tempo de
-transporte das semelhantes para ambas. A Figura
+transporte semelhantes para ambas. A Figura
 ~\ref{fig:custo_entre_costureiras} mostra a definição de tempo e custo para
 ambas as costureiras:
 
@@ -223,84 +224,164 @@ Figura ~\ref{fig:resultado_custo}:
 \end{figure}
 
 \par Com base no resultado obtido, o algoritmo interpretou que pelo fato de
-Maria e Duda ter o mesmo tempo de produção porém Duda ter um preço por peça bem
-superior que o de Maria, Duda não recebeu nenhum lote para produzir, pois neste
+Maria e Duda obter o mesmo tempo de produção e Duda ter um preço por peça
+bem superior que o de Maria, Duda não recebeu nenhum lote para produzir, pois neste
 caso é possível que Maria produza sozinha os lotes dentro do prazo de entrega do
 processo. Caso Maria não conseguisse produzir os lotes no prazo estipulado, o
 algoritmo adequa a distribuição distribuindo alguns lotes para Duda para
-conseguir alcançar o prazo de entrega, toda via, fazendo isto o custo tende a
-almentar.
+conseguir alcançar o prazo de entrega, toda via, fazendo isto, o custo tende a
+almentar, este caso será mostrado com mais detalhes na seção 4.3.
 
-\par A Figura ~\ref{fig:resultado_mudando_prazo_de_entrega} mostra o resultado
-contendo a alteração na data de início para 27-11-15 às 13:30:00 e mantendo o
-prazo de entrega para 27-11-15 às 14:14:1.
+\par Caso Maria e Duda obtvessem o mesmo tempo, o mesmo preço e a mesma posição
+X e Y o algoritmo distribui lotes para Duda pois, mesmo a costureira Maria
+conseguindo fabricar as peças dentro do prazo, se Duda receber alguns lotes para produzir
+isto não interferirá no preço final como mostra a Figura
+~\ref{fig:resultado_tudo_igual}.
+\newpage
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.4]{./imagens/resultado_tudo_igual_teste2.png}}
+	\caption[Custo entre as costureiras atividade Finalização]
+	{Custo entre as costureiras atividade Finalização \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:resultado_tudo_igual}
+\end{figure}
+
+\section{Teste tempo x custo e prazo de entrega}
+
+\par Este teste foi realizado para demonstrar como fica o tempo de
+produção e o custo quando o prazo de entrega é curto,
+assim mesmo que uma costureira for inviável pelo tempo ou custo, ela poderá
+receber ou não lotes para produzir para que seja cumprido o prazo de entrega.
+
+\par Para isto as costureiras que possuem a habilidade Finalização ficarão com
+as seguintes configurações como ilustra a Figura
+~\ref{fig:configuracao_habilidade_costureira_teste3}
 
 \newpage
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.4]{./imagens/resultado_alterando_prazo_entrega_teste2.png}}
-	\caption[Resultado com alteração do prazo de entrega]
-	{Resultado com alteração do prazo de entrega \textbf{Fonte:} Desenvolvido pelos autores}
-	\label{fig:resultado_mudando_prazo_de_entrega}
+	\centerline{\includegraphics[scale=0.4]{./imagens/cofiguracao_habilidade_teste3.png}}
+	\caption[Custo entre as costureiras atividade Finalização]
+	{Custo entre as costureiras atividade Finalização \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:configuracao_habilidade_costureira_teste3}
 \end{figure}
 
-\par Com base no resultado da Figura
-~\ref{fig:resultado_mudando_prazo_de_entrega}, mesmo com um preço por peça mais
-caro que Maria, o algoritmo distribui um lote para Duda pois Maria não
-conseguiria produzir as peças no prazo limite, com isso o custo final para
-realizar este processo de produção aumenta em relação ao teste anterior
-representado pela Figura ~\ref{fig:resultado_custo} 
+
+\par A Figura ~\ref{fig:resultado1_teste3} mostra o resultado
+com base nas configurações da habilidade Finalização mostrada na Figura
+~\ref{fig:configuracao_habilidade_costureira_teste3}.
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.4]{./imagens/resultado1_teste3.png}}
+	\caption[Custo entre as costureiras atividade Finalização]
+	{Custo entre as costureiras atividade Finalização \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:resultado1_teste3}
+\end{figure}
+
+\par Como ilustrado na Figura ~\ref{fig:resultado1_teste3} a costureira Duda não
+recebe nenhum lote pois possui um tempo de produção e custo maior que Maria,
+porém se caso o prazo de entrega for menor, Duda poderá dependendo do prazo,
+receber lotes para produzir mesmo que o tempo e o custo finais aumentem para
+atender o prazo de entrega.
+
+A Figura ~\ref{fig:resultado2_teste3} mostra a distribuição de lotes entre as
+costureiras com alteração na data de inicio do processo.
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.4]{./imagens/resultado2_teste3.png}}
+	\caption[Custo entre as costureiras atividade Finalização]
+	{Custo entre as costureiras atividade Finalização \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:resultado2_teste3}
+\end{figure}
+
+\par Como ilustrado na Figura ~\ref{fig:resultado2_teste3} a costureira Duda
+recebe 3 lotes para produzir, assim, o tempo de produção e custo aumentam com
+relação ao resultado da Figura ~\ref{fig:resultado1_teste3}, porém o prazo de
+entrega é cumprido.
+
 
 \section{Teste considerando o tempo de transporte}
-\par Este teste foi realizado com duas atividades em que as costureiras estão em suas casas. Neste caso deve-se considerar
-o tempo de transporte entre as costureiras da atividade Frente e a fábrica do Marcelo para a retirada dos materiais e o tempo 
-entre tais costureiras e a costureira responsável pela finalização, conforme
-mostra a Figura 31.
 
+\par Este teste foi realizado para demonstrar que mesmo as costureiras possuindo
+o tempo e custo iguais, a distancia entre a fábrica pode determinar a
+distribuição dos lotes.
+
+
+\par Para isto foi necessário cadastrar um valor X e Y para cada costureira que
+representa sua localização conforme mostra a Figura ~\ref{fig:add_xy_costureira_teste4}.
+
+\newpage
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.3]{./imagens/test_case_2.png}}
+	\centerline{\includegraphics[scale=0.3]{./imagens/posicao_xy_costureiras_teste4.png}}
 	\caption[Caso de teste com tempo de distribuição]
 	{Caso de teste com tempo de distribuição \textbf{Fonte:} Desenvolvido pelos autores}
-	\label{fig:exemplo1}
+	\label{fig:add_xy_costureira_teste4}
 \end{figure}
 
 
-\par Neste teste foi considerado apenas o tempo de transporte, logo o tempo de confecção por peça das costureiras da parte 
-da Frente possuem o mesmo valor, conforme mostra a Figura 32.
+
+\par Neste teste foi considerado apenas o tempo de transporte, logo o tempo de
+confecção por peça das costureiras da atividade Finalização possuem o mesmo
+valor de tempo e custo, conforme mostra a Figura
+~\ref{fig:at_finalizacao_teste4}.
 
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.3]{./imagens/test_case_2_habilidades.png}}
+	\centerline{\includegraphics[scale=0.3]{./imagens/cofig_at_finalizaca_teste4.png}}
 	\caption[Caso de teste com tempo de distribuição]
 	{Caso de teste com tempo de distribuição \textbf{Fonte:} Desenvolvido pelos autores}
-	\label{fig:exemplo1}
+	\label{fig:at_finalizacao_teste4}
 \end{figure}
 
 \newpage
 
-\par Além disso foi necessário cadastrar um valor X e Y para cada costureira que representa sua localização conforme 
-mostra a Figura 33.
+\par Feito isso foi iniciado então o processo de distribuição das atividades,
+através do menu Distribuição de Tarefas, a Figura
+~\ref{fig:resultado_transporte_teste4} mostra o resultado obtido.
 
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.3]{./imagens/test_case_2_costureiras.png}}
-	\caption[Cadastro de costureiras]
-	{Cadastro de costureiras \textbf{Fonte:} Desenvolvido pelos autores}
-	\label{fig:exemplo1}
-\end{figure}
-
-\par \par Feito isso foi iniciado então o processo de distribuição das atividades, através do menu Distribuição de Tarefas.
-O algoritmo foi configurado para ter 1000 gerações e 80 indivíduos em cada população, além disso a taxa de indivíduos
-estrangeiros e de mutação foram de 0,5\% e 0,05\% respectivamente, conforme
-mostra a Figura 34.
-
-\begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.3]{./imagens/test_case2_distribuicao.png}}
+	\centerline{\includegraphics[scale=0.3]{./imagens/resultado_transporte_teste4.png}}
 	\caption[Distribuição das atividades]
 	{Distribuição das atividades \textbf{Fonte:} Desenvolvido pelos autores}
-	\label{fig:exemplo1}
+	\label{fig:resultado_transporte_teste4}
 \end{figure}
+
+\par Como mostrado na figura ~\ref{fig:add_xy_costureira_teste4}, a costureira
+Duda fica mais distante da fábrica por isso recebe menos lotes para produzir em
+relação a costureira Maria.
+
+\section{Teste adicionando mais atividades}
+
+\par Neste caso deve-se considerar o tempo de transporte entre as costureiras da atividade Frente e a fábrica 
+para a retirada dos materiais e o tempo entre tais costureiras e a costureira
+responsável pela Finalização, para isso foi adicionado no processo a atividade
+frente conforme mostra a Figura ~\ref{fig:add_frente_teste4}.
+
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.3]{./imagens/adicionar_atividade_frente_teste4.png}}
+	\caption[Caso de teste com tempo de distribuição]
+	{Caso de teste com tempo de distribuição \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:add_frente_teste4}
+\end{figure}
+
+
+\par Foi adicionado na habilidade frente a costureira Roberta para que esta
+possa realizar a atividade frente do processo.
+\par A Figura mostra a costureira adicionada na habilidade frente.
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.3]{./imagens/costureira_frente_teste4.png}}
+	\caption[Caso de teste com tempo de distribuição]
+	{Caso de teste com tempo de distribuição \textbf{Fonte:} Desenvolvido pelos autores}
+	\label{fig:add_costureira_frente_teste4}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \par Após clicar no botão "Iniciar Distribuição", o algoritmo distribuiu os lotes para as costureiras das atividades
  finalização e frente o qual o tempo total encontrado foi de 1700 segundos,
