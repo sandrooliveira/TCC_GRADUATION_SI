@@ -1481,10 +1481,10 @@ tal método utiliza o mesmo construtor utilizado para criação de indivíduos d
 
 \subsection{Seleção de indivíduos e cruzamento} 
 
-\par Após o processo de elitismo e a criação dos indivíduos estrangeiros, o restante da população é criado através do processo
-de cruzamento, conforme mostra  o próximo passo consiste em criar novos indivíduos, conforme as instruções a partir da linha 39
-do Código ~\ref{list:código_metodo_execute}. O cruzamento começa com a seleção dos indivíduos que devem participar deste processo, 
-esta seleção é realizada por meio do método \texttt{doSelection()} mostrado no Código ~\ref{list:metodoDoSelection}.
+\par Após o processo de elitismo e a criação dos indivíduos estrangeiros, o restante da nova população é criado através do processo
+de cruzamento, conforme as instruções a partir da linha 39 do Código ~\ref{list:código_metodo_execute}. O cruzamento começa com a 
+seleção dos indivíduos que devem participar deste processo, esta seleção é realizada por meio do método \texttt{doSelection()} 
+mostrado no Código ~\ref{list:metodoDoSelection}.
 
 \begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doSelection()}]{Método \texttt{doSelection()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoDoSelection] 
 
@@ -1558,9 +1558,9 @@ o novo indivíduo selecionado seja diferente do anterior evitando assim que dois
 a mesclagem dos cromossomos de seus pais. No cruzamento desenvolvido para esta solução, foi 
 necessário realizar um agrupamento dos cromossomos e então criar novos indivíduos através da
 mesclagem destes grupos. Isto foi necessário pois, para cada atividade, o total de lotes,
-distribuído em cada cromossomo, não pode ser diferente do número total de lotes definido, assim o 
+distribuídos entre os cromossomos de cada atividade, não pode ser diferente do número total de lotes definido, assim o 
 cruzamento então ocorre de forma que os indivíduos filhos recebem a mesclagem de grupos de 
-cromossomos, referente a cada atividade, de seus pais, além disso, a cada cruzamento é criado
+cromossomos de seus pais referente a cada atividade e assim a cada cruzamento é criado
 dois novos indivíduos que irão fazer parte da nova população. A Figura COLOCAR ilustra este processo.
 
 %\begin{figure}[h!]
@@ -1574,8 +1574,31 @@ dois novos indivíduos que irão fazer parte da nova população. A Figura COLOC
 
 \par A partir da linha 49 do código Código ~\ref{list:código_metodo_execute}, dois indivíduos já foram selecionados e então o 
 método \texttt{doCrossing()} é chamado para realizar o cruzamento. Tal método também verifica o tipo de cruzamento definido
-chamando o método correspondente, neste caso, o método escolhido para o cruzamento foi o de permutação, desta forma o método
-\texttt{doPermutationCrossing()}. Este método faz parte do \texttt{framework} de desenvolvimento, porém foi modificado para se 
+chamando o método correspondente conforme mostra o Código ~\ref{list:metodoDoCrossing}. 
+
+
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doCrossing()}]{Método \texttt{doCrossing()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoDoCrossing] 
+
+	private IndividualPair doCrossing(Individual individual1, Individual individual2){
+		switch (model.getCrossType()) {
+			case ARITMETIC: break;
+			
+			case BINARY: 
+				return doBinaryCrossing(individual1,individual2);
+			case PERMUTATION: 
+				return doPermutationCrossing(individual1, individual2);
+		
+			case UNIFORM:break;
+		}
+		return null;
+	}
+
+\end{lstlisting}
+
+
+Neste caso, o método escolhido para o cruzamento foi o de permutação, desta forma o método \texttt{doPermutationCrossing()} é chamado.
+Tal método faz parte do \texttt{framework} de desenvolvimento, porém foi modificado para se 
 adaptar ao problema a ser resolvido pela aplicação conforme demonstrado no Código ~\ref{list:metodoPermutationCrossing}.
 
 
@@ -1633,15 +1656,15 @@ adaptar ao problema a ser resolvido pela aplicação conforme demonstrado no Có
 
 \end{lstlisting}
 
-\par Primeiramente é realizado uma iteração sobre a lista de cromossomos do indivíduo 1, dentro
-de tal iteração é realizada uma verificação para checar se é a primeira execução \texttt{lastAtividade == null}
-ou se a iteração já passou por um grupo de atividades, caso positivo, um valor binário é sorteado, se tal valor
-for um, o primeiro novo indivíduo que está sendo criado terá os cromossomos do indivíduo 1 do cruzamento e o 
-segundo novo indivíduo receberá os cromossomos do indivíduo 2, caso o valor sorteado seja zero, os novos indivíduos
-recebem os cromossomos de forma inversa. Assim a iteração continua até os novos indivíduos possuir todos os grupos
-de cromossomos necessários e ao fim da iteração 2 novas listas de cromossomos são criadas e então dois novos indivíduos são criados
-através do método \texttt{createIndividual}. Quando se cria indivíduos a partir deste ponto, a classe \texttt{ProcessoModel} utiliza
-um outro construtor para criar o indivíduo, conforme mostra o Código \~ref{list:metodoCreateIndividualCromossomos}.
+\par Conforme visto na Figura COLOCAR, os cromossomos estão ordenados na lista de acordo com suas respectivas atividades, considerando
+isto, foi feita uma lógica para agrupar estes cromossomos por atividade e criar novos indivíduos através da mesclagem dos grupos criados
+de forma a sortear de qual indivíduo do cruzamento cada grupo deve ser pego ao criar um novo indivíduo. 
+
+\par Assim, de acordo com o Código ~\ref{list:metodoPermutationCrossing}, primeiramente é feita uma iteração sobre a lista de cromossomos do indivíduo 1, dentro de tal iteração, é realizada uma verificação para checar se um cromossomo é o primeiro da primeira atividade (\texttt{lastAtividade == null}) ou se é o primeiro de um determinada atividade de acordo com a ordem delas, caso uma destas condições for verdadeira, um valor binário é sorteado, se tal valor for um, o primeiro novo indivíduo que será criado terá os cromossomos, da atividade em questão, pegos do indivíduo 1 do cruzamento e o segundo novo indivíduo receberá os cromossomos, referentes a tal atividade, do indivíduo 2, caso o valor sorteado seja zero, o processo acontece de forma inversa. 
+
+\par Assim a iteração continua até a lista de cromossomos dos novos indivíduos possuir todos os grupos de cromossomos referentes a todas as atividades e então, ao fim da iteração, dois novos indivíduos serão criados através do método \texttt{createIndividual}.
+
+\par Quando se cria indivíduos a partir deste ponto, a classe \texttt{ProcessoModel} utiliza um outro construtor para criar o indivíduo, conforme mostra o Código ~\ref{list:metodoCreateIndividualCromossomos}
 
 
 \begin{lstlisting} [style=custom_Java,caption={[Método \texttt{creatIndividual()} utilzando cromossomos]{Método \texttt{creatIndividual()} utilizando cromossomos. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoCreateIndividualCromossomos] 
@@ -1654,9 +1677,8 @@ um outro construtor para criar o indivíduo, conforme mostra o Código \~ref{lis
 \end{lstlisting}
 
 \par Neste caso são passados quase todos os parâmetros enviados durante a criação
-da população inicial, a diferença, é que, neste caso, o indivíduo será criado a partir 
-dos cromossomos conforme mostra o Código \~ref{list:construtorDeIndividuosComCromossomos}.
-
+da população inicial, a diferença é que, neste caso, o indivíduo será criado a partir 
+dos cromossomos conforme mostra o Código ~\ref{list:construtorDeIndividuosComCromossomos}.
 
 \begin{lstlisting} [style=custom_Java,caption={[Construtor de \texttt{ProcessoIndividual} utilizando cromossomos]{Construtor de \texttt{ProcessoIndividual} utilizando cromossomos. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:construtorDeIndividuosComCromossomos] 
 
@@ -1675,7 +1697,10 @@ public ProcessoIndividual(Atividade atividadeInicial,
 \end{lstlisting}
 
 \par Os cromossomos recebidos são inseridos na lista de cromossomos declarada na classe mãe (\texttt{Individual}), e os 
-outros parâmetros são setados a seus respectivos atributos.
+outros parâmetros são atribuídos aos seus respectivos atributos. No final do método \texttt{doPermutaionCrossing}, como no 
+Java não é possível retornar dois valores, é criado um objeto da classe \texttt{IndividualPair}, passando os dois novos indivíduos, 
+e então este objeto é retornado. Esta classe só possui dois atributos do tipo \texttt{Individual} e só é utilizada para retornar os dois 
+novos indivíduos criados.
 
 \subsection{Mutação}
 
