@@ -1597,9 +1597,9 @@ chamando o método correspondente conforme mostra o Código ~\ref{list:metodoDoC
 \end{lstlisting}
 
 
-Neste caso, o método escolhido para o cruzamento foi o de permutação, desta forma o método \texttt{doPermutationCrossing()} é chamado.
-Tal método faz parte do \texttt{framework} de desenvolvimento, porém foi modificado para se 
-adaptar ao problema a ser resolvido pela aplicação conforme demonstrado no Código ~\ref{list:metodoPermutationCrossing}.
+\par Neste caso, o método escolhido para o cruzamento foi o de permutação, desta forma o método \texttt{doPermutationCrossing()} é chamado.
+Tal método faz parte do \texttt{framework} de desenvolvimento, porém foi modificado para se adaptar ao problema a ser resolvido pela 
+aplicação conforme demonstrado no Código ~\ref{list:metodoPermutationCrossing}.
 
 
 \begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doPermutationCrossing()}]{Método \texttt{doPermutationCrossing()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoPermutationCrossing] 
@@ -1695,7 +1695,6 @@ public ProcessoIndividual(Atividade atividadeInicial,
 }
 
 \end{lstlisting}
-
 \par Os cromossomos recebidos são inseridos na lista de cromossomos declarada na classe mãe (\texttt{Individual}), e os 
 outros parâmetros são atribuídos aos seus respectivos atributos. No final do método \texttt{doPermutaionCrossing}, como no 
 Java não é possível retornar dois valores, é criado um objeto da classe \texttt{IndividualPair}, passando os dois novos indivíduos, 
@@ -1703,8 +1702,120 @@ e então este objeto é retornado. Esta classe só possui dois atributos do tipo
 novos indivíduos criados.
 
 \subsection{Mutação}
+\par O processo de mutação, conforme já explicado anteriormente, consiste em realizar uma pequena modificação entre os cromossomos
+de um indivíduo. Esta modificação pode ser boa, melhorando o resultado do indivíduo ou ruim. No algoritmo genético desenvolvido, 
+a mutação foi realizada trocando o número de lotes recebidos entre duas costureiras escolhidas aleatoriamente dentro de um grupo de cromossomos de cada atividade do indivíduo, conforme mostra a Figura COLOCAR.
 
- 
+
+FIGURA
+
+\par O processo de mutação inicia-se dentro do método \texttt{execute()} da classe \texttt{GAController}, e é realizado nos indivíduos
+criados, através do processo de cruzamento, dentro de uma determinada taxa, definida anteriormente nos atributos de configuração do algoritmo genético na classe \texttt{GeneticAlgorithmManagement}. O método que inicia este processo é o \texttt{doMutation()}, tal método verifica o tipo de mutação definido chamando o método correspondente, além disto, ele verifica se a mutação deve ser realizada, sorteando um número aleatoriamente e checando se o número sorteado é menor que a taxa de mutação definida, conforme mostra o Código ~\ref{list:metodoDoMutation}. 
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doMutation()}]{Método \texttt{doMutation()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoDoMutation] 
+
+	public void doMutation(Individual individual){
+		if(Math.random() < model.getMutationRate()){
+			for(int i = 0; i < model.getMutationQuantity();i++){
+				switch (model.getMutation()) {
+					case BINARY: doMutationBinary(individual);break;
+					case NUMERICAL: break;
+					case PERMUTATION: doMutationPermutation(individual);break;
+				}
+			}
+		}
+	}
+
+\end{lstlisting}
+
+\par Neste caso, o método escolhido para a mutação foi o de permutação, desta forma o método \texttt{doMutationPermutation()} é chamado.
+Tal método faz parte do \texttt{framework} de desenvolvimento, porém também foi modificado para se adaptar ao problema a ser resolvido pela 
+aplicação conforme demonstrado no Código ~\ref{list:metodoPermutationMutation}.
+
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doMutationPermutation()}]{Método \texttt{doMutationPermutation()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoPermutationMutation] 
+
+	public void doMutationPermutation(Individual individual) {
+	
+		Integer lastAtividade = null;
+		ArrayList<ProcessoChromosome> chromossomesToMutate = 
+			new ArrayList<ProcessoChromosome>(); 
+		
+		for(Chromosome chromosome : individual.getChromosomes()){
+			ProcessoChromosome processoChromosome = 
+				(ProcessoChromosome) chromosome;
+			
+			if(lastAtividade == null || 
+				   !lastAtividade.equals(processoChromosome.getAtividade())){
+				   
+				if(!chromossomesToMutate.isEmpty() && 
+					   chromossomesToMutate.size() > 1){
+					
+					doMutationOnChromossome(chromossomesToMutate);
+				}
+				chromossomesToMutate.clear();
+				lastAtividade = processoChromosome.getAtividade();
+			}
+			chromossomesToMutate.add(processoChromosome);
+		}
+		//Para o ultimo grupo
+		if(!chromossomesToMutate.isEmpty() && 
+			   chromossomesToMutate.size() > 1){
+			
+			doMutationOnChromossome(chromossomesToMutate);
+		}
+	}
+
+\end{lstlisting}
+
+\par Para a realização da lógica que realiza a mutação, é realizada uma iteração na lista de cromossomos do 
+indivíduo a qual a mutação será realizada, dentro desta iteração, os cromossomos de uma atividade são adicionados
+à lista \texttt{chromossomesToMutate}, e assim, quando todos os cromossomos de uma atividade são adicionados nesta
+lista, o método \texttt{doMutationOnCromossome} demonstrado no Código ~\ref{list:metododoMutationOnChromossome}, é
+chamado para realizar a mutação, assim, após a mutação para os cromossomos de tal atividade, a lista \texttt{chromossomesToMutate} é zerada para que os cromossomos da próxima atividade sejam adicionados a esta e posteriormente sofram a mutação, logicamente, o grupo de atividades sofrerá mutação somente se possuir mais de um cromossomo.
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doMutationOnChromossome()}]{Método \texttt{doMutationOnChromossome()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metododoMutationOnChromossome] 
+
+
+	private void doMutationOnChromossome(
+		ArrayList<ProcessoChromosome> chromossomesToMutate){
+	
+		int position1;
+		int position2;
+		int varAux;
+		int varAux2;
+		
+		ProcessoChromosome chromosome1 = null;
+		ProcessoChromosome chromosome2 = null;
+		
+		position1 = (int) (Math.random() * (chromossomesToMutate.size()));
+		
+		do{
+			position2 = (int) (Math.random() * 
+				(chromossomesToMutate.size()));
+		}while(position1 == position2);
+	
+		chromosome1 = chromossomesToMutate.get(position1);
+		chromosome2 = chromossomesToMutate.get(position2);
+		
+		varAux  = chromosome2.getQuantidade_lotes();
+		varAux2 = chromosome2.getLotesToShow();
+		
+		chromosome2.setQuantidade_lotes(
+			chromosome1.getQuantidade_lotes());
+			
+		chromosome2.setLotesToShow(chromosome1.getLotesToShow());
+		
+		chromosome1.setQuantidade_lotes(varAux);
+		chromosome1.setLotesToShow(varAux2);
+	}
+
+\end{lstlisting}
+
+\par Neste método, é selecionado quais cromossomos terão seus valores trocados entre si. O segundo cromossomo é escolhido dentro de um
+\texttt{doWhile()} para evitar que o mesmo cromossomo escolhido na primeira vez seja selecionado e então, com auxilio de variáveis
+auxiliares, os atributos \texttt{quantidade\_lotes} e \texttt{lotesToShow}, tem seus valores trocados entre si.
+
 \subsection{Construção da interface gráfica, \texttt{CRUD} e apresentação dos dados} 
 
 
