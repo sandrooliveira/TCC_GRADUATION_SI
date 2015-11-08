@@ -1554,6 +1554,24 @@ o for, o indivíduo da posição \texttt{i} é retornado. A figura Figura ~\ref{
 um novo indivíduo deve ser selecionado, porém a instrução está dentro de um \texttt{do while} pois o processo deve ser repetido até que 
 o novo indivíduo selecionado seja diferente do anterior evitando assim que dois indivíduos iguais façam parte do cruzamento.
 
+\par O cruzamento é realizado a nível de cromossomos, neste caso, os indvíduos filhos recebem 
+a mesclagem dos cromossomos de seus pais. No cruzamento desenvolvido para esta solução, foi 
+necessário realizar um agrupamento dos cromossomos e então criar novos indivíduos através da
+mesclagem destes grupos. Isto foi necessário pois, para cada atividade, o total de lotes,
+distribuído em cada cromossomo, não pode ser diferente do número total de lotes definido, assim o 
+cruzamento então ocorre de forma que os indivíduos filhos recebem a mesclagem de grupos de 
+cromossomos, referente a cada atividade, de seus pais, além disso, a cada cruzamento é criado
+dois novos indivíduos que irão fazer parte da nova população. A Figura COLOCAR ilustra este processo.
+
+%\begin{figure}[h!]
+%	\centerline{\includegraphics[scale=0.6]{./imagens/cruzamento.png}}
+%	\caption[Cruzamento dos indivíduos]
+%	{Representação do processo de cruzamento dos indivíduos
+%		\textbf{Fonte:} Desenvolvido pelos autores.}
+%	\label{fig:ex_cruzamento}
+%\end{figure}
+
+
 \par A partir da linha 49 do código Código ~\ref{list:código_metodo_execute}, dois indivíduos já foram selecionados e então o 
 método \texttt{doCrossing()} é chamado para realizar o cruzamento. Tal método também verifica o tipo de cruzamento definido
 chamando o método correspondente, neste caso, o método escolhido para o cruzamento foi o de permutação, desta forma o método
@@ -1611,9 +1629,53 @@ adaptar ao problema a ser resolvido pela aplicação conforme demonstrado no Có
 			
 			return new IndividualPair(newIndividual1,newIndividual2);
 		}
+	
 
 \end{lstlisting}
 
+\par Primeiramente é realizado uma iteração sobre a lista de cromossomos do indivíduo 1, dentro
+de tal iteração é realizada uma verificação para checar se é a primeira execução \texttt{lastAtividade == null}
+ou se a iteração já passou por um grupo de atividades, caso positivo, um valor binário é sorteado, se tal valor
+for um, o primeiro novo indivíduo que está sendo criado terá os cromossomos do indivíduo 1 do cruzamento e o 
+segundo novo indivíduo receberá os cromossomos do indivíduo 2, caso o valor sorteado seja zero, os novos indivíduos
+recebem os cromossomos de forma inversa. Assim a iteração continua até os novos indivíduos possuir todos os grupos
+de cromossomos necessários e ao fim da iteração 2 novas listas de cromossomos são criadas e então dois novos indivíduos são criados
+através do método \texttt{createIndividual}. Quando se cria indivíduos a partir deste ponto, a classe \texttt{ProcessoModel} utiliza
+um outro construtor para criar o indivíduo, conforme mostra o Código \~ref{list:metodoCreateIndividualCromossomos}.
+
+
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{creatIndividual()} utilzando cromossomos]{Método \texttt{creatIndividual()} utilizando cromossomos. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoCreateIndividualCromossomos] 
+
+	@Override
+	public Individual createIndividual(ArrayList<Chromosome> chromosomes) {
+		return new ProcessoIndividual(atividadeFinal, prazoEmSegundos, chromosomes,this.numeroLote,this.pecasPorLote);
+	}
+
+\end{lstlisting}
+
+\par Neste caso são passados quase todos os parâmetros enviados durante a criação
+da população inicial, a diferença, é que, neste caso, o indivíduo será criado a partir 
+dos cromossomos conforme mostra o Código \~ref{list:construtorDeIndividuosComCromossomos}.
+
+
+\begin{lstlisting} [style=custom_Java,caption={[Construtor de \texttt{ProcessoIndividual} utilizando cromossomos]{Construtor de \texttt{ProcessoIndividual} utilizando cromossomos. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:construtorDeIndividuosComCromossomos] 
+
+public ProcessoIndividual(Atividade atividadeInicial, 
+						  BigDecimal prazoEmSegundos, 
+						  ArrayList<Chromosome> chromosomes, 
+						  int numeroLote, int pecasPorLote) {
+
+	super(chromosomes);
+	this.atividadeFinal = atividadeInicial;
+	this.numeroLote = numeroLote;
+	this.pecasPorLote = pecasPorLote;
+	this.prazo = prazoEmSegundos;
+}
+
+\end{lstlisting}
+
+\par Os cromossomos recebidos são inseridos na lista de cromossomos declarada na classe mãe (\texttt{Individual}), e os 
+outros parâmetros são setados a seus respectivos atributos.
 
 \subsection{Mutação}
 
