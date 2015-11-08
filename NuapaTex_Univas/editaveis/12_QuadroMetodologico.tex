@@ -1561,15 +1561,15 @@ mesclagem destes grupos. Isto foi necessário pois, para cada atividade, o total
 distribuídos entre os cromossomos de cada atividade, não pode ser diferente do número total de lotes definido, assim o 
 cruzamento então ocorre de forma que os indivíduos filhos recebem a mesclagem de grupos de 
 cromossomos de seus pais referente a cada atividade e assim a cada cruzamento é criado
-dois novos indivíduos que irão fazer parte da nova população. A Figura COLOCAR ilustra este processo.
+dois novos indivíduos que irão fazer parte da nova população. A Figura ~\ref{fig:ex_cruzamento} ilustra este processo.
 
-%\begin{figure}[h!]
-%	\centerline{\includegraphics[scale=0.6]{./imagens/cruzamento.png}}
-%	\caption[Cruzamento dos indivíduos]
-%	{Representação do processo de cruzamento dos indivíduos
-%		\textbf{Fonte:} Desenvolvido pelos autores.}
-%	\label{fig:ex_cruzamento}
-%\end{figure}
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.4]{./imagens/ex_cruzamento.png}}
+	\caption[Cruzamento dos indivíduos]
+	{Representação do processo de cruzamento dos indivíduos
+		\textbf{Fonte:} Desenvolvido pelos autores.}
+	\label{fig:ex_cruzamento}
+\end{figure}
 
 
 \par A partir da linha 49 do código Código ~\ref{list:código_metodo_execute}, dois indivíduos já foram selecionados e então o 
@@ -1656,9 +1656,7 @@ aplicação conforme demonstrado no Código ~\ref{list:metodoPermutationCrossing
 
 \end{lstlisting}
 
-\par Conforme visto na Figura COLOCAR, os cromossomos estão ordenados na lista de acordo com suas respectivas atividades, considerando
-isto, foi feita uma lógica para agrupar estes cromossomos por atividade e criar novos indivíduos através da mesclagem dos grupos criados
-de forma a sortear de qual indivíduo do cruzamento cada grupo deve ser pego ao criar um novo indivíduo. 
+\par Conforme visto na Figura  ~\ref{fig:ex_cruzamento}, os cromossomos estão ordenados na lista de acordo com suas respectivas atividades, considerando isto, foi feita uma lógica para agrupar estes cromossomos por atividade e criar novos indivíduos através da mesclagem dos grupos criados de forma a sortear de qual indivíduo do cruzamento cada grupo deve ser pego ao criar um novo indivíduo. 
 
 \par Assim, de acordo com o Código ~\ref{list:metodoPermutationCrossing}, primeiramente é feita uma iteração sobre a lista de cromossomos do indivíduo 1, dentro de tal iteração, é realizada uma verificação para checar se um cromossomo é o primeiro da primeira atividade (\texttt{lastAtividade == null}) ou se é o primeiro de um determinada atividade de acordo com a ordem delas, caso uma destas condições for verdadeira, um valor binário é sorteado, se tal valor for um, o primeiro novo indivíduo que será criado terá os cromossomos, da atividade em questão, pegos do indivíduo 1 do cruzamento e o segundo novo indivíduo receberá os cromossomos, referentes a tal atividade, do indivíduo 2, caso o valor sorteado seja zero, o processo acontece de forma inversa. 
 
@@ -1704,10 +1702,17 @@ novos indivíduos criados.
 \subsection{Mutação}
 \par O processo de mutação, conforme já explicado anteriormente, consiste em realizar uma pequena modificação entre os cromossomos
 de um indivíduo. Esta modificação pode ser boa, melhorando o resultado do indivíduo ou ruim. No algoritmo genético desenvolvido, 
-a mutação foi realizada trocando o número de lotes recebidos entre duas costureiras escolhidas aleatoriamente dentro de um grupo de cromossomos de cada atividade do indivíduo, conforme mostra a Figura COLOCAR.
+a mutação foi realizada trocando o número de lotes recebidos entre duas costureiras escolhidas aleatoriamente dentro de um grupo de cromossomos de cada atividade do indivíduo, conforme mostra a Figura ~\ref{fig:ex_mutacao}.
 
 
-FIGURA
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.7]{./imagens/mutacao_cromossomo.png}}
+	\caption[Exemplo de mutação]
+	{Exemplo de mutação
+		\textbf{Fonte:} Desenvolvido pelos autores.}
+	\label{fig:ex_mutacao}
+\end{figure}
+
 
 \par O processo de mutação inicia-se dentro do método \texttt{execute()} da classe \texttt{GAController}, e é realizado nos indivíduos
 criados, através do processo de cruzamento, dentro de uma determinada taxa, definida anteriormente nos atributos de configuração do algoritmo genético na classe \texttt{GeneticAlgorithmManagement}. O método que inicia este processo é o \texttt{doMutation()}, tal método verifica o tipo de mutação definido chamando o método correspondente, além disto, ele verifica se a mutação deve ser realizada, sorteando um número aleatoriamente e checando se o número sorteado é menor que a taxa de mutação definida, conforme mostra o Código ~\ref{list:metodoDoMutation}. 
@@ -1816,7 +1821,7 @@ chamado para realizar a mutação, assim, após a mutação para os cromossomos 
 \texttt{doWhile()} para evitar que o mesmo cromossomo escolhido na primeira vez seja selecionado e então, com auxilio de variáveis
 auxiliares, os atributos \texttt{quantidade\_lotes} e \texttt{lotesToShow}, tem seus valores trocados entre si.
 
-\subsection{Construção da interface gráfica, \texttt{CRUD} e apresentação dos dados} 
+\subsection{Interface gráfica de distribuição} 
 
 
 

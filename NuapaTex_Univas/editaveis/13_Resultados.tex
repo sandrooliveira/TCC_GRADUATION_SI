@@ -72,9 +72,7 @@ seguintes.
 \par Este teste demonstra a distribuição de lotes levando em consideração o
 tempo de cada costureira para fabricação das peças. Neste teste será definido o
 preço por peça igual para as costureiras alterando somente o tempo por peça de
-cada uma.
-
-\par Para este teste foi cadastrado um processo de produção informando o
+cada uma. Para este teste foi cadastrado um processo de produção informando o
 cliente, o modelo da calça e a data e hora da entrega conforme mostra a Figura 27:
 \newpage
 
@@ -86,8 +84,7 @@ cliente, o modelo da calça e a data e hora da entrega conforme mostra a Figura 
 \end{figure}
 
 \par Todo processo ao ser criado, por padrão já contém as atividades principais
-que são o carimbo e a finalização conforme mostra a Figura
-~\ref{fig:processo_cadastrado}:
+ Carimbo e Finalização conforme mostra a Figura ~\ref{fig:processo_cadastrado}:
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.4]{./imagens/tela_processo_teste1.png}}
@@ -96,16 +93,13 @@ que são o carimbo e a finalização conforme mostra a Figura
 	\label{fig:processo_cadastrado}
 \end{figure}
 
-\par Após a criação do processo é preciso definir quais costureiras possuem a
-habilidade para realizar as atividades que compõe o processo. Vale ressaltar que
+\par Após a criação do processo foram definidas quais costureiras possuem a
+habilidade para realizar as atividades que compõe o processo, definido para 
+realizar a atividade Finalização as costureiras Maria e Duda, ambas cobram o 
+mesmo valor por peça porém o tempo gasto para fabricar uma peça é diferente 
+conforme mostra a Figura ~\ref{fig:costureira_habilidade}. Vale ressaltar que
 a atividade Carimbo é realizada somente pelo proprietário da fábrica pois é a
-atividade onde serão distribuídas as peças para serem produzidas e é por isso
-que esta atividade está como principal.
-
-\par Será definido para realizar a atividade Finalização as costureiras
-Maria e Duda, ambas cobram o mesmo valor por peça porém o tempo
-gasto para fabricar uma peça é diferente conforme mostra
-a Figura ~\ref{fig:costureira_habilidade}:
+atividade onde serão distribuídas as peças para serem produzidas. 
 
 \newpage
 
@@ -117,9 +111,9 @@ a Figura ~\ref{fig:costureira_habilidade}:
 \end{figure}
 
 
-\par Feito isso, pode-se iniciar o processo de distribuição
+\par Feito isso, foi aberto o processo para a distribuição
 das atividades, através do menu Distribuição de Tarefas.
-Ao acessar a página todos os processos criados serão
+Ao acessar a página todos os processos criados são
 listados como mostra a Figura ~\ref{fig:distribuicao_tarefas}:
 
 \begin{figure}[h!]
@@ -130,12 +124,11 @@ listados como mostra a Figura ~\ref{fig:distribuicao_tarefas}:
 \end{figure}
 
 
-\par Ao clicar no botão abrir da coluna opções será mostrado a tela para que o
+\par Ao clicar no botão abrir da coluna opções é mostrado a tela para que o
 usuário insira os dados como número de peças, total de peças por lote e data inicio. Depois de
 inseridos os dados ao clicar no botão Iniciar distribuição, o sistema executa
 toda a parte de algoritmos genéticos e retorna para o usuário a melhor solução
-encontrada com base nos dados inseridos conforme mostra a Figura
-~\ref{fig:resultado_distribuicao_teste1}:
+encontrada com base nos dados inseridos conforme mostra a Figura ~\ref{fig:resultado_distribuicao_teste1}:
 
 
 \begin{figure}[h!]
@@ -145,15 +138,15 @@ encontrada com base nos dados inseridos conforme mostra a Figura
 	\label{fig:resultado_distribuicao_teste1}
 \end{figure}
 
-\par Conforme ilustrado na Figura ~\ref{fig:costureira_habilidade}, Maria possui
-o tempo de produção maior que Duda, por isso ela recebe um número menor de lotes
-para produzir conforme ilustrado na Figura
-~\ref{fig:resultado_distribuicao_teste1}
+\par Os valores então foram definidos, a distribuição foi realizada, e o resultado apresentado
+. Conforme ilustrado na Figura ~\ref{fig:costureira_habilidade}, Maria possui
+o tempo de produção maior que Duda, por isso ela recebeu um número menor de lotes
+para produzir conforme ilustrado na Figura ~\ref{fig:resultado_distribuicao_teste1}
 
 \par Se o tempo de cada costureira for alterado, um novo resultado será
-retornado levando em consideração as alterações. Para isto, será definido para
+retornado levando em consideração as alterações. Para isto, foi definido para
 Maria o tempo de 4 segundos e para Duda o tempo de 7 segundos conforme ilustra a
-Figura ~\ref{fig:tempo_costureiras}: 
+Figura ~\ref{fig:tempo_costureiras}. 
 
 \newpage
 
@@ -164,7 +157,7 @@ Figura ~\ref{fig:tempo_costureiras}:
 	\label{fig:tempo_costureiras}
 \end{figure}
 
-\par Após executar novamente a distribuição será retornado um novo resultado
+\par Após executar novamente a distribuição foi retornado um novo resultado
 ilustrado na Figura ~\ref{fig:novo_resultado_distribuicao_teste1}:
 
 \begin{figure}[h!]
@@ -174,27 +167,16 @@ ilustrado na Figura ~\ref{fig:novo_resultado_distribuicao_teste1}:
 	\label{fig:novo_resultado_distribuicao_teste1}
 \end{figure}
 
-\par Neste resultado Maria obtém mais lotes que Duda para produzir pois o seu
-tempo de produção é menor. O algoritmo foi configurado para ter 1000
-gerações e 80 indivíduos em cada população, além disso a taxa de indivíduos estrangeiros e de mutação 
-foram de 0,5\% e 0,05\% respectivamente.
-
+\par Neste resultado Maria obteve mais lotes que Duda para produzir pois o seu tempo de produção é menor.
 
 \section{Teste considerando o custo de produção}
 
-\par Este teste segue o mesmo procedimento do teste realizado na seção 4.1,
-porém o tempo de produção entre as costureiras será o mesmo e o custo será
-alterado.
-
-\par O processo assim como o processo da seção 4.1 irá conter as atividades
-Carimbo e Finalização. 
-Será definido o tempo de 5 segundos para as costureiras Maria e Duda e o preço por 
-peça R\textdollar 1,50 e R\textdollar
-2,70 respectivamente. Além disso foi definido os mesmos valores X e Y  
-relativos a posição geografica para Maria e Duda, de forma a manter o tempo de
-transporte semelhantes para ambas. A Figura
-~\ref{fig:custo_entre_costureiras} mostra a definição de tempo e custo para
-ambas as costureiras:
+\par Este teste foi realizado utilizando-se o mesmo processo do teste realizado na seção anterior,
+porém foi definido o mesmo tempo de produção para ambas costureiras alterando somente o custo. Foi definido 
+o tempo de 5 segundos para as costureiras Maria e Duda e o preço por peça R\textdollar 1,50 e R\textdollar 
+2,70 respectivamente. Além disso foi definido os mesmos valores X e Y relativos a posição geográfica para 
+Maria e Duda, de forma a manter o tempo de transporte semelhante para ambas. 
+A Figura ~\ref{fig:custo_entre_costureiras} mostra a definição de tempo e custo para ambas as costureiras:
 
 
 
@@ -205,10 +187,7 @@ ambas as costureiras:
 	\label{fig:custo_entre_costureiras}
 \end{figure}
 
-
-
-\par Ao executar a aplicação é retornado a seguinte distribuição ilustrada na
-Figura ~\ref{fig:resultado_custo}:
+\par Ao executar a distribuição é retornado a seguinte resultado ilustrado na Figura ~\ref{fig:resultado_custo}:
 
 \newpage
 
@@ -219,20 +198,22 @@ Figura ~\ref{fig:resultado_custo}:
 	\label{fig:resultado_custo}
 \end{figure}
 
-\par Com base no resultado obtido, o algoritmo interpretou que pelo fato de
+\par Com base no resultado obtido, o algoritmo decidiu que, pelo fato de
 Maria e Duda obter o mesmo tempo de produção e Duda ter um preço por peça
-bem superior que o de Maria, Duda não recebeu nenhum lote para produzir, pois neste
+bem superior que o de Maria, Duda não deve receber nenhum lote para produzir, pois neste
 caso é possível que Maria produza sozinha os lotes dentro do prazo de entrega do
 processo. Caso Maria não conseguisse produzir os lotes no prazo estipulado, o
-algoritmo adequa a distribuição distribuindo alguns lotes para Duda para
+algoritmo adequaria a distribuição distribuindo alguns lotes para Duda para
 conseguir alcançar o prazo de entrega, toda via, fazendo isto, o custo tende a
-almentar, este caso será mostrado com mais detalhes na seção 4.3.
+aumentar, este caso será mostrado com mais detalhes na seção 4.3.
 
-\par Caso Maria e Duda obtvessem o mesmo tempo, o mesmo preço e a mesma posição
-X e Y o algoritmo distribui lotes para Duda pois, mesmo a costureira Maria
-conseguindo fabricar as peças dentro do prazo, se Duda receber alguns lotes para produzir
-isto não interferirá no preço final como mostra a Figura
+\par Caso Maria e Duda gastassem o mesmo tempo, cobrassem o mesmo preço e o tempo de
+transporte das peças entre todos os envolvidos no processo fosse o mesmo para ambas, 
+o algoritmo distribuiria lotes para Duda pois, mesmo a costureira Maria
+conseguindo fabricar as peças dentro do prazo, neste caso, se Duda recebesse alguns lotes para produzir
+isto não interferiria no preço final e a produção seria realizada em um tempo menor como mostra a Figura
 ~\ref{fig:resultado_tudo_igual}.
+
 \newpage
 
 \begin{figure}[h!]
@@ -242,17 +223,13 @@ isto não interferirá no preço final como mostra a Figura
 	\label{fig:resultado_tudo_igual}
 \end{figure}
 
-\section{Teste tempo x custo e prazo de entrega}
+\section{Teste considerando tempo x custo x prazo de entrega}
 
-\par Este teste foi realizado para demonstrar como fica o tempo de
-produção e o custo quando o prazo de entrega é curto,
-assim mesmo que uma costureira for inviável pelo tempo ou custo, ela poderá
-receber ou não lotes para produzir para que seja cumprido o prazo de entrega.
-Este teste segue o mesmo procedimento da seção 4.1.
-
-\par Para isto as costureiras que possuem a habilidade Finalização ficarão com
-as seguintes configurações como ilustra a Figura
-~\ref{fig:configuracao_habilidade_costureira_teste3}
+\par Este teste foi realizado para demonstrar a distribuição considerando o tempo de
+produção, o custo e o prazo de entrega, assim mesmo que uma costureira for inviável 
+quanto ao custo, ela poderá receber lotes para produzir para que seja cumprido o prazo 
+de entrega. Para isto as costureiras que possuem a habilidade Finalização ficarão com
+as seguintes configurações como ilustra a Figura ~\ref{fig:configuracao_habilidade_costureira_teste3}
 
 \newpage
 
@@ -276,10 +253,9 @@ com base nas configurações da habilidade Finalização mostrada na Figura
 \end{figure}
 
 \par Como ilustrado na Figura ~\ref{fig:resultado1_teste3}, a costureira Duda
-não recebe nenhum lote pois possui um tempo de produção e custo maior que Maria e
-esta consegue cumprir o prazo de entrega, porém, caso Maria não consiga atender
-o prazo de entrega, Duda poderá receber lotes para produzir mesmo que o tempo e
-o custo finais aumentem.
+não recebeu nenhum lote pois possui um tempo de produção e custo maior que Maria e
+esta consegue cumprir o prazo de entrega, porém, caso Maria não conseguisse atender
+o prazo, Duda poderia receber lotes para produzir mesmo que custo aumente.
 
 A Figura ~\ref{fig:resultado2_teste3} mostra a distribuição de lotes entre as
 costureiras com a alteração na data de inicio do processo.
@@ -292,22 +268,22 @@ costureiras com a alteração na data de inicio do processo.
 \end{figure}
 
 \par Como ilustrado na Figura ~\ref{fig:resultado2_teste3} a costureira Duda
-recebe 3 lotes para produzir, assim, o tempo de produção e custo aumentam com
-relação ao resultado da Figura ~\ref{fig:resultado1_teste3}, porém o prazo de
-entrega é cumprido.
+recebe 3 lotes para produzir, assim, o custo de produção aumenta com relação ao 
+resultado da Figura ~\ref{fig:resultado1_teste3}, porém o tempo de produção diminui
+sendo possível atender o prazo de entrega.
 
 
 \section{Teste considerando o tempo de transporte}
 
 \par Este teste foi realizado para demonstrar que mesmo as costureiras possuindo
 o tempo e custo iguais, a distancia entre a fábrica pode determinar a
-distribuição dos lotes. Foi utilizado para o teste o processo da seção 4.1.
+distribuição dos lotes.
 
-
-\par Para isto, foi necessário cadastrar um valor X e Y para cada costureira que
-representa sua localização conforme mostra a Figura ~\ref{fig:add_xy_costureira_teste4}.
+\par Para isto, foi necessário cadastrar um valor X e Y para cada costureira, 
+conforme mostra a Figura ~\ref{fig:add_xy_costureira_teste4}.
 
 \newpage
+
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.3]{./imagens/posicao_xy_costureiras_teste4.png}}
