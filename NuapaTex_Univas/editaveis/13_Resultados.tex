@@ -33,7 +33,7 @@ o escopo definido, o foco passou a ser na definição da estrutura dos elementos
 
 
 
-\par Após todas as etapas descritas acima, foi obtido como resultado a aplicação
+\par Assim, seguindo os passos descrito no quadro metodológico, foi obtido como resultado a aplicação
 capaz de distribuir atividades de forma a se obter o menor custo e o menor tempo de produção, 
 alcançando assim os objetivos específicos conforme mostra a Figura ~\ref{fig:tela_inicial_da_aplicação}.
 
@@ -77,8 +77,8 @@ cliente, o modelo da calça e a data e hora da entrega conforme mostra a Figura 
 \end{figure}
 
 \par Após a criação do processo foram definidas quais costureiras possuem a
-habilidade para realizar as atividades que compõe o processo, definido para 
-realizar a atividade Finalização as costureiras Maria e Duda, ambas cobram o 
+habilidade para realizar as atividades que compõe o processo, sendo definidas para 
+realizar a atividade Finalização, as costureiras Maria e Duda, ambas cobram o 
 mesmo valor por peça porém o tempo gasto para fabricar uma peça é diferente 
 conforme mostra a Figura ~\ref{fig:costureira_habilidade}. Vale ressaltar que
 a atividade Carimbo é realizada somente pelo proprietário da fábrica pois é a
@@ -259,8 +259,7 @@ sendo possível atender o prazo de entrega.
 \section{Teste considerando o tempo de transporte}
 
 \par Este teste foi realizado para demonstrar que mesmo as costureiras possuindo
-o tempo e custo iguais, a distancia entre a fábrica pode determinar a
-distribuição dos lotes.
+o tempo e custo iguais, o tempo de transporte entre elas pode influenciar na distribuição dos lotes.
 
 \par Para isto, foi necessário cadastrar um valor X e Y para cada costureira, 
 conforme mostra a Figura ~\ref{fig:add_xy_costureira_teste4}.
@@ -305,7 +304,7 @@ através do menu Distribuição de Tarefas, a Figura
 \end{figure}
 
 \par Como mostrado na figura ~\ref{fig:add_xy_costureira_teste4}, a costureira
-Duda fica mais distante da fábrica por isso recebe menos lotes para produzir em
+Duda fica mais distante do Marcelo e por isso recebe menos lotes para produzir em
 relação a costureira Maria.
 
 \par Para melhor ilustar o tempo de envio das peças para as costureiras, na tela
@@ -331,7 +330,7 @@ Duda recebe menos lotes para ser produzidos.
 \par Este teste foi realizado para demonstrar a adição de mais atividades no
 processo. Este teste segue o mesmo processo da seção 4.1.
 
-\par Neste caso deve-se considerar o tempo de transporte entre as costureiras da atividade Frente e a fábrica 
+\par Neste caso deve-se considerar o tempo de transporte entre as costureiras da atividade Frente e o Marcelo 
 para a retirada dos materiais e o tempo entre tais costureiras e a costureira
 responsável pela Finalização, para isso foi adicionado no processo a atividade
 Frente conforme mostra a Figura ~\ref{fig:add_frente_teste5}.
@@ -344,10 +343,9 @@ Frente conforme mostra a Figura ~\ref{fig:add_frente_teste5}.
 \end{figure}
 
 \par Após a adição da atividade, é preciso adicioná-la ao fluxo do processo como
-predecessora da atividade Finalização. Como ativividade Finalização é sempre a
-última atividade do processo, todas as atividades que forem incluidas sempre
-serão predecessoras a ela.
-\par A Figura ~\ref{fig:add_frente_teste4} mostra a atividade Frente adicionada
+predecessora da atividade Finalização. Como a atividade Finalização é sempre a
+última atividade do processo, todas as atividades que forem incluídas sempre
+serão predecessoras a ela.  A Figura ~\ref{fig:add_frente_teste4} mostra a atividade Frente adicionada
 no fluxo do processo.
 
 \newpage
@@ -361,7 +359,7 @@ no fluxo do processo.
 
 
 \par Foi adicionado na habilidade Frente as costureiras Roberta, Lucia e Renata
-para que estas possão realizar a atividade Frente do processo.
+para que estas possam realizar a atividade Frente do processo.
 \par A Figura ~\ref{fig:add_costureira_frente_teste4} mostra as costureiras
 adicionadas na habilidade Frente.
 
@@ -372,7 +370,7 @@ adicionadas na habilidade Frente.
 	\label{fig:add_costureira_frente_teste4}
 \end{figure}
 
-\par Feito isso foi realizado a distribuição dos lotes com as cofigurações de
+\par Feito isso foi realizado a distribuição dos lotes com as configurações de
 tempo e custo mostradas na Figura ~\ref{fig:add_costureira_frente_teste4} e com
 as configurações de posicionamento mostradas na Figura
 ~\ref{fig:add_xy_costureira_teste4}.
