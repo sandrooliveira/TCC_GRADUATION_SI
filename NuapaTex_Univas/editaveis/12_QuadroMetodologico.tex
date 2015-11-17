@@ -191,17 +191,17 @@ de um algoritmo genético. Tal \textit{framework} é definido dentro da seguinte
 	\par A classe contém os seguintes atributos:
 	
 	\begin{itemize} 
-		\item \textit{populationSize}:
+		\item \texttt{populationSize}:
 		este atributo define qual será o tamanho da população, ou seja, quantos
 		indivíduos irão formar cada população;
 		
-		\item \textit{generationQuantity}:
+		\item \texttt{generationQuantity}:
 		como já explicado no quadro teórico, o processo de cruzamento e mutação se
 		repete até que o número de indivíduos, definido no atributo anterior, seja atingido formando assim uma nova população e então, por sua vez, 
 		este processo de geração de novas populações se repete até que seja atingido um número de gerações definido 
 		pelo programador. Este atributo representa esta quantidade;
 		
-		\item \textit{elitism}:
+		\item \texttt{elitism}:
 		atributo do tipo \textit{boolean} que representa se o algoritmo vai ter a
 		função de elitismo.
 		Esta função, como já foi explicada no quadro teórico, quando está ativada (com
@@ -210,42 +210,39 @@ de um algoritmo genético. Tal \textit{framework} é definido dentro da seguinte
 		Este mecanismo garante que a nova população terá pelo menos dois indivíduos iguais ao da antiga população, o que irá 
 		impedir que a nova população não seja pior que a anterior;
 		
-		\item \textit{foreignIndividualRate}:
+		\item \texttt{foreignIndividualRate}:
 		este atributo define a taxa de novos indivíduos que devem entrar em novas
-		populações e será visto com mais detalhes na seção Indivíduos Estrangeiros.
+		populações e será visto com mais detalhes na seção ~\ref{ind_estrangeiros_subsection}.
 		
-		\item \textit{mutationRate}:
+		\item \texttt{mutationRate}:
 		como descrito no quadro teórico, a mutação é o fato de realizar pequenas
-		alterações no indivíduo a fim de que este possa se tornar ainda melhor. Este parâmetro define uma porcentagem, geralmente baixa, que define quando 
-		o indivíduo sofrerá mutação ou não. Esta questão ficará mais clara logo
-		abaixo, quando será explicado o passo-a-passo da execução do algoritmo.
+		alterações no indivíduo a fim de que este possa se tornar ainda melhor. Este parâmetro define uma porcentagem, geralmente baixa, que define quando o indivíduo sofrerá mutação ou não. Esta questão ficará mais clara na seção ~\ref{mutacao_subsection}.
 		
-		\item \textit{mutationQuantity}:
+		\item \texttt{mutationQuantity}:
 		caso a mutação for ocorrer para o indivíduo, a alteração aleatória será feita
 		nos cromossomos.
 		Este parâmetro define quantos cromossomos do indivíduo deve ser alterado pela mutação;
 		
-		\item \textit{selectionType}:
+		\item \texttt{selectionType}:
 		conforme descrito no quadro teórico, existem várias formas de seleção dos
-		indivíduos para realizarem o cruzamento. Este parâmetro define qual será a forma escolhida pelo programador ao
-		implementar o seu problema.No \textit{framework} este parâmetro é do tipo \texttt{enum} e pode assumir 2 valores o
-		\textit{ROULETTE}, que define que o método de seleção utilizado será o de roleta e o \textit{CLASSIFICATION}, que 
+		indivíduos para realizarem o cruzamento. Este parâmetro define qual será a forma de seleção escolhida pelo programador ao
+		implementar o seu problema. No \textit{framework} este parâmetro é do tipo \texttt{enum} e pode assumir 2 valores o
+		\texttt{ROULETTE}, que define que o método de seleção utilizado será o de roleta e o \texttt{CLASSIFICATION}, que 
 		define que o método a ser utilizado é o de classificação. Neste projeto o
 		método padrão que já foi pré-definido no código foi o método de roleta;
 		
-		\item \textit{crossType}:
-		Assim como a seleção, existe diversas formas de fazer o cruzamento dos indivíduos. Este atributo, 
-		também do tipo \texttt{enum} representa a forma de cruzamento e pode receber os valores \textit{Binary}, 
-		\textit{Permutation}, \textit{Uniform} e \textit{Aritmetic}, esses valores
+		\item \texttt{crossType}:
+		assim como a seleção, existe diversas formas de fazer o cruzamento dos indivíduos. Este atributo, 
+		também do tipo \texttt{enum} representa a forma de cruzamento e pode receber os valores \texttt{Binary}, 
+		\texttt{Permutation}, \texttt{Uniform} e \texttt{Aritmetic}, esses valores
 		definem qual implementação de cruzamento o algoritmo deve utilizar, esta aplicação
-		utilizará o método \textit{Permutation}, desta forma somente um
-		método de cruzamento foi implementado conforme mostra a seção Seleção,
-		cruzamento e mutação;
+		utilizará o método \texttt{Permutation}, desta forma somente um método de cruzamento foi implementado conforme 
+		mostra a seção ~\ref{selecao_cruzamento_section};
 		
-		\item \textit{mutationType}:
-		Segue a mesma forma que o selectionType e o crossType e pode assumir os valores \textit{Permutation}, 
-		\textit{Binary} e \textit{Numerical}, e neste projeto foi o escolhido o
-		método \textit{Permutation}.
+		\item \texttt{mutationType}:
+		Segue a mesma forma que o \texttt{selectionType} e o \texttt{crossType} e pode assumir os valores \texttt{Permutation}, 
+		\texttt{Binary} e \texttt{Numerical}, e neste projeto foi o escolhido o
+		método \texttt{Permutation}.
 		
 	\end{itemize}
 	
@@ -255,9 +252,9 @@ de um algoritmo genético. Tal \textit{framework} é definido dentro da seguinte
 	\texttt{Cromossomo}, que será descrita posteriormente, que contém uma coleção
 	de objetos que representam as características da solução.
 	
-	\par A Classe contém ainda um atributo chamado \texttt{valor} que irá armazenar a qualidade, ou seja, qual é o custo
+	\par A classe contém ainda um atributo chamado \texttt{valor} que irá armazenar a qualidade (\textit{fitness}), ou seja, qual é o custo
 	da solução representada pelo indivíduo, tal valor é recebido no retorno da
-	operação calculateValue() descrita abaixo.
+	operação \texttt{calculateValue()} descrita abaixo.
 	
 	\par Com relação as operações, além dos \textit{getters and setters}, a classe contém a operação abstrata 
 	\texttt{calculateValue()}, que realiza a função de avaliação, que mede a qualidade do indivíduo. Desta forma, ao utilizar este \textit{framework}, a classe que representa o indivíduo do 
@@ -304,13 +301,13 @@ de um algoritmo genético. Tal \textit{framework} é definido dentro da seguinte
 	partir de cruzamentos, mutações, elitismo, etc, tendo também a
 	responsabilidade de chamar a função de classificação e avaliação de cada indivíduo.
 	
-	\par Os pontos a seguir descrevem basicamente os passos executados dentro do
+	\par Os seguintes passos descrevem basicamente os passos executados dentro do
 	método execute(). Outros detalhes serão vistos mais adiante quando será
 	descrita a implementação do algoritmo da fábrica de calças, pois será
 	necessário realizar algumas adaptações neste \textit{framework}.
 	
 	\begin{itemize}
-		\item	Criação da população inicial, através do método createInitialPopulation()
+		\item	Criação da população inicial, através do método \texttt{createInitialPopulation()}
 		do objeto que será extendido da classe GAModel;
 		
 		\item Classificação e avaliação da população inicial através do método
@@ -322,7 +319,7 @@ de um algoritmo genético. Tal \textit{framework} é definido dentro da seguinte
 		\item Inserção de indivíduos estrangeiros na população;
 		
 		\item Realização do processo de seleção de indivíduos, através do método
-		doSelection();
+		\texttt{doSelection()};
 		
 		\item Execução do processo de cruzamento e mutação, através do método
 		\texttt{doCrossing()} e \texttt{doMutaion()} respectivamente.
@@ -331,13 +328,13 @@ de um algoritmo genético. Tal \textit{framework} é definido dentro da seguinte
 	\end{itemize}
 	
 	\par Após estes passos, uma nova população foi criada e está
-	armazenada na variável newGeneration, assim o método
+	armazenada na variável \texttt{newGeneration}, assim o método
 	\texttt{setPopulation()} do objeto \texttt{model} é chamado para então substituir
 	a antiga população pela nova. Como a execução está dentro de uma estrutura de repetição
 	\texttt{for}, ocorre um \texttt{loop} e então é recomeçado o processo de
 	criação de uma outra população. Este processo para quando o número de gerações, 
 	definido no parâmetro \texttt{generationQuantity} do objeto \texttt{model}
-	for atingido, neste caso é dado o comando \texttt{break} e o \texttt{loop} é encerrado.
+	for atingido, neste caso é dado o comando \texttt{break}, e o \texttt{loop} é encerrado.
 	% 	Para começar é chamado o método  \texttt{createInitialPopulation} da classe
 	% 	\texttt{GAModel} para criar a população de indivíduos, este método será
 	% 	implementado pela classe que irá herdar da classe \texttt{GAModel}.
@@ -368,11 +365,12 @@ e dos elementos do algoritmo genético, seguindo as definições do \textit{fram
 \subsection{Representação do processo de produção}
 
 \par Primeiramente foi definido como seria o processo de fabricação. Este foi pensado com base no 
-processo da fábrica, em que a confecção das peças deveria ser dividida em atividades que representam
+processo da fábrica, em que a confecção das peças deveria ser dividida em atividades que representam a fabricação de
 cada parte da calça. Neste contexto, surgiu a necessidade de determinar uma ordem para a execução do processo, 
 devido ao fato de que algumas atividades dependem da finalização de outras para poderem ser
 realizadas. A Figura ~\ref{fig:processo_fabricacao} demonstra basicamente um
-exemplo de ordem de execução do processo de confecção.
+exemplo de ordem de execução do processo de confecção, sendo importante ressaltar que a atividade finalização, apesar
+de ser a atividade final, é que inicia o processo de solicitação das dependências das atividades predecessoras.
 
 
 \begin{figure}[h!]
@@ -384,9 +382,9 @@ exemplo de ordem de execução do processo de confecção.
 \end{figure}
 
 \par  Uma questão importante que foi definida é que, independente da complexidade e tamanho do processo, este deve sempre começar 
-com a atividade Carimbo e finalizar com a atividade Finalização. Isso ocorre pois a Finalização é sempre a última atividade 
-de qualquer processo da fábrica e o Carimbo é uma atividade simbólica que representa o fato de o dono da fábrica separar o 
-material de costura. O tempo e o custo gastos nesta separação não são contabilizados no algoritmo genético, somente o tempo de 
+com a atividade carimbo e finalizar com a atividade Finalização. Isso ocorre pois a finalização é sempre a última atividade 
+de qualquer processo da fábrica e o carimbo é uma atividade simbólica que representa o fato de o dono da fábrica separar o 
+material de costura. O tempo gasto e o custo desta separação não são contabilizados no algoritmo genético, somente o tempo de 
 transporte dos materiais até as costureiras são considerados na distribuição, além disto esta atividade terá somente uma pessoa
 trabalhando que, neste caso será o Marcelo, dono da fábrica, que é o responsável por este trabalho.
 
@@ -409,14 +407,14 @@ de calça possui um processo diferente que pode possuir diferentes atividades qu
 são representadas na tabela \texttt{atividade}, onde é feita a relação que define quais são as atividades de 
 um processo,  além de conter quais são as habilidades necessárias para cada atividade, ou seja, cada registro desta 
 tabela representa uma atividade do processo e qual habilidade é necessária para sua execução. O campo 
-\texttt{is\_atividade\_inicial}, quando tem o valor 1, define que tal atividade
+\texttt{is\_atividade\_final}, quando tem o valor 1, define que tal atividade
 é a atividade Finalização. Esta \textit{flag} é importante no momento de calcular o tempo total de execução do
 processo e será visto com mais detalhes posteriormente e, por fim, a tabela
 \texttt{atividade\_ordem} é onde é feita a definição de ordem de execução das
 atividades.
 
-\par A Figura ~\ref{fig:class_atividadeOrdem} demonstra o mapeamento da relação
-entre a tabela \texttt{atividade} e atividade\_ordem para o Java.
+\par A Figura ~\ref{fig:class_atividadeOrdem} demonstra as classes que representam o mapeamento da relação
+entre a tabela \texttt{atividade} e \texttt{atividade\_ordem} para o Java.
 
 \newpage
 
@@ -428,36 +426,23 @@ entre a tabela \texttt{atividade} e atividade\_ordem para o Java.
 	\label{fig:class_atividadeOrdem}
 \end{figure} 
 
-\par A classe Atividade pode ter zero ou vários objetos da classe
-AtividadeOrdem.
-Esta possui dois objetos da própria classe Atividade, um representando uma
+\par A classe \texttt{Atividade} pode ter zero ou vários objetos da classe
+\texttt{AtividadeOrdem}.
+Esta possui dois objetos da própria classe \texttt{Atividade}, um representando uma
 atividade e outro representando a sua predecessora.
 
-\par Considerando o processo de produção e o modelo de dados apresentados acima, foi
+\par Considerando o processo de produção e o modelo de dados apresentados anteriormente, foi
 desenvolvido um algoritmo genético para a solução do problema de otimização. Conforme já demonstrado 
-no Quadro Teórico, um algoritmo genético deve seguir uma ordem de execução conforme mostra
-a Figura ~\ref{fig:exec_ag}.
-
-
-\begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.6]{./imagens/algoritimos_geneticos.jpg}}
-	\caption[Demonstração da execução de um AG.]
-	{Demonstração da execução de um AG. \textbf{Fonte:} Desenvolvido pelos
-	autores.}
-	\label{fig:exec_ag}
-\end{figure}
-
-\newpage
-
+no capítulo ~\ref{quadro_teorico}, um algoritmo genético deve seguir uma ordem de execução conforme mostra
+a Figura ~\ref{fig:representacao_ags} (ver página 16).
 
 \par O primeiro passo para a execução do algoritmo então foi o desenvolvimento de uma lógica para a criação
-da população inicial de indivíduos, conforme explicado na próxima seção.
+da população inicial de indivíduos.
 
 \subsection {População inicial: Distribuição das atividades, Indivíduos e Cromossomos}
 
 \par Para um melhor entendimento dos conceitos a serem explanados, é necessário
-conhecer, de forma básica, o fluxo de execução da aplicação. Como será visto na seção que descreve a construção
-da interface gráfica, o usuário irá iniciar a execução do algoritmo genético através de uma tela de distribuição de atividades, nesta tela ele deve informar o número de peças que deseja produzir, a quantidade de peças que cada lote deve possuir e uma data de início das atividades. Através da data de início e a data de entrega, informada no cadastro do processo, o controlador da tela calcula o prazo de entrega e o número total de lotes e chama o serviço de gerenciamento da execução do AG, passando o número de lote, o número de peças por lote e o prazo de entrega a ser considerado durante a distribuição. Tal serviço, por sua vez, configura os parâmetros do algoritmo genético e da início a execução deste. A Figura ~\ref{fig:fluxo_basico} ilustra o fluxo básico de execução da aplicação.
+conhecer, de forma básica, o fluxo de execução da aplicação. Como será visto na seção ~\ref{interface_grafica_section}, o usuário irá iniciar a execução do algoritmo genético através de uma tela de distribuição de atividades, nesta tela ele deve informar o número de peças que deseja produzir, a quantidade de peças que cada lote deve possuir e uma data de início das atividades. Através da data de início e a data de entrega, informada no cadastro do processo, o controlador da tela calcula o prazo de entrega e o número total de lotes e chama o serviço de gerenciamento da execução do AG, passando o número de lote, o número de peças por lote e o prazo de entrega a ser considerado durante a distribuição. Tal serviço, por sua vez, configura os parâmetros do algoritmo genético e da início a execução deste. A Figura ~\ref{fig:fluxo_basico} ilustra o fluxo básico de execução da aplicação.
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.5]{./imagens/fluxo_basico.png}}
@@ -467,7 +452,7 @@ da interface gráfica, o usuário irá iniciar a execução do algoritmo genéti
 \end{figure}
 
 \par Conforme ilustrado na Figura ~\ref{fig:fluxo_basico}, o processo de criação da população inicial assim como o processo de seleção, 
-cruzamento e mutação e a chamada da função de avaliação de cada indivíduo, ocorre dentro dentro de uma classe de controle,
+cruzamento e mutação e a chamada da função de avaliação de cada indivíduo, ocorre dentro de uma classe de controle,
 ou seja, esta classe faz a orquestração de toda a execução do AG. Tal classe é denominada \texttt{GAController} e
 pertence ao \textit{Framework} explanado anteriormente.
 
@@ -479,7 +464,7 @@ neste objeto pois são utilizados pela regra de negócio seguida na execução d
 demonstra o método \texttt{iniciarDistribuicao()}.
 
 
-\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{iniciarDistribuicao()} da classe GeneticAlgorithmManagement]
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{iniciarDistribuicao()} da classe \texttt{GeneticAlgorithm\-Management} ]
 {Método \texttt{iniciarDistribuicao()} da classe \texttt{GeneticAlgorithmManagement}. \textbf{Fonte:}
 Elaborado pelos autores.}}, label=list:iniciarDistribuicao]
 
@@ -520,8 +505,8 @@ buscar todas as costureiras que tem a habilidade de fazer cada uma destas e cria
 atividade final (Finalização), conforme demonstra o Código ~\ref{list:getInformacoesCostureiras}.
 
 
-\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{getInformacoesCostureiras}]
-{Método \texttt{getInformacoesCostureiras}. \textbf{Fonte:}
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{getInformacoesCostureiras()}]
+{Método \texttt{getInformacoesCostureiras()}. \textbf{Fonte:}
 Elaborado pelos autores.}}, label=list:getInformacoesCostureiras]
 
 public void getInformacoesCostureiras() {
@@ -566,9 +551,8 @@ pelo método \texttt{getInformacoesCostureiras()}, além dos atributos \texttt{n
 \texttt{prazoEmSegundos}, conforme mostra o código ~\ref{list:createInitialPopulation}.
 
 
-\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{createInitialPopulation}]
-{Método \texttt{createInitialPopulation}. \textbf{Fonte:}
-Elaborado pelos autores.}}, label=list:createInitialPopulation]
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{createInitialPopulation()}]
+{Método \texttt{createInitialPopulation()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:createInitialPopulation]
 
 @Override
 	public void createInitialPopulation() {
@@ -982,10 +966,10 @@ mostrada na Figura ~\ref{fig:demonstracao_costureiras_habilidades}.
 \par O método \texttt{calculateValue()}, após agrupar os cromossomos por atividade, 
  instancia um objeto da classe \texttt{Node} passando a \texttt{atividadeFinal} e o número de 
  peças por lote recebidos na criação do indivíduo, conforme descrito na seção anterior, e o map 
- atividadeCromossomos conforme mostra a Código ~\ref{list:metodoCalculateValue}.
+ atividadeCromossomos conforme mostra o Código ~\ref{list:metodoCalculateValue}.
 
 
-\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{calculateValue()]
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{calculateValue()}]
 {Método \texttt{calculateValue()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoCalculateValue]
 
 	public void calculateValue() {
@@ -1012,9 +996,12 @@ mostrada na Figura ~\ref{fig:demonstracao_costureiras_habilidades}.
 		}
 		
 		for (Chromosome chromosome : chromosomes) {
-		ProcessoChromosome processoChromossome = (ProcessoChromosome) chromosome;
+		ProcessoChromosome processoChromossome = 
+			(ProcessoChromosome) chromosome;
 		
-			if (lastAtividade == null || lastAtividade != processoChromossome.getAtividade()) {
+			if (lastAtividade == null || lastAtividade != 
+				processoChromossome.getAtividade()) {
+				
 				cromossomos = new ArrayList<Chromosome>();
 				
 				atividadeCromossomos.put
@@ -1023,7 +1010,8 @@ mostrada na Figura ~\ref{fig:demonstracao_costureiras_habilidades}.
 			}
 			cromossomos.add(processoChromossome);
 		}
-		node = new Node(atividadeFinal, atividadeCromossomos,this.pecasPorLote);
+		node = new Node(
+			atividadeFinal, atividadeCromossomos,this.pecasPorLote);
 		
 		setCusto(custoTotal);
 		
@@ -1045,12 +1033,10 @@ mostrada na Figura ~\ref{fig:demonstracao_costureiras_habilidades}.
 cada vez que esta é instanciada, é como se criasse um nó daqueles mostrados na Figura ~\ref{fig:montagem_node}. Assim,
 quando o método \texttt{calculateValue()} instancia um objeto \texttt{Node}, no construtor deste outros nós são criados, e então toda
 estrutura, como foi ilustrada na Figura
-~\ref{fig:montagem_node}, será criada. O Código
-~\ref{list:classeNode} mostra a construção de um objeto \texttt{Node}.
+~\ref{fig:montagem_node}, será criada. O Código ~\ref{list:classeNode} mostra a construção de um objeto \texttt{Node}.
 
-\begin{lstlisting} [style=custom_Java,caption={[Construtor da classe Node.}]
-{Construtor da classe Node. \textbf{Fonte:} Elaborado pelos
-autores.}}, label=list:classeNode]
+\begin{lstlisting} [style=custom_Java,caption={[Construtor da classe \texttt{Node}]
+{Construtor da classe \texttt{Node}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:classeNode]
 
 	public Node(Atividade atividade,Map<Integer,List<Chromosome>>
 		 atividadeCromossomos, int pecasPorLote){
@@ -1080,8 +1066,7 @@ O construtor então armazena as informações e pega do \texttt{MAP} somente os 
 por fim, faz uma iteração na lista de atividades predecessoras da atividade recebida e, recursivamente, cria novos nós, 
 construindo assim, a estrutura demonstrada na Figura ~\ref{fig:montagem_node}.
 
-\par Como se pode ver no método \texttt{calculateValue()} no Código
-~\ref{list:metodoCalculateValue}, após criar a estrutura de nós, é chamado o método \texttt{getTempoTotal()} do objeto
+\par Como se pode ver no método \texttt{calculateValue()} no Código ~\ref{list:metodoCalculateValue}, após criar a estrutura de nós, é chamado o método \texttt{getTempoTotal()} do objeto
 \texttt{node} criado. Este método é responsável por iniciar a sequência lógica que 
 faz o cálculo do tempo total a ser gasto pelo indivíduo, calculando o tempo gasto por 
 cada costureira, definindo quem irá enviar peças pra quem e calculando o tempo de transporte 
@@ -1242,8 +1227,8 @@ foi chamado passando o cromossomo Roberta. O Código ~\ref{list:codigo_metodo_ca
 
 
 
-\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{getValueChromosomosPredecessores()}.]
-{Método \texttt{getValueChromosomosPredecessores()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:codigo_metodo_calcularTempoEntreCostureiras] 	
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{calcularTempoEntreCostureiras()}.]
+{Método \texttt{calcularTempoEntreCostureiras()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:codigo_metodo_calcularTempoEntreCostureiras] 	
 
 	public long calcularTempoEntreCostureiras(
 		ProcessoChromosome processoChromosome,
@@ -1310,7 +1295,7 @@ No fim, pravalece sempre o maior valor do tempo de recebimento dos lotes das ati
 então tal valor é somado ao tempo de produção da finalização o que, no exemplo da Figura 17, resultou e 1600 segundos,
 este valor então é colocado no atributo \texttt{tempoTotal} do indivíduo.
 
-\par A função de avaliação é chamada dentro do método \texttt{classify}, dentro da classe \texttt{GAController}, tal método, 
+\par A função de avaliação é chamada dentro do método \texttt{classify}, dentro da classe GAController, tal método, 
 por sua vez, é chamado dentro do método \texttt{execute()} após a criação da população inicial.
 
 \subsection{Classificação dos indivíduos}
@@ -1365,7 +1350,7 @@ public void classify(List<Individual> population){
 						
 \end{lstlisting}
 
-\par Após chamar a função de avaliação para todos os indivíduos, através do método \texttt{calculateValue()}, o método
+\par Após chamar a função de avaliação para todos os indivíduos, através do método calculateValue(), o método
 de ordenação \texttt{Collections.sort()} é chamado passando a lista de indivíduos (população). Para que se possa utilizar este método
 de ordenação, a classe, que representa o tipo da lista, deve implementar a interface
 \texttt{Comparable} e, ao implementá-la, obrigatoriamente o método \texttt{compareTo()} deve ser implementado. Este método
@@ -1398,7 +1383,7 @@ atribuído ao indivíduo no construtor da classe \texttt{ProcessoIndivíduo}, co
 
 \par Desta forma, os melhores indivíduos (primeiros colococados), irão ter sempre menor custo, procurando manter o tempo dentro do prazo, porém caso nenhum dos indivíduos tenham o tempo total menor ou igual ao prazo, então o melhor tempo é retornado e a ordenação por custo é ignorada.
 
-\subsection{Indivíduos estrangeiros e elitismo}
+\subsection{Indivíduos estrangeiros e elitismo} \label{ind_estrangeiros_subsection}
 
 \par Após a classificação dos indivíduos, o próximo passo, a ser realizado pelo método \texttt{execute()}, é verificar
 se o melhor indivíduo (primeiro da lista) da população atual é melhor que o da população anterior, caso positivo ou
@@ -1484,7 +1469,7 @@ atributo \texttt{foreignIndividualRate} da classe GAModel do \textit{framework},
 demonstrado na linha 36 do Código ~\ref{list:código_metodo_execute}, os indivíduos estrangeiros são criados utilizando o método \texttt{createIndividual()} da classe \texttt{GAModel} que foi implementado na classe \texttt{ProcessoModel}, 
 tal método utiliza o mesmo construtor utilizado para criação de indivíduos da população inicial portanto segue a mesma lógica utilizada, a diferença é que, ao criar tais indivíduos, o \textit{looping} é executado de acordo com a taxa definida, o que irá resultar na criação de um número bem menor de indivíduos, comparado a quantidade de indivíduos criados durante a população inicial..
 
-\subsection{Seleção de indivíduos e cruzamento/Reprodução} 
+\subsection{Seleção de indivíduos e cruzamento/reprodução}  \label{selecao_cruzamento_section}
 
 \par Após o processo de elitismo e a criação dos indivíduos estrangeiros, o restante da nova população é criado através do processo
 de cruzamento, conforme as instruções a partir da linha 39 do Código ~\ref{list:código_metodo_execute}. O cruzamento começa com a 
@@ -1585,7 +1570,9 @@ chamando o método correspondente conforme mostra o Código ~\ref{list:metodoDoC
 
 \begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doCrossing()}]{Método \texttt{doCrossing()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoDoCrossing] 
 
-	private IndividualPair doCrossing(Individual individual1, Individual individual2){
+	private IndividualPair doCrossing(Individual individual1, 
+		Individual individual2){
+		
 		switch (model.getCrossType()) {
 			case ARITMETIC: break;
 			
@@ -1667,14 +1654,18 @@ aplicação conforme demonstrado no Código ~\ref{list:metodoPermutationCrossing
 
 \par Assim a iteração continua até a lista de cromossomos dos novos indivíduos possuir todos os grupos de cromossomos referentes a todas as atividades e então, ao fim da iteração, dois novos indivíduos serão criados através do método \texttt{createIndividual()}.
 
-\par Quando se cria indivíduos a partir deste ponto, a classe \texttt{ProcessoModel} utiliza um outro construtor para criar o indivíduo, conforme mostra o Código ~\ref{list:metodoCreateIndividualCromossomos}
+\par Quando se cria indivíduos a partir deste ponto, a classe \texttt{ProcessoModel} utiliza um outro construtor para criar o indivíduo, conforme mostra o Código ~\ref{list:metodoCreateIndividualCromossomos}.
 
 
-\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{creatIndividual()} utilzando cromossomos]{Método \texttt{creatIndividual()} utilizando cromossomos. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoCreateIndividualCromossomos] 
+\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{createIndividual()} utilzando cromossomos]{Método \texttt{createIndividual()} utilizando cromossomos. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoCreateIndividualCromossomos] 
 
 	@Override
-	public Individual createIndividual(ArrayList<Chromosome> chromosomes) {
-		return new ProcessoIndividual(atividadeFinal, prazoEmSegundos, chromosomes,this.numeroLote,this.pecasPorLote);
+	public Individual createIndividual(
+		ArrayList<Chromosome> chromosomes) {
+		
+		return new ProcessoIndividual(atividadeFinal,
+			 prazoEmSegundos, chromosomes,this.numeroLote,
+				 this.pecasPorLote);
 	}
 
 \end{lstlisting}
@@ -1704,7 +1695,7 @@ Java não é possível retornar dois valores, é criado um objeto da classe \tex
 e então este objeto é retornado. Esta classe só possui dois atributos do tipo \texttt{Individual} e só é utilizada para retornar os dois 
 novos indivíduos criados.
 
-\subsection{Mutação}
+\subsection{Mutação} \label{mutacao_subsection}
 \par O processo de mutação, conforme já explicado anteriormente, consiste em realizar uma pequena modificação entre os cromossomos
 de um indivíduo. Esta modificação pode ser boa, melhorando o resultado do indivíduo ou ruim. No algoritmo genético desenvolvido, 
 a mutação foi realizada trocando o número de lotes recebidos entre duas costureiras escolhidas aleatoriamente dentro cada grupo de cromossomos (atividades) do indivíduo, conforme mostra a Figura ~\ref{fig:ex_mutacao}.
@@ -1830,7 +1821,7 @@ auxiliares, os atributos \texttt{quantidade\_lotes} e \texttt{lotesToShow}, tem 
 Concluindo, após a finalização do processo de cruzamento e possível mutação dos novos indivíduos, uma nova população terá sido criada, assim esta nova população substitui a população anterior e então todo o processo de classificação, verificação do melhor indivíduo etc é reiniciado, desta forma sempre será criada uma nova população até que o número de gerações seja atingido e quando o for, o melhor indivíduo 
 é retornado, conforme explicado anteriormente. 
 
-\subsection{Interface gráfica de distribuição} 
+\subsection{Interface gráfica de distribuição} \label{interface_grafica_section}
 
 \par Para a interação do usuário com o algoritmo de distribuição e possibilidade de cadastro de cadastro de fluxos de processos e 
 costureiras assim como suas respectivas habilidades, tempo e preço de produção, foi realizado uma aplicação em plataforma \texttt{web}
@@ -1862,7 +1853,7 @@ peças que cada lote irá conter e a data de início da produção conforme most
 
 \par Toda tela criada com \texttt{JSF} é desenvolvida através de documentos \texttt{XHTML}, tais documentos possuem componentes para entrada e apresentação dos dados. Estes componentes podem ser tanto do \texttt{JSF} quanto do \textit{primefaces}, o Código ~\ref{list:doc_xhtml} demonstra o documento \texttt{XHTML} da tela demonstrada acima.
 
-\begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doMutationOnChromossome()}]{Método \texttt{doMutationOnChromossome()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:doc_xhtml] 
+\begin{lstlisting} [style=custom_Java,caption={[Documento XTML da tela de distribuição]{Documento XTML da tela de distribuição. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:doc_xhtml] 
 
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
