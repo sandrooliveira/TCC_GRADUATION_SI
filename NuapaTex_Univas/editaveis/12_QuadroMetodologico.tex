@@ -494,7 +494,7 @@ public ProcessoIndividual iniciarDistribuicao(
 
 \end{lstlisting}
 
-\par Tal método retorna um objeto do tipo \texttt{ProcessoIndividual} para o controlador da tela de distribuição, este é o melhor indivíduo encontrado, ou seja, a melhor solução encontrada. Tal solução será então apresentada ao usuário conforme mostra a Figura~\ref{fig:fluxo_basico}.
+\par Tal método retorna um objeto do tipo \texttt{ProcessoIndividual}, que será explicado posteriormente, para o controlador da tela de distribuição, este é o melhor indivíduo encontrado, ou seja, a melhor solução encontrada. Tal solução será então apresentada ao usuário conforme mostra a Figura~\ref{fig:fluxo_basico}.
 
 \par A classe \texttt{ProcessoModel}, ao ser instanciada, recebe em seu construtor uma conexão para o 
 banco de dados e o \texttt{ID} do processo a qual será executado o algoritmo, tal construtor então chama o método
@@ -580,8 +580,6 @@ que irão fazer a parte da frente e posteriormente estas enviam os 10 lotes para
 \par Com base nesses requisitos, para a realização de tal distribuição, inicialmente, o algoritmo irá distribuir, 
 de forma aleatória, o número de lotes definido entre as costureiras de cada atividade,
 conforme mostra a Figura~\ref{fig:distribuicao_lotes_costureiras}.
-
-
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.5]{./imagens/distribuicao_exemplo.png}}
