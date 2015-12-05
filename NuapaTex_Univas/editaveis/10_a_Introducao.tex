@@ -8,19 +8,17 @@
 
 
 \addcontentsline{toc}{chapter}{INTRODUÇÃO}
-\stepcounter{chapter} %incrementa o número do capítulo
-
-%\par Exemplo simples de parágrafo utilizando o comando\texttt{$\backslash$par}.
-% Pode-se utilizar (in\-cons\-titucional (exemplo de forçar separação de sílabas)).
+\stepcounter{chapter} 
 
 \par Sabe-se   que   atualmente   existem   diversos   softwares  
-disponíveis no mercado para facilitar o dia a dia nas empresas.   Programas que  
-vão desde aqueles desenvolvidos sob   medida até   softwares   genéricos   popularmente chamados   de   “softwares   de   prateleira”.
-Porém   no   cenário   corporativo,   levando   em   consideração que   empresas   buscam
-a   cada   dia   se   tornarem   mais   competitivas,   é   necessário   que   um   sistema  
-ofereça   suporte   para   que   estas   possam   se tornar   mais   eficientes,
-como   por exemplo,   auxiliar   na  busca   pela   diminuição   dos   custos   operacionais   para   que
-assim   seja   possível   alcançar   os   melhores  preços de venda
+disponíveis no mercado para facilitar o dia a dia nas empresas.   
+Programas que vão desde aqueles desenvolvidos sob   medida até   
+softwares   genéricos   popularmente chamados   de   “softwares   
+de   prateleira”. Porém, no cenário corporativo, levando em consideração 
+que empresas buscam constantemente se tornarem  mais competitivas,   
+é necessário que um sistema ofereça suporte para que essas possam se tornar   
+mais eficientes, como por exemplo, auxiliar na busca pela diminuição dos custos   
+operacionais, para que assim seja possível alcançar os melhores preços de venda
 \cite{livro_laudon_sistemas_de_informacoes_gerenciais}.
 
 \par Neste   contexto,   a   ideia   de   agregar   características  
@@ -36,23 +34,23 @@ e   complexos   demais   para   serem resolvidos por seres humanos.
 \end{citacao} 
 
 \par O conceito por trás deste pensamento é denominado Inteligência Artificial -
-IA\footnotemark[1] - e é definido por \citeonline{artificial_intelligence}, como
+IA\footnotemark[1] - e é definido por \citeonline{artificial_intelligence} como
 uma área da ciência da computação que abrange a automatização da inteligência.
 
 \par Para \citeonline[p.44]{ags_java_magazine}, “a IA é inspirada  em  
 processos naturais e está relacionada à reprodução de   capacidades  
 normalmente   associadas   à   inteligência   humana,   como aprendizagem,
-adaptação,   o   raciocínio,   entre   outras”.   Ainda   segundo   os   mesmos
-autores,   várias  abordagens   surgiram   ao   longo   da   história   tais   como  
-a abordagem   conexionista,   inspirada   nos  neurônios   biológicos,   a  
+adaptação,  raciocínio,   entre   outras”.   Ainda   segundo   os   mesmos
+autores,   várias  abordagens   surgiram   ao   longo   da   história,   tais   como  
+a abordagem   conexionista,   inspirada   nos  neurônios   biológicos;   a  
 simbolista, baseada   na   inferência   humana   e   a   evolutiva, fundamentada na teoria
 de evolução das espécies.
 
 \par Na busca por otimizar seu processo de produção, uma empresa da região, que
 fabrica calças e aloca costureiras que trabalham em suas casas, deseja saber
 qual a melhor forma de distribuir o trabalho para que um determinado lote de seu produto
-seja produzido no menor tempo possível e com o menor custo. Para a resolução
-deste problema, pode-se fazer uso de IA através de um dos ramos da abordagem
+seja produzido dentro de um prazo com o menor custo possível. Para a resolução
+desse problema, pode-se fazer uso de IA através de um dos ramos da abordagem
 evolutiva denominado Algoritmos Genéticos - AGs\footnotemark[2] - pois, como
 afirma \citeonline{nocoes_geriais_anita_fernandes}, os AGs resolvem problemas de
 otimização através de um processo que oferece como saída a melhor solução
@@ -64,13 +62,13 @@ a partir deste ponto do trabalho.}
 \footnotetext[2]{O termo Algoritmos Genéticos será referenciado pela sigla AGs
 a partir deste ponto do trabalho.}
 
-\par O presente trabalho têm por objetivo geral, desenvolver uma aplicação
-utilizando técnicas de inteligência artificial, capazes de realizar a alocação
+\par O presente trabalho tem por objetivo geral desenvolver uma aplicação
+utilizando técnicas de inteligência artificial capaz de realizar a alocação
 de empregados em uma linha de produção de forma otimizada. 
-\par Para a realização do mesmo, foram colocados os seguintes objetivos
+\par Para a realização dessa pesquisa, foram colocados os seguintes objetivos
 específicos: a) Demonstrar o uso de algoritmos genéticos; b) Projetar uma aplicação em plataforma WEB que distribua as
 atividades de uma linha de produção de calças de forma inteligente, a fim de se
-obter um tempo de produção dentro um prazo estipulado procurando obter o menor custo.
+obter um tempo de produção dentro de um prazo estipulado, procurando obter o menor custo.
 
 \par Para \citeonline {livro_ags_ricardo_linden}, AGs é definido
 como uma técnica de otimização e busca que se baseia na teoria do processo de evolução e seleção
@@ -83,36 +81,27 @@ por Holland, em 1975, e por imitação à teoria da evolução, é representado 
 uma população de indivíduos que representam soluções para um determinado problema e então tais soluções
 podem evoluir até se chegar a uma solução ótima.
 
-\par Vários trabalhos foram desenvolvidos utilizando a robustez de AGs, dentre
+\par Vários trabalhos foram desenvolvidos utilizando a robustez de AGs, entre
 eles o trabalho de \citeonline{santos2007seleccao}, que faz a seleção de
 atributos usando AGs para classificação de
-regiões, o trabalho de \citeonline{silva2001otimizaccao}, que descreve a
+regiões; o trabalho de \citeonline{silva2001otimizaccao}, que descreve a
 otimização de estruturas de concreto armado utilizando AGs e 
-o trabalho de \citeonline{freitas2007ferramenta} que descreve uma ferramenta
+o trabalho de \citeonline{freitas2007ferramenta}, que descreve uma ferramenta
 baseada em AGs para a geração de tabela de horário escolar.
 
 \par O sistema desenvolvido neste trabalho, assim como nos outros citados, 
 tem o mesmo conceito, o de otimizar processos. No caso da fábrica de calças, 
 tal otimização irá promover a diminuição do custo de produção das calças confeccionadas, 
-permitindo assim com que estas possam ser vendidas também por um preço melhor, 
+permitindo então que essas possam ser vendidas também por um preço melhor, 
 beneficiando assim, os consumidores da região. 
 Além disso, a ideia de otimizar procedimentos, muitas vezes, também contribui
 para a preservação de recursos naturais devido ao fato de que processos otimizados 
 podem significar economia de energia e diminuição de emissão de gases. 
-No caso da empresa de calças, se o gestor ter sempre em mãos a solução mais otimizada, 
-irá ter um menor tempo de transporte de materiais, o que irá reduzir a emissão de gases 
+No caso da empresa de calças, se o gestor tiver sempre em mãos a solução mais otimizada, 
+terá consequentemente um menor tempo de transporte de materiais, o que reduzirá a emissão de gases 
 dos veículos utilizados no transporte de materiais e peças entre as costureiras.
 
 \par No âmbito acadêmico, o trabalho agregará à base de conhecimento
 da Univás um material que faça referência a tecnologias e conceitos de inteligência
-artificial, que hoje estão presentes em diversos sistemas críticos de apoio a
+artificial, hoje presentes em diversos sistemas críticos de apoio à
 decisão e otimização de processos nas empresas.
-
-%\par O \LaTeX~faz a ifenização automática, porém existem casos que é necessário
-% forçá-lo. Veja no parágrafo anterior como forçar a ifenização, na palavra: inconstitucional.
-
-%\par Existem várias formas de fazer referências. As duas formas mais comuns
-% são: a primeira é assim: \cite{livro_laudon_sistemas_de_informacoes_gerenciais}, e a outra é mostrada conforme \cite{ecocentro}.
-
-
-%
