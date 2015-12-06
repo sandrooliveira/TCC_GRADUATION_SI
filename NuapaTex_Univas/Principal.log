@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.6)  6 DEC 2015 19:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.6)  6 DEC 2015 20:18
 entering extended mode
 **Principal.tex
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\Principal.tex
@@ -1188,7 +1188,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--5
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--25
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
 
  []
 
@@ -1849,7 +1849,7 @@ ic/lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtl10.pfb>
 /MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on Principal.pdf (102 pages, 1951634 bytes).
+Output written on Principal.pdf (102 pages, 1952417 bytes).
 PDF statistics:
  2229 PDF objects out of 2487 (max. 8388607)
  1031 named destinations out of 1200 (max. 500000)
