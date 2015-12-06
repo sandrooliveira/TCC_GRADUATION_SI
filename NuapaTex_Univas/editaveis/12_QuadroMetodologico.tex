@@ -363,10 +363,9 @@ trabalhando, neste caso será o Marcelo, dono da fábrica, que é o responsável
 \par Para armazenar este processo e suas atividades no software, foram utilizadas tabelas do banco de dados, conforme mostra 
 a Figura~\ref{fig:proc_fabri_db}.
 
-\newpage
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.7]{./imagens/representacao_processo.png}}
+	\centerline{\includegraphics[width=10cm]{./imagens/representacao_processo.png}}
 	\caption[Modelo do processo de fabricação no banco de dados.]
 	{Representação do processo de fabricação no banco de dados. \textbf{Fonte:}
 	Desenvolvido pelos autores.}
@@ -417,7 +416,7 @@ da população inicial de indivíduos.
 conhecer, de forma básica, o fluxo de execução da aplicação. Como será visto na seção~\ref{interface_grafica_section}, o usuário irá iniciar a execução do algoritmo genético através de uma tela de distribuição de atividades, onde ele deve informar o número de peças que deseja produzir, a quantidade de peças que cada lote deve possuir e uma data de início das atividades. Através da data de início e da data de entrega, informada no cadastro do processo, o controlador da tela calcula o prazo de entrega e o número total de lotes e chama o serviço de gerenciamento da execução do AG, passando o número de lote, o número de peças por lote e o prazo de entrega a ser considerado durante a distribuição. Tal serviço, por sua vez, configura os parâmetros do algoritmo genético e dá início a sua execução. A Figura~\ref{fig:fluxo_basico} ilustra o fluxo básico de execução da aplicação.
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.5]{./imagens/fluxo_basico.png}}
+	\centerline{\includegraphics[width=14cm]{./imagens/fluxo_basico.png}}
 	\caption[Fluxo básico de execução.]
 	{Fluxo básico de execução. \textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:fluxo_basico}
@@ -608,7 +607,7 @@ sempre que for necessário se criar um novo indivíduo. O atributo \texttt{costu
 é feita a relação entre quais habilidades cada costureira possui além do tempo e o preço de cada uma para 
 fazer uma peça de uma determinada parte da calça. Além disso, na tabela \texttt{costureira}, foram definidos os campos \texttt{posicaoX} e \texttt{posicaoY}, que definem a localização da costureira, conforme demonstra a Figura~\ref{fig:dados_costureiras}. Estes valores serão utilizados posteriormente para calcular a distância entre duas costureiras, 
 
-\newpage
+
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.6]{./imagens/costureira_habilidade_tabela.png}}
@@ -621,8 +620,8 @@ fazer uma peça de uma determinada parte da calça. Além disso, na tabela \text
 
 \par A classe \texttt{CostureiraHabilidade}, conforme ilustra a Figura~\ref{fig:class_costureiraHabilidade}, por sua vez, possui o atributo habilidade, outro que representa a costureira, além de dois atributos que representam o tempo de produção e o custo 
 de cada costureira para confeccionar uma peça de uma determinada parte. Fez-se
-necessário ter um atributo da classe \texttt{CostureiraHabilidade} ao invés de simplesmente ter um objeto do tipo Costureira, pois, 
-na função de avaliação, como será visto mais adiante, é necessário ter o tempo gasto e o preço de cada costureira para se fazer uma peça 
+necessário ter um atributo da classe \texttt{Costureira\-Habilidade} ao invés de
+simplesmente ter um objeto do tipo Costureira, pois, na função de avaliação, como será visto mais adiante, é necessário ter o tempo gasto e o preço de cada costureira para se fazer uma peça 
 e essas informações podem variar para uma mesma costureira dependendo de suas habilidades.
 
 
@@ -721,7 +720,8 @@ produzido por cada costureira em cada atividade. Tomando como exemplo a Figura~\
 	\item Assim, seria feito um cálculo com regra de 3 com o número total de peças. Supondo que o 
 	 valor total fosse 500, logo:
 	
-	\par \texttt{(500 * 42) / 100 = 210 | (500 * 35) / 100 = 175 | (500 * 23) / 100 = 115}
+	\par \texttt{(500*42) /100 = 210 | (500*35) /100 = 175 | (500*23) /100 =
+	115}
 	
 	\par Nesse caso então, a Andrea deveria produzir 210 peças, a Dita 175 e a Cida 115 peças;
 	
@@ -892,7 +892,7 @@ questão da ordem de precedência entre as atividades. Tal estrutura, conforme �
 deveria possuir nós representando cada atividade, as costureiras que trabalham em cada atividade e o número de lotes atribuídos a 
 cada uma, aleatoriamente, pelo algoritmo.
 
-\newpage
+
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=1.1]{./imagens/montagem_node.png}}
@@ -923,7 +923,8 @@ mostrada na Figura~\ref{fig:montagem_node}.
 \par O método \texttt{calculateValue()}, após agrupar os cromossomos por atividade, 
  instancia um objeto da classe \texttt{Node} passando a atividade final e o número de 
  peças por lote recebidos na criação do indivíduo, conforme descrito na seção~\ref{populacao_inicial_section}, e o \texttt{MAP} 
- \texttt{atividadeCromossomos}, conforme mostra o Código~\ref{list:metodoCalculateValue}.
+ \texttt{atividade\-Cromossomos}, conforme mostra o
+ Código~\ref{list:metodoCalculateValue}.
 
 
 \begin{lstlisting} [style=custom_Java,caption={[Método \texttt{calculateValue()}]
@@ -1054,7 +1055,8 @@ de cada envio, conforme demonstra o Código~\ref{list:codigo_metodo_get_valor_to
 cada cromossomo e o valor de seus lotes, e irá retornar o valor do maior cromossomo.
 
 \par Tomando como base a Figura~\ref{fig:montagem_node}, para facilitar o
-entendimento, o método \texttt{getChromosomeValue()} será chamado, passando o cromossomo "Josi" e o inteiro 10 na quantidade de lotes. 
+entendimento, o método \texttt{get\-ChromosomeValue()} será chamado, passando o
+cromossomo "Josi" e o inteiro 10 na quantidade de lotes.
 Este método é responsável por calcular o tempo gasto 
 pela costureira para confeccionar os lotes atribuídos a ela. O tempo gasto pela
 costureira é definido por \texttt{NLC * QPL * TP}, onde: \texttt{NLC} é o número
@@ -1079,9 +1081,9 @@ public long getCromossomeValue(ProcessoChromosome processoChromosome,
 
 \end{lstlisting}
 
-\par O método \texttt{getChromossomeValue()} chama então o método \texttt{getTempoRecebimentoPecas()}, passando o cromossomo Josi e 
-o inteiro 10 como quantidade de lote. O método chamado tem a função de fazer uma busca nos nós predecessores, buscando encontrar 
-qual o tempo gasto para o recebimento das partes predecessoras da atividade e retornar o maior valor, 
+\par O método \texttt{getChromossomeValue()} chama então o método
+\texttt{getTempoRece\-bimentoPecas()}, passando o cromossomo Josi e o inteiro 10
+como quantidade de lote. O método chamado tem a função de fazer uma busca nos nós predecessores, buscando encontrar qual o tempo gasto para o recebimento das partes predecessoras da atividade e retornar o maior valor, 
 conforme demonstra o Código~\ref{list:codigo_metodo_get_recebimento_pecas}.
 
 \begin{lstlisting} [style=custom_Java,caption={[Método \texttt{getTempoRecebimentoPecas()}.]{Método \texttt{getTempoRecebimentoPecas()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:codigo_metodo_get_recebimento_pecas] 	
@@ -1108,9 +1110,9 @@ conforme demonstra o Código~\ref{list:codigo_metodo_get_recebimento_pecas}.
 
 
 \par Neste ponto começa então um processo recursivo, pois é chamado um método da
-própria classe \texttt{Node}, só que de uma outra instância. O método chamado é o \texttt{getValueChromosomosPr\-edecessores()}, 
-passando o cromossomo Josi e o inteiro 10 como número de lotes. O código~\ref{list:codigo_metodo_getValueChromosomosPredecessores} 
-mostra este método.
+própria classe \texttt{Node}, só que de uma outra instância. O método chamado é
+o \texttt{getValue\-ChromosomosPredecessores()}, passando o cromossomo Josi e
+o inteiro 10 como número de lotes. O código~\ref{list:codigo_metodo_getValueChromosomosPredecessores} mostra este método.
 
 
 \begin{lstlisting} [style=custom_Java,caption={[Método \texttt{getValueChromosomosPredecessores()}.]
@@ -1164,7 +1166,6 @@ podem ser obtidos os lotes, retornando o maior valor. No exemplo da Figura~\ref{
 é a frente e a primeira costureira da lista é a Roberta, assim a Josi solicita 10 lotes da parte da frente para a Roberta, porém, 
 neste caso, a Roberta confeccionou somente 5 lotes, então a Josi irá consumir os 5 lotes confeccionados.
 
-\newpage
 
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=1.2]{./imagens/distribuicao_exemplo_apresentacao.png}}
@@ -1233,10 +1234,12 @@ o tempo de produção do número de peças solicitadas, que seria 5 nesse caso.
 
 \par Concluindo, o processo é todo feito recursivamente, no qual as costureiras das primeiras atividades vão consumindo
 os lotes das costureiras das atividades predecessoras, de forma que o tempo de produção e transporte é calculado permanecendo 
-sempre o maior valor, conforme mostra a Figura~\ref{fig:ex_tempo_producao}. 
+sempre o maior valor, conforme mostra a Figura ~\ref{fig:ex_tempo_producao}. 
+
+\newpage
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=1.2]{./imagens/distribuicao_tempo.png}}
+	\centerline{\includegraphics[width=14cm]{./imagens/distribuicao_tempo.png}}
 	\caption[Distribuição demonstrando o tempo.]
 	{Distribuição demonstrando o tempo.
 		\textbf{Fonte:} Desenvolvido pelos autores.}
@@ -1245,7 +1248,7 @@ sempre o maior valor, conforme mostra a Figura~\ref{fig:ex_tempo_producao}.
 
 \par A recursividade para quando se chega na atividade Carimbo, então os valores começam a ser retornados.  
 No fim, prevalece sempre o maior valor do tempo de recebimento dos lotes das atividades predecessoras e 
-então tal valor é somado ao tempo de produção da finalização, o que, no exemplo da Figura 17, resultou em 1600 segundos,
+então tal valor é somado ao tempo de produção da finalização, o que, no exemplo da Figura ~\ref{fig:ex_tempo_producao}, resultou em 1600 segundos,
 este valor então é colocado no atributo \texttt{tempoTotal} do indivíduo.
 
 \par A função de avaliação é chamada dentro do método \texttt{classify}, dentro da classe \texttt{GACont\-roller}, tal método, 
@@ -1499,8 +1502,6 @@ cruzamento então ocorre de forma que os indivíduos filhos recebem a mesclagem 
 cromossomos de seus pais referente à cada atividade e assim a cada cruzamento são criados
 dois novos indivíduos que irão fazer parte da nova população. A Figura~\ref{fig:ex_cruzamento} ilustra este processo.
 
-\newpage
-
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.4]{./imagens/ex_cruzamento.png}}
 	\caption[Cruzamento dos indivíduos.]
@@ -1643,7 +1644,7 @@ novos indivíduos criados.
 \par O processo de mutação, conforme já explicado anteriormente, consiste em realizar uma pequena modificação entre os cromossomos
 de um indivíduo. Esta modificação pode ser boa, melhorando o resultado do indivíduo, ou ruim. No algoritmo genético desenvolvido, 
 a mutação foi realizada trocando o número de lotes recebidos entre duas costureiras escolhidas aleatoriamente dentro de cada grupo de cromossomos (atividades) do indivíduo, conforme mostra a Figura~\ref{fig:ex_mutacao}.
-
+\newpage
 \begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.7]{./imagens/mutacao_cromossomo.png}}
 	\caption[Exemplo de mutação.]
@@ -1654,7 +1655,9 @@ a mutação foi realizada trocando o número de lotes recebidos entre duas costu
 
 
 \par O processo de mutação inicia-se logo após cada cruzamento e é realizado
-nos indivíduos criados nesse processo, dentro de uma determinada taxa, definida anteriormente nos atributos de configuração do algoritmo genético na classe \texttt{GeneticAlgorithmManagement}. O método que inicia este processo é o \texttt{doMutation()}, que verifica o tipo de mutação definido, chamando o método correspondente, além disso, ele verifica se a mutação deve ser realizada, sorteando um número aleatoriamente e checando se o número sorteado é menor que a taxa de mutação definida, conforme mostra o Código~\ref{list:metodoDoMutation}. 
+nos indivíduos criados nesse processo, dentro de uma determinada taxa, definida
+anteriormente nos atributos de configuração do algoritmo genético na classe
+\texttt{GeneticAlgorithmMana\-gement}. O método que inicia este processo é o \texttt{doMutation()}, que verifica o tipo de mutação definido, chamando o método correspondente, além disso, ele verifica se a mutação deve ser realizada, sorteando um número aleatoriamente e checando se o número sorteado é menor que a taxa de mutação definida, conforme mostra o Código~\ref{list:metodoDoMutation}.
 
 \begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doMutation()}]{Método \texttt{doMutation()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoDoMutation] 
 	public void doMutation(Individual individual){
@@ -1713,8 +1716,8 @@ aplicação, conforme demonstrado no Código~\ref{list:metodoPermutationMutation
 \par A lógica que faz a mutação inicia-se com uma iteração na lista de cromossomos do 
 indivíduo no qual a mutação será realizada, dentro dessa iteração, os cromossomos de uma atividade são adicionados
 à lista \texttt{chromossomesToMutate}, e então, quando todos os cromossomos de uma atividade são adicionados nesta
-lista, o método \texttt{doMutationOnCromossome}, demonstrado no Código~\ref{list:metododoMutationOnChromossome}, é
-chamado para realizar a mutação, assim, após a mutação para os cromossomos de tal atividade, a lista \texttt{chromossomesToMutate} é zerada para que os cromossomos da próxima atividade sejam adicionados a ela e posteriormente sofram a mutação, logicamente, o grupo de atividades sofrerá mutação somente se possuir mais de um cromossomo.
+lista, o método \texttt{doMutationOnCromo\-ssome}, demonstrado no
+Código~\ref{list:metododoMutationOnChromossome}, é chamado para realizar a mutação, assim, após a mutação para os cromossomos de tal atividade, a lista \texttt{chromossomesToMutate} é zerada para que os cromossomos da próxima atividade sejam adicionados a ela e posteriormente sofram a mutação, logicamente, o grupo de atividades sofrerá mutação somente se possuir mais de um cromossomo.
 
 \begin{lstlisting} [style=custom_Java,caption={[Método \texttt{doMutationOnChromossome()}]{Método \texttt{doMutationOnChromossome()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metododoMutationOnChromossome] 
 	private void doMutationOnChromossome(
@@ -1766,7 +1769,7 @@ utilizando \textit{JSF} e \textit{Primefaces}. A forma que o mecanismo de cadast
 ser apresentada, sendo importante, porém, explanar sobre o desenvolvimento da tela de distribuição das atividades, a qual é de extrema importância para entender o fluxo de execução da aplicação. No menu "Distribuir tarefas" da aplicação estão disponíveis todos os processos cadastrados e para abrir a tela de distribuição de atividades basta clicar no ícone "Abrir" da coluna opções, conforme mostra a Figura~\ref{fig:tela_dis_processos}.
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.5]{./imagens/tela_distribuicao_processos.png}}
+	\centerline{\includegraphics[width=14.7cm]{./imagens/tela_distribuicao_processos.png}}
 	\caption[Menu Distribuir tarefas.]
 	{Menu Distribuir tarefas.
 		\textbf{Fonte:} Desenvolvido pelos autores.}
@@ -1778,10 +1781,8 @@ dados importantes para a regra de negócio do algoritmo genético, além disso, 
 solução) são apresentadas.  Os dados informados através dessa tela são o número total de peças que se deseja produzir, o número de 
 peças que cada lote irá conter e a data de início da produção, conforme mostra a Figura~\ref{fig:tela_dis_open}.
 
-\newpage
-
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.5]{./imagens/tela_distribuicao_open.png}}
+	\centerline{\includegraphics[width=14.7cm]{./imagens/tela_distribuicao_open.png}}
 	\caption[Tela de distribuição de tarefas.]
 	{Tela de distribuição de tarefas.
 		\textbf{Fonte:} Desenvolvido pelos autores.}
@@ -1847,14 +1848,15 @@ xmlns:p="http://primefaces.org/ui">
 
 \par No \texttt{JSF}, toda página \texttt{XHTML} possui um controlador que
 consiste em uma classe Java, e para definir que tal classe é uma controladora de páginas, na sua declaração é definida a anotação \texttt{@ManagedBean(name = "[nome da classe em minusculo]")}.
-No caso da tela de distribuição, a classe controladora é denominada \texttt{DistribuiçãoController}, portanto possui a notação
-\texttt{@ManagedBean(name = "[distribuiçãoController]")} em sua declaração. As páginas \texttt{XHTML} fazem então um \textit{bind}, ou
-seja, uma conexão com a classe controladora de forma que os dados do \texttt{XHTML} são disponibilizados em tal classe e vice-versa. 
+No caso da tela de distribuição, a classe controladora é denominada
+\texttt{DistribuiçãoContro\-ller}, portanto possui a notação
+\texttt{@ManagedBean(name ="[distribuiçãoControlle\-r]")} em sua declaração. As
+páginas \texttt{XHTML} fazem então um \textit{bind}, ou seja, uma conexão com a classe controladora de forma que os dados do \texttt{XHTML} são disponibilizados em tal classe e vice-versa.
 No caso da página de distribuição, as \textit{tags} \texttt{p:inputText} e \texttt{p:calendar} são responsáveis pela entrada de 
 informações, tais \textit{tags} possuem um atributo \texttt{value}, neste atributo é informado em qual classe controladora e em qual 
 atributo dela os dados informados pelo usuário serão atribuídos, realizando assim o \textit{bind}. Nesse caso, os dados informados pelo 
 usuário estarão respetivamente disponíveis nos atributos \texttt{totalPecas}, \texttt{totalPecasPorLote} e \texttt{dataInicio} da
-classe \texttt{DistribuiçãoController}.
+classe \texttt{DistribuiçãoContro\-ller}.
 
 \par Após entrar com os dados necessários, o usuário deve clicar no botão "Iniciar Distribuição", este botão é construído com a
 \textit{tag} \texttt{p:commandButton} conforme mostra o Código~\ref{list:doc_xhtml}. Esta \textit{tag} possui o atributo \texttt{action}, que 
@@ -1916,14 +1918,15 @@ public void iniciarDistribuicao(){
 
 \end{lstlisting}
 
-\ Os dados que o algoritmo genético espera receber são: o número de lotes a serem distribuídos, o número de 
-peças por lote e o prazo de entrega. Portanto, uma das funções do método \texttt{iniciarDistribuicao()} é
+\par Os dados que o algoritmo genético espera receber são: o número de lotes a
+serem distribuídos, o número de peças por lote e o prazo de entrega. Portanto, uma das funções do método \texttt{iniciarDistribuicao()} é
 calcular a quantidade de lotes a serem produzidos e o prazo de entrega das peças, além disso, o método 
 realiza algumas validações, de forma a somente enviar informações consistentes para o algoritmo genético. 
 O cálculo de número de lotes é realizado então dividindo o número de peças informado pelo usuário pelo 
 número de peças por lote, o resultado é armazenado na variável \texttt{numeroDeLotes}.
 
-\par Para calcular o prazo de entrega da produção é chamado o método \texttt{calcularPrazo()}, demonstrado no 
+\par Para calcular o prazo de entrega da produção é chamado o método
+\texttt{calcularPra\-zo()}, demonstrado no
 Código~\ref{list:metodoCalcularPrazo}.
 
 \begin{lstlisting} [style=custom_Java,caption={[Método \texttt{calcularPrazo()}]{Método \texttt{calcularPrazo()}. \textbf{Fonte:} Elaborado pelos autores.}}, label=list:metodoCalcularPrazo] 
@@ -1948,12 +1951,12 @@ o \texttt{ID} do tal processo via \texttt{URL} e o controlador buscou no banco d
 \texttt{inici\-arDistribuicao()} é chamado. Tal método, conforme já visto nas seções anteriores,
 faz o gerenciamento da execução do algoritmo genético e retorna o melhor indivíduo encontrado, tal indivíduo é armazenado no 
 atributo \texttt{melhorIndividuo} da classe \texttt{distribuiçãoController} e então os métodos \texttt{construirArvore()} e
-\texttt{construirTableDetail()} são chamados para realizar a apresentação dos dados do indivíduo na tela após a distribuição, tais métodos
-simplesmente apresentam ao usuário as atividades e suas respectivas costureiras juntamente com o número de lote que cada uma recebeu, além disto, também são apresentados o tempo e o custo total, além de uma tabela de detalhes da distribuição.
+\texttt{construir\-TableDetail()} são chamados para realizar a apresentação dos
+dados do indivíduo na tela após a distribuição, tais métodos simplesmente apresentam ao usuário as atividades e suas respectivas costureiras juntamente com o número de lote que cada uma recebeu, além disto, também são apresentados o tempo e o custo total, além de uma tabela de detalhes da distribuição.
 A Figura~\ref{fig:tela_dis_result} mostra a tela com o resultado da execução do algoritmo.
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.4]{./imagens/resultado_distribuicao.png}}
+	\centerline{\includegraphics[width=14cm]{./imagens/resultado_distribuicao.png}}
 	\caption[Tela de resultado de distribuição de tarefas.]
 	{Tela de resultado de distribuição de tarefas.
 		\textbf{Fonte:} Desenvolvido pelos autores.}
