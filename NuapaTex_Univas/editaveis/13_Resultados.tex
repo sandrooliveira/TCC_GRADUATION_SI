@@ -7,37 +7,36 @@ casos de teste, buscando demonstrar o comportamento do algoritmo genético de di
 \par Desde o princípio, quando começou-se a discutir sobre o tema do 
 trabalho de conclusão de curso, teve-se a ideia de desenvolver algo relacionado
 à inteligência artificial, por ser um assunto de bastante relevância na área de desenvolvimento de software. 
-Dentro deste campo então, realizando algumas buscas na internet, foi encontrado
+Dentro desse campo então, realizando algumas buscas na internet, foi encontrado
 o assunto de algoritmos genéticos.
-Coincidentemente foi lecionada no primeiro semestre deste ano a disciplina
-sistemas especialistas, a qual o assunto foi abordado o que facilitou bastante o aprendizado.
+Coincidentemente foi lecionada, no primeiro semestre deste ano, a disciplina
+"sistemas especialistas", na qual o assunto foi abordado, o que facilitou bastante o aprendizado.
 
 \par Assim, como sugestão do professor orientador, foi decidido então
 desenvolver uma aplicação para otimizar um processo de distribuição de atividades entre
-costureiras para um microempresário da cidade de Cachoeira de Minas - MG, do ramo de costura e constatamos 
-que um sistema Web seria mais cômodo de ser utilizado por não precisar de
-nenhuma instalação por parte do usuário e este poder acessar o programa de
-qualquer lugar desde que estivesse conectado à internet.
+costureiras para um microempresário da cidade de Cachoeira de Minas - MG, do ramo de costura. Constatamos 
+que um sistema \textit{web} seria mais cômodo de ser utilizado, por não precisar de
+nenhuma instalação por parte do usuário e ainda poder ser acessado de qualquer lugar, desde que estivesse 
+conectado à internet.
 
-\par Neste sentido, foram adotadas como tecnologias para o desenvolvimento em
-plataforma Web os \textit{frameworks} JSF e Primefaces. Além disso foi utilizado
-um \textit{plug-in} denominado \texttt{JBoss Tools} o qual foi de grande utilidade para gerar as classes 
-modelos a partir do banco de dados.
+\par Assim sendo, foram adotadas como tecnologias para o desenvolvimento em
+plataforma Web os \textit{frameworks} JSF e Primefaces. Além disso, foi utilizado
+um \textit{plug-in} denominado \texttt{JBoss Tools}, o qual foi de grande utilidade
+para gerar as classes modelos a partir do banco de dados.
 
 \par Inicialmente foi tomado como base o caso do microempresário citado acima,
-todavia logo após iniciarmos o trabalho, o mesmo fez uma reestruturação de processos em sua empresa. 
-Desta forma, sua maneira de trabalhar deixou de ser um cenário o qual algoritmos genéticos
-pudessem ser aplicados, desta forma, fechou-se um escopo para que o trabalho
+todavia, logo após iniciarmos o trabalho, o proprietário fez uma reestruturação de processos em sua empresa. 
+Portanto, sua maneira de trabalhar deixou de ser um cenário no qual algoritmos genéticos
+pudessem ser aplicados, consequentemente, fechou-se um escopo para que o trabalho
 pudesse continuar, conforme descrito na seção 3.3.2 do quadro metodológico. Com
 o escopo definido, o foco passou a ser na definição da estrutura dos elementos do algoritmo genético.
 
 
-
-\par Assim, seguindo os passos descritos no quadro metodológico, foi obtido como resultado a aplicação
+\par Posto isso, seguindo os passos descritos no quadro metodológico, foi obtido como resultado a aplicação
 capaz de distribuir atividades de forma a se obter o menor custo e o menor tempo de produção, 
 alcançando assim os objetivos específicos. Com a aplicação finalizada, foram realizados então casos de 
-testes a fim de colocar em prova a eficiência da ferramenta para se buscar melhores soluções nas distribuição 
-de tarefas, conforme mostra as seções seguintes.
+testes, a fim de colocar em prova a eficiência da ferramenta para se buscar melhores soluções nas distribuição 
+de tarefas, conforme mostram as seções seguintes.
 
 
 \section{Teste considerando somente o tempo de produção}
@@ -59,7 +58,7 @@ cliente, o modelo da calça e a data e hora da entrega conforme mostra a Figura~
  Carimbo e Finalização conforme mostra a Figura~\ref{fig:processo_cadastrado}.
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.3]{./imagens/tela_processo_teste1.png}}
+	\centerline{\includegraphics[scale=0.4]{./imagens/tela_processo_teste1.png}}
 	\caption[Detalhes do processo cadastrado.]
 	{Detalhes do processo cadastrado. \textbf{Fonte:} Desenvolvido pelos autores.}
 	\label{fig:processo_cadastrado}
@@ -89,7 +88,7 @@ Ao acessar a página todos os processos criados são
 listados como mostra a Figura~\ref{fig:distribuicao_tarefas}:
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.3]{./imagens/tela_distribuicao_tarefas.png}}
+	\centerline{\includegraphics[scale=0.4]{./imagens/tela_distribuicao_tarefas.png}}
 	\caption[Tela de distribuição de tarefas.]
 	{Tela de dritribuição de tarefas. \textbf{Fonte:} Desenvolvido
 	pelos autores.}
@@ -126,7 +125,7 @@ Figura~\ref{fig:tempo_costureiras}.
 
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.3]{./imagens/alterando_tempo_costureira.png}}
+	\centerline{\includegraphics[scale=0.4]{./imagens/alterando_tempo_costureira.png}}
 	\caption[Alteração no tempo de produção entre as costureiras.]
 	{Alteração no tempo de produção entre as costureiras. \textbf{Fonte:}
 	Desenvolvido pelos autores.}
@@ -212,7 +211,7 @@ isto não interferiria no preço final e a produção seria realizada em um temp
 \par Este teste foi realizado para demonstrar a distribuição considerando o tempo de
 produção, o custo e o prazo de entrega, assim mesmo que uma costureira for inviável 
 quanto ao custo, ela poderá receber lotes para produzir para que seja cumprido o prazo 
-de entrega. Para isto as costureiras que possuem a habilidade Finalização ficarão com
+de entrega. Para isto as costureiras que possuem a habilidade finalização ficarão com
 as seguintes configurações como ilustra a Figura~\ref{fig:configuracao_habilidade_costureira_teste3}.
 
 \newpage
@@ -266,10 +265,8 @@ sendo possível atender o prazo de entrega.
 \par Este teste foi realizado para demonstrar que mesmo as costureiras possuindo
 o tempo e custo iguais, o tempo de transporte entre elas pode influenciar na distribuição dos lotes.
 
-\par Para isto, foi necessário cadastrar um valor X e Y para cada costureira, 
+\par Para isto, foi necessário cadastrar um valor X e Y, correspondente às coordenadas geográficas, para cada costureira, 
 conforme mostra a Figura~\ref{fig:add_xy_costureira_teste4}.
-
-
 
 
 \begin{figure}[h!]
@@ -280,10 +277,9 @@ conforme mostra a Figura~\ref{fig:add_xy_costureira_teste4}.
 \end{figure}
 
 
-
-\par Neste teste foi considerado apenas o tempo de transporte, logo o tempo de
-confecção por peça das costureiras da atividade Finalização possuem o mesmo
-valor de tempo e custo, conforme mostra a Figura~\ref{fig:at_finalizacao_teste4}.
+\par Neste teste foi considerado apenas o tempo de transporte, logo o tempo e o preço de
+confecção por peça das costureiras da atividade finalização possuem o mesmo
+valor, conforme mostra a Figura~\ref{fig:at_finalizacao_teste4}.
 
 
 \begin{figure}[h!]
@@ -297,7 +293,7 @@ valor de tempo e custo, conforme mostra a Figura~\ref{fig:at_finalizacao_teste4}
 
 
 \par Feito isto, foi iniciado então o processo de distribuição das atividades,
-através do menu Distribuição de Tarefas, a Figura~\ref{fig:resultado_transporte_teste4} mostra o resultado obtido.
+através do menu "Distribuição de Tarefas". A Figura~\ref{fig:resultado_transporte_teste4} mostra o resultado obtido.
 
 
 \begin{figure}[h!]
@@ -310,11 +306,11 @@ através do menu Distribuição de Tarefas, a Figura~\ref{fig:resultado_transpor
 
 \par Como mostrado na Figura~\ref{fig:add_xy_costureira_teste4}, a costureira
 Duda fica mais distante do Marcelo e por isso recebe menos lotes para produzir em
-relação a costureira Maria.
+relação à costureira Maria.
 
 \par Para melhor ilustrar o tempo de envio das peças para as costureiras, na tela
-de resultados há um detalhamento de todo calculo realizado, a Figura~\ref{fig:detalhameneto_transporte_teste4} 
-mostra que o tempo de envio da peças para Duda é 
+de resultados há um detalhamento de todo calculo realizado. A Figura~\ref{fig:detalhameneto_transporte_teste4} 
+mostra que o tempo de envio das peças para Duda é 
 maior que o tempo de envio para Maria, comprovando o resultado mostrado na
 Figura~\ref{fig:resultado_transporte_teste4}.
 
@@ -327,18 +323,14 @@ Figura~\ref{fig:resultado_transporte_teste4}.
 
 \par Como mostrado na Figura~\ref{fig:detalhameneto_transporte_teste4}, o tempo
 de envio das peças para Duda é 1800 segundos e para Maria 700, por isso
-Duda recebe menos lotes para ser produzidos.
+Duda recebe menos lotes para serem produzidos.
 
 
 \section{Teste adicionando mais atividades ao processo}
 
 \par Este teste foi realizado para demonstrar a adição de mais atividades no
-processo. Este teste segue o mesmo processo da seção 4.1.
-
-\par Neste caso deve-se considerar o tempo de transporte entre as costureiras da atividade Frente e o Marcelo 
-para a retirada dos materiais e o tempo entre tais costureiras e a costureira
-responsável pela Finalização, para isso foi adicionado no processo a atividade
-Frente conforme mostra a Figura~\ref{fig:add_frente_teste5}.
+processo e utiliza o mesmo processo da seção 4.1, porém será adicionado
+à ele a atividade frente conforme mostra a Figura~\ref{fig:add_frente_teste5}.
 
 \newpage
 
@@ -351,9 +343,9 @@ Frente conforme mostra a Figura~\ref{fig:add_frente_teste5}.
 \end{figure}
 
 \par Após a adição da atividade, é preciso adicioná-la ao fluxo do processo como
-predecessora da atividade Finalização. Como a atividade Finalização é sempre a
+predecessora da atividade finalização. Como a atividade finalização é sempre a
 última atividade do processo, todas as atividades que forem incluídas sempre
-serão predecessoras a ela. A Figura~\ref{fig:add_frente_teste4} mostra a atividade Frente adicionada
+serão predecessoras a ela. A Figura~\ref{fig:add_frente_teste4} mostra a atividade frente adicionada
 no fluxo do processo.
 
 
@@ -367,10 +359,10 @@ no fluxo do processo.
 \end{figure}
 
 
-\par Foi adicionado na habilidade Frente as costureiras Roberta, Lúcia e Renata
-para que estas possam realizar a atividade Frente do processo.
+\par Foi adicionado na habilidade frente as costureiras Roberta, Lúcia e Renata
+para que estas possam realizar a atividade frente do processo.
 \par A Figura~\ref{fig:add_costureira_frente_teste4} mostra as costureiras
-adicionadas na habilidade Frente.
+adicionadas na habilidade frente.
 
 \newpage
 

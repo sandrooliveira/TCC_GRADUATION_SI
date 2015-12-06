@@ -1,0 +1,52 @@
+\select@language {brazil}
+\contentsline {figure}{\numberline {1}{\ignorespaces Demonstra\IeC {\c c}\IeC {\~a}o da execu\IeC {\c c}\IeC {\~a}o de um AG}}{20}{figure.caption.9}
+\contentsline {figure}{\numberline {2}{\ignorespaces Demonstra\IeC {\c c}\IeC {\~a}o do m\IeC {\'e}todo de sele\IeC {\c c}\IeC {\~a}o Roleta}}{22}{figure.caption.10}
+\contentsline {figure}{\numberline {3}{\ignorespaces Demonstra\IeC {\c c}\IeC {\~a}o do Modelo MVC}}{27}{figure.caption.11}
+\contentsline {figure}{\numberline {4}{\ignorespaces Demonstra\IeC {\c c}\IeC {\~a}o de um processo de fabrica\IeC {\c c}\IeC {\~a}o de uma cal\IeC {\c c}a.}}{39}{figure.caption.12}
+\contentsline {figure}{\numberline {5}{\ignorespaces Modelo do processo de fabrica\IeC {\c c}\IeC {\~a}o no banco de dados.}}{41}{figure.caption.13}
+\contentsline {figure}{\numberline {6}{\ignorespaces Classes \texttt {Atividade} e \texttt {AtividadeOrdem}.}}{42}{figure.caption.14}
+\contentsline {figure}{\numberline {7}{\ignorespaces Fluxo b\IeC {\'a}sico de execu\IeC {\c c}\IeC {\~a}o.}}{43}{figure.caption.15}
+\contentsline {figure}{\numberline {8}{\ignorespaces Exemplo de distribui\IeC {\c c}\IeC {\~a}o aleat\IeC {\'o}ria de lotes para as costureiras.}}{46}{figure.caption.16}
+\contentsline {figure}{\numberline {9}{\ignorespaces Classe \texttt {ProcessoChromosome}.}}{47}{figure.caption.17}
+\contentsline {figure}{\numberline {10}{\ignorespaces Armazenamento de dados das costureiras.}}{49}{figure.caption.18}
+\contentsline {figure}{\numberline {11}{\ignorespaces Classe \texttt {CostureiraHabilidade}.}}{49}{figure.caption.19}
+\contentsline {figure}{\numberline {12}{\ignorespaces Classe \texttt {ProcessoIndividual}.}}{50}{figure.caption.20}
+\contentsline {figure}{\numberline {13}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o em porcentagem.}}{51}{figure.caption.21}
+\contentsline {figure}{\numberline {14}{\ignorespaces Demonstra\IeC {\c c}\IeC {\~a}o de costureiras e habilidades.}}{55}{figure.caption.22}
+\contentsline {figure}{\numberline {15}{\ignorespaces Estrutura de representa\IeC {\c c}\IeC {\~a}o da ordem de preced\IeC {\^e}ncia.}}{57}{figure.caption.23}
+\contentsline {figure}{\numberline {16}{\ignorespaces Exemplo de solicita\IeC {\c c}\IeC {\~a}o de lotes predecessores.}}{63}{figure.caption.24}
+\contentsline {figure}{\numberline {17}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o demonstrando o tempo.}}{64}{figure.caption.25}
+\contentsline {figure}{\numberline {18}{\ignorespaces Representa\IeC {\c c}\IeC {\~a}o do processo de sele\IeC {\c c}\IeC {\~a}o dos indiv\IeC {\'\i }duos.}}{70}{figure.caption.26}
+\contentsline {figure}{\numberline {19}{\ignorespaces Cruzamento dos indiv\IeC {\'\i }duos.}}{72}{figure.caption.27}
+\contentsline {figure}{\numberline {20}{\ignorespaces Exemplo de muta\IeC {\c c}\IeC {\~a}o.}}{75}{figure.caption.28}
+\contentsline {figure}{\numberline {21}{\ignorespaces Menu Distribuir tarefas.}}{78}{figure.caption.29}
+\contentsline {figure}{\numberline {22}{\ignorespaces Tela de distribui\IeC {\c c}\IeC {\~a}o de tarefas.}}{79}{figure.caption.30}
+\contentsline {figure}{\numberline {23}{\ignorespaces Tela de resultado de distribui\IeC {\c c}\IeC {\~a}o de tarefas.}}{83}{figure.caption.31}
+\contentsline {figure}{\numberline {24}{\ignorespaces Cria\IeC {\c c}\IeC {\~a}o de um processo.}}{85}{figure.caption.32}
+\contentsline {figure}{\numberline {25}{\ignorespaces Detalhes do processo cadastrado.}}{86}{figure.caption.33}
+\contentsline {figure}{\numberline {26}{\ignorespaces Inserindo costureiras na habilidade Finaliza\IeC {\c c}\IeC {\~a}o.}}{86}{figure.caption.34}
+\contentsline {figure}{\numberline {27}{\ignorespaces Tela de distribui\IeC {\c c}\IeC {\~a}o de tarefas.}}{87}{figure.caption.35}
+\contentsline {figure}{\numberline {28}{\ignorespaces Resultado da distribui\IeC {\c c}\IeC {\~a}o de lotes considerando o tempo de produ\IeC {\c c}\IeC {\~a}o.}}{87}{figure.caption.36}
+\contentsline {figure}{\numberline {29}{\ignorespaces Altera\IeC {\c c}\IeC {\~a}o no tempo de produ\IeC {\c c}\IeC {\~a}o entre as costureiras.}}{88}{figure.caption.37}
+\contentsline {figure}{\numberline {30}{\ignorespaces Resultado da distribui\IeC {\c c}\IeC {\~a}o de lotes ap\IeC {\'o}s a altera\IeC {\c c}\IeC {\~a}o do tempo de produ\IeC {\c c}\IeC {\~a}o entre as costureiras.}}{88}{figure.caption.38}
+\contentsline {figure}{\numberline {31}{\ignorespaces Custo entre as costureiras da atividade Finaliza\IeC {\c c}\IeC {\~a}o.}}{90}{figure.caption.39}
+\contentsline {figure}{\numberline {32}{\ignorespaces Resultado da distribui\IeC {\c c}\IeC {\~a}o de lotes considerando o custo.}}{90}{figure.caption.40}
+\contentsline {figure}{\numberline {33}{\ignorespaces Resultado da distribui\IeC {\c c}\IeC {\~a}o de lotes com configura\IeC {\c c}\IeC {\~o}es iguais entre as costureiras.}}{91}{figure.caption.41}
+\contentsline {figure}{\numberline {34}{\ignorespaces Configura\IeC {\c c}\IeC {\~a}o das costureiras da atividade Finaliza\IeC {\c c}\IeC {\~a}o.}}{92}{figure.caption.42}
+\contentsline {figure}{\numberline {35}{\ignorespaces Resultado da distribui\IeC {\c c}\IeC {\~a}o de lotes com prazo longo.}}{92}{figure.caption.43}
+\contentsline {figure}{\numberline {36}{\ignorespaces Resultado da distribui\IeC {\c c}\IeC {\~a}o de lotes com prazo reduzido.}}{93}{figure.caption.44}
+\contentsline {figure}{\numberline {37}{\ignorespaces Tela de cadastro de costureiras.}}{93}{figure.caption.45}
+\contentsline {figure}{\numberline {38}{\ignorespaces Configura\IeC {\c c}\IeC {\~a}o das costureiras da habilidade Finaliza\IeC {\c c}\IeC {\~a}o.}}{94}{figure.caption.46}
+\contentsline {figure}{\numberline {39}{\ignorespaces Resultado da distribui\IeC {\c c}\IeC {\~a}o de lotes considerando o tempo de transporte.}}{94}{figure.caption.47}
+\contentsline {figure}{\numberline {40}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o das atividades.}}{95}{figure.caption.48}
+\contentsline {figure}{\numberline {41}{\ignorespaces Adi\IeC {\c c}\IeC {\~a}o de uma atividade ao processo.}}{96}{figure.caption.49}
+\contentsline {figure}{\numberline {42}{\ignorespaces Adi\IeC {\c c}\IeC {\~a}o de uma atividade ao fluxo do processo.}}{96}{figure.caption.50}
+\contentsline {figure}{\numberline {43}{\ignorespaces Adi\IeC {\c c}\IeC {\~a}o de costureiras na habilidade Frente.}}{97}{figure.caption.51}
+\contentsline {figure}{\numberline {44}{\ignorespaces Resultado da distribui\IeC {\c c}\IeC {\~a}o de lotes com mais uma atividade.}}{97}{figure.caption.52}
+\contentsline {figure}{\numberline {45}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o das atividades.}}{98}{figure.caption.53}
+\contentsline {figure}{\numberline {46}{\ignorespaces Resultado da distribui\IeC {\c c}\IeC {\~a}o de lotes ap\IeC {\'o}s executar novamente a distribui\IeC {\c c}\IeC {\~a}o.}}{98}{figure.caption.54}
+\contentsline {figure}{\numberline {47}{\ignorespaces Distribui\IeC {\c c}\IeC {\~a}o das atividades.}}{99}{figure.caption.55}
+\contentsline {figure}{\numberline {48}{\ignorespaces Configura\IeC {\c c}\IeC {\~a}o das costureiras da atividade Finaliza\IeC {\c c}\IeC {\~a}o.}}{99}{figure.caption.56}
+\contentsline {figure}{\numberline {49}{\ignorespaces Resultado da distribui\IeC {\c c}\IeC {\~a}o de lotes com prazo n\IeC {\~a}o atendido.}}{100}{figure.caption.57}
+\contentsline {figure}{\numberline {50}{\ignorespaces Altera\IeC {\c c}\IeC {\~a}o no custo das costureiras da habilidade Finaliza\IeC {\c c}\IeC {\~a}o.}}{100}{figure.caption.58}
+\contentsline {figure}{\numberline {51}{\ignorespaces Resultado da distribui\IeC {\c c}\IeC {\~a}o ap\IeC {\'o}s altera\IeC {\c c}\IeC {\~a}o no custo da costureira Duda.}}{101}{figure.caption.59}
