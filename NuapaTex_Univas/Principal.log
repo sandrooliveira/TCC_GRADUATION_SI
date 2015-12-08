@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.6)  6 DEC 2015 20:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.6)  8 DEC 2015 13:15
 entering extended mode
 **Principal.tex
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\Principal.tex
@@ -1146,39 +1146,27 @@ l.35 \imprimirfolhaderosto*{}
 
 
 ])
-(C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\fixos/03_FichaCata
-lografica.tex
-Underfull \hbox (badness 10000) in paragraph at lines 24--24
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--24
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--24
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--24
-
- []
-
-[2])
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\fixos/04_FolhaApro
 vacao.tex
 Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
-[3
+[2
 
 ])
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/05_Dedic
-atoria.tex [4
+atoria.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
+
+ []
+
+[3
 
 ])
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/06_Agrad
@@ -1188,24 +1176,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--5
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--36
+Underfull \hbox (badness 10000) in paragraph at lines 36--38
 
  []
 
-[5
+[4
 
 
-] [6])
+] [5])
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/07_Epigr
-afe.tex [7
+afe.tex [6
 
 ])
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/08_Resum
-o.tex [8
+o.tex [7
 
 ])
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/09_Abstr
-act.tex [9
+act.tex [8
 
 ])
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\fixos/0A_ListasAut
@@ -1215,21 +1203,21 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 7.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [10
+) [9
 
-]) [11]
+]) [10]
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\Principal.lol
 Overfull \hbox (18.2033pt too wide) in paragraph at lines 1--1
  [][] [][]\T1/ptm/b/n/12 Có-digo []Método \T1/lmtt/b/n/12 iniciarDistribuicao()
  \T1/ptm/b/n/12 da classe \T1/lmtt/b/n/12 GeneticAlgorithm- 
  []
 
-) [12
+) [11
 
 ])
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\fixos/0C_Sumario.t
 ex (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\Principal.toc)
-[13
+[12
 
 ])
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/10_a_Int
@@ -1240,14 +1228,14 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 60.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 60.
- [14
+ [13
 
-] [15])
+] [14])
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/11_Quadr
-oTeorico.tex [16] [17
+oTeorico.tex [15] [16
 
-] [18] [19]
-<./imagens/algoritimos_geneticos.jpg, id=392, 700.11563pt x 323.70938pt>
+] [17] [18]
+<./imagens/algoritimos_geneticos.jpg, id=386, 700.11563pt x 323.70938pt>
 File: ./imagens/algoritimos_geneticos.jpg Graphic file (type jpg)
 
 <use ./imagens/algoritimos_geneticos.jpg>
@@ -1256,23 +1244,23 @@ Package pdftex.def Info: ./imagens/algoritimos_geneticos.jpg used on input line
 (pdftex.def)             Requested size: 350.05696pt x 161.8543pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 156.
- [20 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/algor
-itimos_geneticos.jpg>] [21]
-<./imagens/roleta.jpg, id=423, 311.9655pt x 103.587pt>
+ [19 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/algor
+itimos_geneticos.jpg>] [20]
+<./imagens/roleta.jpg, id=417, 311.9655pt x 103.587pt>
 File: ./imagens/roleta.jpg Graphic file (type jpg)
 
 <use ./imagens/roleta.jpg>
 Package pdftex.def Info: ./imagens/roleta.jpg used on input line 227.
 (pdftex.def)             Requested size: 311.96474pt x 103.58675pt.
- [22 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/rolet
-a.jpg>] [23] [24] [25] [26]
-<./imagens/jsf_using_mvc.jpg, id=496, 521.95pt x 250.9375pt>
+ [21 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/rolet
+a.jpg>] [22] [23] [24] [25]
+<./imagens/jsf_using_mvc.jpg, id=490, 521.95pt x 250.9375pt>
 File: ./imagens/jsf_using_mvc.jpg Graphic file (type jpg)
 
 <use ./imagens/jsf_using_mvc.jpg>
 Package pdftex.def Info: ./imagens/jsf_using_mvc.jpg used on input line 440.
 (pdftex.def)             Requested size: 260.97435pt x 125.46843pt.
- [27 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/jsf_u
+ [26 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/jsf_u
 sing_mvc.jpg>]
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 463.
 
@@ -1288,23 +1276,23 @@ Overfull \hbox (0.92644pt too wide) in paragraph at lines 463--465
 ão de re-fe-rên-cia ([][]$<[]http : / / javaserverfaces .$
  []
 
-[28]
+[27]
 Overfull \hbox (2.39148pt too wide) in paragraph at lines 538--542
  []\T1/ptm/m/n/10 uma co-le-ção de in-for-ma-ções re-la-ci-o-na-das, or-ga-ni-z
 a-das em ta-be-las. Cada
  []
 
-[29])
+[28])
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/12_Quadr
-oMetodologico.tex [30] [31
+oMetodologico.tex [29] [30
 
-] [32] [33] [34] [35] [36]
+] [31] [32] [33] [34] [35]
 Overfull \hbox (1.6316pt too wide) in paragraph at lines 235--238
 []\T1/lmtt/m/n/12 mutationType\T1/ptm/m/n/12 : Se-gue a mesma forma que o \T1/l
 mtt/m/n/12 selectionType \T1/ptm/m/n/12 e o \T1/lmtt/m/n/12 crossType
  []
 
-[37]
+[36]
 Overfull \hbox (14.74661pt too wide) in paragraph at lines 302--304
 []\T1/ptm/m/n/12 Criação da po-pu-la-ção ini-cial, atra-vés do mé-todo \T1/lmtt
 /m/n/12 createInitialPopulation()
@@ -1328,24 +1316,24 @@ Overfull \hbox (25.46257pt too wide) in paragraph at lines 315--317
  mé-todo \T1/lmtt/m/n/12 doCrossing()
  []
 
-[38] <./imagens/processo1.png, id=613, 812.03375pt x 252.945pt>
+[37] <./imagens/processo1.png, id=607, 812.03375pt x 252.945pt>
 File: ./imagens/processo1.png Graphic file (type png)
 
 <use ./imagens/processo1.png>
 Package pdftex.def Info: ./imagens/processo1.png used on input line 349.
 (pdftex.def)             Requested size: 406.01588pt x 126.47218pt.
 
-<./imagens/representacao_processo.png, id=616, 398.23781pt x 323.70938pt>
+<./imagens/representacao_processo.png, id=610, 398.23781pt x 323.70938pt>
 File: ./imagens/representacao_processo.png Graphic file (type png)
 
 <use ./imagens/representacao_processo.png>
 Package pdftex.def Info: ./imagens/representacao_processo.png used on input lin
 e 368.
 (pdftex.def)             Requested size: 284.52756pt x 231.28745pt.
- [39 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/proce
-sso1.png>] [40 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/ima
+ [38 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/proce
+sso1.png>] [39 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/ima
 gens/representacao_processo.png>]
-<./imagens/atividade_diagram.png, id=627, 554.07pt x 260.47313pt>
+<./imagens/atividade_diagram.png, id=621, 554.07pt x 260.47313pt>
 File: ./imagens/atividade_diagram.png Graphic file (type png)
 
 <use ./imagens/atividade_diagram.png>
@@ -1353,13 +1341,13 @@ Package pdftex.def Info: ./imagens/atividade_diagram.png used on input line 393
 .
 (pdftex.def)             Requested size: 387.84636pt x 182.32994pt.
 
-<./imagens/fluxo_basico.png, id=632, 862.22125pt x 453.695pt>
+<./imagens/fluxo_basico.png, id=626, 862.22125pt x 453.695pt>
 File: ./imagens/fluxo_basico.png Graphic file (type png)
 
 <use ./imagens/fluxo_basico.png>
 Package pdftex.def Info: ./imagens/fluxo_basico.png used on input line 419.
 (pdftex.def)             Requested size: 398.33858pt x 209.6022pt.
- [41 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/ativi
+ [40 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/ativi
 dade_diagram.png>]
 (C:\Users\Sandro\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -1369,101 +1357,101 @@ nput line 440.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 442.
 
-[42 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/fluxo_
-basico.png>] [43] [44]
-<./imagens/distribuicao_exemplo.png, id=725, 560.0925pt x 303.1325pt>
+[41 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/fluxo_
+basico.png>] [42] [43]
+<./imagens/distribuicao_exemplo.png, id=719, 560.0925pt x 303.1325pt>
 File: ./imagens/distribuicao_exemplo.png Graphic file (type png)
 
 <use ./imagens/distribuicao_exemplo.png>
 Package pdftex.def Info: ./imagens/distribuicao_exemplo.png used on input line 
 555.
 (pdftex.def)             Requested size: 280.04556pt x 151.56587pt.
- [45 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/distr
+ [44 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/distr
 ibuicao_exemplo.png>]
-<./imagens/processo_chromosome_diagram.png, id=733, 630.85687pt x 388.45125pt>
+<./imagens/processo_chromosome_diagram.png, id=727, 630.85687pt x 388.45125pt>
 File: ./imagens/processo_chromosome_diagram.png Graphic file (type png)
 
 <use ./imagens/processo_chromosome_diagram.png>
 Package pdftex.def Info: ./imagens/processo_chromosome_diagram.png used on inpu
 t line 589.
 (pdftex.def)             Requested size: 315.42766pt x 194.22514pt.
- [46 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/proce
+ [45 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/proce
 sso_chromosome_diagram.png>]
-<./imagens/costureira_habilidade_tabela.png, id=741, 509.65407pt x 277.78781pt>
+<./imagens/costureira_habilidade_tabela.png, id=735, 509.65407pt x 277.78781pt>
 File: ./imagens/costureira_habilidade_tabela.png Graphic file (type png)
 <use ./imagens/costureira_habilidade_tabela.png>
 Package pdftex.def Info: ./imagens/costureira_habilidade_tabela.png used on inp
 ut line 613.
 (pdftex.def)             Requested size: 305.7948pt x 166.67395pt.
 
-<./imagens/costureiraHabilidade_class.png, id=743, 490.83376pt x 371.3875pt>
+<./imagens/costureiraHabilidade_class.png, id=737, 490.83376pt x 371.3875pt>
 File: ./imagens/costureiraHabilidade_class.png Graphic file (type png)
 
 <use ./imagens/costureiraHabilidade_class.png>
 Package pdftex.def Info: ./imagens/costureiraHabilidade_class.png used on input
  line 629.
 (pdftex.def)             Requested size: 245.41628pt x 185.69328pt.
- [47 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/costu
+ [46 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/costu
 reira_habilidade_tabela.png> <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/Nuapa
 Tex_Univas/imagens/costureiraHabilidade_class.png>]
-<./imagens/class_individual.png, id=750, 344.03531pt x 325.215pt>
+<./imagens/class_individual.png, id=744, 344.03531pt x 325.215pt>
 File: ./imagens/class_individual.png Graphic file (type png)
 
 <use ./imagens/class_individual.png>
 Package pdftex.def Info: ./imagens/class_individual.png used on input line 648.
 
 (pdftex.def)             Requested size: 240.82307pt x 227.64894pt.
- [48 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/class
+ [47 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/class
 _individual.png>]
-<./imagens/distribuicao_porcentagem.png, id=759, 94.85437pt x 60.225pt>
+<./imagens/distribuicao_porcentagem.png, id=752, 94.85437pt x 60.225pt>
 File: ./imagens/distribuicao_porcentagem.png Graphic file (type png)
 
 <use ./imagens/distribuicao_porcentagem.png>
 Package pdftex.def Info: ./imagens/distribuicao_porcentagem.png used on input l
 ine 705.
 (pdftex.def)             Requested size: 94.85413pt x 60.22484pt.
- [49 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/distr
-ibuicao_porcentagem.png>] [50]
-[51] [52] <./imagens/tempo_habilidade_3.PNG, id=876, 640.3925pt x 257.96375pt>
+ [48 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/distr
+ibuicao_porcentagem.png>] [49]
+[50] [51] <./imagens/tempo_habilidade_3.PNG, id=870, 640.3925pt x 257.96375pt>
 File: ./imagens/tempo_habilidade_3.PNG Graphic file (type png)
 
 <use ./imagens/tempo_habilidade_3.PNG>
 Package pdftex.def Info: ./imagens/tempo_habilidade_3.PNG used on input line 88
 0.
 (pdftex.def)             Requested size: 320.19547pt x 128.98155pt.
- [53 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/tempo
+ [52 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/tempo
 _habilidade_3.PNG>]
-<./imagens/montagem_node.png, id=883, 339.52348pt x 97.00671pt>
+<./imagens/montagem_node.png, id=877, 339.52348pt x 97.00671pt>
 File: ./imagens/montagem_node.png Graphic file (type png)
 
 <use ./imagens/montagem_node.png>
 Package pdftex.def Info: ./imagens/montagem_node.png used on input line 898.
 (pdftex.def)             Requested size: 373.47697pt x 106.7077pt.
- [54 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/monta
-gem_node.png>] [55] [56] [57] [58]
-<./imagens/distribuicao_exemplo_apresentacao.png, id=1083, 339.52348pt x 121.25
+ [53 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/monta
+gem_node.png>] [54] [55] [56] [57]
+<./imagens/distribuicao_exemplo_apresentacao.png, id=1077, 339.52348pt x 121.25
 839pt>
 File: ./imagens/distribuicao_exemplo_apresentacao.png Graphic file (type png)
  <use ./imagens/distribuicao_exemplo_apresentacao.png>
 Package pdftex.def Info: ./imagens/distribuicao_exemplo_apresentacao.png used o
 n input line 1171.
 (pdftex.def)             Requested size: 407.42613pt x 145.50932pt.
- [59 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/distr
+ [58 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/distr
 ibuicao_exemplo_apresentacao.png>]
 Overfull \hbox (5.03662pt too wide) in paragraph at lines 1218--1220
 []\T1/ptm/m/n/12 Resumindo, o fluxo de exe-cu-ção dos mé-to-dos en-tão será \T1
 /lmtt/m/n/12 getCromossomeValue()\T1/ptm/m/n/12 ,
  []
 
-[60] <./imagens/distribuicao_tempo.png, id=1128, 363.77516pt x 145.51007pt>
+[59] <./imagens/distribuicao_tempo.png, id=1121, 363.77516pt x 145.51007pt>
 File: ./imagens/distribuicao_tempo.png Graphic file (type png)
 
 <use ./imagens/distribuicao_tempo.png>
 Package pdftex.def Info: ./imagens/distribuicao_tempo.png used on input line 12
 42.
 (pdftex.def)             Requested size: 398.33858pt x 159.34439pt.
- [61 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/distr
-ibuicao_tempo.png>] [62] [63] [64]
+ [60 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/distr
+ibuicao_tempo.png>] [61] [62] [63]
 Overfull \hbox (0.946pt too wide) in paragraph at lines 1420--1424
 \T1/ptm/m/n/12 pu-la-ção de acordo com uma taxa de-fi-nida no atri-buto \T1/lmt
 t/m/n/12 foreignIndividualRate \T1/ptm/m/n/12 da classe
@@ -1476,7 +1464,7 @@ odel\T1/ptm/m/n/12 , que foi im-ple-men-tado na classe \T1/lmtt/m/n/12 Processo
 Model\T1/ptm/m/n/12 ,
  []
 
-[65] <./imagens/selecao.png, id=1281, 421.97919pt x 169.76175pt>
+[64] <./imagens/selecao.png, id=1275, 421.97919pt x 169.76175pt>
 File: ./imagens/selecao.png Graphic file (type png)
 
 <use ./imagens/selecao.png>
@@ -1486,42 +1474,42 @@ Package pdftex.def Info: ./imagens/selecao.png used on input line 1485.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[66] <./imagens/ex_cruzamento.png, id=1309, 883.3pt x 471.7625pt>
+[65] <./imagens/ex_cruzamento.png, id=1302, 883.3pt x 471.7625pt>
 File: ./imagens/ex_cruzamento.png Graphic file (type png)
 
 <use ./imagens/ex_cruzamento.png>
 Package pdftex.def Info: ./imagens/ex_cruzamento.png used on input line 1506.
 (pdftex.def)             Requested size: 353.31374pt x 188.70164pt.
- [67 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/selec
+ [66 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/selec
 ao.png> <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/ex
-_cruzamento.png>] [68] [69] [70]
-<./imagens/mutacao_cromossomo.png, id=1418, 481.8pt x 401.5pt>
+_cruzamento.png>] [67] [68] [69]
+<./imagens/mutacao_cromossomo.png, id=1412, 481.8pt x 401.5pt>
 File: ./imagens/mutacao_cromossomo.png Graphic file (type png)
 
 <use ./imagens/mutacao_cromossomo.png>
 Package pdftex.def Info: ./imagens/mutacao_cromossomo.png used on input line 16
 49.
 (pdftex.def)             Requested size: 337.25769pt x 281.04808pt.
- [71 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/mutac
-ao_cromossomo.png>] [72] [73]
-<./imagens/tela_distribuicao_processos.png, id=1510, 846.91406pt x 253.69781pt>
+ [70 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/mutac
+ao_cromossomo.png>] [71] [72]
+<./imagens/tela_distribuicao_processos.png, id=1504, 846.91406pt x 253.69781pt>
 File: ./imagens/tela_distribuicao_processos.png Graphic file (type png)
 <use ./imagens/tela_distribuicao_processos.png>
 Package pdftex.def Info: ./imagens/tela_distribuicao_processos.png used on inpu
 t line 1772.
 (pdftex.def)             Requested size: 418.25542pt x 125.28853pt.
 
-<./imagens/tela_distribuicao_open.png, id=1512, 838.63312pt x 241.65282pt>
+<./imagens/tela_distribuicao_open.png, id=1506, 838.63312pt x 241.65282pt>
 File: ./imagens/tela_distribuicao_open.png Graphic file (type png)
 
 <use ./imagens/tela_distribuicao_open.png>
 Package pdftex.def Info: ./imagens/tela_distribuicao_open.png used on input lin
 e 1785.
 (pdftex.def)             Requested size: 418.25542pt x 120.52005pt.
- [74 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/tela_
+ [73 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/tela_
 distribuicao_processos.png> <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaT
-ex_Univas/imagens/tela_distribuicao_open.png>] [75] [76] [77]
-<./imagens/resultado_distribuicao.png, id=1641, 805.62032pt x 455.68137pt>
+ex_Univas/imagens/tela_distribuicao_open.png>] [74] [75] [76]
+<./imagens/resultado_distribuicao.png, id=1635, 805.62032pt x 455.68137pt>
 File: ./imagens/resultado_distribuicao.png Graphic file (type png)
 
 <use ./imagens/resultado_distribuicao.png>
@@ -1530,28 +1518,28 @@ e 1959.
 (pdftex.def)             Requested size: 398.33858pt x 225.31613pt.
 )
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/13_Resul
-tados.tex [78 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imag
-ens/resultado_distribuicao.png>] [79] [80
+tados.tex [77 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imag
+ens/resultado_distribuicao.png>] [78] [79
 
 ]
-<./imagens/teste_processo.png, id=1657, 1102.1175pt x 372.39125pt>
+<./imagens/teste_processo.png, id=1651, 1102.1175pt x 372.39125pt>
 File: ./imagens/teste_processo.png Graphic file (type png)
 
 <use ./imagens/teste_processo.png>
 Package pdftex.def Info: ./imagens/teste_processo.png used on input line 51.
 (pdftex.def)             Requested size: 418.25542pt x 141.32263pt.
 
-<./imagens/tela_processo_teste1.png, id=1659, 1116.17pt x 555.07375pt>
+<./imagens/tela_processo_teste1.png, id=1653, 1116.17pt x 555.07375pt>
 File: ./imagens/tela_processo_teste1.png Graphic file (type png)
 
 <use ./imagens/tela_processo_teste1.png>
 Package pdftex.def Info: ./imagens/tela_processo_teste1.png used on input line 
 62.
 (pdftex.def)             Requested size: 369.88582pt x 183.94563pt.
- [81 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/teste
+ [80 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/teste
 _processo.png> <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/ima
 gens/tela_processo_teste1.png>]
-<./imagens/tela_habilidade_teste1.png, id=1665, 1117.17375pt x 558.085pt>
+<./imagens/tela_habilidade_teste1.png, id=1659, 1117.17375pt x 558.085pt>
 File: ./imagens/tela_habilidade_teste1.png Graphic file (type png)
 
 <use ./imagens/tela_habilidade_teste1.png>
@@ -1559,26 +1547,26 @@ Package pdftex.def Info: ./imagens/tela_habilidade_teste1.png used on input lin
 e 78.
 (pdftex.def)             Requested size: 418.25542pt x 208.94073pt.
 
-<./imagens/tela_distribuicao_tarefas.png, id=1667, 1171.37625pt x 417.56pt>
+<./imagens/tela_distribuicao_tarefas.png, id=1661, 1171.37625pt x 417.56pt>
 File: ./imagens/tela_distribuicao_tarefas.png Graphic file (type png)
 
 <use ./imagens/tela_distribuicao_tarefas.png>
 Package pdftex.def Info: ./imagens/tela_distribuicao_tarefas.png used on input 
 line 92.
 (pdftex.def)             Requested size: 418.25542pt x 149.09816pt.
- [82 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/tela_
+ [81 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/tela_
 habilidade_teste1.png> <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Un
 ivas/imagens/tela_distribuicao_tarefas.png>]
-<./imagens/resultado_distribuicao_teste1.png, id=1673, 1017.8025pt x 634.37pt>
+<./imagens/resultado_distribuicao_teste1.png, id=1667, 1017.8025pt x 634.37pt>
 File: ./imagens/resultado_distribuicao_teste1.png Graphic file (type png)
 
 <use ./imagens/resultado_distribuicao_teste1.png>
 Package pdftex.def Info: ./imagens/resultado_distribuicao_teste1.png used on in
 put line 108.
 (pdftex.def)             Requested size: 418.25542pt x 260.68384pt.
- [83 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/resul
+ [82 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/resul
 tado_distribuicao_teste1.png>] <./imagens/alterando_tempo_costureira.png, id=16
-82, 1104.125pt x 564.1075pt>
+76, 1104.125pt x 564.1075pt>
 File: ./imagens/alterando_tempo_costureira.png Graphic file (type png)
 
 <use ./imagens/alterando_tempo_costureira.png>
@@ -1586,7 +1574,7 @@ Package pdftex.def Info: ./imagens/alterando_tempo_costureira.png used on input
  line 129.
 (pdftex.def)             Requested size: 398.33858pt x 203.51752pt.
 
-<./imagens/novo_resultado_alterado_tempo_teste1.png, id=1684, 999.735pt x 617.3
+<./imagens/novo_resultado_alterado_tempo_teste1.png, id=1678, 999.735pt x 617.3
 0624pt>
 File: ./imagens/novo_resultado_alterado_tempo_teste1.png Graphic file (type png
 )
@@ -1594,10 +1582,10 @@ File: ./imagens/novo_resultado_alterado_tempo_teste1.png Graphic file (type png
 Package pdftex.def Info: ./imagens/novo_resultado_alterado_tempo_teste1.png use
 d on input line 142.
 (pdftex.def)             Requested size: 418.25542pt x 258.25899pt.
- [84 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/alter
+ [83 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/alter
 ando_tempo_costureira.png> <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTe
 x_Univas/imagens/novo_resultado_alterado_tempo_teste1.png>]
-<./imagens/custo_entre_costureiras_teste2.png, id=1692, 1118.1775pt x 575.14874
+<./imagens/custo_entre_costureiras_teste2.png, id=1685, 1118.1775pt x 575.14874
 pt>
 File: ./imagens/custo_entre_costureiras_teste2.png Graphic file (type png)
  <use ./imagens/custo_entre_costureiras_teste2.png>
@@ -1605,25 +1593,25 @@ Package pdftex.def Info: ./imagens/custo_entre_costureiras_teste2.png used on i
 nput line 165.
 (pdftex.def)             Requested size: 418.25542pt x 215.13612pt.
 
-<./imagens/resultado_teste2.png, id=1694, 1014.79124pt x 502.87875pt>
+<./imagens/resultado_teste2.png, id=1687, 1014.79124pt x 502.87875pt>
 File: ./imagens/resultado_teste2.png Graphic file (type png)
 
 <use ./imagens/resultado_teste2.png>
 Package pdftex.def Info: ./imagens/resultado_teste2.png used on input line 178.
 
 (pdftex.def)             Requested size: 369.88582pt x 183.29216pt.
- [85 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/custo
+ [84 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/custo
 _entre_costureiras_teste2.png> <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/Nua
 paTex_Univas/imagens/resultado_teste2.png>]
-<./imagens/resultado_tudo_igual_teste2.png, id=1701, 1021.8175pt x 633.36626pt>
+<./imagens/resultado_tudo_igual_teste2.png, id=1695, 1021.8175pt x 633.36626pt>
 File: ./imagens/resultado_tudo_igual_teste2.png Graphic file (type png)
 <use ./imagens/resultado_tudo_igual_teste2.png>
 Package pdftex.def Info: ./imagens/resultado_tudo_igual_teste2.png used on inpu
 t line 203.
 (pdftex.def)             Requested size: 418.25542pt x 259.24695pt.
- [86 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/resul
+ [85 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/resul
 tado_tudo_igual_teste2.png>]
-<./imagens/cofiguracao_habilidade_teste3.png, id=1708, 1115.16624pt x 567.11874
+<./imagens/cofiguracao_habilidade_teste3.png, id=1702, 1115.16624pt x 567.11874
 pt>
 File: ./imagens/cofiguracao_habilidade_teste3.png Graphic file (type png)
  <use ./imagens/cofiguracao_habilidade_teste3.png>
@@ -1631,17 +1619,17 @@ Package pdftex.def Info: ./imagens/cofiguracao_habilidade_teste3.png used on in
 put line 222.
 (pdftex.def)             Requested size: 418.25542pt x 212.70361pt.
 
-<./imagens/resultado1_teste3.png, id=1711, 1011.78pt x 541.02126pt>
+<./imagens/resultado1_teste3.png, id=1705, 1011.78pt x 541.02126pt>
 File: ./imagens/resultado1_teste3.png Graphic file (type png)
 
 <use ./imagens/resultado1_teste3.png>
 Package pdftex.def Info: ./imagens/resultado1_teste3.png used on input line 235
 .
 (pdftex.def)             Requested size: 369.88582pt x 197.78894pt.
- [87 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/cofig
+ [86 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/cofig
 uracao_habilidade_teste3.png> <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/Nuap
 aTex_Univas/imagens/resultado1_teste3.png>] <./imagens/resultado2_teste3.png, i
-d=1719, 1019.81pt x 630.355pt>
+d=1713, 1019.81pt x 630.355pt>
 File: ./imagens/resultado2_teste3.png Graphic file (type png)
 
 <use ./imagens/resultado2_teste3.png>
@@ -1649,7 +1637,7 @@ Package pdftex.def Info: ./imagens/resultado2_teste3.png used on input line 252
 .
 (pdftex.def)             Requested size: 418.25542pt x 258.53378pt.
 
-<./imagens/posicao_xy_costureiras_teste4.png, id=1723, 1113.15875pt x 504.88625
+<./imagens/posicao_xy_costureiras_teste4.png, id=1717, 1113.15875pt x 504.88625
 pt>
 File: ./imagens/posicao_xy_costureiras_teste4.png Graphic file (type png)
  <use ./imagens/posicao_xy_costureiras_teste4.png>
@@ -1661,24 +1649,24 @@ put line 275.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./imagens/cofig_at_finalizaca_teste4.png, id=1725, 1113.15875pt x 567.11874pt>
+<./imagens/cofig_at_finalizaca_teste4.png, id=1719, 1113.15875pt x 567.11874pt>
 File: ./imagens/cofig_at_finalizaca_teste4.png Graphic file (type png)
 <use ./imagens/cofig_at_finalizaca_teste4.png>
 Package pdftex.def Info: ./imagens/cofig_at_finalizaca_teste4.png used on input
  line 288.
 (pdftex.def)             Requested size: 398.33858pt x 202.94244pt.
- [88 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/resul
-tado2_teste3.png>] [89 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Un
+ [87 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/resul
+tado2_teste3.png>] [88 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Un
 ivas/imagens/posicao_xy_costureiras_teste4.png> <C:/Users/Sandro/TCC_FINAL/TCC_
 GRADUATION_SI/NuapaTex_Univas/imagens/cofig_at_finalizaca_teste4.png>]
-<./imagens/resultado_transporte_teste4.png, id=1736, 1025.8325pt x 619.31375pt>
+<./imagens/resultado_transporte_teste4.png, id=1730, 1025.8325pt x 619.31375pt>
 File: ./imagens/resultado_transporte_teste4.png Graphic file (type png)
 <use ./imagens/resultado_transporte_teste4.png>
 Package pdftex.def Info: ./imagens/resultado_transporte_teste4.png used on inpu
 t line 303.
 (pdftex.def)             Requested size: 418.25542pt x 252.51224pt.
 
-<./imagens/detalhamento_transporte_teste4.png, id=1740, 1008.76875pt x 602.25pt
+<./imagens/detalhamento_transporte_teste4.png, id=1734, 1008.76875pt x 602.25pt
 >
 File: ./imagens/detalhamento_transporte_teste4.png Graphic file (type png)
  <use ./imagens/detalhamento_transporte_teste4.png>
@@ -1690,7 +1678,7 @@ nput line 321.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<./imagens/adiconar_atividade_frente_teste5.png, id=1743, 1089.06876pt x 628.34
+<./imagens/adiconar_atividade_frente_teste5.png, id=1737, 1089.06876pt x 628.34
 75pt>
 File: ./imagens/adiconar_atividade_frente_teste5.png Graphic file (type png)
  <use ./imagens/adiconar_atividade_frente_teste5.png>
@@ -1701,12 +1689,12 @@ Package pdftex.def Info: ./imagens/adiconar_atividade_frente_teste5.png used on
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[90 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/result
-ado_transporte_teste4.png>] [91 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/Nu
+[89 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/result
+ado_transporte_teste4.png>] [90 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/Nu
 apaTex_Univas/imagens/detalhamento_transporte_teste4.png> <C:/Users/Sandro/TCC_
 FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/adiconar_atividade_frente_teste
 5.png>]
-<./imagens/adicionar_atividade_frente_teste4.png, id=1756, 1103.12125pt x 561.0
+<./imagens/adicionar_atividade_frente_teste4.png, id=1750, 1103.12125pt x 561.0
 9625pt>
 File: ./imagens/adicionar_atividade_frente_teste4.png Graphic file (type png)
  <use ./imagens/adicionar_atividade_frente_teste4.png>
@@ -1714,16 +1702,16 @@ Package pdftex.def Info: ./imagens/adicionar_atividade_frente_teste4.png used o
 n input line 355.
 (pdftex.def)             Requested size: 418.25542pt x 212.7479pt.
 
-<./imagens/costureiras_at_frente_tete5.png, id=1758, 1114.1625pt x 563.10374pt>
+<./imagens/costureiras_at_frente_tete5.png, id=1752, 1114.1625pt x 563.10374pt>
 File: ./imagens/costureiras_at_frente_tete5.png Graphic file (type png)
 <use ./imagens/costureiras_at_frente_tete5.png>
 Package pdftex.def Info: ./imagens/costureiras_at_frente_tete5.png used on inpu
 t line 369.
 (pdftex.def)             Requested size: 398.33858pt x 201.31665pt.
- [92 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/adici
+ [91 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/adici
 onar_atividade_frente_teste4.png> <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/
 NuapaTex_Univas/imagens/costureiras_at_frente_tete5.png>]
-<./imagens/resultado1_teste5.png, id=1766, 1057.9525pt x 633.36626pt>
+<./imagens/resultado1_teste5.png, id=1760, 1057.9525pt x 633.36626pt>
 File: ./imagens/resultado1_teste5.png Graphic file (type png)
 
 <use ./imagens/resultado1_teste5.png>
@@ -1731,17 +1719,17 @@ Package pdftex.def Info: ./imagens/resultado1_teste5.png used on input line 386
 .
 (pdftex.def)             Requested size: 418.25542pt x 250.39438pt.
 
-<./imagens/detalhamento1_teste5.png, id=1770, 1027.84pt x 614.295pt>
+<./imagens/detalhamento1_teste5.png, id=1764, 1027.84pt x 614.295pt>
 File: ./imagens/detalhamento1_teste5.png Graphic file (type png)
 
 <use ./imagens/detalhamento1_teste5.png>
 Package pdftex.def Info: ./imagens/detalhamento1_teste5.png used on input line 
 401.
 (pdftex.def)             Requested size: 418.25542pt x 249.97853pt.
- [93 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/resul
+ [92 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/resul
 tado1_teste5.png> <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/
 imagens/detalhamento1_teste5.png>]
-<./imagens/resultado2_teste5.png, id=1777, 1043.9pt x 629.35126pt>
+<./imagens/resultado2_teste5.png, id=1771, 1043.9pt x 629.35126pt>
 File: ./imagens/resultado2_teste5.png Graphic file (type png)
 
 <use ./imagens/resultado2_teste5.png>
@@ -1749,68 +1737,96 @@ Package pdftex.def Info: ./imagens/resultado2_teste5.png used on input line 417
 .
 (pdftex.def)             Requested size: 418.25542pt x 252.15857pt.
 
-<./imagens/detalhamento2_teste5.png, id=1780, 1035.87pt x 607.26875pt>
+<./imagens/detalhamento2_teste5.png, id=1774, 1035.87pt x 607.26875pt>
 File: ./imagens/detalhamento2_teste5.png Graphic file (type png)
 
 <use ./imagens/detalhamento2_teste5.png>
 Package pdftex.def Info: ./imagens/detalhamento2_teste5.png used on input line 
 430.
 (pdftex.def)             Requested size: 418.25542pt x 245.2012pt.
- [94 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/resul
+ [93 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/resul
 tado2_teste5.png> <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/
 imagens/detalhamento2_teste5.png>]
-<./imagens/configuracao_costureiras_teste6.png, id=1789, 1116.17pt x 562.1pt>
+<./imagens/configuracao_costureiras_teste6.png, id=1783, 1116.17pt x 562.1pt>
 File: ./imagens/configuracao_costureiras_teste6.png Graphic file (type png)
 
 <use ./imagens/configuracao_costureiras_teste6.png>
 Package pdftex.def Info: ./imagens/configuracao_costureiras_teste6.png used on 
-input line 455.
+input line 454.
 (pdftex.def)             Requested size: 418.25542pt x 210.6326pt.
- [95 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/confi
-guracao_costureiras_teste6.png>] <./imagens/resultado1_teste6.png, id=1796, 990
+ [94 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/confi
+guracao_costureiras_teste6.png>] <./imagens/resultado1_teste6.png, id=1790, 990
 .70125pt x 480.79625pt>
 File: ./imagens/resultado1_teste6.png Graphic file (type png)
 
 <use ./imagens/resultado1_teste6.png>
-Package pdftex.def Info: ./imagens/resultado1_teste6.png used on input line 469
+Package pdftex.def Info: ./imagens/resultado1_teste6.png used on input line 468
 .
 (pdftex.def)             Requested size: 369.88582pt x 179.50581pt.
 
-<./imagens/alterecao_custo_teste6.png, id=1799, 1113.15875pt x 559.08875pt>
+<./imagens/alterecao_custo_teste6.png, id=1793, 1113.15875pt x 559.08875pt>
 File: ./imagens/alterecao_custo_teste6.png Graphic file (type png)
 
 <use ./imagens/alterecao_custo_teste6.png>
 Package pdftex.def Info: ./imagens/alterecao_custo_teste6.png used on input lin
-e 487.
+e 486.
 (pdftex.def)             Requested size: 418.25542pt x 210.07578pt.
- [96 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/resul
+ [95 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/imagens/resul
 tado1_teste6.png> <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/
 imagens/alterecao_custo_teste6.png>]
-<./imagens/resultado2_teste6.png, id=1807, 986.68625pt x 485.815pt>
+<./imagens/resultado2_teste6.png, id=1800, 986.68625pt x 485.815pt>
 File: ./imagens/resultado2_teste6.png Graphic file (type png)
 
 <use ./imagens/resultado2_teste6.png>
-Package pdftex.def Info: ./imagens/resultado2_teste6.png used on input line 500
+Package pdftex.def Info: ./imagens/resultado2_teste6.png used on input line 499
 .
 (pdftex.def)             Requested size: 418.25542pt x 205.93861pt.
 )
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\editaveis/14_Concl
-usao.tex [97 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/image
-ns/resultado2_teste6.png>] [98
+usao.tex [96 <C:/Users/Sandro/TCC_FINAL/TCC_GRADUATION_SI/NuapaTex_Univas/image
+ns/resultado2_teste6.png>] [97
 
 ])
 (C:\Users\Sandro\TCC_FINAL\TCC_GRADUATION_SI\NuapaTex_Univas\Principal.bbl
-[99]
+[98]
 bibitemlist
-LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 10.
-[100
 
-])
+Underfull \hbox (badness 8019) in paragraph at lines 14--17
+[]\T1/ptm/m/n/12 CARVALHO, L. \T1/ptm/m/it/12 Aprenda al-gu-mas téc-ni-cas de r
+eu-nião\T1/ptm/m/n/12 . 2012. [][]$<[]http : / / www .$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--17
+$\T1/ptm/m/n/12 administradores . com . br / artigos / negocios / aprenda-[]alg
+umas-[]tecnicas-[]de-[]reuniao / 62516 /$
+ []
+
+[99
+
+]
+Underfull \hbox (badness 1406) in paragraph at lines 136--139
+[]\T1/ptm/m/n/12 ORACLE. \T1/ptm/m/it/12 Ja-va-Ser-ver Fa-ces Te-ch-no-logy Ove
+r-view\T1/ptm/m/n/12 . 2015. [][]$<[]http : / / www . oracle . com /$
+ []
+
+
+Underfull \hbox (badness 5203) in paragraph at lines 148--151
+[]\T1/ptm/m/n/12 PRESSMAN, R. \T1/ptm/m/it/12 En-ge-nha-ria de Soft-ware\T1/ptm
+/m/n/12 . Mc-Graw Hill Bra-sil, 2011. ISBN
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--151
+\T1/ptm/m/n/12 9788580550443. Dis-po-ní-vel em: [][]$<[]http : / / books . goog
+le . com . br / books ? id =$
+ []
+
+)
 No file Principal.ind.
 
 AED: lastpage setting LastPage
-[101]
+[100]
 
 Package caption Warning: Unused \captionsetup[Quadro] on input line 303.
 See the caption package documentation for explanation.
@@ -1834,24 +1850,23 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
  ) 
 Here is how much of TeX's memory you used:
- 16382 strings out of 493921
- 253360 string characters out of 3147280
+ 16371 strings out of 493921
+ 253026 string characters out of 3147280
  490712 words of memory out of 3000000
- 18321 multiletter control sequences out of 15000+200000
- 60552 words of font info for 64 fonts, out of 3000000 for 9000
+ 18316 multiletter control sequences out of 15000+200000
+ 57784 words of font info for 62 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  46i,12n,49p,1009b,2017s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}{C:/Program File
-s/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2.9/fonts/ty
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
+iKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtl10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on Principal.pdf (102 pages, 1952417 bytes).
+/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/urw/times/utmri8a.pfb>
+Output written on Principal.pdf (101 pages, 1949968 bytes).
 PDF statistics:
- 2229 PDF objects out of 2487 (max. 8388607)
- 1031 named destinations out of 1200 (max. 500000)
+ 2220 PDF objects out of 2487 (max. 8388607)
+ 1030 named destinations out of 1200 (max. 500000)
  648 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,5 @@
 \providecommand{\abntreprintinfo}[1]{%
- \citeonline{#1}}
+\citeonline{#1}}
 \setlength{\labelsep}{0pt}\begin{thebibliography}{}
 \providecommand{\abntrefinfo}[3]{}
 \providecommand{\abntbstabout}[1]{}
@@ -7,23 +7,23 @@
 
 \bibitem[Bergsten 2004]{bergsten_javaserver_faces}
 \abntrefinfo{Bergsten}{BERGSTEN}{2004}
-{BERGSTEN, H. \emph{\textbf{Javaserver Faces}}. [S.l.: s.n.], 2004.}
+\justify{BERGSTEN, H. \emph{Javaserver Faces}. [S.l.: s.n.], 2004.}
 
 \bibitem[Carvalho 2012]{ref_reuniao}
 \abntrefinfo{Carvalho}{CARVALHO}{2012}
-{CARVALHO, L. \emph{Aprenda algumas técnicas de reunião}. 2012.
-  \url{http://www.administradores.com.br/artigos/negocios/aprenda-algumas-tecnicas-de-reuniao/62516/}.
+\justify{CARVALHO, L. \emph{Aprenda algumas técnicas de reunião}. 2012.
+\url{http://www.administradores.com.br/artigos/negocios/aprenda-algumas-tecnicas-de-reuniao/62516/}.
 Acessado em 04 de abril.}
 
 \bibitem[Date 2004]{livro_introd_sistemas_bd}
 \abntrefinfo{Date}{DATE}{2004}
-{DATE, C.~J. \emph{Introdução a sistemas de banco de dados}. 8º. ed. São
-  Paulo: Campus, 2004.}
+\justify{DATE, C.~J. \emph{Introdução a sistemas de banco de dados}. 8º. ed. São
+Paulo: Campus, 2004.}
 
 \bibitem[Faria 2015]{aula_joelma_26_03_15}
 \abntrefinfo{Faria}{FARIA}{2015}
-{FARIA, J. de. \emph{TCC I}. Pouso Alegre: Univás. Notas de Aula 26 de março:
-  [s.n.], 2015.}
+\justify{FARIA, J. de. \emph{TCC I}. Pouso Alegre: Univás. Notas de Aula 26 de março:
+[s.n.], 2015.}
 
 \bibitem[Faria 2013]{faria_java_ee_7_jsf_primefaces_cdi}
 \abntrefinfo{Faria}{FARIA}{2013}
@@ -31,172 +31,172 @@ Acessado em 04 de abril.}
 
 \bibitem[Fernandes 2003]{nocoes_geriais_anita_fernandes}
 \abntrefinfo{Fernandes}{FERNANDES}{2003}
-{FERNANDES, A. M. D.~R. \emph{Inteligência Artificial: Noções Gerais.}
-  [S.l.]: Visual Books, 2003.}
+\justify{FERNANDES, A. M. D.~R. \emph{Inteligência Artificial: Noções Gerais.}
+[S.l.]: Visual Books, 2003.}
 
 \bibitem[Filitto 2008]{REVISTA_MULTIDISCIPLINAR_DA_UNIESP}
 \abntrefinfo{Filitto}{FILITTO}{2008}
-{FILITTO, D. Algoritimos genéticos: Uma visão explanatória.
-\emph{Saber Acadêmico}, n.~06, p. 136--143, 2008.}
+\justify{FILITTO, D. \emph{Algoritimos genéticos: Uma visão explanatória}.
+Saber Acadêmico, n.~06, p. 136--143, 2008.}
 
 \bibitem[Freitas et al. 2007]{freitas2007ferramenta}
 \abntrefinfo{Freitas et al.}{FREITAS et al.}{2007}
-{FREITAS, C.~C. et al. Uma ferramenta baseada em algoritmos gen{\'e}ticos para
-  a gera{\c{c}}{\~a}o de tabela de hor{\'a}rio escolar.
+\justify{FREITAS, C.~C. et al. Uma ferramenta baseada em algoritmos gen{\'e}ticos para
+a gera{\c{c}}{\~a}o de tabela de hor{\'a}rio escolar.
 \emph{S{\'E}TIMA ESCOLA REGIONAL DE COMPUTA{\c{C}}{\~A}O Bahia-Sergipe.
-  Vit{\'o}ria da Conquista:[sn]}, 2007.}
+Vit{\'o}ria da Conquista:[sn]}, 2007.}
 
 \bibitem[Gamma et al.
-  2009]{gamma_helm_johnson_vlissides_design_patterns_elements_reusable_object_oriented_software}
+2009]{gamma_helm_johnson_vlissides_design_patterns_elements_reusable_object_oriented_software}
 \abntrefinfo{Gamma et al.}{GAMMA et al.}{2009}
-{GAMMA, E. et al. \emph{Design Patterns: Elements of Reusable Object-Oriented
-  Software}. [S.l.: s.n.], 2009.}
+\justify{GAMMA, E. et al. \emph{Design Patterns: Elements of Reusable Object-Oriented
+Software}. [S.l.: s.n.], 2009.}
 
 \bibitem[Gerhardt e Silveira 2009]{livro_metodos_de_pesquisa}
 \abntrefinfo{Gerhardt e Silveira}{GERHARDT; SILVEIRA}{2009}
-{GERHARDT, T.~E.; SILVEIRA, D.~T. \emph{Métodos de Pesquisa.} 1º. ed. Porto
-  Alegre: UFRGS, 2009.}
+\justify{GERHARDT, T.~E.; SILVEIRA, D.~T. \emph{Métodos de Pesquisa.} 1º. ed. Porto
+Alegre: UFRGS, 2009.}
 
 \bibitem[Gil 1999]{pesquisa_social_gil}
 \abntrefinfo{Gil}{GIL}{1999}
-{GIL, A.~C. \emph{Métodos e técnicas de pesquisa social.} São Paulo: Atlas,
-  1999.}
+\justify{GIL, A.~C. \emph{Métodos e técnicas de pesquisa social.} São Paulo: Atlas,
+1999.}
 
 \bibitem[Goldberg 1989]{livro_genetic_algorithm_goldberg}
 \abntrefinfo{Goldberg}{GOLDBERG}{1989}
-{GOLDBERG, D.~E. \emph{Genetic Algorithms in search optimization and machine
-  learning}. 1º. ed. New York: Addison-Wesley publishing company,inc., 1989.}
+\justify{GOLDBERG, D.~E. \emph{Genetic Algorithms in search optimization and machine
+learning}. 1º. ed. New York: Addison-Wesley publishing company,inc., 1989.}
 
 \bibitem[Haguette 1997]{metodoliga_qualitativas_na_sociologia}
 \abntrefinfo{Haguette}{HAGUETTE}{1997}
-{HAGUETTE, T. M.~F. \emph{Metodologias qualitativas na Sociologia}. 5º. ed.
-  Petrópolis: Vozes, 1997.}
+\justify{HAGUETTE, T. M.~F. \emph{Metodologias qualitativas na Sociologia}. 5º. ed.
+Petrópolis: Vozes, 1997.}
 
 \bibitem[Juneau 2014]{juneau_primefaces_enterprise}
 \abntrefinfo{Juneau}{JUNEAU}{2014}
-{JUNEAU, J. \emph{Primefaces in the Enterprise}. 2014.
-  \url{http://www.oracle.com/technetwork/articles/java/java-primefaces-2191907.html}.
+\justify{JUNEAU, J. \emph{Primefaces in the Enterprise}. 2014.
+\url{http://www.oracle.com/technetwork/articles/java/java-primefaces-2191907.html}.
 Acesso em: 15 de janeiro de 2015.}
 
 \bibitem[Junior 2007]{livro_java_Guia_do_Programador}
 \abntrefinfo{Junior}{JUNIOR}{2007}
-{JUNIOR, P.~J. \emph{P. de JAVA: Guia do Programador.} 1º. ed. [S.l.]:
-  Novatec, 2007.}
+\justify{JUNIOR, P.~J. \emph{P. de JAVA: Guia do Programador.} 1º. ed. [S.l.]:
+Novatec, 2007.}
 
 \bibitem[Lacerda e Carvalho 2015]{intro_aos_algoritimos_geneticos}
 \abntrefinfo{Lacerda e Carvalho}{LACERDA; CARVALHO}{2015}
-{LACERDA, E. G.~M. de; CARVALHO, A. C. P. L.~F. de. \emph{Introdução aos
-  Algritmos Genéticos}. 2015.
-  \url{http://www.leca.ufrn.br/~estefane/metaheuristicas/ag.pdf}.
+\justify{LACERDA, E. G.~M. de; CARVALHO, A. C. P. L.~F. de. \emph{Introdução aos
+Algritmos Genéticos}. 2015.
+\url{http://www.leca.ufrn.br/~estefane/metaheuristicas/ag.pdf}.
 Acessado em 1 de Agosto.}
 
 \bibitem[Laudon e Laudon 2009]{livro_laudon_sistemas_de_informacoes_gerenciais}
 \abntrefinfo{Laudon e Laudon}{LAUDON; LAUDON}{2009}
-{LAUDON, K.~C.; LAUDON, J.~P. \emph{Sistemas de informação gerenciais.} 7º.
-  ed. [S.l.]: Pearson, 2009.}
+\justify{LAUDON, K.~C.; LAUDON, J.~P. \emph{Sistemas de informação gerenciais.} 7º.
+ed. [S.l.]: Pearson, 2009.}
 
 \bibitem[Linden 2012]{livro_ags_ricardo_linden}
 \abntrefinfo{Linden}{LINDEN}{2012}
-{LINDEN, R. \emph{Algoritmos genéticos}. 1º. ed. Rio de Janeiro: Ciência
-  Moderna, 2012.}
+\justify{LINDEN, R. \emph{Algoritmos genéticos}. 1º. ed. Rio de Janeiro: Ciência
+Moderna, 2012.}
 
 \bibitem[Lucknow e Melo 2010]{livro_programacao_java_para_web}
 \abntrefinfo{Lucknow e Melo}{LUCKNOW; MELO}{2010}
-{LUCKNOW, D.~H.; MELO, A.~A. de. \emph{Programação Java para Web}. 1º. ed.
-  São Paulo: Novatec, 2010.}
+\justify{LUCKNOW, D.~H.; MELO, A.~A. de. \emph{Programação Java para Web}. 1º. ed.
+São Paulo: Novatec, 2010.}
 
 \bibitem[Luger e Stubblefield 1993]{artificial_intelligence}
 \abntrefinfo{Luger e Stubblefield}{LUGER; STUBBLEFIELD}{1993}
-{LUGER, G.; STUBBLEFIELD, W.~A. \emph{Artificial Intelligence: Structures and
-  Strategies for Complex Problem Solving.} 2º. ed. [S.l.]: Palo Alto, 1993.}
+\justify{LUGER, G.; STUBBLEFIELD, W.~A. \emph{Artificial Intelligence: Structures and
+Strategies for Complex Problem Solving.} 2º. ed. [S.l.]: Palo Alto, 1993.}
 
 \bibitem[Luque e Silva 2010]{ags_java_magazine}
 \abntrefinfo{Luque e Silva}{LUQUE; SILVA}{2010}
-{LUQUE, L.; SILVA, R. Algoritmos genéticos em java, conceitos e aplicação.
+\justify{LUQUE, L.; SILVA, R. Algoritmos genéticos em java, conceitos e aplicação.
 \emph{Java Magazine}, Rio de Janeiro, v.~82, p. 44--55, 2010.}
 
 \bibitem[Manzoni 2005]{teste_doutorado_manzoni}
 \abntrefinfo{Manzoni}{MANZONI}{2005}
-{MANZONI, A. Desenvolvimento de um sistema computacional orientado a objetos
-  para sistemas elÉtricos de potÊncia: AplicaÇÃo a simulaÇÃo rÁpida e
-  anÁlise da estabilidade de tensÃo. In:  . [S.l.: s.n.], 2005.}
+\justify{MANZONI, A. \emph{Desenvolvimento de um sistema computacional orientado a objetos
+para sistemas elétricos de potência: Aplicação a simulação rápida e
+análise da estabilidade de tensão}. [S.l.: s.n.], 2005.}
 
 \bibitem[Marconi e Lakatos 2009]{tecnicas_de_pesquisa}
 \abntrefinfo{Marconi e Lakatos}{MARCONI; LAKATOS}{2009}
-{MARCONI, M.~A.; LAKATOS, E.~M. \emph{técnicas de Pesquisa}. 7º. ed. [S.l.]:
-  Atlas, 2009.}
+\justify{MARCONI, M.~A.; LAKATOS, E.~M. \emph{técnicas de Pesquisa}. 7º. ed. [S.l.]:
+Atlas, 2009.}
 
 \bibitem[Melanie 1999]{livro_introduction_ag_melaine_mitchell}
 \abntrefinfo{Melanie}{MELANIE}{1999}
-{MELANIE, M. \emph{An introduction to genetic algorithms}. 1º. ed. London:
-  Massachusetts Institute of Technology, 1999.}
+\justify{MELANIE, M. \emph{An introduction to genetic algorithms}. 1º. ed. London:
+Massachusetts Institute of Technology, 1999.}
 
 \bibitem[Oracle 2015]{oracle_javaserver_faces_technology_overview}
 \abntrefinfo{Oracle}{ORACLE}{2015a}
-{ORACLE. \emph{JavaServer Faces Technology Overview}. 2015.
-  \url{http://www.oracle.com/technetwork/java/javaee/overview-140548.html}.
+\justify{ORACLE. \emph{JavaServer Faces Technology Overview}. 2015.
+\url{http://www.oracle.com/technetwork/java/javaee/overview-140548.html}.
 Acesso em 15 de janeiro de 2015.}
 
 \bibitem[Oracle 2015]{oracle}
 \abntrefinfo{Oracle}{ORACLE}{2015b}
-{ORACLE. \emph{O que é Java?} 2015.
-  \url{https://www.java.com/pt_BR/download/whatis_java.jsp}.
+\justify{ORACLE. \emph{O que é Java?} 2015.
+\url{https://www.java.com/pt_BR/download/whatis_java.jsp}.
 Acessado em 12 de Fevereiro.}
 
 \bibitem[Pressman 2011]{pressman2011engenharia}
 \abntrefinfo{Pressman}{PRESSMAN}{2011}
-{PRESSMAN, R. \emph{Engenharia de Software}. McGraw Hill Brasil, 2011.
+\justify{PRESSMAN, R. \emph{Engenharia de Software}. McGraw Hill Brasil, 2011.
 ISBN 9788580550443. Dispon{\'\i}vel em:
-  \url{http://books.google.com.br/books?id=y0rH9wuXe68C}.}
+\url{http://books.google.com.br/books?id=y0rH9wuXe68C}.}
 
 \bibitem[Price 2008]{oracle_database_sql}
 \abntrefinfo{Price}{PRICE}{2008}
-{PRICE, J. \emph{Oracle Database 11g SQL}: Domine sql e pl/sql no banco de
-  dados oracle. 1º. ed. Porto Alegre: bookman, 2008.}
+\justify{PRICE, J. \emph{Oracle Database 11g SQL}: Domine sql e pl/sql no banco de
+dados oracle. 1º. ed. Porto Alegre: bookman, 2008.}
 
 \bibitem[Ross e Borsoi 2012]{ross_borsoi_uso_primefaces}
 \abntrefinfo{Ross e Borsoi}{ROSS; BORSOI}{2012}
-{ROSS, C.~L.; BORSOI, B.~T. Uso de primefaces no desenvolvimento de
-  aplicações ricas para web.
+\justify{ROSS, C.~L.; BORSOI, B.~T. \emph{Uso de primefaces no desenvolvimento de
+aplicações ricas para web}.
 2012.}
 
 \bibitem[Santos et al. 2007]{santos2007seleccao}
 \abntrefinfo{Santos et al.}{SANTOS et al.}{2007}
-{SANTOS, J.~C. et al. Sele{\c{c}}{\~a}o de atributos usando algoritmos
-  gen{\'e}ticos para classifica{\c{c}}{\~a}o de regi{\~o}es. In:  \emph{XIII
-  Simposio Brasileiro de Sensoriamento Remoto, Florian{\'o}polis, Brasil.
-  INPE-Instituto Nacional de Pesquisas Espaciais}. [S.l.: s.n.], 2007. p.
-  6143--6150.}
+\justify{SANTOS, J.~C. et al. \emph{Sele{\c{c}}{\~a}o de atributos usando algoritmos
+gen{\'e}ticos para classifica{\c{c}}{\~a}o de regi{\~o}es}. In:  XIII
+Simposio Brasileiro de Sensoriamento Remoto, Florian{\'o}polis, Brasil.
+INPE-Instituto Nacional de Pesquisas Espaciais. [S.l.: s.n.], 2007. p.
+6143--6150.}
 
 \bibitem[Santos 2003]{livro_intro_a_prog_orientada_objetos_usando_java}
 \abntrefinfo{Santos}{SANTOS}{2003}
-{SANTOS, R. \emph{Introdução à Programação Orientada a Objetos usando
-  Java}. 3º. ed. Rio de Janeiro: Campus, 2003.}
+\justify{SANTOS, R. \emph{Introdução à Programação Orientada a Objetos usando
+Java}. 3º. ed. Rio de Janeiro: Campus, 2003.}
 
 \bibitem[Schildt 2007]{livro_java_complete_references}
 \abntrefinfo{Schildt}{SCHILDT}{2007}
-{SCHILDT, H. \emph{The complete reference Java}. 7º. ed. Nova York: MC Graw
-  Hill Osborne, 2007.}
+\justify{SCHILDT, H. \emph{The complete reference Java}. 7º. ed. Nova York: MC Graw
+Hill Osborne, 2007.}
 
 \bibitem[Silva 2001]{silva2001otimizaccao}
 \abntrefinfo{Silva}{SILVA}{2001}
-{SILVA, E. E.~d.
+\justify{SILVA, E. E.~d.
 \emph{Otimiza{\c{c}}{\~a}o de estruturas de concreto armado utilizando
-  algoritmos gen{\'e}ticos.}
+algoritmos gen{\'e}ticos.}
 Tese (Doutorado) --- Universidade de S{\~a}o Paulo, 2001.}
 
 \bibitem[Suehring 2002]{livro_mysql_bible}
 \abntrefinfo{Suehring}{SUEHRING}{2002}
-{SUEHRING, S. \emph{MySQL Bible}. Nova York: Wiley Publishing, Inc, 2002.}
+\justify{SUEHRING, S. \emph{MySQL Bible}. Nova York: Wiley Publishing, Inc, 2002.}
 
 \bibitem[Vukotic e Goodwill 2011]{livro_apache_tomcat_7}
 \abntrefinfo{Vukotic e Goodwill}{VUKOTIC; GOODWILL}{2011}
-{VUKOTIC, A.; GOODWILL, J. \emph{Apache Tomcat 7}. 1º. ed. Nova York: Apress,
-  2011.}
+\justify{VUKOTIC, A.; GOODWILL, J. \emph{Apache Tomcat 7}. 1º. ed. Nova York: Apress,
+2011.}
 
 \bibitem[Zanella 2009]{livro_metodologia_de_estudo_de_pesquisa}
 \abntrefinfo{Zanella}{ZANELLA}{2009}
-{ZANELLA, L. C.~H. \emph{Metodologia de Estudo e de Pesquisa em
-  Administração.} 1º. ed. Florianópolis: CAPES, 2009.}
+\justify{ZANELLA, L. C.~H. \emph{Metodologia de Estudo e de Pesquisa em
+Administração.} 1º. ed. Florianópolis: CAPES, 2009.}
 
 \end{thebibliography}

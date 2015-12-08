@@ -1,43 +1,43 @@
 \changetocdepth {4}
 \changetocdepth {2}
 \select@language {brazil}
-\contentsline {chapter}{INTRODU\IeC {\c C}\IeC {\~A}O}{14}{section*.8}
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {QUADRO TE\IeC {\'O}RICO}}{17}{chapter.2}
-\contentsline {section}{\numberline {2.1}Algoritmos Gen\IeC {\'e}ticos}{17}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Fundamentos}{17}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Caracter\IeC {\'\i }sticas dos Algoritmos Gen\IeC {\'e}ticos}{19}{subsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.2.1}Popula\IeC {\c c}\IeC {\~a}o Inicial}{21}{subsubsection.2.1.2.1}
-\contentsline {subsubsection}{\numberline {2.1.2.2}Fun\IeC {\c c}\IeC {\~a}o de avalia\IeC {\c c}\IeC {\~a}o}{21}{subsubsection.2.1.2.2}
-\contentsline {subsubsection}{\numberline {2.1.2.3}Sele\IeC {\c c}\IeC {\~a}o}{22}{subsubsection.2.1.2.3}
-\contentsline {subsubsection}{\numberline {2.1.2.4}Cruzamento}{23}{subsubsection.2.1.2.4}
-\contentsline {subsubsection}{\numberline {2.1.2.5}Muta\IeC {\c c}\IeC {\~a}o}{23}{subsubsection.2.1.2.5}
-\contentsline {section}{\numberline {2.2}Tecnologias}{24}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Linguagem de programa\IeC {\c c}\IeC {\~a}o Java}{24}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Interface Gr\IeC {\'a}fica - JSF}{27}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Armazenamento de dados}{29}{subsection.2.2.3}
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {QUADRO METODOL\IeC {\'O}GICO}}{31}{chapter.3}
-\contentsline {section}{\numberline {3.1}Tipo de pesquisa}{31}{section.3.1}
-\contentsline {section}{\numberline {3.2}Contexto de pesquisa}{32}{section.3.2}
-\contentsline {section}{\numberline {3.3}Instrumentos}{32}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Entrevistas}{33}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Reuni\IeC {\~o}es}{33}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Procedimentos}{35}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Framework de desenvolvimento}{35}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Representa\IeC {\c c}\IeC {\~a}o do processo de produ\IeC {\c c}\IeC {\~a}o}{39}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Popula\IeC {\c c}\IeC {\~a}o inicial: Distribui\IeC {\c c}\IeC {\~a}o das atividades, Indiv\IeC {\'\i }duos e Cromossomos}{41}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Fun\IeC {\c c}\IeC {\~a}o de avalia\IeC {\c c}\IeC {\~a}o}{53}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}Classifica\IeC {\c c}\IeC {\~a}o dos indiv\IeC {\'\i }duos}{61}{subsection.3.4.5}
-\contentsline {subsection}{\numberline {3.4.6}Indiv\IeC {\'\i }duos estrangeiros e elitismo}{63}{subsection.3.4.6}
-\contentsline {subsection}{\numberline {3.4.7}Sele\IeC {\c c}\IeC {\~a}o de indiv\IeC {\'\i }duos e cruzamento/reprodu\IeC {\c c}\IeC {\~a}o}{65}{subsection.3.4.7}
-\contentsline {subsection}{\numberline {3.4.8}Muta\IeC {\c c}\IeC {\~a}o}{70}{subsection.3.4.8}
-\contentsline {subsection}{\numberline {3.4.9}Interface gr\IeC {\'a}fica de distribui\IeC {\c c}\IeC {\~a}o}{74}{subsection.3.4.9}
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Discuss\IeC {\~a}o de resultados}}{80}{chapter.4}
-\contentsline {section}{\numberline {4.1}Teste considerando somente o tempo de produ\IeC {\c c}\IeC {\~a}o}{81}{section.4.1}
-\contentsline {section}{\numberline {4.2}Teste considerando o custo de produ\IeC {\c c}\IeC {\~a}o}{85}{section.4.2}
-\contentsline {section}{\numberline {4.3}Teste considerando tempo x custo x prazo de entrega}{87}{section.4.3}
-\contentsline {section}{\numberline {4.4}Teste considerando o tempo de transporte}{88}{section.4.4}
-\contentsline {section}{\numberline {4.5}Teste adicionando mais atividades ao processo}{90}{section.4.5}
-\contentsline {section}{\numberline {4.6}Teste quando o prazo n\IeC {\~a}o \IeC {\'e} atendido}{95}{section.4.6}
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {CONCLUS\IeC {\~A}O}}{98}{chapter.5}
+\contentsline {chapter}{INTRODU\IeC {\c C}\IeC {\~A}O}{13}{section*.8}
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {QUADRO TE\IeC {\'O}RICO}}{16}{chapter.2}
+\contentsline {section}{\numberline {2.1}Algoritmos Gen\IeC {\'e}ticos}{16}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Fundamentos}{16}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Caracter\IeC {\'\i }sticas dos Algoritmos Gen\IeC {\'e}ticos}{18}{subsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Popula\IeC {\c c}\IeC {\~a}o Inicial}{20}{subsubsection.2.1.2.1}
+\contentsline {subsubsection}{\numberline {2.1.2.2}Fun\IeC {\c c}\IeC {\~a}o de avalia\IeC {\c c}\IeC {\~a}o}{20}{subsubsection.2.1.2.2}
+\contentsline {subsubsection}{\numberline {2.1.2.3}Sele\IeC {\c c}\IeC {\~a}o}{21}{subsubsection.2.1.2.3}
+\contentsline {subsubsection}{\numberline {2.1.2.4}Cruzamento}{22}{subsubsection.2.1.2.4}
+\contentsline {subsubsection}{\numberline {2.1.2.5}Muta\IeC {\c c}\IeC {\~a}o}{22}{subsubsection.2.1.2.5}
+\contentsline {section}{\numberline {2.2}Tecnologias}{23}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Linguagem de programa\IeC {\c c}\IeC {\~a}o Java}{23}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Interface Gr\IeC {\'a}fica - JSF}{26}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Armazenamento de dados}{28}{subsection.2.2.3}
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {QUADRO METODOL\IeC {\'O}GICO}}{30}{chapter.3}
+\contentsline {section}{\numberline {3.1}Tipo de pesquisa}{30}{section.3.1}
+\contentsline {section}{\numberline {3.2}Contexto de pesquisa}{31}{section.3.2}
+\contentsline {section}{\numberline {3.3}Instrumentos}{31}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Entrevistas}{32}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Reuni\IeC {\~o}es}{32}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Procedimentos}{34}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Framework de desenvolvimento}{34}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Representa\IeC {\c c}\IeC {\~a}o do processo de produ\IeC {\c c}\IeC {\~a}o}{38}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Popula\IeC {\c c}\IeC {\~a}o inicial: Distribui\IeC {\c c}\IeC {\~a}o das atividades, Indiv\IeC {\'\i }duos e Cromossomos}{40}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Fun\IeC {\c c}\IeC {\~a}o de avalia\IeC {\c c}\IeC {\~a}o}{52}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}Classifica\IeC {\c c}\IeC {\~a}o dos indiv\IeC {\'\i }duos}{60}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.6}Indiv\IeC {\'\i }duos estrangeiros e elitismo}{62}{subsection.3.4.6}
+\contentsline {subsection}{\numberline {3.4.7}Sele\IeC {\c c}\IeC {\~a}o de indiv\IeC {\'\i }duos e cruzamento/reprodu\IeC {\c c}\IeC {\~a}o}{64}{subsection.3.4.7}
+\contentsline {subsection}{\numberline {3.4.8}Muta\IeC {\c c}\IeC {\~a}o}{69}{subsection.3.4.8}
+\contentsline {subsection}{\numberline {3.4.9}Interface gr\IeC {\'a}fica de distribui\IeC {\c c}\IeC {\~a}o}{73}{subsection.3.4.9}
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Discuss\IeC {\~a}o de resultados}}{79}{chapter.4}
+\contentsline {section}{\numberline {4.1}Teste considerando somente o tempo de produ\IeC {\c c}\IeC {\~a}o}{80}{section.4.1}
+\contentsline {section}{\numberline {4.2}Teste considerando o custo de produ\IeC {\c c}\IeC {\~a}o}{84}{section.4.2}
+\contentsline {section}{\numberline {4.3}Teste considerando tempo x custo x prazo de entrega}{86}{section.4.3}
+\contentsline {section}{\numberline {4.4}Teste considerando o tempo de transporte}{87}{section.4.4}
+\contentsline {section}{\numberline {4.5}Teste adicionando mais atividades ao processo}{89}{section.4.5}
+\contentsline {section}{\numberline {4.6}Teste quando o prazo n\IeC {\~a}o \IeC {\'e} atendido}{94}{section.4.6}
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {CONCLUS\IeC {\~A}O}}{97}{chapter.5}
 \vspace {\cftbeforechapterskip }
-\contentsline {chapter}{REFER\IeC {\^E}NCIAS}{101}{section*.62}
+\contentsline {chapter}{REFER\IeC {\^E}NCIAS}{100}{section*.62}
